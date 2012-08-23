@@ -88,6 +88,41 @@ class Users extends CI_Controller {
 		}
 	}
 
+	function showSignUps()
+	{
+
+		$this->load->database();
+		//check to see if the user already exists
+		$query = $this->db->query("SELECT id, email, date FROM viral");	
+
+		if ($query->num_rows() > 0)
+		{
+			echo "<style>table, th, td { border: 1px solid #888; } </style>";
+			echo "<table width='90%' border='0'";
+			echo "<tr><th>ID</th><th>E-mail</th><th>Date</th></tr>";
+		    foreach ($query->result() as $row)
+		    {
+		    	echo "<tr>";
+		    	echo "<td>" . $row->id . "</td>";
+		    	echo "<td>" . $row->email . "</td>";
+		    	echo "<td>" . $row->date . "</td>";
+		    	echo "</tr>";
+		       
+		    }
+
+		    echo "</table>";
+
+ 		} else {
+
+			echo "There are no users.";
+
+		}
+
+	
+
+
+	}
+
 	
 	
 	
