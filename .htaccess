@@ -1,3 +1,4 @@
 RewriteEngine on
+RewriteBase /PastureScoutCode/
 RewriteCond $1 !^(index\.php|images|robots\.txt)
-RewriteRule ^(.*)$ /index.php/$1 [L]
+RewriteRule ^(.*)$ /PastureScoutCode/index.php?/$1 [L]
