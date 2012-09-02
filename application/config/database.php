@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'e!b77Ix8Hm05';
+$db['default']['password'] = '';
 $db['default']['database'] = 'pasture_scout';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
@@ -68,7 +68,7 @@ $db['default']['stricton'] = FALSE;
 $db['dev']['hostname'] = 'localhost';
 $db['dev']['username'] = 'root';
 $db['dev']['password'] = '';
-$db['dev']['database'] = 'pscout_data';
+$db['dev']['database'] = 'pasture_scout';
 $db['dev']['dbdriver'] = 'mysql';
 $db['dev']['dbprefix'] = '';
 $db['dev']['pconnect'] = TRUE;

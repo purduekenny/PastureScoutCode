@@ -1,0 +1,244 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url("reset.css");
+
+* { 
+    margin:0;
+}
+
+html { 
+    height:100%;
+}
+
+/***** BODY *****/
+body {
+    background-image:url(../../images/homepage/bg_body.jpg);
+    height:100%;
+    margin:0px;
+    padding:0px;
+    background-color:#f5f5f5;
+    background-repeat:repeat-x;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:14px;
+    color:#111;
+}
+#pageContainer {  
+        width:960px;
+        margin:0px auto;
+
+}
+
+/***** LOGO *****/
+#logo {
+    background: url('../../images/homepage/logo.png') no-repeat;
+    width:355px;
+    height:61px;
+    float:left;
+    margin:40px 0 0 30px;
+    border:0px;
+}
+
+/***** HEADER *****/
+header {  
+    height:130px;
+    margin:7px 0 0 0;
+}
+
+/***** NAVIGATION AREA *****/
+nav {  
+    height:123px;
+}
+
+#nav_wrapper{
+    position: relative;
+    width:400px;
+    height:40px;
+    float:right;
+    top:45px;
+}
+
+/***** SOCIAL MEDIA *****/
+.socialMediaList {
+    position:relative;
+    display: block;
+    left:258px;
+    top: -20px;
+}
+
+.socialMediaLi {
+    display:inline;
+    border:0px;
+}
+
+.navList(){
+    position: relative;
+    width:100px;
+    height:45px;
+}
+.navLi {
+    font-size:15px;
+    font-weight:bolder;
+    display:inline;
+    padding:0 20px 0 0;
+    float:left;
+}
+
+.navLi a:link,
+.navLi a:active,
+.navLi a:visited {
+    text-decoration:none;
+    color:#111;
+}
+
+.navLi a:hover {
+    color:#3e8827;
+}
+
+
+/***** login *****/
+.open {
+    position:relative;
+    left: 68px;
+    top: -28px;
+}
+.collapse{
+    position: relative;
+    top:-20px;
+    left:65px;
+}
+
+    a { color:#999; text-decoration:none; }
+    label { display: block; }
+    form { margin: 25px; text-align:left }
+    form input[type=text] { padding:5px; width:90%; border:solid 1px #CCC;}
+    form textarea { padding:5px; width:90%; border:solid 1px #CCC; height:100px;}
+
+/***** GREEN INFO BAR *****/
+#infoBar {  
+    height:394px;
+    /*background-image:url('../../images/homepage/johnw.png');*/
+    background-repeat:no-repeat;
+    position: relative;
+    top:-45px;
+}
+
+#infoBarText {
+    width:400px;
+    margin:60px 0 0 30px;
+    float:left;
+}
+
+#slider {
+    width:750px;
+    margin:53px auto
+}
+
+#signup{
+    position: relative;
+    margin:auto;
+    width:452px;
+    top:-40px;
+}
+
+h1 {
+    font-size:36px;
+    color:#ffb400;
+    -moz-text-shadow: 1px 1px 2px #2f6a1d;
+    -webkit-text-shadow: 1px 1px 2px #2f6a1d;
+    text-shadow: 1px 1px 2px #2f6a1d;
+}
+
+.infoBoxText {
+    font-size:18px;
+    line-height:23px;
+    color:#f2f2f2;
+    margin:20px 0 0 0;
+    -moz-text-shadow: 1px 1px 2px #2f6a1d;
+    -webkit-text-shadow: 1px 1px 2px #2f6a1d;
+    text-shadow: 1px 1px 2px #2f6a1d;
+}
+
+.infoBoxText a:link,
+.infoBoxText a:active,
+.infoBoxText a:visited {
+    text-decoration:underline;
+    color:#ffb400;
+}
+
+.infoBoxText a:hover {
+    text-decoration:underline;
+    color:#f2f2f2;
+}
+
+.btnSignup {
+    margin:30px 0 0 0;
+    border:0px;
+}
+
+/***** FIND BID LEASE *****/
+#findBidLease {  
+    width:100%;
+}
+
+/***** TEXT CONTENT *****/
+#longContent {  
+    width:900px;
+    margin:0 30px 30px 30px;
+    line-height:22px;
+}
+
+h2 {
+    font-size:32px;
+    color:#ffb400;
+    font-weight:normal;
+    -moz-text-shadow: 1px 1px 2px #cecece;
+    -webkit-text-shadow: 1px 1px 2px #cecece;
+    text-shadow: 1px 1px 2px #cecece;
+    margin:0 0 13px -2px;
+}
+
+/***** STICKY FOOTER *****/
+.wrapper { min-height:100%; height:auto !important; height:100%; margin:0 auto -363px; /* the bottom margin is the negative value of the footer's height */ }
+.push { height:363px; /* .push must be the same height as .footer */ }
+footer { background-image:url('../../images/homepage/bg_footer.jpg'); background-repeat:repeat-x; height:363px; /* .push must be the same height as .footer */ }
+
+
+#greenFooter {
+    width:900px;
+    margin:0px auto;
+    color:#f2f2f2;
+}
+
+#asSeen {
+    background: url('../../images/homepage/asseen.png') no-repeat;
+    width:900px;
+    height:208px;
+}
+
+#footerLinks {
+    font-size:12px;
+    margin:25px 0 0 0;
+}
+
+#footerLinks a:link,
+#footerLinks a:active,
+#footerLinks a:visited {
+    text-decoration:none;
+    color:#ffb400;
+}
+
+#footerLinks a:hover {
+    text-decoration:none;
+    color:#f2f2f2;
+}
+
+#copyright{
+    float:right;
+}
+
+#footerSocial{
+    visibility: hidden;
+}
+
+

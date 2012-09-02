@@ -1,5 +1,5 @@
 body{
-    background-image:url(../images/homepage/medium/med_bg_body.png);
+    background-image:url(../../images/main/medium/med_bg_body.png);
 }
 
 /***** LOGO *****/
@@ -82,7 +82,7 @@ h1 {
 }
 
 #asSeen {
-    background: url('../images/homepage/medium/medium_asseen.png') no-repeat center;
+    background: url('../../images/main/medium/medium_asseen.png') no-repeat center;
     width:auto;
 }
 

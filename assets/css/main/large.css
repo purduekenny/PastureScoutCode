@@ -1,5 +1,5 @@
 body{
-    background-image:url(../images/homepage/bg_body.jpg);
+    background-image:url(../../images/main/bg_body.jpg);
 }
 #pageContainer {  
     width:95%;
@@ -7,7 +7,7 @@ body{
 
 /***** LOGO *****/
 #logo {
-    background: url('../images/homepage/large/large_logo.png') no-repeat;
+    background: url('../../images/main/large/large_logo.png') no-repeat;
     width:300px;
     height:52px;
 }
@@ -82,7 +82,7 @@ nav {
 }
 
 #asSeen {
-    background: url('../images/homepage/large/large_asseen.png') no-repeat center;
+    background: url('../../images/main/large/large_asseen.png') no-repeat center;
 }
 
 #greenFooter {

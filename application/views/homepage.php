@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <title>PastureScout</title>
     <!-- Main styles -->
-    <link rel='stylesheet' href='assets/css/master.css' />
+    <link rel='stylesheet' href='assets/css/homepage/master.css' />
     <!-- Styles for styles for tables in horizontal mode -->
-    <link rel='stylesheet' media='screen and (max-width:1000px)' href='assets/css/large.css' />
+    <link rel='stylesheet' media='screen and (max-width:1000px)' href='assets/css/homepage/large.css' />
     <!-- Styles for tables in vertical mode and smartphones in horizonal mode -->
-    <link rel='stylesheet' media='screen and (max-width:768px)' href='assets/css/medium.css' />
+    <link rel='stylesheet' media='screen and (max-width:768px)' href='assets/css/homepage/medium.css' />
     <!-- Styles for smartphones -->
-    <link rel='stylesheet' media='screen and (max-width: 480px)' href='assets/css/small.css' />
+    <link rel='stylesheet' media='screen and (max-width: 480px)' href='assets/css/homepage/small.css' />
     <!-- Styles for IE7 -->
     <!--[if IE 7]>
         <link rel="stylesheet" type="text/css" href="css/ie7.css">
@@ -29,7 +29,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 
     <!-- KenBurn CSS STYLE -->
-    <link rel="stylesheet" type="text/css" href="assets/css/slider_style.css" media="screen" />       
+    <link rel="stylesheet" type="text/css" href="assets/css/homepage/slider_style.css" media="screen" />       
     
      <!-- jQuery KenBurn Slider  -->    
     <script type="text/javascript" src="assets/plugins/slider_plugin/js/jquery.themepunch.plugins.min.js"></script>            

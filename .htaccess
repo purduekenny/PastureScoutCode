@@ -1,4 +1,4 @@
 RewriteEngine on
 RewriteBase /PastureScoutCode/
-RewriteCond $1 !^(index\.php|assets|robots\.txt)
+RewriteCond $1 !^(index\.php|assets|captcha|robots\.txt)
 RewriteRule ^(.*)$ /PastureScoutCode/index.php?/$1 [L]

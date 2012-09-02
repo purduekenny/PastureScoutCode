@@ -1,0 +1,118 @@
+/***** LOGO *****/
+body{
+    background-image:url(../../images/homepage/small/small_bg_body.png);
+}
+
+
+#logo {
+    background: url('../../images/homepage/small/small_logo.png');
+    margin:10px 0 0 5px;
+    width:270px;
+    height:47px;
+}
+
+/***** NAVIGATION AREA *****/
+#nav_wrapper{
+    position: relative;
+    width:300px;
+    height:70px;
+    float:left;
+    top:15px;
+}
+    
+/***** SOCIAL MEDIA *****/
+.socialMediaList {
+    display:none;
+}
+
+/***** NAV ITEMS *****/
+.navList {
+    float:left;
+    margin:0;
+    right:auto;
+    padding: 15px 5px 0 5px;
+}
+
+.navLi {
+    padding: 0 10px 0 0px;
+    font-size:12px;
+}
+
+.btnLogin {
+    left:190px;
+}
+
+/***** login *****/
+.open {
+    position:relative;
+    left: 68px;
+    top: -28px;
+}
+
+/***** GREEN INFO BAR *****/
+#infoBar{
+    height:190px;
+}
+#infoBarText {
+    width:280px;
+    margin:5px 0 0 5px;
+}
+
+h1 {
+    font-size:1.8em;
+}
+
+.infoBoxText {
+    font-size:1.0em;
+}
+
+#slider {
+    width:350px;
+    margin:53px auto;
+    
+}
+
+#signup{
+    position: relative;
+    margin:auto;
+    width:300px;
+    top:-45px;
+}
+#signup img{
+    width:300px;
+    height:69px;
+}
+
+.btnSignup {
+    margin:20px 0 0 0;
+}
+
+/***** FIND BID LEASE *****/
+
+#findBidLease {
+    background: url('../../images/homepage/small/small_fbl.png') no-repeat center;
+    height: 269px;
+}
+#findBidLease img{  
+    width:20%;
+    visibility: hidden;
+}
+
+/***** TEXT CONTENT *****/
+#longContent {  
+    width:95%;
+    margin:0 0px 10px 5px;
+}
+
+#asSeen {
+    background: url('../../images/homepage/small/small_asseen.png') no-repeat center;
+}
+
+#footerLinks {
+    margin:25px 10px 30px 10px;
+}
+
+#copyright{
+    clear:both;
+    padding:10px 0 0 0;
+}

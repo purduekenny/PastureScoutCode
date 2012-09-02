@@ -13,7 +13,7 @@ html {
 
 /***** BODY *****/
 body {
-    background-image:url(../images/homepage/bg_body.jpg);
+    background-image:url(../../images/main/bg_body.jpg);
     height:100%;
     margin:0px;
     padding:0px;
@@ -31,7 +31,7 @@ body {
 
 /***** LOGO *****/
 #logo {
-    background: url('../images/homepage/logo.png') no-repeat;
+    background: url('../../images/main/logo.png') no-repeat;
     width:355px;
     height:61px;
     float:left;
@@ -117,7 +117,7 @@ nav {
 /***** GREEN INFO BAR *****/
 #infoBar {  
     height:394px;
-    /*background-image:url('../images/homepage/johnw.png');*/
+    /*background-image:url('../../images/main/johnw.png');*/
     background-repeat:no-repeat;
     position: relative;
     top:-45px;
@@ -199,9 +199,9 @@ h2 {
 }
 
 /***** STICKY FOOTER *****/
-.wrapper { min-height:100%; height:auto !important; height:100%; margin:0 auto -363px; /* the bottom margin is the negative value of the footer's height */ }
+.wrapper { min-height:100%; height:auto !important; height:100%; margin:0 auto -155px; /* the bottom margin is the negative value of the footer's height */ }
 .push { height:363px; /* .push must be the same height as .footer */ }
-footer { background-image:url('../images/homepage/bg_footer.jpg'); background-repeat:repeat-x; height:363px; /* .push must be the same height as .footer */ }
+footer { background-image:url('../../images/main/bg_footer.jpg'); background-repeat:repeat-x; height:155px; /* .push must be the same height as .footer */ }
 
 
 #greenFooter {
@@ -211,7 +211,7 @@ footer { background-image:url('../images/homepage/bg_footer.jpg'); background-re
 }
 
 #asSeen {
-    background: url('../images/homepage/asseen.png') no-repeat;
+    background: url('../../images/main/asseen.png') no-repeat;
     width:900px;
     height:208px;
 }

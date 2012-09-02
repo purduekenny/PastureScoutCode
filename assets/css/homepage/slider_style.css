@@ -23,12 +23,12 @@ html {
 
 .body-dark{
 	background-color:#111;	
-	background-image:url(../images/homepage/grain.png);
+	background-image:url(../../images/homepage/grain.png);
 }
 
 .body-light{
 	background-color:#eee;	
-	background-image:url(../images/homepage/grain.png);
+	background-image:url(../../images/homepage/grain.png);
 }
 
 ol, ul { 

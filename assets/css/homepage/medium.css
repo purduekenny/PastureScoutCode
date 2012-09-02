@@ -1,0 +1,116 @@
+body{
+    background-image:url(../../images/homepage/medium/med_bg_body.png);
+}
+
+/***** LOGO *****/
+#logo {
+    margin:15px 0 0 10px;
+}
+
+/***** NAVIGATION AREA *****/
+nav { 
+    clear:both; 
+}
+/***** NAV ITEMS *****/
+#nav_wrapper{
+    position: relative;
+    width:400px;
+    height:70px;
+    float:left;
+    top:15px;
+    left:10px;
+}
+    
+/***** SOCIAL MEDIA *****/
+.socialMediaList {
+    display: none;
+}
+
+/***** NAV ITEMS *****/
+.navList {
+    padding: 10px 0 0 10px;
+    top:30px;
+}
+
+/***** GREEN INFO BAR *****/
+#infoBar{
+    height:300px;
+}
+
+#infoBarText {
+    width:450px;
+    margin:10px 0 0 10px;
+}
+
+#slider {
+    width:500px;
+    margin:53px auto;
+    
+}
+
+#signup{
+    position: relative;
+    margin:auto;
+    width:452px;
+    top:-50px;
+}
+
+/***** login *****/
+.open {
+    position:relative;
+    left: 68px;
+    top: -28px;
+}
+
+h1 {
+    font-size:2.5em;
+}
+
+.infoBoxText {
+    font-size:1.2em;
+}
+
+/***** FIND BID LEASE *****/
+#findBidLease img{  
+    width:100%;
+}
+
+/***** TEXT CONTENT *****/
+#longContent {  
+    width:95%;
+    margin:0 10px 10px 10px;
+}
+
+#asSeen {
+    background: url('../../images/homepage/medium/medium_asseen.png') no-repeat center;
+    width:auto;
+}
+
+#siteLinks{
+    float:left;
+}
+#copyright{
+    clear:both;
+    padding:10px 0 0 0;
+    float:left;
+}
+
+#footerLinks {
+    height:100px;
+}
+
+/*only visible for medium*/
+#footerSocial{
+    display: block;
+    visibility: visible;
+    position: relative;
+    width:100px;
+    height:40px;
+    clear:both;
+    padding-top: 10px;
+}
+
+/*only visible for medium*/
+#footerSocial li{
+    display: inline
+}

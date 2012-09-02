@@ -1,11 +1,11 @@
 /***** LOGO *****/
 body{
-    background-image:url(../images/homepage/small/small_bg_body.png);
+    background-image:url(../../images/main/small/small_bg_body.png);
 }
 
 
 #logo {
-    background: url('../images/homepage/small/small_logo.png');
+    background: url('../../images/main/small/small_logo.png');
     margin:10px 0 0 5px;
     width:270px;
     height:47px;
@@ -90,7 +90,7 @@ h1 {
 /***** FIND BID LEASE *****/
 
 #findBidLease {
-    background: url('../images/homepage/small/small_fbl.png') no-repeat center;
+    background: url('../../images/main/small/small_fbl.png') no-repeat center;
     height: 269px;
 }
 #findBidLease img{  
@@ -105,7 +105,7 @@ h1 {
 }
 
 #asSeen {
-    background: url('../images/homepage/small/small_asseen.png') no-repeat center;
+    background: url('../../images/main/small/small_asseen.png') no-repeat center;
 }
 
 #footerLinks {
