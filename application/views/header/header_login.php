@@ -1,6 +1,6 @@
 
-
-                    <!-- BEGIN POPBOX PLUGIN -->
+<a href="auth/login"><img src='../assets/images/main/login.png' alt="User Login" style="position:relative; top: -10px" ></a>
+                    <!-- BEGIN POPBOX PLUGIN
                     <div class='popbox'>
                         <a class='open' href='#'>
                           <img src='../assets/images/main/login.png' alt="User Login" >
@@ -21,14 +21,14 @@
                                     </form>
 
                                 </div>
-                            </div>
-                        </div><!-- end popbox plugin-->
+                            </div> 
+                        </div>--><!-- end popbox plugin-->
                 </div><!--end nav wrapper -->
                 <script type='text/javascript'>
-                    jQuery.noConflict();
-                    jQuery(document).ready(function(){
-                        jQuery('.popbox').popbox();
-                    });
+                    //jQuery.noConflict();
+                    //jQuery(document).ready(function(){
+                    //    jQuery('.popbox').popbox();
+                    //});
                 </script>
             </nav><!-- close navigation area-->
         </header><!-- close header -->

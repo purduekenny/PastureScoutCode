@@ -15,6 +15,13 @@ $email = array(
 	'maxlength'	=> 80,
 	'size'	=> 30,
 );
+$zip_code = array(
+	'name'	=> 'zip_code',
+	'id'	=> 'zip_code',
+	'value'	=> set_value('zip_code'),
+	'maxlength'	=> 7,
+	'size'	=> 30,
+);
 $password = array(
 	'name'	=> 'password',
 	'id'	=> 'password',
@@ -48,6 +55,11 @@ $captcha = array(
 		<td><?php echo form_label('Email Address', $email['id']); ?></td>
 		<td><?php echo form_input($email); ?></td>
 		<td style="color: red;"><?php echo form_error($email['name']); ?><?php echo isset($errors[$email['name']])?$errors[$email['name']]:''; ?></td>
+	</tr>
+	<tr>
+		<td><?php echo form_label('Zip Code', $zip_code['id']); ?></td>
+		<td><?php echo form_input($zip_code); ?></td>
+		<td style="color: red;"><?php echo form_error($zip_code['name']); ?><?php echo isset($errors[$zip_code['name']])?$errors[$zip_code['name']]:''; ?></td>
 	</tr>
 	<tr>
 		<td><?php echo form_label('Password', $password['id']); ?></td>

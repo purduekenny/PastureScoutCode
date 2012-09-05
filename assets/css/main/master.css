@@ -137,6 +137,7 @@ form input[value=Register]{
 #password,
 #username,
 #email,
+#zip_code,
 #confirm_password{ 
     background-color:#ffffff; 
     border:1px solid #dbdbdb; 
@@ -168,6 +169,7 @@ label[for=login],
 label[for=password],
 label[for=username],
 label[for=email],
+label[for=zip_code],
 label[for=confirm_password]
 
 {
@@ -289,7 +291,7 @@ footer { background-image:url('../../images/main/bg_footer.jpg'); background-rep
 
 #footerLinks {
     font-size:12px;
-    margin:25px 0 0 0;
+    padding:25px 0 0 0;
 }
 
 #footerLinks a:link,

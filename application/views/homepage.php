@@ -66,10 +66,11 @@
                         <li class="navLi"><a href="#">Contact</a></li>
                         <li class="navLi"><a href="#">Feedback</a></li>
                     </ul><!-- close navigation -->
-                        <!-- BEGIN POPBOX PLUGIN -->
+<a href="auth/login"><img src='assets/images/homepage/login.png' alt="User Login" style="position:relative; top: -10px" ></a>
+                    <!-- BEGIN POPBOX PLUGIN
                     <div class='popbox'>
                         <a class='open' href='#'>
-                          <img src='assets/images/homepage/login.png' alt="User Login" >
+                          <img src='../assets/images/main/login.png' alt="User Login" >
                         </a>
                         <div class='collapse'>
                             <div class='box'>
@@ -87,15 +88,15 @@
                                     </form>
 
                                 </div>
-                            </div>
-                        </div><!-- end popbox plugin-->
+                            </div> 
+                        </div>--><!-- end popbox plugin-->
                 </div><!--end nav wrapper -->
-                    <script type='text/javascript'>
-                        jQuery.noConflict();
-                        jQuery(document).ready(function(){
-                            jQuery('.popbox').popbox();
-                        });
-                    </script>
+                <script type='text/javascript'>
+                    //jQuery.noConflict();
+                    //jQuery(document).ready(function(){
+                    //    jQuery('.popbox').popbox();
+                    //});
+                </script>
             </nav><!-- close navigation area-->
         </header><!-- close header -->
 
