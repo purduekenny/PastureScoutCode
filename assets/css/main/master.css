@@ -108,11 +108,82 @@ nav {
     left:65px;
 }
 
-    a { color:#999; text-decoration:none; }
-    label { display: block; }
-    form { margin: 25px; text-align:left }
-    form input[type=text] { padding:5px; width:90%; border:solid 1px #CCC;}
-    form textarea { padding:5px; width:90%; border:solid 1px #CCC; height:100px;}
+a { color:#999; text-decoration:none; }
+form { margin: 25px; text-align:left }
+form input[type=text] { padding:5px; width:90%; border:solid 1px #333;}
+form textarea { padding:5px; width:90%; border:solid 1px #CCC; height:100px;}
+
+form input[value=Login], 
+form input[value='Get a new password'],
+form input[value=Register]{ 
+    height:40px; 
+    font-size:20px; 
+    font-family:Arial, Helvetica, sans-serif; 
+    float:left; 
+    margin-top: 10px;
+    position: relative;
+}
+
+form input[value=Login], 
+form input[value='Get a new password']{ 
+    left: 110px;
+}
+
+form input[value=Register]{
+    left: 145px;
+}
+
+#login, 
+#password,
+#username,
+#email,
+#confirm_password{ 
+    background-color:#ffffff; 
+    border:1px solid #dbdbdb; 
+    padding:5px; 
+    -webkit-border-radius:8px; 
+    -moz-border-radius:8px; 
+    height:40px; 
+    font-size:20px; 
+    font-family:Arial, Helvetica, sans-serif; float:left; 
+    color:#747474; 
+    width: 300px;
+}
+
+#login_links {
+    position: relative;
+    left: 105px;
+}
+#login_links a{
+    color:#747474;
+    padding-left: 10px;
+    text-decoration:underline;
+}
+
+#login_links a:hover{
+    color:#3e8827;
+}
+
+label[for=login],
+label[for=password],
+label[for=username],
+label[for=email],
+label[for=confirm_password]
+
+{
+    float: right;
+    position: relative;
+    top:-5px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+table td{
+    padding:5px;
+}
+
+
+
 
 /***** GREEN INFO BAR *****/
 #infoBar {  

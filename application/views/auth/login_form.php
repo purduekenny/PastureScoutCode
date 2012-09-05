@@ -81,7 +81,7 @@ $captcha = array(
 	} ?>
 
 	<tr>
-		<td colspan="3">
+		<td colspan="3" id="login_links">
 			<?php echo form_checkbox($remember); ?>
 			<?php echo form_label('Remember me', $remember['id']); ?>
 			<?php echo anchor('/auth/forgot_password/', 'Forgot password'); ?>
@@ -89,5 +89,5 @@ $captcha = array(
 		</td>
 	</tr>
 </table>
-<?php echo form_submit('submit', 'Let me in'); ?>
+<?php echo form_submit('submit', 'Login'); ?>
 <?php echo form_close(); ?>

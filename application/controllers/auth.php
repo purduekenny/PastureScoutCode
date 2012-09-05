@@ -30,7 +30,7 @@ class Auth extends CI_Controller
 	function login()
 	{
 		if ($this->tank_auth->is_logged_in()) {									// logged in
-			redirect('');
+			redirect('homepage');
 
 		} elseif ($this->tank_auth->is_logged_in(FALSE)) {						// logged in, not activated
 			redirect('/auth/send_again/');
@@ -68,7 +68,7 @@ class Auth extends CI_Controller
 						$this->form_validation->set_value('remember'),
 						$data['login_by_username'],
 						$data['login_by_email'])) {								// success
-					redirect('');
+					redirect('homepage');
 
 				} else {
 					$errors = $this->tank_auth->get_error_message();
@@ -92,7 +92,10 @@ class Auth extends CI_Controller
 					$data['captcha_html'] = $this->_create_captcha();
 				}
 			}
+			$this->load->view('header/header_main');
+			$this->load->view('header/header_login');
 			$this->load->view('auth/login_form', $data);
+			$this->load->view('footer/footer_main');
 		}
 	}
 
@@ -170,7 +173,7 @@ class Auth extends CI_Controller
 							$this->_send_email('welcome', $data['email'], $data);
 						}
 						unset($data['password']); // Clear password (just for any case)
-
+						redirect('/auth/login/');
 						$this->_show_message($this->lang->line('auth_message_registration_completed_2').' '.anchor('/auth/login/', 'Login'));
 					}
 				} else {
@@ -188,7 +191,10 @@ class Auth extends CI_Controller
 			$data['use_username'] = $use_username;
 			$data['captcha_registration'] = $captcha_registration;
 			$data['use_recaptcha'] = $use_recaptcha;
+			$this->load->view('header/header_main');
+			$this->load->view('header/header_login');
 			$this->load->view('auth/register_form', $data);
+			$this->load->view('footer/footer_main');
 		}
 	}
 
@@ -223,7 +229,10 @@ class Auth extends CI_Controller
 					foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
 				}
 			}
+			$this->load->view('header/header_main');
+			$this->load->view('header/header_login');
 			$this->load->view('auth/send_again_form', $data);
+			$this->load->view('footer/footer_main');
 		}
 	}
 
@@ -283,7 +292,10 @@ class Auth extends CI_Controller
 					foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
 				}
 			}
+			$this->load->view('header/header_main');
+			$this->load->view('header/header_login');
 			$this->load->view('auth/forgot_password_form', $data);
+			$this->load->view('footer/footer_main');
 		}
 	}
 
@@ -329,7 +341,10 @@ class Auth extends CI_Controller
 				$this->_show_message($this->lang->line('auth_message_new_password_failed'));
 			}
 		}
+		$this->load->view('header/header_main');
+		$this->load->view('header/header_login');
 		$this->load->view('auth/reset_password_form', $data);
+		$this->load->view('footer/footer_main');
 	}
 
 	/**
@@ -360,7 +375,10 @@ class Auth extends CI_Controller
 					foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
 				}
 			}
+			$this->load->view('header/header_main');
+			$this->load->view('header/header_login');
 			$this->load->view('auth/change_password_form', $data);
+			$this->load->view('footer/footer_main');
 		}
 	}
 
@@ -397,7 +415,10 @@ class Auth extends CI_Controller
 					foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
 				}
 			}
+			$this->load->view('header/header_main');
+			$this->load->view('header/header_login');
 			$this->load->view('auth/change_email_form', $data);
+			$this->load->view('footer/footer_main');
 		}
 	}
 
@@ -448,7 +469,10 @@ class Auth extends CI_Controller
 					foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
 				}
 			}
+			$this->load->view('header/header_main');
+			$this->load->view('header/header_login');
 			$this->load->view('auth/unregister_form', $data);
+			$this->load->view('footer/footer_main');
 		}
 	}
 
