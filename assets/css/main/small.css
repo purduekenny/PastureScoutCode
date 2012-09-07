@@ -1,8 +1,4 @@
 /***** LOGO *****/
-body{
-    background-image:url(../../images/main/small/small_bg_body.png);
-}
-
 
 #logo {
     background: url('../../images/main/small/small_logo.png');
@@ -48,6 +44,16 @@ body{
     left: 68px;
     top: -28px;
 }
+
+#login, 
+#password,
+#username,
+#email,
+#zip_code,
+#confirm_password{ 
+    width: 90%;
+}
+
 
 /***** GREEN INFO BAR *****/
 #infoBar{

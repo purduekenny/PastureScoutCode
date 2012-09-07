@@ -222,7 +222,7 @@
                 });
             </script>
 
-            <div  id="signup" class="centerme"><img src="assets/images/homepage/register.png" width="452" height="103" alt="Sign up" /></div>
+            <div  id="signup" class="centerme"><a href="auth/register"><img src="assets/images/homepage/register.png" width="452" height="103" alt="Sign up" /></a></div>
                 
                 
             

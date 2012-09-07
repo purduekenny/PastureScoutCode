@@ -32,3 +32,10 @@
                 </script>
             </nav><!-- close navigation area-->
         </header><!-- close header -->
+        <?php
+            if ($message = $this->session->flashdata('message')) {
+                echo "<p class='message'>";
+                $this->load->view('auth/general_message', array('message' => $message));
+                echo "</p>";
+            }
+        ?>

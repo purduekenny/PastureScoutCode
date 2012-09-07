@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" ?><dwsync><file name="button_dark.png" server="angelinetran.com" local="3428704070" remote="12018955472" /><file name="button_light.png" server="angelinetran.com" local="3428704070" remote="12018955472" /><file name="close_dark.png" server="angelinetran.com" local="3428704070" remote="12018955472" /><file name="close.png" server="angelinetran.com" local="3428704070" remote="12018955472" /><file name="navigdots_bgtile.png" server="angelinetran.com" local="3428704070" remote="12018955472" /><file name="arrowleft.png" server="angelinetran.com" local="3428704070" remote="12018955472" /><file name="arrowright.png" server="angelinetran.com" local="3428704070" remote="12018955472" /><file name="navigdots.png" server="angelinetran.com" local="3428704070" remote="12018955472" /></dwsync>
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="button_dark.png" server="angelinetran.com" local="3428704070" remote="12018955472" Dst="-1" />
+<file name="button_light.png" server="angelinetran.com" local="3428704070" remote="12018955472" Dst="-1" />
+<file name="close_dark.png" server="angelinetran.com" local="3428704070" remote="12018955472" Dst="-1" />
+<file name="close.png" server="angelinetran.com" local="3428704070" remote="12018955472" Dst="-1" />
+<file name="navigdots_bgtile.png" server="angelinetran.com" local="3428704070" remote="12018955472" Dst="-1" />
+<file name="arrowleft.png" server="angelinetran.com" local="3428704070" remote="12018955472" Dst="-1" />
+<file name="arrowright.png" server="angelinetran.com" local="3428704070" remote="12018955472" Dst="-1" />
+<file name="navigdots.png" server="angelinetran.com" local="3428704070" remote="12018955472" Dst="-1" />
+<file name="arrowleft.png" server="ftp.digital-inflection.com" local="129909851568575467" remote="129914598600000000" Dst="2" />
+<file name="arrowright.png" server="ftp.digital-inflection.com" local="129909851568685564" remote="129914598600000000" Dst="2" />
+<file name="button_dark.png" server="ftp.digital-inflection.com" local="129909851568815669" remote="129914598600000000" Dst="2" />
+<file name="button_light.png" server="ftp.digital-inflection.com" local="129909851568935770" remote="129914598600000000" Dst="2" />
+<file name="close.png" server="ftp.digital-inflection.com" local="129909851569045867" remote="129914598600000000" Dst="2" />
+<file name="close_dark.png" server="ftp.digital-inflection.com" local="129909851569165972" remote="129914598600000000" Dst="2" />
+<file name="navigdots.png" server="ftp.digital-inflection.com" local="129909851569286069" remote="129914598600000000" Dst="2" />
+<file name="navigdots_bgtile.png" server="ftp.digital-inflection.com" local="129909851569396166" remote="129914598600000000" Dst="2" />
+</dwsync>

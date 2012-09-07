@@ -330,16 +330,6 @@ website:   	http://www.themepunch.com
 /****************************
 	-	DECORATIONS	-
 ****************************/	
-a:link, a:visited {
-	text-decoration: none;
-	color: #fff;
-}
-
-a:hover {
-	text-decoration: none;
-	cursor: pointer;
-	color: #ddd;
-}
 
 a:focus { 
     outline: none; 

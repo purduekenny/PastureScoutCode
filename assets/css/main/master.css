@@ -271,6 +271,13 @@ h2 {
     margin:0 0 13px -2px;
 }
 
+.message{
+    color:#9d6601;
+    padding:7px;
+    border: solid 1px #9d6601;
+    background: #ffeb9c;
+}
+
 /***** STICKY FOOTER *****/
 .wrapper { min-height:100%; height:auto !important; height:100%; margin:0 auto -155px; /* the bottom margin is the negative value of the footer's height */ }
 .push { height:363px; /* .push must be the same height as .footer */ }
