@@ -1,21 +1,4 @@
-/***** LOGO *****/
 
-#logo {
-    background: url('../../images/main/small/small_logo.png');
-    margin:10px 0 0 5px;
-    width:270px;
-    height:47px;
-}
-
-/***** NAVIGATION AREA *****/
-#nav_wrapper{
-    position: relative;
-    width:300px;
-    height:70px;
-    float:left;
-    top:15px;
-}
-    
 /***** SOCIAL MEDIA *****/
 .socialMediaList {
     display:none;
@@ -34,8 +17,8 @@
     font-size:12px;
 }
 
-.btnLogin {
-    left:190px;
+#login_btn {
+    top:5px;
 }
 
 /***** login *****/

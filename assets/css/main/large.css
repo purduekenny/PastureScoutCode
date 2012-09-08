@@ -1,38 +1,5 @@
-body{
-    background-image:url(../../images/main/bg_body.jpg);
-}
 #pageContainer {  
     width:95%;
-}
-
-/***** LOGO *****/
-#logo {
-    background: url('../../images/main/large/large_logo.png') no-repeat;
-    width:300px;
-    height:52px;
-}
-
-/***** NAVIGATION AREA *****/
-nav {  
-    height:20px;
-}
-    
-/***** SOCIAL MEDIA *****/
-.socialMediaList {
-    position:relative;
-    display: block;
-    left:258px;
-    top: -20px;
-}
-
-/***** NAV ITEMS *****/
-#nav_wrapper{
-    position: relative;
-    width:400px;
-    height:70px;
-    float:right;
-    top:48px;
-    left:30px;
 }
 
 .navList(){
@@ -40,11 +7,6 @@ nav {
     float:left
 }
     
-.btnLogin {
-    left:235px;
-    top:33px;
-}
-
 /***** login *****/
 .open {
     position:relative;

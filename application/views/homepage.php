@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
-    <title>PastureScout</title>
+    <title>Pasture Scout - Find it. Bid it. Lease it. </title>
     <!-- Main styles -->
     <link rel='stylesheet' href='assets/css/homepage/master.css' />
     <!-- Styles for styles for tables in horizontal mode -->
@@ -58,11 +58,11 @@
                 <div id="nav_wrapper">
                     <!-- SOCIAL MEDIA LINKS -->
                     <ul class="socialMediaList">
-                        <li class="socialMediaLi"><a href="#" target="_blank"><img src="assets/images/homepage/icon_facebook.png" width="24" height="24" alt="Facebook link" /></a></li>
-                        <li class="socialMediaLi"><a href="#" target="_blank"><img src="assets/images/homepage/icon_twitter.png" width="24" height="24" alt="Twitter link" /></a></li>
+                        <li class="socialMediaLi"><a href="http://www.facebook.com/pasturescout" target="_blank"><img src="assets/images/homepage/icon_facebook.png" width="24" height="24" alt="Facebook link" /></a></li>
+                        <li class="socialMediaLi"><a href="http://www.twitter.com/pasturescout" target="_blank"><img src="assets/images/homepage/icon_twitter.png" width="24" height="24" alt="Twitter link" /></a></li>
                     </ul><!-- close social media -->
                     <ul class="navList">
-                        <li class="navLi"><a href="#">About</a></li>
+                        <li class="navLi"><a href="http://pasturescout.com/blog/about-us/">About</a></li>
                         <li class="navLi"><a href="#">Contact</a></li>
                         <li class="navLi"><a href="#">Feedback</a></li>
                     </ul><!-- close navigation -->

@@ -13,15 +13,12 @@ html {
 
 /***** BODY *****/
 body {
-    background-image:url(../../images/main/bg_body.jpg);
+    background: #fdfdfd url(../../images/main/main_bg.png) repeat-x;
     height:100%;
-    margin:0px;
     padding:0px;
-    background-color:#f5f5f5;
     background-repeat:repeat-x;
     font-family:Arial, Helvetica, sans-serif;
     font-size:14px;
-    color:#111;
 }
 #pageContainer {  
         width:960px;
@@ -32,16 +29,16 @@ body {
 /***** LOGO *****/
 #logo {
     background: url('../../images/main/logo.png') no-repeat;
-    width:355px;
-    height:61px;
+    width:223px;
+    height:38px;
     float:left;
-    margin:40px 0 0 30px;
+    margin:5px 0 0 10px;
     border:0px;
 }
 
 /***** HEADER *****/
 header {  
-    height:130px;
+    height:58px;
     margin:7px 0 0 0;
 }
 
@@ -55,7 +52,12 @@ nav {
     width:400px;
     height:40px;
     float:right;
-    top:45px;
+    top:20px;
+}
+
+#login_btn{
+    position:relative; 
+    top: -10px
 }
 
 /***** SOCIAL MEDIA *****/
@@ -108,20 +110,32 @@ nav {
     left:65px;
 }
 
-a { color:#999; text-decoration:none; }
-form { margin: 25px; text-align:left }
-form input[type=text] { padding:5px; width:90%; border:solid 1px #333;}
-form textarea { padding:5px; width:90%; border:solid 1px #CCC; height:100px;}
+a { 
+    color:#999; 
+    text-decoration:none;
+}
+form { 
+    margin: 25px; text-align:left 
+}
+form textarea { 
+    padding:5px; 
+    width:90%; 
+    border:solid 1px #CCC; 
+    height:100px;
+}
 
-form input[value=Login], 
-form input[value='Get a new password'],
-form input[value=Register]{ 
-    height:40px; 
+form input{ 
+    height:30px; 
     font-size:20px; 
     font-family:Arial, Helvetica, sans-serif; 
-    float:left; 
-    margin-top: 10px;
-    position: relative;
+}
+
+form ul{
+    clear:both;
+}
+
+form ul li{
+    margin: 10px 0 0 0;
 }
 
 form input[value=Login], 
@@ -133,12 +147,11 @@ form input[value=Register]{
     left: 145px;
 }
 
-#login, 
-#password,
-#username,
-#email,
-#zip_code,
-#confirm_password{ 
+form input[type=submit]{
+    margin-top: 10px;
+}
+
+input[type=text],input[type=password]{ 
     background-color:#ffffff; 
     border:1px solid #dbdbdb; 
     padding:5px; 
@@ -146,15 +159,11 @@ form input[value=Register]{
     -moz-border-radius:8px; 
     height:40px; 
     font-size:20px; 
-    font-family:Arial, Helvetica, sans-serif; float:left; 
+    font-family:Arial, Helvetica, sans-serif; 
     color:#747474; 
     width: 300px;
 }
 
-#login_links {
-    position: relative;
-    left: 105px;
-}
 #login_links a{
     color:#747474;
     padding-left: 10px;
@@ -165,17 +174,7 @@ form input[value=Register]{
     color:#3e8827;
 }
 
-label[for=login],
-label[for=password],
-label[for=username],
-label[for=email],
-label[for=zip_code],
-label[for=confirm_password]
-
-{
-    float: right;
-    position: relative;
-    top:-5px;
+label{
     font-family:Arial, Helvetica, sans-serif;
     font-weight: bolder;
 }
@@ -185,35 +184,6 @@ table td{
 }
 
 
-
-
-/***** GREEN INFO BAR *****/
-#infoBar {  
-    height:394px;
-    /*background-image:url('../../images/main/johnw.png');*/
-    background-repeat:no-repeat;
-    position: relative;
-    top:-45px;
-}
-
-#infoBarText {
-    width:400px;
-    margin:60px 0 0 30px;
-    float:left;
-}
-
-#slider {
-    width:750px;
-    margin:53px auto
-}
-
-#signup{
-    position: relative;
-    margin:auto;
-    width:452px;
-    top:-40px;
-}
-
 h1 {
     font-size:36px;
     color:#ffb400;
@@ -222,44 +192,6 @@ h1 {
     text-shadow: 1px 1px 2px #2f6a1d;
 }
 
-.infoBoxText {
-    font-size:18px;
-    line-height:23px;
-    color:#f2f2f2;
-    margin:20px 0 0 0;
-    -moz-text-shadow: 1px 1px 2px #2f6a1d;
-    -webkit-text-shadow: 1px 1px 2px #2f6a1d;
-    text-shadow: 1px 1px 2px #2f6a1d;
-}
-
-.infoBoxText a:link,
-.infoBoxText a:active,
-.infoBoxText a:visited {
-    text-decoration:underline;
-    color:#ffb400;
-}
-
-.infoBoxText a:hover {
-    text-decoration:underline;
-    color:#f2f2f2;
-}
-
-.btnSignup {
-    margin:30px 0 0 0;
-    border:0px;
-}
-
-/***** FIND BID LEASE *****/
-#findBidLease {  
-    width:100%;
-}
-
-/***** TEXT CONTENT *****/
-#longContent {  
-    width:900px;
-    margin:0 30px 30px 30px;
-    line-height:22px;
-}
 
 h2 {
     font-size:32px;

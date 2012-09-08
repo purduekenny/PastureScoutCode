@@ -1,7 +1,5 @@
-
-/***** LOGO *****/
-#logo {
-    margin:15px 0 0 10px;
+body {
+    background: #fff url(../../images/main/medium/medium_main_bg.png) repeat-x;
 }
 
 /***** NAVIGATION AREA *****/
@@ -14,8 +12,9 @@ nav {
     width:400px;
     height:70px;
     float:left;
-    top:15px;
-    left:10px;
+    clear:both;
+    top:5px;
+    left:0px;
 }
     
 /***** SOCIAL MEDIA *****/
