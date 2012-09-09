@@ -2,6 +2,12 @@ body {
     background: #fff url(../../images/main/medium/medium_main_bg.png) repeat-x;
 }
 
+/***** HEADER *****/
+header {  
+    height:99px;
+    margin:7px 0 0 0;
+}
+
 /***** NAVIGATION AREA *****/
 nav { 
     clear:both; 
@@ -28,12 +34,8 @@ nav {
     top:30px;
 }
 
-#login, 
-#password,
-#username,
-#email,
-#zip_code,
-#confirm_password{ 
+
+input[type=text],input[type=password]{ 
     width: 90%;
 }
 

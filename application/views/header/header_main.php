@@ -43,13 +43,24 @@
             <!-- NAVIGATION -->
             <div id="nav_wrapper">
                 <ul class="navList">
+                    <li class="navLi"><a href='<?= base_url("dashboard"); ?>'>Dashboard</a></li>
+                    <li class="navLi"><a href='<?= base_url("my_account"); ?>'>My Account</a></li>
                     <li class="navLi"><a href="http://pasturescout.com/blog/about-us/">About</a></li>
-                    <li class="navLi"><a href="#">Contact</a></li>
-                    <li class="navLi"><a href="#">Feedback</a></li>
+                    <?php
+                        $username = $this->session->userdata('username');
+                        if(isset($username)){
+                            ?><li class="navLi">Hi, <?php echo $username ?></li> <?php
+                        }
+                    ?>
                 </ul><!-- close navigation -->
+                
+                <?php if (!isset($username)){ ?>
+                    <a href="'<?= base_url("auth/login"); ?>'"><img src='<?= base_url("assets/images/main/login.png"); ?>' alt="User Login" id="login_btn"></a>
+                <?php } ?>
 
 
-                <a href="auth/login"><img src='<?= base_url("assets/images/main/login.png"); ?>' alt="User Login" id="login_btn"></a>
+
+
             </div><!--end nav wrapper -->
         </header><!-- close header -->
         <?php
