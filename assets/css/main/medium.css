@@ -34,6 +34,11 @@ nav {
     top:30px;
 }
 
+.navLi {
+    padding: 0 10px 0 0px;
+    font-size:12px;
+}
+
 
 input[type=text],input[type=password]{ 
     width: 90%;

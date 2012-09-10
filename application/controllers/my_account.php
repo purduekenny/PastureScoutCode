@@ -26,7 +26,7 @@ class My_Account extends CI_Controller
 			$this->load->view('footer/footer_main');
 		} else {
 			// if logged in, not activated				
-			$this->_show_message('You must be logged in to view this page');
+			$this->session->set_flashdata('message', 'You must be logged in to use this page');
 			redirect('/auth/login/');
 		}
 	}
@@ -36,43 +36,38 @@ class My_Account extends CI_Controller
 
 		if (!$this->tank_auth->is_logged_in()) {									
 			// if logged in, not activated				
-			$this->_show_message('You must be logged in to view this page');
+			$this->session->set_flashdata('message', 'You must be logged in to use this page');
 			redirect(base_url() . 'auth/login');
 		} else if ($user_id= ''){
-			$this->_show_message('Oops!');
+			$this->session->set_flashdata('message', 'oops!');
 			redirect(base_url() . 'my_account');
 		} else {
 			$user_id = $this->tank_auth->get_user_id();
 
 			$this->form_validation->set_rules('first_name', 'First Name', 'trim|required|xss_clean|max_length[100]|alpha_dash');
 			$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required|xss_clean|max_length[100]|alpha_dash');
-			$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean|min_length['.$this->config->item('username_min_length', 'tank_auth').']|max_length['.$this->config->item('username_max_length', 'tank_auth').']|alpha_dash');
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean|valid_email');
 			$this->form_validation->set_rules('zip_code', 'Zip Code', 'trim|required|numeric');
-
 
 			$data['errors'] = array();
 
 			if ($this->form_validation->run()) {										
 				// validation ok
-				
-				// validation ok
 				$data = array(
-					'username'	=> $this->form_validation->set_value('username'),
 					'email'		=> $this->form_validation->set_value('email'),
 					'zip_code'	=> $this->form_validation->set_value('zip_code'),
 					'first_name'=> $this->form_validation->set_value('first_name'),
 					'last_name'	=> $this->form_validation->set_value('last_name')
 				);
 
+				//update account information
 				$this->user->set_account_info($user_id, $data);								
-				// success
 
 				//reset session w/ new stuff
 				$newdata = array(
-                   'username'  => $this->form_validation->set_value('username'),
                    'email'     => $this->form_validation->set_value('email')
                 );
+                
 				$this->session->set_userdata($newdata);
 				$this->session->set_flashdata('message', 'You have successfully edited your account');
 				redirect(base_url() . 'my_account');

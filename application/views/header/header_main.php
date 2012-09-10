@@ -12,10 +12,9 @@
     <link rel='stylesheet' media='screen and (max-width:768px)' href='<?= base_url("assets/css/main/medium.css"); ?>' />
     <!-- Styles for smartphones -->
     <link rel='stylesheet' media='screen and (max-width: 480px)' href='<?= base_url("assets/css/main/small.css"); ?>' />
-    <!-- Styles for IE7 -->
-    <!--[if IE 7]>
-        <link rel="stylesheet" type="text/css" href="css/ie7.css">
-    <![endif]-->
+    <!-- Styles for jquery -->
+    <link rel='stylesheet' href='<?= base_url("assets/css/main/jquery/jquery.ui.datepicker.css"); ?>' />
+    
 
     <!-- html5.js for IE less than 9 -->
     <!--[if lt IE 9]>
@@ -26,7 +25,16 @@
     <!--[if lt IE 9]>
         <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.core.js"); ?>"></script>
+    <script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.widget.js"); ?>"></script>
+    <script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.datepicker.js"); ?>"></script>
+
+    <script>
+        $(function() {
+            $( ".datepicker" ).datepicker();
+        });
+    </script>
 </head>
 
 <body>
@@ -39,31 +47,33 @@
         
         <!-- HEADER -->
         <header>
-            <a href="#"><div id="logo"></div></a>
+            <a href="<?= base_url(); ?>"><div id="logo"></div></a>
             <!-- NAVIGATION -->
             <div id="nav_wrapper">
                 <ul class="navList">
-                    <li class="navLi"><a href='<?= base_url("dashboard"); ?>'>Dashboard</a></li>
-                    <li class="navLi"><a href='<?= base_url("my_account"); ?>'>My Account</a></li>
-                    <li class="navLi"><a href="http://pasturescout.com/blog/about-us/">About</a></li>
+                    
                     <?php
-                        $username = $this->session->userdata('username');
-                        if(isset($username)){
-                            ?><li class="navLi">Hi, <?php echo $username ?></li> <?php
+                        $email = $this->session->userdata('email');
+                        if($email != '' ){
+                            ?>
+                                <li class="navLi"><a href='<?= base_url("properties"); ?>'>Pastures</a></li>
+                                <li class="navLi"><a href='<?= base_url("my_account"); ?>'>Hi, <?php echo $email ?></a></li> 
+                                <li class="navLi"><a href='<?= base_url("auth/logout"); ?>'>Logout</a></li>
+                                </ul><!-- close navigation -->
+                            <?php
+                        }else{ ?>
+                        <a href="<?php echo base_url() . 'auth/login'; ?>"><img src='<?= base_url("assets/images/main/login.png"); ?>' alt="User Login" id="login_btn"></a>
+                        <?php
+
                         }
                     ?>
-                </ul><!-- close navigation -->
-                
-                <?php if (!isset($username)){ ?>
-                    <a href="'<?= base_url("auth/login"); ?>'"><img src='<?= base_url("assets/images/main/login.png"); ?>' alt="User Login" id="login_btn"></a>
-                <?php } ?>
-
 
 
 
             </div><!--end nav wrapper -->
         </header><!-- close header -->
         <?php
+            //show message
             if ($message = $this->session->flashdata('message')) {
                 echo "<p class='message'>";
                 echo $message;

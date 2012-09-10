@@ -12,12 +12,6 @@ $last_name = array(
 	'value' => isset($info[0]['last_name']) ? $info[0]['last_name'] : set_value('last_name'),
 	'maxlength'	=> 100
 );
-$username = array(
-	'name'	=> 'username',
-	'id'	=> 'username',
-	'value' => isset($info[0]['username']) ? $info[0]['username'] : set_value('username'),
-	'maxlength'	=> $this->config->item('username_max_length', 'tank_auth')
-);
 $email = array(
 	'name'	=> 'email',
 	'id'	=> 'email',
@@ -43,10 +37,6 @@ $zip_code = array(
 		<li><?php echo form_input($last_name); ?></li>
 		<li style="color: red;"><?php echo form_error($last_name['name']); ?><?php echo isset($errors[$last_name['name']])?$errors[$last_name['name']]:''; ?></li>
 
-		<li><?php echo form_label('Username', $username['id']); ?></li>
-		<li><?php echo form_input($username); ?></li>
-		<li style="color: red;"><?php echo form_error($username['name']); ?><?php echo isset($errors[$username['name']])?$errors[$username['name']]:''; ?></li>
-
 		<li><?php echo form_label('Email Address', $email['id']); ?></li>
 		<li><?php echo form_input($email); ?></li>
 		<li style="color: red;"><?php echo form_error($email['name']); ?><?php echo isset($errors[$email['name']])?$errors[$email['name']]:''; ?></li>
@@ -55,8 +45,9 @@ $zip_code = array(
 		<li><?php echo form_input($zip_code); ?></li>
 		<li style="color: red;"><?php echo form_error($zip_code['name']); ?><?php echo isset($errors[$zip_code['name']])?$errors[$zip_code['name']]:''; ?></li>
 	</ul>
-<?php echo form_submit('register', 'Edit Account'); ?>
+<?php echo form_submit('edit', 'Edit Account'); ?>
 <?php echo form_close(); ?>
+<a href="<?=base_url() . 'auth/change_password/' . $user_id; ?>">Change your Password</a></br>
 <a href="<?=base_url() . 'auth/unregister/' . $user_id; ?>">Delete your Account</a>
 <script>
 	$("#first_name").focus();

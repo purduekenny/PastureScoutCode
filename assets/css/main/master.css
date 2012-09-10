@@ -21,9 +21,9 @@ body {
     font-size:14px;
 }
 #pageContainer {  
-        width:960px;
-        margin:0px auto;
-
+    position: relative;
+    width:960px;
+    margin:0px auto;
 }
 
 /***** LOGO *****/
@@ -109,18 +109,25 @@ nav {
     left:65px;
 }
 
-a { 
-    color:#999; 
-    text-decoration:none;
-}
+
+/***** form *****/
 form { 
     margin: 25px; text-align:left 
 }
 form textarea { 
     padding:5px; 
     width:90%; 
+    height:300px;
     border:solid 1px #CCC; 
-    height:100px;
+    background-color:#ffffff; 
+    border:1px solid #dbdbdb; 
+    padding:5px; 
+    -webkit-border-radius:8px; 
+    -moz-border-radius:8px; 
+    border-radius: 8px;
+    font-size:20px; 
+    font-family:Arial, Helvetica, sans-serif; 
+    color:#747474; 
 }
 
 form input{ 
@@ -156,6 +163,7 @@ input[type=text],input[type=password]{
     padding:5px; 
     -webkit-border-radius:8px; 
     -moz-border-radius:8px; 
+    border-radius: 8px;
     height:40px; 
     font-size:20px; 
     font-family:Arial, Helvetica, sans-serif; 
@@ -182,6 +190,63 @@ table td{
     padding:5px;
 }
 
+/***** Dashboard styles *****/
+#dashboard_nav{
+    position: relative;
+    width:30%;
+    height:100%;
+    display:inline-block;
+    vertical-align: top;
+}
+
+#dashboard_nav li{
+    float: left;
+    width:100px;
+    height:100px;
+    margin: 5px;
+    background: #4aa242;
+    padding:10px;
+    -webkit-border-radius:8px; 
+    -moz-border-radius:8px; 
+    border-radius: 8px;
+}
+
+#dashboard_nav li a{
+    display:inline-block;
+    width:100px;
+    height:100px;
+    color: #fff;
+    text-align: left;
+}
+
+.dashboard_content{
+    position: relative;
+    width:69%;
+    display:inline-block;
+    vertical-align: top;
+}
+
+.dashboard_content li{
+    display:inline-block;
+    width:100%;
+    min-height:100px;
+    margin: 5px;
+    background: #949494;
+
+    -webkit-border-radius:8px; 
+    -moz-border-radius:8px; 
+    border-radius: 8px;
+}
+
+.dashboard_content li a{
+    color:#fff;
+}
+
+.dashboard_content p {
+    margin: 5px 0 10px 10px;
+    color: #fff;
+}
+
 
 h1 {
     font-size:36px;
@@ -193,7 +258,7 @@ h1 {
 
 
 h2 {
-    font-size:32px;
+    font-size:20px;
     color:#ffb400;
     font-weight:normal;
     -moz-text-shadow: 1px 1px 2px #cecece;
@@ -201,6 +266,20 @@ h2 {
     text-shadow: 1px 1px 2px #cecece;
     margin:0 0 13px -2px;
 }
+
+h3 {
+    font-size:20px;
+    color:#fff;
+    font-weight:normal;
+    margin:10px 0 0 10px;
+}
+
+
+a { 
+    color:#999; 
+    text-decoration:none;
+}
+
 
 .message{
     color:#9d6601;
@@ -211,7 +290,7 @@ h2 {
 
 /***** STICKY FOOTER *****/
 .wrapper { min-height:100%; height:auto !important; height:100%; margin:0 auto -155px; /* the bottom margin is the negative value of the footer's height */ }
-.push { height:363px; /* .push must be the same height as .footer */ }
+.push { height:155px; /* .push must be the same height as .footer */ }
 footer { background-image:url('../../images/main/bg_footer.jpg'); background-repeat:repeat-x; height:155px; /* .push must be the same height as .footer */ }
 
 

@@ -14,11 +14,7 @@
 
 .navLi {
     padding: 0 10px 0 0px;
-    font-size:12px;
-}
-
-#login_btn {
-    top:5px;
+    font-size:10px;
 }
 
 /***** login *****/
@@ -28,14 +24,11 @@
     top: -28px;
 }
 
-#login, 
-#password,
-#username,
-#email,
-#zip_code,
-#confirm_password{ 
-    width: 90%;
+#login_links a{
+    display: block;
+    padding-top:5px;
 }
+
 
 
 /***** GREEN INFO BAR *****/

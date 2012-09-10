@@ -26,7 +26,7 @@
     <!--[if lt IE 9]>
         <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 
     <!-- KenBurn CSS STYLE -->
     <link rel="stylesheet" type="text/css" href="assets/css/homepage/slider_style.css" media="screen" />       
@@ -53,7 +53,7 @@
         
         <!-- HEADER -->
         <header>
-            <a href="#"><div id="logo"></div></a>
+            <a href="<?php echo base_url(); ?>"><div id="logo"></div></a>
                 <!-- NAVIGATION -->
                 <div id="nav_wrapper">
                     <!-- SOCIAL MEDIA LINKS -->

@@ -29,11 +29,26 @@ class User extends CI_Model{
 	}
 
 	/**
+	 * Get last login
+	 *
+	 * @param	int
+	 * @return	array
+	 */
+	function get_last_login($user_id){
+
+		$this->db->select('`last_login`');
+		$this->db->where('id', $user_id);
+
+		$query = $this->db->get('users');
+		return $query->result_array();
+	}
+
+	/**
 	 * Set account information
 	 *
 	 * @param	int
 	 * @param	array
-	 * @return	array
+	 * @return	null
 	 */
 	function set_account_info($user_id, $data){
 
