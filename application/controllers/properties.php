@@ -64,7 +64,8 @@ class Properties extends CI_Controller
 
 			//pagination configuration
 			$config['base_url'] = base_url().'properties/my_properties/index/';
-			$config['total_rows'] = $this->property->get_properties_count();
+			$config['total_rows'] = $this->property->get_properties_count_by_user_id($user_id);
+
 			//if number of property rows less than 5
 			if ($config['total_rows'] < 5){
 				$config['per_page'] = $config['total_rows'];
@@ -171,6 +172,7 @@ class Properties extends CI_Controller
 	 */
 	function edit($property_id)
 	{
+
 		if (!$this->tank_auth->is_logged_in()) {									
 			// if logged in, not activated				
 			$this->session->set_flashdata('message', 'You must be logged in to use this page');
@@ -179,55 +181,65 @@ class Properties extends CI_Controller
 			$this->session->set_flashdata('message', 'oops!');
 			redirect(base_url() . 'my_account');
 		} else {
+			//logged in user
+			$user_id = $this->tank_auth->get_user_id();
+			//propety record
 			$data['property'] = $this->property->get_property_by_id($property_id);
+			//owner of pasture
+			$property_user_id = $data['property'][0]['user_id'];
+			//if current user owns pasture
+			if($user_id == $property_user_id){
+				//form validation
+				$this->form_validation->set_rules('name', 'Name', 'trim|required|xss_clean|max_length[200]');
+				$this->form_validation->set_rules('location', 'Location', 'trim|required|xss_clean|max_length[300]');
+				$this->form_validation->set_rules('region', 'Region', 'trim|required|xss_clean|max_length[300]');
+				$this->form_validation->set_rules('city', 'City', 'trim|required|xss_clean|max_length[100]');
+				$this->form_validation->set_rules('state', 'State', 'trim|required|xss_clean|max_length[30]');
+				$this->form_validation->set_rules('country', 'Country', 'trim|required|xss_clean|max_length[50]');
+				$this->form_validation->set_rules('max_head_count', 'Max Head Count', 'trim|numeric|xss_clean|max_length[100]');
+				$this->form_validation->set_rules('min_bid', 'Mininum Bid', 'trim|numeric|xss_clean|max_length[100]');
+				$this->form_validation->set_rules('opening_bid_date', 'Opening Bid Date', 'trim|required|xss_clean|max_length[100]');
+				$this->form_validation->set_rules('closing_bid_date', 'Closing Bid Date', 'trim|required|xss_clean|max_length[100]');
+				$this->form_validation->set_rules('other_info', '', 'trim|xss_clean|max_length[500]');
+				$data['errors'] = array();
 
-			//form validation
-			$this->form_validation->set_rules('name', 'Name', 'trim|required|xss_clean|max_length[200]');
-			$this->form_validation->set_rules('location', 'Location', 'trim|required|xss_clean|max_length[300]');
-			$this->form_validation->set_rules('region', 'Region', 'trim|required|xss_clean|max_length[300]');
-			$this->form_validation->set_rules('city', 'City', 'trim|required|xss_clean|max_length[100]');
-			$this->form_validation->set_rules('state', 'State', 'trim|required|xss_clean|max_length[30]');
-			$this->form_validation->set_rules('country', 'Country', 'trim|required|xss_clean|max_length[50]');
-			$this->form_validation->set_rules('max_head_count', 'Max Head Count', 'trim|numeric|xss_clean|max_length[100]');
-			$this->form_validation->set_rules('min_bid', 'Mininum Bid', 'trim|numeric|xss_clean|max_length[100]');
-			$this->form_validation->set_rules('opening_bid_date', 'Opening Bid Date', 'trim|required|xss_clean|max_length[100]');
-			$this->form_validation->set_rules('closing_bid_date', 'Closing Bid Date', 'trim|required|xss_clean|max_length[100]');
-			$this->form_validation->set_rules('other_info', '', 'trim|xss_clean|max_length[500]');
-			$data['errors'] = array();
+				if ($this->form_validation->run()) {										
+					// validation ok prep data to be put in database
+					//change dates to be mysql friendly
+					$opening_bid_date = date('Y-m-d',strtotime(str_replace("/",".", $this->form_validation->set_value('opening_bid_date'))));
+					$closing_bid_date = date('Y-m-d',strtotime(str_replace("/",".", $this->form_validation->set_value('closing_bid_date'))));
 
-			if ($this->form_validation->run()) {										
-				// validation ok prep data to be put in database
-				//change dates to be mysql friendly
-				$opening_bid_date = date('Y-m-d',strtotime(str_replace("/",".", $this->form_validation->set_value('opening_bid_date'))));
-				$closing_bid_date = date('Y-m-d',strtotime(str_replace("/",".", $this->form_validation->set_value('closing_bid_date'))));
+					$data = array(
+						'name'					=> $this->form_validation->set_value('name'),
+						'location'				=> $this->form_validation->set_value('location'),
+						'region'				=> $this->form_validation->set_value('region'),
+						'city'					=> $this->form_validation->set_value('city'),
+						'state'					=> $this->form_validation->set_value('state'),
+						'country'				=> $this->form_validation->set_value('country'),
+						'restricted_stock_type'	=> $this->form_validation->set_value('restricted_stock_type'),
+						'max_head_count'		=> $this->form_validation->set_value('max_head_count'),
+						'min_bid'				=> $this->form_validation->set_value('min_bid'),
+						'opening_bid_date'		=> $opening_bid_date,
+						'closing_bid_date'		=> $closing_bid_date,
+						'other_info'			=> $this->form_validation->set_value('other_info'),
+						'modified'				=> date('d/m/Y H:i:s', strtotime('today'))
+					);
 
-				$data = array(
-					'name'					=> $this->form_validation->set_value('name'),
-					'location'				=> $this->form_validation->set_value('location'),
-					'region'				=> $this->form_validation->set_value('region'),
-					'city'					=> $this->form_validation->set_value('city'),
-					'state'					=> $this->form_validation->set_value('state'),
-					'country'				=> $this->form_validation->set_value('country'),
-					'restricted_stock_type'	=> $this->form_validation->set_value('restricted_stock_type'),
-					'max_head_count'		=> $this->form_validation->set_value('max_head_count'),
-					'min_bid'				=> $this->form_validation->set_value('min_bid'),
-					'opening_bid_date'		=> $opening_bid_date,
-					'closing_bid_date'		=> $closing_bid_date,
-					'other_info'			=> $this->form_validation->set_value('other_info'),
-					'modified'				=> date('d/m/Y H:i:s', strtotime('today'))
-				);
+					//edit property
+					$this->property->set_property($property_id, $data);								
 
-				//edit property
-				$this->property->set_property($property_id, $data);								
-
-				//message
-				$this->session->set_flashdata('message', 'You have successfully edited your property');
-				redirect(base_url() . 'properties/my_properties');
+					//message
+					$this->session->set_flashdata('message', 'You have successfully edited your property');
+					redirect(base_url() . 'properties/my_properties');
 
 				} else {
 					$errors = $this->tank_auth->get_error_message();
 					foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
 				}
+			} else {
+				$this->session->set_flashdata('message', 'You are not authorized to edit this property');
+				redirect(base_url() . 'properties/my_properties');
+			}
 		}
 		$this->load->view('header/header_main');
 		$this->load->view('properties/properties_edit_form', $data);

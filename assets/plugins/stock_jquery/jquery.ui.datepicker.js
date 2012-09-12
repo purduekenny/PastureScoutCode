@@ -29,7 +29,7 @@ function Datepicker() {
 	this._keyEvent = false; // If the last event was a key event
 	this._disabledInputs = []; // List of date picker inputs that have been disabled
 	this._datepickerShowing = false; // True if the popup picker is showing , false if not
-	this._inDialog = false; // True if showing within a "dialog", false if not
+	this._inDialog = false; // True if hide within a "dialog", false if not
 	this._mainDivId = 'ui-datepicker-div'; // The ID of the main datepicker division
 	this._inlineClass = 'ui-datepicker-inline'; // The name of the inline marker class
 	this._appendClass = 'ui-datepicker-append'; // The name of the append marker class
@@ -42,8 +42,8 @@ function Datepicker() {
 	this.regional = []; // Available regional settings, indexed by language code
 	this.regional[''] = { // Default regional settings
 		closeText: 'Done', // Display text for close link
-		prevText: 'Prev', // Display text for previous month link
-		nextText: 'Next', // Display text for next month link
+		prevText: '', // Display text for previous month link
+		nextText: '', // Display text for next month link
 		currentText: 'Today', // Display text for current month link
 		monthNames: ['January','February','March','April','May','June',
 			'July','August','September','October','November','December'], // Names of months for drop-down and formatting
@@ -68,7 +68,7 @@ function Datepicker() {
 		appendText: '', // Display text following the input box, e.g. showing the format
 		buttonText: '...', // Text for trigger button
 		buttonImage: '', // URL for trigger button image
-		buttonImageOnly: false, // True if the image appears alone, false if it appears on a button
+		buttonImageOnly: true, // True if the image appears alone, false if it appears on a button
 		hideIfNoPrevNext: false, // True to hide next/previous month links
 			// if not applicable, false to just disable them
 		navigationAsDateFormat: false, // True if date formatting applied to prev/today/next links

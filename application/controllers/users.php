@@ -107,7 +107,6 @@ class Users extends CI_Controller {
 		    	echo "<td>" . $row->email . "</td>";
 		    	echo "<td>" . $row->date . "</td>";
 		    	echo "</tr>";
-		       
 		    }
 
 		    echo "</table>";

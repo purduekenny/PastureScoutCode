@@ -26,6 +26,8 @@ $zip_code = array(
 );
 
 ?>
+
+<div id="edit_account">
 <?php echo form_open(base_url().'my_account/edit/'. $user_id); ?>
 	<ul>
 		
@@ -52,3 +54,4 @@ $zip_code = array(
 <script>
 	$("#first_name").focus();
 </script>
+</div>

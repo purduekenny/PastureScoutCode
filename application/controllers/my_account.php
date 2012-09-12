@@ -21,8 +21,18 @@ class My_Account extends CI_Controller
 			//get user_id
 			$user_id = $this->tank_auth->get_user_id();
 			$data['info']=$this->user->get_account_info($user_id);
+
+//			$data['userdata'] = $this->user->get_signup_date($user_id);
+//			$date_created = $data['userdata'][0]['created'];
+//			$date = new DateTime($date_created); 
+//			$date->add(new DateInterval('P30D'));
+//			echo date_format($date, 'Y-m-d');
+//			die();
+
+			//$membership_expiration = $date
 			$this->load->view('header/header_main');
 			$this->load->view('my_account/edit_form', $data);
+			$this->load->view('my_account/membership_countdown');
 			$this->load->view('footer/footer_main');
 		} else {
 			// if logged in, not activated				

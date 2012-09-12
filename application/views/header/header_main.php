@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <title>Pasture Scout - Find it. Bid it. Lease it.</title>
     <!-- Main styles -->
-    <link rel='stylesheet' href='<?= base_url("assets/css/main/master.css"); ?>' />
+    <link rel='stylesheet' href='<?= base_url("assets/css/main/master.css"); ?>'>
     <!-- Styles for styles for tables in horizontal mode -->
-    <link rel='stylesheet' media='screen and (max-width:1000px)' href='<?= base_url("assets/css/main/large.css"); ?>' />
+    <link rel='stylesheet' media='screen and (max-width:1000px)' href='<?= base_url("assets/css/main/large.css"); ?>'>
     <!-- Styles for tables in vertical mode and smartphones in horizonal mode -->
-    <link rel='stylesheet' media='screen and (max-width:768px)' href='<?= base_url("assets/css/main/medium.css"); ?>' />
+    <link rel='stylesheet' media='screen and (max-width:768px)' href='<?= base_url("assets/css/main/medium.css"); ?>'>
     <!-- Styles for smartphones -->
-    <link rel='stylesheet' media='screen and (max-width: 480px)' href='<?= base_url("assets/css/main/small.css"); ?>' />
+    <link rel='stylesheet' media='screen and (max-width: 480px)' href='<?= base_url("assets/css/main/small.css"); ?>'>
     <!-- Styles for jquery -->
-    <link rel='stylesheet' href='<?= base_url("assets/css/main/jquery/jquery.ui.datepicker.css"); ?>' />
+    <link rel='stylesheet' href='<?= base_url("assets/css/main/jquery/jquery.ui.datepicker.css"); ?>'>
+    <link rel="stylesheet" href='<?= base_url("assets/css/main/jquery/jquery.ui.theme.css"); ?>'>
     
 
     <!-- html5.js for IE less than 9 -->
@@ -37,8 +38,7 @@
     </script>
 </head>
 
-<body>
-
+<body id = "<?=$this->router->class . '_' . $this->router->method?>">
 <!-- WRAPPER -->
 <div class="wrapper">
 

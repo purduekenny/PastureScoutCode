@@ -58,6 +58,22 @@ class User extends CI_Model{
 		return NULL;
 	}
 
+	/**
+	 * get date signed up.
+	 *
+	 * @param	int
+	 * @return	null
+	 */
+	function get_signup_date($user_id){
+		$this->db->select('`created`');
+		$this->db->where('id', $user_id);
+
+		$query = $this->db->get('users');
+		return $query->result_array();
+		
+		return NULL;
+	}
+
 
 }
 

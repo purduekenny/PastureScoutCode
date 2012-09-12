@@ -40,6 +40,8 @@ class Property extends CI_Model{
 	 * Get properties by user_id
 	 *
 	 * @param	int
+	 * @param	int
+	 * @param	int
 	 * @return	array
 	 */
 	function get_properties_by_user($user_id, $num=0, $start=0){
@@ -66,7 +68,7 @@ class Property extends CI_Model{
 	}
 
 	/**
-	 * Get property id
+	 * Get a property by id
 	 *
 	 * @param	int
 	 * @return	array
@@ -102,6 +104,21 @@ class Property extends CI_Model{
 		$query = $this->db->get('properties');
 		return $query->num_rows();
 	}
+
+	/**
+	 * Get properties count by user_id
+	 *
+	 * @param 	int
+	 * @return	int
+	 */
+	function get_properties_count_by_user_id($user_Id){
+		$this->db->select('`id`');
+		$this->db->where('`status`', 'active');
+		$this->db->where('`user_id`', $user_Id);
+		$query = $this->db->get('properties');
+		return $query->num_rows();
+	}
+
 
 }
 

@@ -53,29 +53,49 @@ $min_bid = array(
 	'value' => isset($property[0]['min_bid']) ? $property[0]['min_bid'] : set_value('min_bid'),
 	'maxlength'	=> 100
 );
+
+//if date is set, make date pretty
+if(isset($property[0]['opening_bid_date'])){
+	// MM/DD/YYYY
+	$formatted_opening_bid_date = date('m/d/Y', strtotime($property[0]['opening_bid_date']));
+}else{
+	set_value('opening_bid_date');
+} 
+
 $opening_bid_date = array(
 	'name'	=> 'opening_bid_date',
 	'id'	=> 'opening_bid_date',
 	'class' => 'datepicker',
-	'value' => isset($property[0]['opening_bid_date']) ? $property[0]['opening_bid_date'] : set_value('opening_bid_date'),
+	'value' => isset($formatted_opening_bid_date),
 	'maxlength'	=> 100
 );
+
+//if date is set, make date pretty
+if(isset($property[0]['closing_bid_date'])){
+	// MM/DD/YYYY
+	$formatted_closing_bid_date = date('m/d/Y', strtotime($property[0]['closing_bid_date']));
+}else{
+	set_value('closing_bid_date');
+} 
+
 $closing_bid_date = array(
 	'name'	=> 'closing_bid_date',
 	'id'	=> 'closing_bid_date',
 	'class' => 'datepicker',
-	'value' => isset($property[0]['closing_bid_date']) ? $property[0]['closing_bid_date'] : set_value('closing_bid_date'),
+	'value' => isset($formatted_closing_bid_date),
 	'maxlength'	=> 100
 );
+
+
 $other_info = array(
 	'name'	=> 'other_info',
 	'id'	=> 'other_info',
-	'value' => isset($property[0]['other_info']) ? $property[0]['other_info'] : set_value('other_info'),
+	'value' => set_value('other_info'),
 	'rows'	=> 30,
 	'cols'  => 30
 );
 ?>
-<?php echo form_open(base_url().'properties/edit/'. $property[0]['id']) ?>
+<?php echo form_open(base_url().'properties/edit/'. isset($property[0]['id'])) ?>
 	<ul style="display:inline-block; width: 50%; vertical-align: top;">
 		<h2>Enter Description</h2>
 		<li><?php echo form_label('Pasture Name', $name['id']); ?></li>
