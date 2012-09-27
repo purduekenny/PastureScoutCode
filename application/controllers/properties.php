@@ -32,6 +32,24 @@ class Properties extends CI_Controller
 			$config['base_url'] = base_url().'properties/index/';
 			$config['total_rows'] = $this->property->get_properties_count();
 			$config['per_page'] = 5;
+			$config['full_tag_open'] = '<div class="pagination"><ul>';
+			$config['full_tag_close'] = '</ul></div>';
+			$config['first_link'] = 'First';
+			$config['first_tag_open'] = '<li>';
+			$config['first_tag_close'] = '</li>';
+			$config['last_tag_open'] = '<li>';
+			$config['last_tag_close'] = '</li>';
+			$config['last_link'] = 'Last';
+			$config['next_link'] = '&gt;';
+			$config['next_tag_open'] = '<li>';
+			$config['next_tag_close'] = '</li>';
+			$config['prev_link'] = '&lt;';
+			$config['prev_tag_open'] = '<li>';
+			$config['prev_tag_close'] = '</li>';
+			$config['cur_tag_open'] = '<li class="active"><a href="#">';
+			$config['cur_tag_close'] = '</a></li>';
+			$config['num_tag_open'] = '<li>';
+			$config['num_tag_close'] = '</li>';
 			//make pagination happen
 			$data['properties'] = $this->property->get_properties(5, $start);
 
@@ -64,6 +82,24 @@ class Properties extends CI_Controller
 			//pagination configuration
 			$config['base_url'] = base_url().'properties/my_properties/index/';
 			$config['total_rows'] = $this->property->get_properties_count_by_user_id($user_id);
+			$config['full_tag_open'] = '<div class="pagination"><ul>';
+			$config['full_tag_close'] = '</ul></div>';
+			$config['first_link'] = 'First';
+			$config['first_tag_open'] = '<li>';
+			$config['first_tag_close'] = '</li>';
+			$config['last_tag_open'] = '<li>';
+			$config['last_tag_close'] = '</li>';
+			$config['last_link'] = 'Last';
+			$config['next_link'] = '&gt;';
+			$config['next_tag_open'] = '<li>';
+			$config['next_tag_close'] = '</li>';
+			$config['prev_link'] = '&lt;';
+			$config['prev_tag_open'] = '<li>';
+			$config['prev_tag_close'] = '</li>';
+			$config['cur_tag_open'] = '<li class="active"><a href="#">';
+			$config['cur_tag_close'] = '</a></li>';
+			$config['num_tag_open'] = '<li>';
+			$config['num_tag_close'] = '</li>';
 
 			//if number of property rows less than 5
 			if ($config['total_rows'] < 5){
