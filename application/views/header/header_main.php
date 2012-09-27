@@ -2,8 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <!-- set default device content size to 100% -->
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <title>Pasture Scout - Find it. Bid it. Lease it.</title>
+    <!-- Styles for bootstrap -->
+    <link rel="stylesheet" href='<?= base_url("assets/bootstrap/css/bootstrap.min.css"); ?>'>
+    <!-- Styles for bootstrap responsive -->
+    <link rel="stylesheet" href='<?= base_url("assets/bootstrap/css/bootstrap-responsive.min.css"); ?>'>
+    <!-- jquery themes stylesheet-->
+    <link rel="stylesheet" href='<?= base_url("assets/css/main/jquery/jquery.ui.theme.css"); ?>'>
+    <!-- datepicker stylesheet -->
+    <link rel='stylesheet' href='<?= base_url("assets/css/main/jquery/jquery.ui.datepicker.css"); ?>'>
     <!-- Main styles -->
     <link rel='stylesheet' href='<?= base_url("assets/css/main/master.css"); ?>'>
     <!-- Styles for styles for tables in horizontal mode -->
@@ -12,32 +21,8 @@
     <link rel='stylesheet' media='screen and (max-width:768px)' href='<?= base_url("assets/css/main/medium.css"); ?>'>
     <!-- Styles for smartphones -->
     <link rel='stylesheet' media='screen and (max-width: 480px)' href='<?= base_url("assets/css/main/small.css"); ?>'>
-    <!-- Styles for jquery -->
-    <link rel='stylesheet' href='<?= base_url("assets/css/main/jquery/jquery.ui.datepicker.css"); ?>'>
-    <link rel="stylesheet" href='<?= base_url("assets/css/main/jquery/jquery.ui.theme.css"); ?>'>
-    
-
-    <!-- html5.js for IE less than 9 -->
-    <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- css3-mediaqueries.js for IE less than 9 -->
-    <!--[if lt IE 9]>
-        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-    <![endif]-->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-    <script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.core.js"); ?>"></script>
-    <script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.widget.js"); ?>"></script>
-    <script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.datepicker.js"); ?>"></script>
-
-    <script>
-        $(function() {
-            $( ".datepicker" ).datepicker();
-        });
-    </script>
 </head>
-
+<!-- get controller/method for navigation styles-->
 <body id = "<?=$this->router->class . '_' . $this->router->method?>">
 <!-- WRAPPER -->
 <div class="wrapper">
@@ -67,20 +52,13 @@
 
                         }
                     ?>
-
-
-
             </div><!--end nav wrapper -->
         </header><!-- close header -->
         <?php
-            //show message
+            //show flashdata message
             if ($message = $this->session->flashdata('message')) {
                 echo "<p class='message'>";
                 echo $message;
                 echo "</p>";
             }
         ?>
-
-
-
-

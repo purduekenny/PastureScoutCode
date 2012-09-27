@@ -33,13 +33,12 @@ class Properties extends CI_Controller
 			$config['total_rows'] = $this->property->get_properties_count();
 			$config['per_page'] = 5;
 			//make pagination happen
-
 			$data['properties'] = $this->property->get_properties(5, $start);
 
 			
 			$this->pagination->initialize($config);
 			$data['pages'] = $this->pagination->create_links();
-
+			//load views
 			$this->load->view('header/header_main');
 			$this->load->view('properties/properties_nav');
 			$this->load->view('properties/properties_all_view', $data);

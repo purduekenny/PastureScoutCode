@@ -32,7 +32,28 @@
     </div><!-- close green footer -->
 
 </footer><!-- close footer -->
+<!-- jquery -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<!-- bootstrap js -->
+<script src="<?= base_url("assets/bootstrap/js/bootstrap.min.js"); ?>"></script>
+<!-- html5.js for IE less than 9 -->
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- css3-mediaqueries.js for IE less than 9 -->
+<!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<!-- jquery plugin -->
+<script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.core.js"); ?>"></script>
+<script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.widget.js"); ?>"></script>
+<script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.datepicker.js"); ?>"></script>
 
+<script>
+    $(function() {
+        $( ".datepicker" ).datepicker();
+    });
+</script>
 </body>
 </html>
 

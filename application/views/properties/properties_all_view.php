@@ -1,4 +1,4 @@
-<div class="dashboard_content">
+<div class="dashboard_content span8">
 	<div class="left">
 	<?php
 		if(empty($properties)){
@@ -28,4 +28,6 @@
 
 	</ul>
 </p><?=$pages?><p>
-</div>
+</div><!-- end dashboard_content -->
+</div><!-- end row_fluid -->
+</div><!-- end container_fluid -->

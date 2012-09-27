@@ -191,13 +191,6 @@ table td{
 }
 
 /***** Dashboard styles *****/
-#dashboard_nav{
-    position: relative;
-    width:30%;
-    height:100%;
-    display:inline-block;
-    vertical-align: top;
-}
 
 #dashboard_nav li{
     float: left;
@@ -250,12 +243,6 @@ body#properties_create li#properties_create{
     text-align: left;
 }
 
-.dashboard_content{
-    position: relative;
-    width:69%;
-    display:inline-block;
-    vertical-align: top;
-}
 
 .dashboard_content li{
     display:inline-block;
