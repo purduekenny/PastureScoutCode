@@ -112,7 +112,8 @@ nav {
 
 /***** form *****/
 form { 
-    margin: 25px; text-align:left 
+
+    text-align:left;
 }
 form textarea { 
     padding:5px; 
@@ -130,11 +131,7 @@ form textarea {
     color:#747474; 
 }
 
-form input{ 
-    height:30px; 
-    font-size:20px; 
-    font-family:Arial, Helvetica, sans-serif; 
-}
+
 
 form ul{
     clear:both;
@@ -144,32 +141,16 @@ form ul li{
     margin: 10px 0 0 0;
 }
 
-form input[value=Login], 
-form input[value='Get a new password']{ 
-    left: 110px;
-}
 
 form input[value=Register]{
     left: 145px;
 }
 
 form input[type=submit]{
-    margin-top: 10px;
+    margin: 10px;
+    padding:10px;
 }
 
-input[type=text],input[type=password]{ 
-    background-color:#ffffff; 
-    border:1px solid #dbdbdb; 
-    padding:5px; 
-    -webkit-border-radius:8px; 
-    -moz-border-radius:8px; 
-    border-radius: 8px;
-    height:40px; 
-    font-size:20px; 
-    font-family:Arial, Helvetica, sans-serif; 
-    color:#747474; 
-    width: 300px;
-}
 
 #login_links a{
     color:#747474;
@@ -190,6 +171,10 @@ table td{
     padding:5px;
 }
 
+.error{
+    display: block;
+    color: red;
+}
 /***** Dashboard styles *****/
 .nav-tabs.nav-stacked > li > a {
   background-color: #fff;
@@ -228,38 +213,51 @@ body#properties_create li#properties_create a{
     text-align: left;
 }
 
+.dashboard_content{
+    width:100%;
+    min-height:100px;
+    margin: 0 0 10px 0;
+    -webkit-border-radius:4px; 
+    -moz-border-radius:4px; 
+    border-radius: 4px;
+    background: #fdfdfd;
+    border:1px solid #ddd;
+}
+.dashboard_content p {
+    margin: 5px 0 10px 10px;
+    color: #969696;
+}
 
-.dashboard_content li{
+.dashboard_content h3 {
+    font-size:20px;
+    color:#969696;
+    font-weight:normal;
+    margin:0 0 0 10px;
+}
+/*Properties*/
+.properties li{
     display:inline-block;
     width:100%;
     min-height:100px;
-    margin: 5px;
-    -webkit-border-radius:8px; 
-    -moz-border-radius:8px; 
-    border-radius: 8px;
-    background: #727272; /* Old browsers */
-    background: -moz-linear-gradient(top,  #727272 1%, #969696 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#727272), color-stop(100%,#969696)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #727272 1%,#969696 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #727272 1%,#969696 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #727272 1%,#969696 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #727272 1%,#969696 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#727272', endColorstr='#969696',GradientType=0 ); /* IE6-9 */
-
+    margin: 0px 0 5px 0;
+    border-bottom:1px solid #ddd;
 }
 
-.dashboard_content li a{
-    color:#fff;
+.properties li:last-child{
+    border-bottom:none;
 }
 
-.dashboard_content p {
-    margin: 5px 0 10px 10px;
-    color: #fff;
+.properties li a{
+    color:#969696;
 }
 
 /*Pagination*/
 .pagination li a{
     color: #727272;
+}
+
+.pagination ul{
+    display:inline;
 }
 
 h1 {
@@ -278,12 +276,12 @@ h2 {
     -moz-text-shadow: 1px 1px 2px #cecece;
     -webkit-text-shadow: 1px 1px 2px #cecece;
     text-shadow: 1px 1px 2px #cecece;
-    margin:0 0 13px -2px;
+    margin:0 0 13px 10px;
 }
 
 h3 {
     font-size:20px;
-    color:#fff;
+    color:#969696;
     font-weight:normal;
     margin:10px 0 0 10px;
 }
@@ -305,6 +303,7 @@ a:hover {
     padding:7px;
     border: solid 1px #9d6601;
     background: #ffeb9c;
+    border-bottom: 10px;
 }
 
 /***** STICKY FOOTER *****/
@@ -351,10 +350,6 @@ footer { background-image:url('../../images/main/bg_footer.jpg'); background-rep
 }
 
 /**** My Account ****/
-#edit_account{
-    display:inline-block;
-    vertical-align: top;
-}
 
 #counter_wrapper{
     padding-top:20px;

@@ -11,6 +11,7 @@ class Properties extends CI_Controller
 		$this->load->library('security');
 		$this->load->library('tank_auth');
 		$this->lang->load('tank_auth');
+		$this->load->helper('file');
 		$this->load->model('user');
 		$this->load->model('property');
 		$this->load->library('pagination');
@@ -58,8 +59,8 @@ class Properties extends CI_Controller
 			$data['pages'] = $this->pagination->create_links();
 			//load views
 			$this->load->view('header/header_main');
-			$this->load->view('properties/properties_nav');
-			$this->load->view('properties/properties_all_view', $data);
+			$this->load->view('properties/nav');
+			$this->load->view('properties/all_view', $data);
 			$this->load->view('footer/footer_main');
 		} else {
 			// if logged in, not activated				
@@ -115,8 +116,8 @@ class Properties extends CI_Controller
 			$data['pages'] = $this->pagination->create_links();
 
 			$this->load->view('header/header_main');
-			$this->load->view('properties/properties_nav');
-			$this->load->view('properties/properties_my_view', $data);
+			$this->load->view('properties/nav');
+			$this->load->view('properties/my_view', $data);
 			$this->load->view('footer/footer_main');
 		} else {
 			// if logged in, not activated				
@@ -196,7 +197,7 @@ class Properties extends CI_Controller
 		$user_id = $this->tank_auth->get_user_id();
 		$data['info']=$this->user->get_account_info($user_id);
 		$this->load->view('header/header_main');
-		$this->load->view('properties/properties_add_form');
+		$this->load->view('properties/add_form');
 		$this->load->view('footer/footer_main');
 	}
 
@@ -277,7 +278,7 @@ class Properties extends CI_Controller
 			}
 		}
 		$this->load->view('header/header_main');
-		$this->load->view('properties/properties_edit_form', $data);
+		$this->load->view('properties/edit_form', $data);
 		$this->load->view('footer/footer_main');
 	}
 
@@ -301,7 +302,7 @@ class Properties extends CI_Controller
 			redirect(base_url() . 'properties/my_properties');
 		}
 		$this->load->view('header/header_main');
-		$this->load->view('properties/properties_edit_form', $data);
+		$this->load->view('properties/edit_form', $data);
 		$this->load->view('footer/footer_main');
 	}
 

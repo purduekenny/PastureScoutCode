@@ -15,8 +15,8 @@ jQuery.fn.countdown = function(userOptions)
     format: "dd:hh:mm:ss",
     startTime: "01:12:32:55",
     digitImages: 6,
-    digitWidth: 53,
-    digitHeight: 77,
+    digitWidth: 26,
+    digitHeight: 38,
     timerEnd: function(){},
     image: "digits.png"
   };

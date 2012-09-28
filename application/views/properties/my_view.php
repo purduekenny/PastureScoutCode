@@ -1,4 +1,4 @@
-<div class="dashboard_content">
+<div class="dashboard_content span8 properties">
 	<div class="left">
 		<script>
 			//confirmation for delete
@@ -53,4 +53,6 @@
 	</p><?=$pages?><p>
 	</div><!-- end class left -->
 </div><!-- end dashboard_content -->
+</div><!-- end row_fluid -->
+</div><!-- end container_fluid -->
 

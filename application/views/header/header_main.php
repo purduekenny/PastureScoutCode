@@ -57,8 +57,9 @@
         <?php
             //show flashdata message
             if ($message = $this->session->flashdata('message')) {
-                echo "<p class='message'>";
+                echo "<p class='alert'>";
                 echo $message;
+                echo "<a class=\"close\" data-dismiss=\"alert\" href=\"#\">&times;</a>";
                 echo "</p>";
             }
         ?>

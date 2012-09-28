@@ -31,8 +31,8 @@ class My_Account extends CI_Controller
 
 			//$membership_expiration = $date
 			$this->load->view('header/header_main');
+			$this->load->view('my_account/nav');
 			$this->load->view('my_account/edit_form', $data);
-			$this->load->view('my_account/membership_countdown');
 			$this->load->view('footer/footer_main');
 		} else {
 			// if logged in, not activated				
@@ -89,6 +89,7 @@ class My_Account extends CI_Controller
 			}
 			$data['info']=$this->user->get_account_info($user_id);
 			$this->load->view('header/header_main');
+			$this->load->view('my_account/nav');
 			$this->load->view('my_account/edit_form');
 			$this->load->view('footer/footer_main');
 		}

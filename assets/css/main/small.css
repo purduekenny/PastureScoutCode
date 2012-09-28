@@ -29,7 +29,10 @@
     padding-top:5px;
 }
 
-
+/***** form *****/
+form.form-horizontal{
+    margin-left: 10px;
+}
 
 /***** GREEN INFO BAR *****/
 #infoBar{
