@@ -48,15 +48,11 @@
 <script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.core.js"); ?>"></script>
 <script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.widget.js"); ?>"></script>
 <script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.datepicker.js"); ?>"></script>
-<script type="text/javascript" src="<?=base_url() . 'assets/plugins/countdown_plugin/jquery.countdown.js'?>"></script>
+<script type="text/javascript" src="<?= base_url("assets/plugins/birthday/bday-picker.min.js"); ?>"></script>
 <script>
     $(function() {
-        $( ".datepicker" ).datepicker();
+        $(".datepicker").datepicker();
         $("#first_name").focus();
-        $('#counter').countdown({
-            image: "<?=base_url() . 'assets/plugins/countdown_plugin/digits.png'?>",
-            startTime: '01:12:12:00'
-        });
 });
 </script>
 </script>

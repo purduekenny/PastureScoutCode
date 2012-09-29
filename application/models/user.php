@@ -14,21 +14,6 @@ class User extends CI_Model{
 	}
 
 	/**
-	 * Get account information
-	 *
-	 * @param	int
-	 * @return	array
-	 */
-	function get_account_info($user_id){
-
-		$this->db->select('`id`, `first_name`, `last_name`, `username`, `email`, `zip_code`');
-		$this->db->where('id', $user_id);
-
-		$query = $this->db->get('users');
-		return $query->result_array();
-	}
-
-	/**
 	 * Get last login
 	 *
 	 * @param	int
@@ -39,6 +24,43 @@ class User extends CI_Model{
 		$this->db->select('`last_login`');
 		$this->db->where('id', $user_id);
 
+		$query = $this->db->get('users');
+		return $query->result_array();
+	}
+
+	/**
+	 * Get account information
+	 *
+	 * @param	int
+	 * @return	array
+	 */
+	function get_account_info($user_id){
+
+		$this->db->select(
+				  '`first_name`,
+				  `last_name`,
+				  `password`,
+				  `email`,
+				  `street`,
+				  `city`,
+				  `state`,
+				  `zip_code`,
+				  `birthday` ,
+				  `home_phone`,
+				  `cell_phone`,
+				  `user_photo`,
+				  `accept_terms` ,
+				  `current_business`,
+				  `operation_type`,
+				  `livestock_type_owned`,
+				  `livestock_number`,
+				  `livestock_managing_percent`,
+				  `number_years_experience`,
+				  `largest_lease`,
+				  `education`,
+				  `land_management_training`,
+				  `activated`');
+		$this->db->where('id', $user_id);
 		$query = $this->db->get('users');
 		return $query->result_array();
 	}
