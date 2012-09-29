@@ -78,9 +78,9 @@ $cell_phone = array(
 );
 
 $operation_type = array(
-    'name'  => 'operation_type[]'
+    'name'  => 'operation_type'
 );
-
+//set variable to '' in order to avoid php errors
 if(empty($info[0]['operation_type'])){
     $info[0]['operation_type'] = '';
 }
@@ -89,7 +89,7 @@ $livestock_type_owned = array(
     'name'  => 'livestock_type_owned[]',
     'value' => 'cattle'
 );
-
+//set variable to '' in order to avoid php errors
 if(empty($info[0]['livestock_type_owned'])){
     $info[0]['livestock_type_owned'] = '';
 }
@@ -97,9 +97,8 @@ if(empty($info[0]['livestock_type_owned'])){
 $livestock_number = array(
     'name'  => 'livestock_number',
     'id'    => 'livestock_number',
-    'maxlength' => 100
 );
-
+//set variable to '' in order to avoid php errors
 if(empty($info[0]['livestock_number'])){
     $info[0]['livestock_number'] = '';
 }
@@ -107,9 +106,8 @@ if(empty($info[0]['livestock_number'])){
 $livestock_managing_percent = array(
     'name'  => 'livestock_managing_percent',
     'id'    => 'livestock_managing_percent',
-    'maxlength' => 100
 );
-
+//set variable to '' in order to avoid php errors
 if(empty($info[0]['livestock_managing_percent'])){
     $info[0]['livestock_managing_percent'] = '';
 }
@@ -686,7 +684,7 @@ $land_management_training = array(
                 <input type="radio" name="livestock_number" value="0-100" 
                 <?php 
                     echo ($info[0]['livestock_number']=='0-100') ? 'checked' : ''; 
-                    echo set_radio('livestock_number', '1'); 
+                    echo set_radio('livestock_number', '0-100'); 
                 ?> 
             />0-100
             </label>
@@ -694,7 +692,7 @@ $land_management_training = array(
                 <input type="radio" name="livestock_number" value="101-300" 
                 <?php 
                     echo ($info[0]['livestock_number']=='101-300') ? 'checked' : '';
-                    echo set_radio('livestock_number', '2'); 
+                    echo set_radio('livestock_number', '101-300'); 
                 ?>
             />101-300
             </label>
@@ -702,7 +700,7 @@ $land_management_training = array(
                 <input type="radio" name="livestock_number" value="301-500" 
                 <?php 
                     echo ($info[0]['livestock_number']=='301-500') ? 'checked' : '';
-                    echo set_radio('livestock_number', '3');
+                    echo set_radio('livestock_number', '301-500');
                 ?> 
             />301-500
             </label>
@@ -710,7 +708,7 @@ $land_management_training = array(
                 <input type="radio" name="livestock_number" value="500+" 
                 <?php 
                     echo ($info[0]['livestock_number']=='500+') ? 'checked' : '';
-                    echo set_radio('livestock_number', '4'); 
+                    echo set_radio('livestock_number', '500+'); 
                 ?> 
             />500+
             </label>
@@ -789,9 +787,9 @@ $land_management_training = array(
     <div class="control-group">
         <?php echo form_label('Any training related to land management, e.g. Ranching for Profit, Beef Cattle Short Course', $education['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($education); ?>
-            <?php echo form_error($education['name'], '<span class="error">', '</span>'); ?>
-            <?php echo isset($errors[$education['name']])?$errors[$education['name']]:''; ?>
+            <?php echo form_input($land_management_training); ?>
+            <?php echo form_error($land_management_training['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$land_management_training['name']])?$errors[$land_management_training['name']]:''; ?>
         </div>
     </div>
 
