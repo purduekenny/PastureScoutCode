@@ -63,40 +63,11 @@
                     </ul><!-- close social media -->
                     <ul class="navList">
                         <li class="navLi"><a href="http://pasturescout.com/blog/about-us/">About</a></li>
+                        <li class="navLi"><a href="#">Membership</a></li>
                         <li class="navLi"><a href="#">Contact</a></li>
-                        <li class="navLi"><a href="#">Feedback</a></li>
                     </ul><!-- close navigation -->
 <a href="auth/login"><img src='assets/images/homepage/login.png' alt="User Login" style="position:relative; top: -10px" ></a>
-                    <!-- BEGIN POPBOX PLUGIN
-                    <div class='popbox'>
-                        <a class='open' href='#'>
-                          <img src='../assets/images/main/login.png' alt="User Login" >
-                        </a>
-                        <div class='collapse'>
-                            <div class='box'>
-                                <div class='arrow'></div>
-                                <div class='arrow-border'></div>
-
-                                    <form action="http://gristmill.createsend.com/t/j/s/nklki/" method="post" id="subForm">
-                                            <div class="input">
-                                                <input type="text" name="cm-name" id="name" placeholder="Name" />
-                                            </div>
-                                            <div class="input" style="padding:10px 0">
-                                                <input type="text" name="cm-nklki-nklki" id="nklki-nklki" placeholder="Email" />
-                                            </div>
-                                        <input type="submit" value="Sign In" /> <a href="#" class="close">Cancel</a>
-                                    </form>
-
-                                </div>
-                            </div> 
-                        </div>--><!-- end popbox plugin-->
                 </div><!--end nav wrapper -->
-                <script type='text/javascript'>
-                    //jQuery.noConflict();
-                    //jQuery(document).ready(function(){
-                    //    jQuery('.popbox').popbox();
-                    //});
-                </script>
             </nav><!-- close navigation area-->
         </header><!-- close header -->
 
@@ -208,16 +179,7 @@
                             
                             timer:7,
                             
-                            debug:"off",                        
-                            
-                            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                            //                                               Google Fonts !!                                             //
-                            // local GoogleFont JS from your server: http://www.yourdomain.com/kb-plugin/js/jquery.googlefonts.js        //
-                            // GoogleFonts from Original Source: http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js or https:... // 
-                            //          PT+Sans+Narrow:400,700                                                                          //
-                            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                            googleFonts:'Oswald',
-                            googleFontJS:'slider_plugin/js/jquery.googlefonts.js'
+                            debug:"off"                      
                         });     
                 });
             </script>
@@ -261,7 +223,7 @@
         <div id="footerLinks">
             <!-- SITE LINKS -->
             <span id="siteLinks">
-                <a href="#">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Contact</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Feedback</a>
+                <a href="#">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Membership</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Contact</a>
             </span><!-- close site_links -->
 
             <!-- COPYRIGHT -->
@@ -271,8 +233,8 @@
 
             <!-- SOCIAL MEDIA LINKS -->
             <ul id="footerSocial">
-                <li class="sociaMediaLi"><a href="#" target="_blank"><img src="images/icon_facebook.png" width="24" height="24" alt="Facebook link" /></a></li>
-                <li class="sociaMediaLi"><a href="#" target="_blank"><img src="images/icon_twitter.png" width="24" height="24" alt="Twitter link" /></a></li>
+                <li class="sociaMediaLi"><a href="#" target="_blank"><img src="assets/images/homepage/icon_facebook.png" width="24" height="24" alt="Facebook link" /></a></li>
+                <li class="sociaMediaLi"><a href="#" target="_blank"><img src="assets/images/homepage/icon_twitter.png" width="24" height="24" alt="twitter link" /></li>
             </ul><!-- close social media -->
             
         </div><!-- close footer links -->

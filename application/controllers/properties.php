@@ -58,10 +58,10 @@ class Properties extends CI_Controller
             $this->pagination->initialize($config);
             $data['pages'] = $this->pagination->create_links();
             //load views
-            $this->load->view('header/header_main');
+            $this->load->view('header/main_view');
             $this->load->view('properties/nav');
             $this->load->view('properties/all_view', $data);
-            $this->load->view('footer/footer_main');
+            $this->load->view('footer/form_view');
         } else {
             // if logged in, not activated              
             $this->session->set_flashdata('message', 'You must be logged in to use this page');
@@ -115,10 +115,10 @@ class Properties extends CI_Controller
             $this->pagination->initialize($config);
             $data['pages'] = $this->pagination->create_links();
 
-            $this->load->view('header/header_main');
+            $this->load->view('header/main_view');
             $this->load->view('properties/nav');
             $this->load->view('properties/my_view', $data);
-            $this->load->view('footer/footer_main');
+            $this->load->view('footer/main_view');
         } else {
             // if logged in, not activated              
             $this->session->set_flashdata('message', 'You must be logged in to use this page');
@@ -210,9 +210,9 @@ class Properties extends CI_Controller
         //get user_id
         $user_id = $this->tank_auth->get_user_id();
         $data['info']=$this->user->get_account_info($user_id);
-        $this->load->view('header/header_main');
+        $this->load->view('header/main_view');
         $this->load->view('properties/add_form');
-        $this->load->view('footer/footer_main');
+        $this->load->view('footer/form_view');
     }
 
     /**
@@ -305,9 +305,9 @@ class Properties extends CI_Controller
                 redirect(base_url() . 'properties/my_properties');
             }
         }
-        $this->load->view('header/header_main');
+        $this->load->view('header/main_view');
         $this->load->view('properties/edit_form', $data);
-        $this->load->view('footer/footer_main');
+        $this->load->view('footer/form_view');
     }
 
     /**
@@ -330,14 +330,70 @@ class Properties extends CI_Controller
             //propety record
             $data['property'] = $this->property->get_property_by_id($property_id);
             //owner of pasture
-            $property_user_id = $data['property'][0]['user_id'];
-            //if current user owns pasture
-            
+            $property_user_id = $data['property']['user_id'];
+
+            //get images from db
+            $images = $this->property->get_images($property_id);
+            //turn field 'photos' into an array, 
+            $image_array = explode(",", $images['photos']);
+            //get last item
+            $last_item = end(array_values($image_array));
+            //remove last item if it doesn't have anything
+            if ($last_item == ''){
+                //remove last array item
+                array_pop($image_array);
+            }
+
+            $data['property']['images'] = $image_array;
         }
-        $this->load->view('header/header_main');
+        $this->load->view('header/main_view');
         $this->load->view('properties/nav');
         $this->load->view('properties/view', $data);
-        $this->load->view('footer/footer_main');
+        $this->load->view('footer/main_view');
+    }
+
+    /**
+     * View User Properties pages
+     *
+     * @return void
+     */
+    function view_mine($property_id)
+    {
+        if (!$this->tank_auth->is_logged_in()) {                                    
+            // if logged in, not activated              
+            $this->session->set_flashdata('message', 'You must be logged in to use this page');
+            redirect(base_url() . 'auth/login');
+        } else if ($user_id= ''){
+            $this->session->set_flashdata('message', 'oops!');
+            redirect(base_url() . 'my_account');
+        } else {
+            //logged in user
+            $user_id = $this->tank_auth->get_user_id();
+            //propety record
+            $data['property'] = $this->property->get_property_by_id($property_id);
+            //owner of pasture
+            $property_user_id = $data['property']['user_id'];
+            //if current user owns pasture
+
+            //get images from db
+            $images = $this->property->get_images($property_id);
+            //turn field 'photos' into an array, 
+            $image_array = explode(",", $images['photos']);
+            //get last item
+            $last_item = end(array_values($image_array));
+            //remove last item if it doesn't have anything
+            if ($last_item == ''){
+                //remove last array item
+                array_pop($image_array);
+            }
+
+            $data['property']['images'] = $image_array;
+            
+        }
+        $this->load->view('header/main_view');
+        $this->load->view('properties/nav');
+        $this->load->view('properties/view_mine', $data);
+        $this->load->view('footer/main_view');
     }
 
     /**
@@ -359,25 +415,10 @@ class Properties extends CI_Controller
             $this->property->archive_property($property_id);
             redirect(base_url() . 'properties/my_properties');
         }
-        $this->load->view('header/header_main');
+        $this->load->view('header/main_view');
         $this->load->view('properties/edit_form', $data);
-        $this->load->view('footer/footer_main');
+        $this->load->view('footer/main_view');
     }
-
-
-
-
-    /**
-     * Show info message
-     *
-     * @param   string
-     * @return  void
-     */
-    function _show_message($message)
-    {
-        $this->session->set_flashdata('message', $message);
-    }
-
 }
 
 /* End of file properties.php */

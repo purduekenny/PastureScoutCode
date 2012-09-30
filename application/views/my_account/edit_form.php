@@ -138,7 +138,7 @@ $land_management_training = array(
 
 ?>
 
-<div class="span8 dashboard_content">
+<div class="span8 content">
 <h2>Account Information</h2>
 <?php echo form_open(base_url().'my_account/edit/'. $user_id, array('class' => 'form-horizontal')); ?>
     

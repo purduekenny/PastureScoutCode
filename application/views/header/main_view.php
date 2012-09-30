@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <!-- set default device content size to 100% -->
+    <base href="<?php echo base_url(); ?>" />
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <title>Pasture Scout - Find it. Bid it. Lease it.</title>
     <!-- Styles for bootstrap -->
@@ -21,6 +22,16 @@
     <link rel='stylesheet' media='screen and (max-width:768px)' href='<?= base_url("assets/css/main/medium.css"); ?>'>
     <!-- Styles for smartphones -->
     <link rel='stylesheet' media='screen and (max-width: 480px)' href='<?= base_url("assets/css/main/small.css"); ?>'>
+    <!-- Bootstrap Image Gallery styles -->
+    <link rel="stylesheet" href="http://blueimp.github.com/Bootstrap-Image-Gallery/css/bootstrap-image-gallery.min.css">
+    <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+    <link rel="stylesheet" href="<?= base_url("assets/plugins/blueimp_file_upload/css/jquery.fileupload-ui.css"); ?>">
+    <!-- base_url for javascript -->
+    <script>
+    /* <![CDATA[ */
+        var baseurl = "<?php echo base_url(); ?>";
+    /* ]]> */
+    </script>
 </head>
 <!-- get controller/method for navigation styles-->
 <body id = "<?=$this->router->class . '_' . $this->router->method?>">

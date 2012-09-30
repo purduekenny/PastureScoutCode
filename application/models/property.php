@@ -109,6 +109,48 @@ class Property extends CI_Model{
     }
 
     /**
+     * get images
+     *
+     * @param   int
+     * @param   array
+     * @return  null
+     */
+    function get_images($property_id){
+        $this->db->select('`photos`');
+        $this->db->where('`id`', $property_id);
+        $query = $this->db->get('properties');
+        return $query->row_array();
+    }
+
+    /**
+     * insert 1 image
+     *
+     * @param   int
+     * @param   array
+     * @return  null
+     */
+    function set_image($property_id, $name){
+        $query = 'UPDATE  `properties` SET `photos` = CONCAT(`photos`, ' ;
+        $query .=  "'$name,'";
+        $query .= ') WHERE `id` = ' . $property_id;
+        $this->db->query($query);
+    }
+
+    /**
+     * update images
+     *
+     * @param   int
+     * @param   array
+     * @return  null
+     */
+    function update_images($property_id, $name){
+        $this->db->set('photos', $name);
+        $this->db->where('id', $property_id);
+        $this->db->update('properties');
+    }
+
+
+    /**
      * Get a property by id
      *
      * @param   int
@@ -129,6 +171,7 @@ class Property extends CI_Model{
             `opening_bid_date`, 
             `closing_bid_date`,
             `other_info`,
+            `photos`,
             `size`,
             `min_lease_term`,
             `lease_availability_date`,
@@ -140,7 +183,7 @@ class Property extends CI_Model{
         $this->db->where('id', $property_id);
         $this->db->where('`status`', 'active');
         $query = $this->db->get('properties');
-        return $query->result_array();
+        return $query->row_array();
     }
 
     /**

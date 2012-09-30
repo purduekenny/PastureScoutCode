@@ -112,16 +112,13 @@ nav {
 
 /***** form *****/
 form { 
-
     text-align:left;
 }
-form textarea { 
+textarea { 
     padding:5px; 
-    width:80%; 
-    height:300px;
+    width:90%; 
+    height:200px;
 }
-
-
 
 form ul{
     clear:both;
@@ -141,6 +138,22 @@ form input[type=submit]{
     padding:10px;
 }
 
+/*image upload styles*/
+#fileupload{
+    padding:20px;
+}
+
+tr .name span{
+    text-overflow: ellipsis; /* will make [...] at the end */
+    width: 100px; /* change to your preferences */
+    overflow:hidden; /* older browsers */
+}
+
+/*end image upload styles*/
+input, textarea, .uneditable-input, select{
+    width:300px;
+}
+
 
 #login_links a{
     color:#747474;
@@ -155,6 +168,7 @@ form input[type=submit]{
 label{
     font-family:Arial, Helvetica, sans-serif;
     font-weight: bolder;
+    padding-left: 10px;
 }
 label[for="remember"]{
     margin-left: 20px;
@@ -172,6 +186,13 @@ table td{
 .error{
     display: block;
     color: red;
+}
+
+.row-fluid .thumbnails{
+    padding:10px;
+}
+.row-fluid .thumbnails li{
+    border:none;
 }
 /***** Dashboard styles *****/
 .nav-tabs.nav-stacked > li > a {
@@ -211,7 +232,11 @@ body#properties_create li#properties_create a{
     text-align: left;
 }
 
-.dashboard_content{
+.row-fluid .span12{
+    margin-left: 0;
+}
+
+.content{
     width:100%;
     min-height:100px;
     margin: 0 0 10px 0;
@@ -221,12 +246,12 @@ body#properties_create li#properties_create a{
     background: #fdfdfd;
     border:1px solid #ddd;
 }
-.dashboard_content p {
+.content p {
     margin: 5px 0 10px 10px;
     color: #969696;
 }
 
-.dashboard_content h3 {
+.content h3 {
     font-size:20px;
     color:#969696;
     font-weight:normal;

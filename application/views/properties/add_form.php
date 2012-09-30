@@ -126,6 +126,9 @@ $other_info = array(
     'cols'  => 30
 );
 ?>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span12 content">
 <?php echo form_open(base_url().'properties/create/', array('class' => 'form-horizontal')) ?>
     <h2>Enter Description</h2>
     <div class="control-group">
@@ -237,8 +240,9 @@ $other_info = array(
             <?php echo form_error($allowed_uses['name']); ?><?php echo isset($errors[$allowed_uses['name']])?$errors[$allowed_uses['name']]:''; ?>
         </div>
     </div>
+<hr>
+<h2>Stock Restrictions (Optional)</h2>
     <div class="control-group">
-        <h2>(Optional) Stock Restrictions</h2>
         <?php echo form_label('Restricted Stock Type', $restricted_stock_type['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($restricted_stock_type); ?>
@@ -259,8 +263,9 @@ $other_info = array(
             <?php echo form_error($max_head_count['name']); ?><?php echo isset($errors[$max_head_count['name']])?$errors[$max_head_count['name']]:''; ?>
         </div>
     </div>
+<hr>
+<h2>Bid Information</h2>
     <div class="control-group">
-        <h2>Bid Information</h2>
         <?php echo form_label('Opening Bid Date', $opening_bid_date['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($opening_bid_date); ?>
@@ -281,5 +286,20 @@ $other_info = array(
             <?php echo form_error($other_info['name']); ?><?php echo isset($errors[$other_info['name']])?$errors[$other_info['name']]:''; ?>
         </div>
     </div>
-<?php echo form_submit('submit', 'Add Pasture'); ?>
-<?php echo form_close(); ?>
+<hr>
+    <?php 
+        $data = array(
+        'name'        => 'submit',
+        'id'          => 'submit',
+        'value'       => 'Add Pasture',
+        'class'       => 'btn btn-primary'
+        );
+        echo form_submit($data);
+        echo form_close();
+    ?>
+<hr>
+
+</div><!-- end span12 -->
+
+</div><!-- end row_fluid -->
+</div><!-- end container_fluid -->

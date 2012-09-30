@@ -170,7 +170,9 @@ $other_info = array(
     'cols'  => 30
 );
 ?>
-
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span12 content">
 <?php echo form_open(base_url().'properties/edit/'. isset($property[0]['id']), array('class' => 'form-horizontal')) ?>
 
     <h2>Enter Description</h2>
@@ -285,8 +287,10 @@ $other_info = array(
             <?php echo form_error($allowed_uses['name']); ?><?php echo isset($errors[$allowed_uses['name']])?$errors[$allowed_uses['name']]:''; ?>
         </div>
     </div>
-    <div class="control-group">
+<hr>
     <h2>Stock Restrictions (Optional)</h2>
+    <div class="control-group">
+    
         <?php echo form_label('Restricted Stock Type', $restricted_stock_type['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($restricted_stock_type); ?>
@@ -307,6 +311,7 @@ $other_info = array(
             <?php echo form_error($max_head_count['name']); ?><?php echo isset($errors[$max_head_count['name']])?$errors[$max_head_count['name']]:''; ?>
         </div>
     </div>
+<hr>
     <h2>Bid Information</h2>
     <div class="control-group">
             <?php echo form_label('Opening Bid Date', $opening_bid_date['id'], array('class' => 'control-label')); ?>
@@ -329,5 +334,21 @@ $other_info = array(
             <?php echo form_error($other_info['name']); ?><?php echo isset($errors[$other_info['name']])?$errors[$other_info['name']]:''; ?>
         </div>
     </div>
-<?php echo form_submit('submit', 'Edit Pasture'); ?>
-<?php echo form_close();?>
+<hr>
+    <?php 
+        $data = array(
+        'name'        => 'edit',
+        'id'          => 'edit',
+        'value'       => 'Edit Pasture',
+        'class'       => 'btn btn-primary'
+        );
+    ?>
+
+    <?php
+        echo form_submit($data);
+        echo form_close();
+    ?>
+
+</div><!-- span12 -->
+</div><!-- end row_fluid -->
+</div><!-- end container_fluid -->

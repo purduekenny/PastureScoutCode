@@ -10,9 +10,9 @@
 			$this->load->helper('url');
 			$this->load->helper('form');
 			//load homepage view
-			$this->load->view('header/header_main');
+			$this->load->view('header/main_view');
 			$this->load->view('register');
-			$this->load->view('footer/footer_main');
+			$this->load->view('footer/main_view');
 		}
 
 		function submit()
