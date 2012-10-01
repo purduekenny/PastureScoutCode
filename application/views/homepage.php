@@ -78,61 +78,55 @@
                 ##################################
                     -   KEN BURN BANNER -
                 ##################################
-                -->            
+                -->         
+
+
                 <div class="bannercontainer light">
-                    <ul>                                
+                    <ul>         
                         <!-- THE 1. SLIDE -->
-                        <li data-transition="fade" data-startalign="right,bottom" data-zoom="in" data-zoomfact="3" data-endAlign="center,top" data-panduration="12" data-colortransition="4"><img alt="" src="assets/images/homepage/slider_images/slides/image1.jpg" data-bw="assets/images/homepage/slider_images/slides/image1_bw.jpg" data-thumb="assets/images/homepage/slider_images/thumbs/thumb1.jpg">
-                                                                                                                
-                                <div class="creative_layer">
-                                    <div class="cp-left faderight" >
-                                        <p class="cp-title">The Responsive Ken Burner</p>
-                                        <p>This is the product that you<br><i><strong>all have been waiting for!</strong></i></p>                               
-                                        <p>A Ken Burns JQuery Banner solution which<br>is fully-responsive and offering cutting-edge<br>caption effects!</p>
-                                        <a style="margin-top:10px" class="kb-button" href="dark.html">See Dark Example</a>
-                                        <div class="clear"></div>
+                        <li data-transition="fade" data-startalign="center,top" data-zoom="in" data-zoomfact="1.6" data-endAlign="center,bottom" data-panduration="12" data-colortransition="4"><img alt="" src="assets/images/homepage/slider_images/slides/pscout1.png">                  
+                                <div class="video_kenburner">
+                                    <div class="video_kenburn_wrap">    
+                                        <div class="video_video">
+                                            <iframe class="video_clip" src="http://www.youtube.com/embed/SC4WNPnaMYo"></iframe>
+                                        </div>
+                                        <div class="video_details">
+                                            <p class="cp-title">Pasture Scout</p>
+                                            <p>PastureScout is an online marketplace that<br> allows users to list, find, and secure leases that meet their needs</p>
+                                            <div class="clear"></div>                           
+                                        </div>
+                                        <div class="close"></div>
+                                        
+                                    </div>
+                                </div>  
+                                
+                                <div class="creative_layer ">
+                                    <div class="cp-left fade">
+                                        <p class="cp-title">Leasing Made Simple</p>
+                                        <p>PastureScout is an online marketplace <br> that allows users to list, find, and secure <br>leases that meet their needs.</p>
+                                        <div class="clear"></div>                           
                                     </div>                                  
-                                </div>       
-                        </li>
+                                </div>
+                        </li>        
                         <!-- THE 2. SLIDE -->
-                        <li data-transition="slide" data-startalign="left,bottom" data-zoom="in" data-zoomfact="3" data-endAlign="center,center" data-panduration="8" data-colortransition="4"><img alt="" src="assets/images/homepage/slider_images/slides/image3.jpg" data-bw="assets/images/homepage/slider_images/slides/image3_bw.jpg" data-thumb="assets/images/homepage/slider_images/thumbs/thumb3.jpg">
+                        <li data-transition="slide" data-startalign="left,bottom" data-zoom="in" data-zoomfact="3" data-endAlign="center,center" data-panduration="8" data-colortransition="4"><img alt="" src="assets/images/homepage/slider_images/slides/pscout2.png">
                             <div class="creative_layer ">
                                     <div class="cp-bottom fadeup">
-                                        <p class="cp-title">The Responsive Ken Burner</p>
-                                        <p>This is the product that you<i><strong>all have been waiting for!</strong></i> A Ken Burns JQuery Banner solution which is fully-responsive and offering cutting-edge caption effects!</p>                                           
+                                        <p class="cp-title">Why is PastureScout needed?</p>
+                                        <p>There is growing demand for leased pasture.</p>
+                                        <p>The current leasing process needs improvement</p>
                                     </div>                                  
                                 </div>
                         </li>  
-                        
                         <!-- THE 3. SLIDE -->
-                        <li data-transition="slide" data-startalign="left,bottom" data-zoom="in" data-zoomfact="3" data-endAlign="center,center" data-panduration="8" data-colortransition="4"><img alt="" src="assets/images/homepage/slider_images/slides/image3.jpg" data-bw="assets/images/homepage/slider_images/slides/image3_bw.jpg" data-thumb="assets/images/homepage/slider_images/thumbs/thumb3.jpg">
+                        <li data-transition="slide" data-startalign="left,bottom" data-zoom="in" data-zoomfact="3" data-endAlign="center,center" data-panduration="8" data-colortransition="4"><img alt="" src="assets/images/homepage/slider_images/slides/pscout3.png">
                             <div class="creative_layer ">
                                     <div class="cp-bottom fadeup">
-                                        <p class="cp-title">The Responsive Ken Burner</p>
-                                        <p>This is the product that you<i><strong>all have been waiting for!</strong></i> A Ken Burns JQuery Banner solution which is fully-responsive and offering cutting-edge caption effects!</p>                                           
+                                        <p class="cp-title">How does PastureScout Work?</p>
+                                        <p>"Find it, bid it, lease it"</p>                                           
                                     </div>                                  
                                 </div>
                         </li>   
-                        <!-- THE 4. SLIDE -->
-                        <li data-transition="fade" data-startalign="right,top" data-zoom="out" data-zoomfact="1.2" data-endAlign="left,bottom" data-panduration="11" data-colortransition="4"><img alt="" src="assets/images/homepage/slider_images/slides/image4.jpg" data-bw="assets/images/homepage/slider_images/slides/image4_bw.jpg" data-thumb="assets/images/homepage/slider_images/thumbs/thumb4.jpg">
-                                                                                                                
-                            <div class="creative_layer ">
-                                    <div class="cp-top fadedown" >
-                                        <p class="cp-title">The Responsive Ken Burner</p>
-                                        <p>This is the product that you<i><strong>all have been waiting for!</strong></i> A Ken Burns JQuery Banner solution which is fully-responsive and offering cutting-edge caption effects!</p>                                           
-                                    </div>                                  
-                                </div>
-                        </li>
-                        
-                        <!-- THE 5. SLIDE -->
-                        <li data-transition="slide" data-startalign="left,bottom" data-zoom="in" data-zoomfact="3" data-endAlign="center,center" data-panduration="8" data-colortransition="4"><img alt="" src="assets/images/homepage/slider_images/slides/image3.jpg" data-bw="assets/images/homepage/slider_images/slides/image3_bw.jpg" data-thumb="assets/images/homepage/slider_images/thumbs/thumb3.jpg">
-                            <div class="creative_layer ">
-                                    <div class="cp-bottom fadeup">
-                                        <p class="cp-title">The Responsive Ken Burner</p>
-                                        <p>This is the product that you<i><strong>all have been waiting for!</strong></i> A Ken Burns JQuery Banner solution which is fully-responsive and offering cutting-edge caption effects!</p>                                           
-                                    </div>                                  
-                                </div>
-                        </li>  
                     </ul>
                 </div>      <!-- THE END OF THE BANNER EXMAPLE -->
                 <div class="bannershadow centerme"><img width="100%" height="40px" src="assets/images/homepage/slider_images/bannershadow.png"></div>
@@ -242,7 +236,6 @@
     </div><!-- close green footer -->
 
 </footer><!-- close footer -->
-
 </body>
 </html>
 
