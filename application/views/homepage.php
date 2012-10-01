@@ -66,7 +66,9 @@
                         <li class="navLi"><a href="#">Membership</a></li>
                         <li class="navLi"><a href="#">Contact</a></li>
                     </ul><!-- close navigation -->
-<a href="auth/login"><img src='assets/images/homepage/login.png' alt="User Login" style="position:relative; top: -10px" ></a>
+                        <a href="auth/login" id="button_login">
+                            <img src="assets/images/homepage/login.png" alt="User Login" width="87" height="28">
+                        </a>
                 </div><!--end nav wrapper -->
             </nav><!-- close navigation area-->
         </header><!-- close header -->

@@ -234,7 +234,7 @@ class Properties extends CI_Controller
             //logged in user
             $user_id = $this->tank_auth->get_user_id();
             //propety record
-            $data['property'] = $this->property->get_property_by_id($property_id);
+            $data['property'] = $this->property->get_property_by_id($property_id);          
             //owner of pasture
             $property_user_id = $data['property']['user_id'];
             //if current user owns pasture

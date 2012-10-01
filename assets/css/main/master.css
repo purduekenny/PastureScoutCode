@@ -54,11 +54,6 @@ nav {
     top:20px;
 }
 
-#login_btn{
-    position:relative; 
-    top: -10px
-}
-
 /***** SOCIAL MEDIA *****/
 .socialMediaList {
     position:relative;
@@ -331,8 +326,8 @@ a:hover {
 
 /***** STICKY FOOTER *****/
 .wrapper { min-height:100%; height:auto !important; height:100%; margin:0 auto -155px; /* the bottom margin is the negative value of the footer's height */ }
-.push { height:155px; /* .push must be the same height as .footer */ }
-footer { background-image:url('../../images/main/bg_footer.jpg'); background-repeat:repeat-x; height:155px; /* .push must be the same height as .footer */ }
+.push { z-index:-10; height:155px; /* .push must be the same height as .footer */ }
+footer { z-index:10; background-image:url('../../images/main/bg_footer.jpg'); background-repeat:repeat-x; height:155px; /* .push must be the same height as .footer */ }
 
 
 #greenFooter {

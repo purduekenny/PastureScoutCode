@@ -38,8 +38,11 @@ body{
     font-size:12px;
 }
 
-.btnLogin {
-    left:190px;
+#button_login{
+    width:87px;
+    height:28px;
+    position:relative; 
+    top: 0px;
 }
 
 /***** login *****/
@@ -67,7 +70,7 @@ h1 {
 }
 
 #slider {
-    width:350px;
+    width:290px;
     margin:53px auto;
     
 }

@@ -169,74 +169,84 @@ $other_info = array(
     'rows'  => 30,
     'cols'  => 30
 );
+isset($property['id']) ? $property['id'] : '';
 ?>
 <div class="container-fluid">
 <div class="row-fluid">
 <div class="span12 content">
-<?php echo form_open(base_url().'properties/edit/'. isset($property['id']), array('class' => 'form-horizontal')) ?>
+<?php echo form_open(base_url().'properties/edit/'. $property['id'], array('class' => 'form-horizontal')) ?>
 
     <h2>Enter Description</h2>
     <div class="control-group">
         <?php echo form_label('Pasture Name', $name['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($name); ?>
-            <?php echo form_error($name['name']); ?><?php echo isset($errors[$name['name']])?$errors[$name['name']]:''; ?>
+            <?php echo form_error($name['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$name['name']])?$errors[$name['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
         <?php echo form_label('Location', $location['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($location); ?>
-            <?php echo form_error($location['name']); ?><?php echo isset($errors[$location['name']])?$errors[$location['name']]:''; ?>
+            <?php echo form_error($location['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$location['name']])?$errors[$location['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
         <?php echo form_label('Region', $region['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($region); ?>
-            <?php echo form_error($region['name']); ?><?php echo isset($errors[$region['name']])?$errors[$region['name']]:''; ?>
+            <?php echo form_error($region['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$region['name']])?$errors[$region['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
         <?php echo form_label('City', $city['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($city); ?>
-            <?php echo form_error($city['name']); ?><?php echo isset($errors[$city['name']])?$errors[$city['name']]:''; ?>
+            <?php echo form_error($city['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$city['name']])?$errors[$city['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
         <?php echo form_label('State/Province', $state['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($state); ?>
-            <?php echo form_error($state['name']); ?><?php echo isset($errors[$state['name']])?$errors[$state['name']]:''; ?>
+            <?php echo form_error($state['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$state['name']])?$errors[$state['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
         <?php echo form_label('Country', $country['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($country); ?>
-            <?php echo form_error($country['name']); ?><?php echo isset($errors[$country['name']])?$errors[$country['name']]:''; ?>
+            <?php echo form_error($country['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$country['name']])?$errors[$country['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
         <?php echo form_label('Size', $size['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($size); ?>
-            <?php echo form_error($size['name']); ?><?php echo isset($errors[$size['name']])?$errors[$size['name']]:''; ?>
+            <?php echo form_error($size['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$size['name']])?$errors[$size['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
         <?php echo form_label('Minimum Lease Term', $min_lease_term['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($min_lease_term); ?>
-            <?php echo form_error($min_lease_term['name']); ?><?php echo isset($errors[$min_lease_term['name']])?$errors[$min_lease_term['name']]:''; ?>
+            <?php echo form_error($min_lease_term['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$min_lease_term['name']])?$errors[$min_lease_term['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
         <?php echo form_label('Lease Availability Date', $lease_availability_date['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($lease_availability_date); ?>
-            <?php echo form_error($lease_availability_date['name']); ?><?php echo isset($errors[$lease_availability_date['name']])?$errors[$lease_availability_date['name']]:''; ?>
+            <?php echo form_error($lease_availability_date['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$lease_availability_date['name']])?$errors[$lease_availability_date['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
@@ -256,14 +266,16 @@ $other_info = array(
             <?php 
                 }//end foreach
             ?>
-            <?php echo form_error($features_forage_type['name']); ?><?php echo isset($errors[$features_forage_type['name']])?$errors[$features_forage_type['name']]:''; ?>
+            <?php echo form_error($features_forage_type['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$features_forage_type['name']])?$errors[$features_forage_type['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
         <?php echo form_label('Handling facilities', $handling_facilities['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($handling_facilities); ?>
-            <?php echo form_error($handling_facilities['name']); ?><?php echo isset($errors[$handling_facilities['name']])?$errors[$handling_facilities['name']]:''; ?>
+            <?php echo form_error($handling_facilities['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$handling_facilities['name']])?$errors[$handling_facilities['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
@@ -284,7 +296,8 @@ $other_info = array(
             <?php
                 } //end foreach
             ?>
-            <?php echo form_error($allowed_uses['name']); ?><?php echo isset($errors[$allowed_uses['name']])?$errors[$allowed_uses['name']]:''; ?>
+            <?php echo form_error($allowed_uses['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$allowed_uses['name']])?$errors[$allowed_uses['name']]:''; ?>
         </div>
     </div>
 <hr>
@@ -294,21 +307,24 @@ $other_info = array(
         <?php echo form_label('Restricted Stock Type', $restricted_stock_type['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($restricted_stock_type); ?>
-            <?php echo form_error($restricted_stock_type['name']); ?><?php echo isset($errors[$restricted_stock_type['name']])?$errors[$restricted_stock_type['name']]:''; ?>
+            <?php echo form_error($restricted_stock_type['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$restricted_stock_type['name']])?$errors[$restricted_stock_type['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
         <?php echo form_label('Min bid', $min_bid['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($min_bid); ?>
-            <?php echo form_error($min_bid['name']); ?><?php echo isset($errors[$min_bid['name']])?$errors[$min_bid['name']]:''; ?>
+            <?php echo form_error($min_bid['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$min_bid['name']])?$errors[$min_bid['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
         <?php echo form_label('Max Head Count', $max_head_count['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($max_head_count); ?>
-            <?php echo form_error($max_head_count['name']); ?><?php echo isset($errors[$max_head_count['name']])?$errors[$max_head_count['name']]:''; ?>
+            <?php echo form_error($max_head_count['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$max_head_count['name']])?$errors[$max_head_count['name']]:''; ?>
         </div>
     </div>
 <hr>
@@ -317,21 +333,24 @@ $other_info = array(
             <?php echo form_label('Opening Bid Date', $opening_bid_date['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($opening_bid_date); ?>
-            <?php echo form_error($opening_bid_date['name']); ?><?php echo isset($errors[$opening_bid_date['name']])?$errors[$opening_bid_date['name']]:''; ?>
+            <?php echo form_error($opening_bid_date['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$opening_bid_date['name']])?$errors[$opening_bid_date['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
         <?php echo form_label('Closing Bid Date', $closing_bid_date['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($closing_bid_date); ?>
-            <?php echo form_error($closing_bid_date['name']); ?><?php echo isset($errors[$closing_bid_date['name']])?$errors[$closing_bid_date['name']]:''; ?>
+            <?php echo form_error($closing_bid_date['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$closing_bid_date['name']])?$errors[$closing_bid_date['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
         <?php echo form_label('Description', $other_info['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_textarea($other_info); ?>
-            <?php echo form_error($other_info['name']); ?><?php echo isset($errors[$other_info['name']])?$errors[$other_info['name']]:''; ?>
+            <?php echo form_error($other_info['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$other_info['name']])?$errors[$other_info['name']]:''; ?>
         </div>
     </div>
 <hr>
