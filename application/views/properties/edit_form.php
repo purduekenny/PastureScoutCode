@@ -2,58 +2,58 @@
 $name = array(
     'name'  => 'name',
     'id'    => 'name',
-    'value' => isset($property[0]['name']) ? $property[0]['name'] : set_value('name'),
+    'value' => isset($property['name']) ? $property['name'] : set_value('name'),
     'maxlength' => 200
 );
 $location = array(
     'name'  => 'location',
     'id'    => 'location',
-    'value' => isset($property[0]['location']) ? $property[0]['location'] : set_value('location'),
+    'value' => isset($property['location']) ? $property['location'] : set_value('location'),
     'maxlength' => 300
 );
 $region = array(
     'name'  => 'region',
     'id'    => 'region',
-    'value' => isset($property[0]['region']) ? $property[0]['region'] : set_value('region'),
+    'value' => isset($property['region']) ? $property['region'] : set_value('region'),
     'maxlength' => 300
 );
 $city = array(
     'name'  => 'city',
     'id'    => 'city',
-    'value' => isset($property[0]['city']) ? $property[0]['city'] : set_value('city'),
+    'value' => isset($property['city']) ? $property['city'] : set_value('city'),
     'maxlength' => 100
 );
 $state = array(
     'name'  => 'state',
     'id'    => 'state',
-    'value' => isset($property[0]['state']) ? $property[0]['state'] : set_value('state'),
+    'value' => isset($property['state']) ? $property['state'] : set_value('state'),
     'maxlength' => 30
 );
 $country = array(
     'name'  => 'country',
     'id'    => 'country',
-    'value' => isset($property[0]['country']) ? $property[0]['country'] : set_value('country'),
+    'value' => isset($property['country']) ? $property['country'] : set_value('country'),
     'maxlength' => 50
 );
 
 $size = array(
     'name'  => 'size',
     'id'    => 'size',
-    'value' => isset($property[0]['size']) ? $property[0]['size'] : set_value('size'),
+    'value' => isset($property['size']) ? $property['size'] : set_value('size'),
     'maxlength' => 50
 );
 $min_lease_term = array(
     'name'  => 'min_lease_term',
     'id'    => 'min_lease_term',
-    'value' => isset($property[0]['min_lease_term']) ? $property[0]['min_lease_term'] : set_value('min_lease_term'),
+    'value' => isset($property['min_lease_term']) ? $property['min_lease_term'] : set_value('min_lease_term'),
     'maxlength' => 50
 );
 
 $lease_availability_date = "";
 //if date is set, make date pretty
-if(isset($property[0]['lease_availability_date'])){
+if(isset($property['lease_availability_date'])){
     // MM/DD/YYYY
-    $formatted_lease_availability_date = date('m/d/Y', strtotime($property[0]['lease_availability_date']));
+    $formatted_lease_availability_date = date('m/d/Y', strtotime($property['lease_availability_date']));
 }else{
     $formatted_lease_availability_date = set_value('lease_availability_date');
 } 
@@ -78,15 +78,15 @@ $features_forage_type = array(
     'id'    => 'features_forage_type',
 );
 //set variable to '' in order to avoid php errors
-if(empty($property[0]['features_forage_type'])){
-    $property[0]['features_forage_type'] = '';
+if(empty($property['features_forage_type'])){
+    $property['features_forage_type'] = '';
 }
 
 
 $handling_facilities = array(
     'name'  => 'handling_facilities',
     'id'    => 'handling_facilities',
-    'value' => isset($property[0]['handling_facilities']) ? $property[0]['handling_facilities'] : set_value('handling_facilities'),
+    'value' => isset($property['handling_facilities']) ? $property['handling_facilities'] : set_value('handling_facilities'),
     'maxlength' => 50
 );
 
@@ -105,34 +105,34 @@ $allowed_uses = array(
     'id'    => 'allowed_uses',
 );
 //set variable to '' in order to avoid php errors
-if(empty($property[0]['allowed_uses'])){
-    $property[0]['allowed_uses'] = '';
+if(empty($property['allowed_uses'])){
+    $property['allowed_uses'] = '';
 }
 
 $restricted_stock_type = array(
     'name'  => 'restricted_stock_type',
     'id'    => 'restricted_stock_type',
-    'value' => isset($property[0]['restricted_stock_type']) ? $property[0]['restricted_stock_type'] : set_value('restricted_stock_type'),
+    'value' => isset($property['restricted_stock_type']) ? $property['restricted_stock_type'] : set_value('restricted_stock_type'),
     'maxlength' => 100
 );
 $max_head_count = array(
     'name'  => 'max_head_count',
     'id'    => 'max_head_count',
-    'value' => isset($property[0]['max_head_count']) ? $property[0]['max_head_count'] : set_value('max_head_count'),
+    'value' => isset($property['max_head_count']) ? $property['max_head_count'] : set_value('max_head_count'),
     'maxlength' => 100
 );
 $min_bid = array(
     'name'  => 'min_bid',
     'id'    => 'min_bid',
-    'value' => isset($property[0]['min_bid']) ? $property[0]['min_bid'] : set_value('min_bid'),
+    'value' => isset($property['min_bid']) ? $property['min_bid'] : set_value('min_bid'),
     'maxlength' => 100
 );
 
 $formatted_opening_bid_date = "";
 //if date is set, make date pretty
-if(isset($property[0]['opening_bid_date'])){
+if(isset($property['opening_bid_date'])){
     // MM/DD/YYYY
-    $formatted_opening_bid_date = date('m/d/Y', strtotime($property[0]['opening_bid_date']));
+    $formatted_opening_bid_date = date('m/d/Y', strtotime($property['opening_bid_date']));
 }else{
     $formatted_opening_bid_date = set_value('opening_bid_date');
 } 
@@ -146,9 +146,9 @@ $opening_bid_date = array(
 
 $formatted_closing_bid_date = "";
 //if date is set, make date pretty
-if(isset($property[0]['closing_bid_date'])){
+if(isset($property['closing_bid_date'])){
     // MM/DD/YYYY
-    $formatted_closing_bid_date = date('m/d/Y', strtotime($property[0]['closing_bid_date']));
+    $formatted_closing_bid_date = date('m/d/Y', strtotime($property['closing_bid_date']));
 }else{
     $formatted_closing_bid_date = set_value('closing_bid_date');
 } 
@@ -173,7 +173,7 @@ $other_info = array(
 <div class="container-fluid">
 <div class="row-fluid">
 <div class="span12 content">
-<?php echo form_open(base_url().'properties/edit/'. isset($property[0]['id']), array('class' => 'form-horizontal')) ?>
+<?php echo form_open(base_url().'properties/edit/'. isset($property['id']), array('class' => 'form-horizontal')) ?>
 
     <h2>Enter Description</h2>
     <div class="control-group">
@@ -248,7 +248,7 @@ $other_info = array(
                 <label class="radio">
                     <input type="radio" name="features_forage_type" value="<?=$feature?>" 
                     <?php 
-                        echo ($property[0]['features_forage_type']==$feature) ? 'checked' : ''; 
+                        echo ($property['features_forage_type']==$feature) ? 'checked' : ''; 
                         echo set_radio('features_forage_type', $feature); 
                     ?> 
                 /><?=$feature?>
@@ -276,7 +276,7 @@ $other_info = array(
                     
                     <input type="checkbox" name="allowed_uses[]" value="<?=$allow?>" 
                     <?php 
-                        echo (preg_match("/" . $allow . "/", $property[0]['allowed_uses'])) ? 'checked' : ''; 
+                        echo (preg_match("/" . $allow . "/", $property['allowed_uses'])) ? 'checked' : ''; 
                         echo set_checkbox('allowed_uses[]', $allow); 
                     ?> 
                 /><?=$allow?>

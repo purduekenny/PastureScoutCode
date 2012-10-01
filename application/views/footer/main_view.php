@@ -44,11 +44,8 @@
 <!--[if lt IE 9]>
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
-<!-- jquery plugin -->
-<script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.core.js"); ?>"></script>
-<script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.widget.js"); ?>"></script>
-<script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.datepicker.js"); ?>"></script>
-<script type="text/javascript" src="<?= base_url("assets/plugins/birthday/bday-picker.min.js"); ?>"></script>
+
+
 
 
 </script>
@@ -76,6 +73,10 @@
 <script src="<?= base_url("assets/plugins/blueimp_file_upload/js/main.js"); ?>"></script>
 <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE8+ -->
 <!--[if gte IE 8]><script src="<?= base_url('assets/plugins/blueimp_file_upload/js/cors/jquery.xdr-transport.js'); ?>"></script><![endif]-->
+<!-- jquery plugin -->
+<script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.core.js"); ?>"></script>
+<script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.widget.js"); ?>"></script>
+<script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.datepicker.js"); ?>"></script>
 <script>
     $(function() {
         $(".datepicker").datepicker();

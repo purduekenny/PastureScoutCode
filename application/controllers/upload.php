@@ -56,7 +56,7 @@ class Upload extends CI_Controller {
         }
         $this->load->view('header/main_view');
         $this->load->view('properties/image_upload', $data);
-        $this->load->view('footer/form_view');
+        $this->load->view('footer/main_view');
     }
 
     // Function called by the form

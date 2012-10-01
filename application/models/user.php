@@ -62,7 +62,7 @@ class User extends CI_Model{
 				  `activated`');
 		$this->db->where('id', $user_id);
 		$query = $this->db->get('users');
-		return $query->result_array();
+		return $query->row_array();
 	}
 
 	/**

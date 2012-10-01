@@ -61,7 +61,7 @@ class Properties extends CI_Controller
             $this->load->view('header/main_view');
             $this->load->view('properties/nav');
             $this->load->view('properties/all_view', $data);
-            $this->load->view('footer/form_view');
+            $this->load->view('footer/main_view');
         } else {
             // if logged in, not activated              
             $this->session->set_flashdata('message', 'You must be logged in to use this page');
@@ -212,7 +212,7 @@ class Properties extends CI_Controller
         $data['info']=$this->user->get_account_info($user_id);
         $this->load->view('header/main_view');
         $this->load->view('properties/add_form');
-        $this->load->view('footer/form_view');
+        $this->load->view('footer/main_view');
     }
 
     /**
@@ -236,7 +236,7 @@ class Properties extends CI_Controller
             //propety record
             $data['property'] = $this->property->get_property_by_id($property_id);
             //owner of pasture
-            $property_user_id = $data['property'][0]['user_id'];
+            $property_user_id = $data['property']['user_id'];
             //if current user owns pasture
             if($user_id == $property_user_id){
                 //form validation
@@ -307,7 +307,7 @@ class Properties extends CI_Controller
         }
         $this->load->view('header/main_view');
         $this->load->view('properties/edit_form', $data);
-        $this->load->view('footer/form_view');
+        $this->load->view('footer/main_view');
     }
 
     /**

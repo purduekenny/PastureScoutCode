@@ -123,7 +123,7 @@ class My_Account extends CI_Controller
             $this->load->view('header/main_view');
             $this->load->view('my_account/nav');
             $this->load->view('my_account/edit_form');
-            $this->load->view('footer/form_view');
+            $this->load->view('footer/main_view');
         }
     }
 
