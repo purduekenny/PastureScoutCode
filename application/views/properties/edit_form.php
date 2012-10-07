@@ -312,14 +312,6 @@ isset($property['id']) ? $property['id'] : '';
         </div>
     </div>
     <div class="control-group">
-        <?php echo form_label('Min bid', $min_bid['id'], array('class' => 'control-label')); ?>
-        <div class="controls">
-            <?php echo form_input($min_bid); ?>
-            <?php echo form_error($min_bid['name'], '<span class="error">', '</span>'); ?>
-            <?php echo isset($errors[$min_bid['name']])?$errors[$min_bid['name']]:''; ?>
-        </div>
-    </div>
-    <div class="control-group">
         <?php echo form_label('Max Head Count', $max_head_count['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($max_head_count); ?>
@@ -329,6 +321,14 @@ isset($property['id']) ? $property['id'] : '';
     </div>
 <hr>
     <h2>Bid Information</h2>
+    <div class="control-group">
+        <?php echo form_label('Min bid', $min_bid['id'], array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo form_input($min_bid); ?>
+            <?php echo form_error($min_bid['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$min_bid['name']])?$errors[$min_bid['name']]:''; ?>
+        </div>
+    </div>
     <div class="control-group">
             <?php echo form_label('Opening Bid Date', $opening_bid_date['id'], array('class' => 'control-label')); ?>
         <div class="controls">

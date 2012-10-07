@@ -174,16 +174,25 @@ class Auth extends CI_Controller
 						unset($data['password']); // Clear password (just for any case)
 
 						$this->_show_message($this->lang->line('auth_message_registration_completed_1'));
-						redirect(base_url("/auth/login/"));
+						redirect(base_url("/my_account"));
 
 					} else {
 						if ($this->config->item('email_account_details', 'tank_auth')) {	// send "welcome" email
 
 							$this->_send_email('welcome', $data['email'], $data);
 						}
+						//after user registers, login.
+						$this->tank_auth->login(
+							$data['email'],
+							$data['password'],
+							$this->form_validation->set_value('remember'),
+							false,
+							true);
+
+
 						unset($data['password']); // Clear password (just for any case)
 						$this->_show_message($this->lang->line('auth_message_registration_completed_2'));
-						redirect(base_url("/auth/login/"));
+						redirect(base_url("my_account/"));
 					}
 				} else {
 					$errors = $this->tank_auth->get_error_message();

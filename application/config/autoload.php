@@ -64,7 +64,7 @@ $autoload['libraries'] = array('session', 'uploadhandler');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url','form','state_helper');
+$autoload['helper'] = array('url','form','html');
 /*
 | -------------------------------------------------------------------
 |  Auto-load Config files

@@ -62,9 +62,9 @@
                         <li class="socialMediaLi"><a href="http://www.twitter.com/pasturescout" target="_blank"><img src="assets/images/homepage/icon_twitter.png" width="24" height="24" alt="Twitter link" /></a></li>
                     </ul><!-- close social media -->
                     <ul class="navList">
-                        <li class="navLi"><a href="http://pasturescout.com/blog/about-us/">About</a></li>
-                        <li class="navLi"><a href="#">Membership</a></li>
-                        <li class="navLi"><a href="#">Contact</a></li>
+                        <li class="navLi"><a href="<?=base_url()?>about/">About</a></li>
+                        <li class="navLi"><a href="<?=base_url()?>membership/">Membership</a></li>
+                        <li class="navLi"><a href="<?=base_url()?>contact/">Contact</a></li>
                     </ul><!-- close navigation -->
                         <a href="auth/login" id="button_login">
                             <img src="assets/images/homepage/login.png" alt="User Login" width="87" height="28">
@@ -116,16 +116,26 @@
                                     <div class="cp-bottom fadeup">
                                         <p class="cp-title">Why is PastureScout needed?</p>
                                         <p>There is growing demand for leased pasture.</p>
-                                        <p>The current leasing process needs improvement</p>
+                                        <p>Leasing pasture is harder than it should be.</p>
                                     </div>                                  
                                 </div>
                         </li>  
                         <!-- THE 3. SLIDE -->
                         <li data-transition="slide" data-startalign="left,bottom" data-zoom="in" data-zoomfact="3" data-endAlign="center,center" data-panduration="8" data-colortransition="4"><img alt="" src="assets/images/homepage/slider_images/slides/pscout3.png">
                             <div class="creative_layer ">
-                                    <div class="cp-bottom fadeup">
-                                        <p class="cp-title">How does PastureScout Work?</p>
-                                        <p>"Find it, bid it, lease it"</p>                                           
+                                    <div class="cp-left fade">
+                                        <p class="cp-title">How does PastureScout<br> Work?</p>
+                                        <p>Discover and bid on pasture<br> leases that meet your needs</p>
+                                        <p>Discover fair market price <br> for your pasture</p>                                           
+                                    </div>                                  
+                                </div>
+                        </li>
+                        <!-- THE 4. SLIDE -->
+                        <li data-transition="fade" data-startalign="center,top" data-zoom="in" data-zoomfact="1.6" data-endAlign="center,bottom" data-panduration="12" data-colortransition="4"><img alt="" src="assets/images/homepage/slider_images/slides/pscout4.png">
+                            <div class="creative_layer ">
+                                    <div class="cp-right fade">
+                                        <p class="cp-title">Sustainability</p>
+                                        <p>Wise utilization of our forage <br>resources is more important<br>than ever.</p>                                           
                                     </div>                                  
                                 </div>
                         </li>   
@@ -173,7 +183,7 @@
                             pauseOnRollOverMain:'on',
                             preloadedSlides:2,                          
                             
-                            timer:7,
+                            timer:14,
                             
                             debug:"off"                      
                         });     
@@ -219,12 +229,15 @@
         <div id="footerLinks">
             <!-- SITE LINKS -->
             <span id="siteLinks">
-                <a href="#">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Membership</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Contact</a>
+                <a href="<?=base_url()?>terms/">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="<?=base_url()?>about">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="<?=base_url()?>membership">Membership</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="<?=base_url()?>contact">Contact</a>
             </span><!-- close site_links -->
 
             <!-- COPYRIGHT -->
             <span id="copyright">
-                <p>Copyright &#169; 2012-2013 PastureScout, LLC.</p>
+                <p>Copyright &#169; 2012-2013 AgLink, LLC.</p>
             </span><!-- close copyright -->
 
             <!-- SOCIAL MEDIA LINKS -->

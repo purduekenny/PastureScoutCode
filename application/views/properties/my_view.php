@@ -31,7 +31,7 @@
 
                 <h3><a href="<?=base_url() . 'properties/view_mine/' . $row['id']; ?>"><?=$row['name']?></a></h3>
                 <p><?=$row['city']?>, <?=$row['state']?> <?=$row['country']?></p>
-                <p><strong>Min Bid:</strong> <?php echo isset($row['min_bid']) ? $row['min_bid'] : 'Not specified'?> </p>
+                <p>Description: <?=$row['other_info']?></p>
             </li>
             
             <?php

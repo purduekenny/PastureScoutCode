@@ -13,12 +13,15 @@
         <div id="footerLinks">
             <!-- SITE LINKS -->
             <span id="siteLinks">
-                <a href="#">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://pasturescout.com/blog/about-us/">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Contact</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Feedback</a>
+                <a href="<?=base_url()?>terms/">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="<?=base_url()?>about/">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="<?=base_url()?>contact">Contact</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="<?=base_url()?>membership">Membership</a>
             </span><!-- close site_links -->
 
             <!-- COPYRIGHT -->
             <span id="copyright">
-                <p>Copyright &#169; 2012-2013 PastureScout, LLC.</p>
+                <p>Copyright &#169; 2012-2013 AgLink, LLC.</p>
             </span><!-- close copyright -->
 
             <!-- SOCIAL MEDIA LINKS -->

@@ -103,10 +103,11 @@ website:   	http://www.themepunch.com
 
 .kb-fullsize p{
 	font-family: Arial, sans-serif;	
-	font-size:12px;
-	color:#777;	
+	font-size:14px;
+	color:#ccc;	
 	line-height:20px;	
 	text-shadow: 0px 1px 0px #000000;
+	padding-top:10px;
 }
 
 
@@ -149,12 +150,13 @@ website:   	http://www.themepunch.com
 }
 
 .light.kb-fullsize .video_kenburn .cp-title{
-	color:#999;
-	text-shadow: 0px 1px 0px #eee;		
+	color:#888;
+	text-shadow: 0px 1px 0px #777;		
 }
 
 .light.kb-fullsize .video_kenburn p{
-	text-shadow: 0px 1px 0px #eee;		
+	color:#888;
+	text-shadow: 0px 1px 0px #777;		
 }
 
 /**************************
@@ -175,10 +177,11 @@ website:   	http://www.themepunch.com
 
 .kb-mediumsize p{
 	font-family: Arial, sans-serif;	
-	font-size:12px;
-	color:#777;	
+	font-size:14px;
+	color:#ccc;	
 	line-height:18px;		
 	text-shadow: 0px 1px 0px #000000;	
+	padding-top: 10px;
 }
 
 /*******	VIDEO SETTINGS	********/
@@ -242,9 +245,10 @@ website:   	http://www.themepunch.com
 .kb-smallsize p{
 	font-family: Arial, sans-serif;	
 	font-size:11px;
-	color:#777;	
+	color:#ccc;	
 	line-height:16px;		
 	text-shadow: 0px 1px 0px #000000;	
+	padding-top:10px;
 }
 
 /*******	VIDEO SETTINGS	********/

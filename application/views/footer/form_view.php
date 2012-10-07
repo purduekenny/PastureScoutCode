@@ -18,7 +18,7 @@
 
             <!-- COPYRIGHT -->
             <span id="copyright">
-                <p>Copyright &#169; 2012-2013 PastureScout, LLC.</p>
+                <p>Copyright &#169; 2012-2013 AgLink, LLC.</p>
             </span><!-- close copyright -->
 
             <!-- SOCIAL MEDIA LINKS -->
