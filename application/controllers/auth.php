@@ -397,7 +397,21 @@ class Auth extends CI_Controller
 					foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
 				}
 			}
+			$user_id = $this->tank_auth->get_user_id();
+			$this->load->model('user');
+			//find out days left until subscription ends
+            $data['userdata'] = $this->user->get_signup_date($user_id);
+            $date_created = date("Y-m-d", strtotime($data['userdata']['created']));
+            //Add one month to date created
+            $free_end_date = strtotime(date("Y-m-d", strtotime($date_created)) . "+1 month");
+            //Right now
+            $now = time();
+            $time_left = $free_end_date-$now;
+            $days_left = round((($time_left/24)/60)/60); //probably...
+            $data['userdata']['days_left'] = $days_left;
+
 			$this->load->view('header/main_view');
+			$this->load->view('my_account/nav', $data);
 			$this->load->view('auth/change_password_form', $data);
 			$this->load->view('footer/main_view');
 		}
@@ -493,7 +507,22 @@ class Auth extends CI_Controller
 					foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
 				}
 			}
+			$user_id = $this->tank_auth->get_user_id();
+			$this->load->model('user');
+			//find out days left until subscription ends
+            $data['userdata'] = $this->user->get_signup_date($user_id);
+            $date_created = date("Y-m-d", strtotime($data['userdata']['created']));
+            //Add one month to date created
+            $free_end_date = strtotime(date("Y-m-d", strtotime($date_created)) . "+1 month");
+            //Right now
+            $now = time();
+            $time_left = $free_end_date-$now;
+            $days_left = round((($time_left/24)/60)/60); //probably...
+            $data['userdata']['days_left'] = $days_left;
+
+
 			$this->load->view('header/main_view');
+			$this->load->view('my_account/nav', $data);
 			$this->load->view('auth/unregister_form', $data);
 			$this->load->view('footer/main_view');
 		}

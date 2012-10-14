@@ -36,7 +36,7 @@ class My_Account extends CI_Controller
             //$membership_expiration = $date
             $this->load->view('header/main_view');
             $this->load->view('my_account/nav', $data);
-            $this->load->view('my_account/edit_form', $data);
+            $this->load->view('my_account/index_view', $data);
             $this->load->view('footer/main_view');
         } else {
             // if logged in, not activated              

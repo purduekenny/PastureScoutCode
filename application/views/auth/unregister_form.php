@@ -5,11 +5,30 @@ $password = array(
 	'size'	=> 30,
 );
 ?>
-<?php echo form_open($this->uri->uri_string()); ?>
-	<ul>
-		<li><?php echo form_label('Password', $password['id']); ?></li>
-		<li><?php echo form_password($password); ?></li>
-		<li style="color: red;"><?php echo form_error($password['name']); ?><?php echo isset($errors[$password['name']])?$errors[$password['name']]:''; ?></li>
-	</ul>
-<?php echo form_submit('cancel', 'Delete account'); ?>
-<?php echo form_close(); ?>
+
+<div class="span8 content">
+    <h2>Delete your account</h2>
+<?php echo form_open($this->uri->uri_string(), array('class' => 'form-horizontal')); ?>
+
+    <div class="control-group">
+		<?php echo form_label('Password', $password['id'], array('class' => 'control-label')); ?>
+        <div class="controls">
+		<?php echo form_password($password); ?>
+		<?php echo form_error($password['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$password['name']])?$errors[$password['name']]:''; ?>
+        </div>
+    </div>
+<?php
+$data = array(
+    'name'        => 'edit',
+    'id'          => 'edit',
+    'value'       => 'Delete Account',
+    'class'       => 'btn btn-danger',
+    );
+echo form_submit($data);
+echo form_close(); ?>
+
+</div><!-- end span8 -->
+
+</div><!-- end row_fluid -->
+</div><!-- end container_fluid -->

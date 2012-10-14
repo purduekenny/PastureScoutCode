@@ -13,9 +13,9 @@ class Contact extends CI_Controller {
     function index()
     {
         //load homepage view
-        $this->load->view('header/homepage_view');
+        $this->load->view('homepage/header_view');
         $this->load->view('homepage/contact_view');
-        $this->load->view('footer/homepage_view');
+        $this->load->view('homepage/footer_view');
     }
 
     function email(){
@@ -61,8 +61,8 @@ class Contact extends CI_Controller {
                 $errors = $this->tank_auth->get_error_message();
                 foreach ($errors as $k => $v)   $data['errors'][$k] = $this->lang->line($v);
             }
-        $this->load->view('header/homepage_view');
+        $this->load->view('homepage/header_view');
         $this->load->view('homepage/contact_view');
-        $this->load->view('footer/homepage_view');
+        $this->load->view('homepage/footer_view');
     }
 }

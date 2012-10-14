@@ -116,7 +116,7 @@
                         <li class="navLi"><a href="<?=base_url()?>membership/">Membership</a></li>
                         <li class="navLi"><a href="<?=base_url()?>contact/">Contact</a></li>
                     </ul><!-- close navigation -->
-                        <a href="auth/login" id="button_login">
+                        <a href="<?=base_url()?>auth/login" id="button_login">
                             <img src="<?= base_url('assets/images/homepage/login.png'); ?>" alt="User Login" width="87" height="28">
                         </a>
                 </div><!--end nav wrapper -->

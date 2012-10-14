@@ -41,6 +41,7 @@ class User extends CI_Model{
 				  `last_name`,
 				  `password`,
 				  `email`,
+				  `paypal`,
 				  `street`,
 				  `city`,
 				  `state`,
