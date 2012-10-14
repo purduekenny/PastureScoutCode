@@ -166,3 +166,4 @@ pip-log.txt
 
 applications/config/database.php
 applications/config/config.php
+sftp-config.json
