@@ -43,7 +43,6 @@ code {
 </head>
 <body>
 
-<p><a href="http://www.angelleye.com"><img src="/demo/codeigniter/images/logo.jpg" alt="Angell EYE Web Solutions Made Easy" width="500" height="102" border="0"></a></p>
 <h1>Angell EYE PayPal Adaptive Payments CodeIgniter Library Demo	</h1>
 <p>This library is written to reflect PayPal's documentation directly. It's very simple to use with a quick understanding of the way it's designed.</p>
 <ul>

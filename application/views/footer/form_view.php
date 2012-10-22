@@ -25,6 +25,8 @@
             <ul id="footerSocial">
                 <li class="sociaMediaLi"><a href="http://www.facebook.com/pasturescout" target="_blank"><img src='<?= base_url("assets/images/main/icon_facebook.png"); ?>' width="24" height="24" alt="Facebook link" /></a></li>
                 <li class="sociaMediaLi"><a href="http://www.twitter.com/pasturescout" target="_blank"><img src='<?= base_url("assets/images/main/icon_twitter.png"); ?>' width="24" height="24" alt="Twitter link" /></a></li>
+                <li class="sociaMediaLi"><a href="http://www.linkedin.com/company/ag-link-incorporated" target="_blank"><img src='<?= base_url("assets/images/main/icon_linkedin.png"); ?>' width="24" height="24" alt="Linked In" /></a></li>
+                <li class="sociaMediaLi"><a href="http://pasturescout.com/blog/" target="_blank"><img src='<?= base_url("assets/images/main/icon_blog.png"); ?>' width="24" height="24" alt="Pasture Scout Blog" /></a></li>
             </ul><!-- close social media -->
             
         </div><!-- close footer links -->

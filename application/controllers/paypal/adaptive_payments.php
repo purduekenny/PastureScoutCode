@@ -37,7 +37,7 @@ class Adaptive_payments extends CI_Controller
 	
 	function index()
 	{
-		$this->load->view('adaptive_payments_demo');
+		$this->load->view('paypal/adaptive_payments_demo');
 	}
 	
 	function Pay()
