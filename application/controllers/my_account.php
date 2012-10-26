@@ -10,8 +10,6 @@ class My_Account extends CI_Controller
         $this->load->library('tank_auth');
         $this->lang->load('tank_auth');
         $this->load->model('user');
-
-
     }
 
     function index()

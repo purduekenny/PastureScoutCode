@@ -112,8 +112,8 @@ class PayPal_IPN
         $this->debug = $settings['debug'];
 
         // We load the two models here in the constructor because they are used throughout the library
-        $this->_ci->load->model('Ipn_log_model', 'IPNLog', TRUE);
-        $this->_ci->load->model('Ipn_order_model', 'IPNOrder', TRUE);
+        $this->_ci->load->model('Ipn_log', 'IPNLog', TRUE);
+        $this->_ci->load->model('Ipn_order', 'IPNOrder', TRUE);
     }
 
     // The key functionality in this library. Extracts the fields from the IPN notification and then
