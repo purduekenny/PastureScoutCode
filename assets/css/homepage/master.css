@@ -62,20 +62,16 @@ nav {
 .socialMediaList {
     position:relative;
     display: block;
-    left:258px;
+    left:222px;
     top: -20px;
 }
 
 .socialMediaLi {
     display:inline;
     border:0px;
+    width:24px;
 }
 
-.navList(){
-    position: relative;
-    width:100px;
-    height:45px;
-}
 .navLi {
     font-size:15px;
     font-weight:bolder;
@@ -201,6 +197,10 @@ h2 {
     -webkit-text-shadow: 1px 1px 2px #cecece;
     text-shadow: 1px 1px 2px #cecece;
     margin:0 0 13px -2px;
+}
+
+td ul{
+    list-style: disc;
 }
 
 /***** STICKY FOOTER *****/

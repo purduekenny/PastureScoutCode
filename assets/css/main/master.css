@@ -179,6 +179,10 @@ table td{
     padding:5px;
 }
 
+table ul{
+    list-style: disc;
+    padding-left: 25px;
+}
 .error{
     display: block;
     color: red;

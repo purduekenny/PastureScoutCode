@@ -85,16 +85,56 @@ class User extends CI_Model{
 	 * get date signed up.
 	 *
 	 * @param	int
-	 * @return	null
+	 * @return	array
 	 */
 	function get_signup_date($user_id){
 		$this->db->select('`created`');
 		$this->db->where('id', $user_id);
 		$query = $this->db->get('users');
 		return $query->row_array();
-		
-		return NULL;
 	}
+
+	/**
+	 * get date signed up for a subscription.
+	 *
+	 * @param	int
+	 * @return	array
+	 */
+	function get_sub_signup_date($user_id){
+		$this->db->select('`created_at`');
+		$this->db->where('custom', $user_id);
+		$query = $this->db->get('ipn_orders');
+		return $query->row_array();
+	}
+
+	/**
+	 * Check if user is subscribed to Pasture Seeking.
+	 *
+	 * @param	int
+	 * @return	int
+	 */
+	function seeking_sub($user_id){
+		$this->db->select('`id`');
+		$this->db->where('`custom`', $user_id);
+		$this->db->where('`transaction_subject`', 'Pasture Seeking');
+		$query = $this->db->get('ipn_orders');
+		return $query->num_rows();
+	}
+
+	/**
+	 * Check if user is subscribed to Pasture Leasing.
+	 *
+	 * @param	int
+	 * @return	int
+	 */
+	function leasing_sub($user_id){
+		$this->db->select('`id`');
+		$this->db->where('`custom`', $user_id);
+		$this->db->where('`transaction_subject`', 'Pasture Leasing');
+		$query = $this->db->get('ipn_orders');
+		return $query->num_rows();
+	}
+
 
 
 }

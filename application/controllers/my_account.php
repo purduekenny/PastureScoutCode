@@ -10,8 +10,6 @@ class My_Account extends CI_Controller
         $this->load->library('tank_auth');
         $this->lang->load('tank_auth');
         $this->load->model('user');
-
-
     }
 
     function index()
@@ -22,21 +20,20 @@ class My_Account extends CI_Controller
             $user_id = $this->tank_auth->get_user_id();
             $data['info']=$this->user->get_account_info($user_id);
 
-            //find out days left until subscription ends
-            $data['userdata'] = $this->user->get_signup_date($user_id);
-            $date_created = date("Y-m-d", strtotime($data['userdata']['created']));
-            //Add one month to date created
-            $free_end_date = strtotime(date("Y-m-d", strtotime($date_created)) . "+1 month");
-            //Right now
-            $now = time();
-            $time_left = $free_end_date-$now;
-            $days_left = round((($time_left/24)/60)/60); //probably...
-            $data['userdata']['days_left'] = $days_left;
+            //get subscription data
+            $sign_up_date = $this->user->get_signup_date($user_id);
+            $seeking_sub_check = $this->user->seeking_sub($user_id);
+            $leasing_sub_check = $this->user->leasing_sub($user_id);
+            //Show Pasture Subscription text in sidebar
+            $data['subscription_access'] = pasture_subscription_access($user_id, $sign_up_date, $seeking_sub_check, $leasing_sub_check);
 
-            //$membership_expiration = $date
             $this->load->view('header/main_view');
             $this->load->view('my_account/nav', $data);
-            $this->load->view('my_account/index_view', $data);
+            $this->load->view('my_account/index_top_view', $data);
+            //show content based on subscription
+            $index_content = index_content($user_id, $sign_up_date, $seeking_sub_check, $leasing_sub_check);
+            $this->load->view($index_content, $data);
+            $this->load->view('my_account/index_bottom_view', $data);
             $this->load->view('footer/main_view');
         } else {
             // if logged in, not activated              
@@ -121,16 +118,12 @@ class My_Account extends CI_Controller
                     $errors = $this->tank_auth->get_error_message();
                     foreach ($errors as $k => $v)   $data['errors'][$k] = $this->lang->line($v);
                 }
-                //find out days left until subscription ends
-                $data['userdata'] = $this->user->get_signup_date($user_id);
-                $date_created = date("Y-m-d", strtotime($data['userdata']['created']));
-                //Add one month to date created
-                $free_end_date = strtotime(date("Y-m-d", strtotime($date_created)) . "+1 month");
-                //Right now
-                $now = time();
-                $time_left = $free_end_date-$now;
-                $days_left = round((($time_left/24)/60)/60); //probably...
-                $data['userdata']['days_left'] = $days_left;
+
+                $sign_up_date = $this->user->get_signup_date($user_id);
+                $seeking_sub_check = $this->user->seeking_sub($user_id);
+                $leasing_sub_check = $this->user->leasing_sub($user_id);
+                //Show Pasture Subscription text in sidebar
+                $data['subscription_access'] = pasture_subscription_access($user_id, $sign_up_date, $seeking_sub_check, $leasing_sub_check);
             }
             $data['info']=$this->user->get_account_info($user_id);
             $this->load->view('header/main_view');
@@ -141,15 +134,57 @@ class My_Account extends CI_Controller
     }
 
     /**
-     * Show info message
+     * Caculate days left until free subscription ends
      *
-     * @param   string
-     * @return  void
+     * @return int
      */
-    function _show_message($message)
-    {
-        $this->session->set_flashdata('message', $message);
+    function sub_days_left($sign_up_date) {
+        $date_created = date("Y-m-d", strtotime($sign_up_date['created']));
+        //Add one month to date created
+        $free_end_date = strtotime(date("Y-m-d", strtotime($date_created)) . "+1 month");
+        //Right now
+        $now = time();
+        $time_left = $free_end_date - $now;
+        $days_left = round((($time_left/24)/60)/60); 
+        return $days_left;
     }
+
+    /**
+     * Shows subscription in sidebar
+     *
+     * @return string
+     */
+    function pasture_subscription_access($user_id, $sign_up_date, $seeking_sub_check, $leasing_sub_check){
+        $days_left = sub_days_left($sign_up_date);
+        if($leasing_sub_check >= 1){
+            return "You are a Pasture Leasing Subscriber";
+        } else if ($seeking_sub_check >= 1) {
+            return "You are a Pasture Seeking Subscriber";
+        } else if ($days_left <= 0) {
+            return "Your free subscription has expired.";
+        } else {
+            return "You have " . $days_left. " until your free trial ends";
+        }
+    }
+
+    /**
+     * Shows content in index
+     *
+     * @return string
+     */
+    function index_content($user_id, $sign_up_date, $seeking_sub_check, $leasing_sub_check){
+        $days_left = sub_days_left($sign_up_date);
+        if($leasing_sub_check >= 1){
+            return 'my_account/index_leaser_view';
+        } else if ($seeking_sub_check >= 1) {
+            return 'my_account/index_seeker_view';
+        } else if ($days_left <= 0) {
+            return 'my_account/index_free_view';
+        } else {
+            return 'my_account/index_free_view';
+        }
+    }
+
 
 /* End of file my_account.php */
 /* Location: ./application/controllers/my_account.php */
