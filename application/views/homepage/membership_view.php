@@ -37,7 +37,7 @@
                 <ul>
                     <li>See owner contact information for all properties</li>
                     <li>Be eligible to bid on auction properties</li>
-                    <li><strong>$25 for 1 month, $60 for 3 months</strong></li>
+                    <li><strong>$25 for 1 month</strong></li>
                 </ul>
             </div>
             <div class="span6">

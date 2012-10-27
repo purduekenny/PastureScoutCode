@@ -199,6 +199,10 @@ h2 {
     margin:0 0 13px -2px;
 }
 
+td ul{
+    list-style: disc;
+}
+
 /***** STICKY FOOTER *****/
 .wrapper { min-height:100%; height:auto !important; height:100%; margin:0 auto -363px; /* the bottom margin is the negative value of the footer's height */ }
 .push { height:363px; /* .push must be the same height as .footer */ }

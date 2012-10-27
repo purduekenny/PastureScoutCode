@@ -26,10 +26,13 @@ class My_Account extends CI_Controller
             //Show Pasture Subscription text in sidebar
             $data['subscription_access'] = pasture_subscription_access($user_id, $sign_up_date, $seeking_sub_check, $leasing_sub_check);
 
-            //$membership_expiration = $date
             $this->load->view('header/main_view');
             $this->load->view('my_account/nav', $data);
-            $this->load->view('my_account/index_view', $data);
+            $this->load->view('my_account/index_top_view', $data);
+            //show content based on subscription
+            $index_content = index_content($user_id, $sign_up_date, $seeking_sub_check, $leasing_sub_check);
+            $this->load->view($index_content, $data);
+            $this->load->view('my_account/index_bottom_view', $data);
             $this->load->view('footer/main_view');
         } else {
             // if logged in, not activated              
@@ -115,8 +118,11 @@ class My_Account extends CI_Controller
                     foreach ($errors as $k => $v)   $data['errors'][$k] = $this->lang->line($v);
                 }
 
+                $sign_up_date = $this->user->get_signup_date($user_id);
+                $seeking_sub_check = $this->user->seeking_sub($user_id);
+                $leasing_sub_check = $this->user->leasing_sub($user_id);
                 //Show Pasture Subscription text in sidebar
-                $data['subscription_access'] = $pasture_subscription_access($user_id);
+                $data['subscription_access'] = pasture_subscription_access($user_id, $sign_up_date, $seeking_sub_check, $leasing_sub_check);
             }
             $data['info']=$this->user->get_account_info($user_id);
             $this->load->view('header/main_view');
@@ -128,6 +134,7 @@ class My_Account extends CI_Controller
 
     /**
      * Caculate days left until free subscription ends
+     *
      * @return int
      */
     function sub_days_left($sign_up_date) {
@@ -143,18 +150,37 @@ class My_Account extends CI_Controller
 
     /**
      * Shows subscription in sidebar
+     *
      * @return string
      */
     function pasture_subscription_access($user_id, $sign_up_date, $seeking_sub_check, $leasing_sub_check){
         $days_left = sub_days_left($sign_up_date);
         if($leasing_sub_check >= 1){
-            return "You are a Pasture Seeking Subscriber";
-        } else if ($seeking_sub_check >= 1) {
             return "You are a Pasture Leasing Subscriber";
+        } else if ($seeking_sub_check >= 1) {
+            return "You are a Pasture Seeking Subscriber";
         } else if ($days_left <= 0) {
             return "Your free subscription has expired.";
         } else {
             return "You have " . $days_left. " until your free trial ends";
+        }
+    }
+
+    /**
+     * Shows content in index
+     *
+     * @return string
+     */
+    function index_content($user_id, $sign_up_date, $seeking_sub_check, $leasing_sub_check){
+        $days_left = sub_days_left($sign_up_date);
+        if($leasing_sub_check >= 1){
+            return 'my_account/index_leaser_view';
+        } else if ($seeking_sub_check >= 1) {
+            return 'my_account/index_seeker_view';
+        } else if ($days_left <= 0) {
+            return 'my_account/index_free_view';
+        } else {
+            return 'my_account/index_free_view';
         }
     }
 

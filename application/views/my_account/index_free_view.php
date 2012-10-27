@@ -1,11 +1,7 @@
 <?php
     $user_id = $this->tank_auth->get_user_id();
 ?>
-<div class="span8 content">
-<h2>My Account</h2>
-
-
-<h2>Choose a subscription</h2>
+<h3>Choose a subscription</h3>
 
 <table>
     <tr>
@@ -71,10 +67,3 @@
     </tr>
 
 </table>
-
-
-
-
-</div><!-- end span8 content -->
-</div><!-- end row_fluid -->
-</div><!-- end container_fluid -->
