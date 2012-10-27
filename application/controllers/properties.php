@@ -154,9 +154,6 @@ class Properties extends CI_Controller
             $this->form_validation->set_rules('country', 'Country', 'trim|required|xss_clean|max_length[50]');
             $this->form_validation->set_rules('max_head_count', 'Max Head Count', 'trim|numeric|xss_clean|max_length[100]');
             $this->form_validation->set_rules('restricted_stock_type', 'Restricted Stock Type', 'trim|xss_clean|max_length[100]');
-            $this->form_validation->set_rules('min_bid', 'Mininum Bid', 'trim|numeric|xss_clean|max_length[100]');
-            $this->form_validation->set_rules('opening_bid_date', 'Opening Bid Date', 'trim|required|xss_clean|max_length[100]');
-            $this->form_validation->set_rules('closing_bid_date', 'Closing Bid Date', 'trim|required|xss_clean|max_length[100]');
             $this->form_validation->set_rules('other_info', '', 'trim|xss_clean|max_length[500]');
             $this->form_validation->set_rules('size', 'Size', 'trim|numeric|required|xss_clean|max_length[100]');
             $this->form_validation->set_rules('min_lease_term', 'Minimum Lease Term', 'trim|required|xss_clean|max_length[100]');
@@ -190,9 +187,6 @@ class Properties extends CI_Controller
                     'restricted_stock_type'  => $this->form_validation->set_value('restricted_stock_type'),
                     'max_head_count'         => $this->form_validation->set_value('max_head_count'),
                     'min_bid'                => $this->form_validation->set_value('min_bid'),
-                    'opening_bid_date'       => $opening_bid_date,
-                    'closing_bid_date'       => $closing_bid_date,
-                    'other_info'             => $this->form_validation->set_value('other_info')
                 );
 
                 //call model and create new property
@@ -215,7 +209,7 @@ class Properties extends CI_Controller
         $sign_up_date = $this->user->get_signup_date($user_id);
         $seeking_sub_check = $this->user->seeking_sub($user_id);
         $leasing_sub_check = $this->user->leasing_sub($user_id);
-        
+
         $this->load->view('header/main_view');
         $this->load->view('properties/add_form');
         $this->load->view('footer/main_view');
@@ -352,9 +346,19 @@ class Properties extends CI_Controller
 
             $data['property']['images'] = $image_array;
         }
+        //Check to see if there are auction permissions
+        $has_auction_permission = $this->property->public_pasture_auction($property_id);
+        if($has_auction_permission >= 1){
+            $view_bid_info = 'properties/view_bid';
+        } else {
+            $view_bid_info = 'properties/view_nothing';
+        }
+
         $this->load->view('header/main_view');
         $this->load->view('properties/nav');
         $this->load->view('properties/view', $data);
+        $this->load->view($view_bid_info, $data);
+        $this->load->view('properties/view_bottom', $data);
         $this->load->view('footer/main_view');
     }
 
@@ -392,13 +396,36 @@ class Properties extends CI_Controller
                 //remove last array item
                 array_pop($image_array);
             }
-
+            //put images into data array to be used in the view
             $data['property']['images'] = $image_array;
+            //calculate how much to charge for paypal
+            if ($data['property']['size'] * .1 > 100){
+                $data['property']['paypal_calculation'] = $data['property']['size'] * .1;
+            } else {
+                $data['property']['paypal_calculation'] = 100;
+            }    
             
         }
+
+        //Check to see if there are auction permissions
+        $has_auction_permission = $this->property->public_pasture_auction($property_id);
+        //check for leasing subscription
+        $leasing_sub_check = $this->user->leasing_sub($user_id);
+        if($leasing_sub_check >= 1){
+            if($has_auction_permission >= 1){
+                $view_bid_info = 'properties/view_mine_auction_bought';
+            } else {
+                $view_bid_info = 'properties/view_mine_buy';
+            }
+        } else {
+            $view_bid_info = 'properties/view_nothing';
+        }
+
         $this->load->view('header/main_view');
         $this->load->view('properties/nav');
         $this->load->view('properties/view_mine', $data);
+        $this->load->view($view_bid_info, $data);
+        $this->load->view('properties/view_mine_bottom', $data);
         $this->load->view('footer/main_view');
     }
 
@@ -424,24 +451,6 @@ class Properties extends CI_Controller
         $this->load->view('header/main_view');
         $this->load->view('properties/edit_form', $data);
         $this->load->view('footer/main_view');
-    }
-
-    /**
-     * Shows content in index
-     *
-     * @return string
-     */
-    function index_content($user_id, $sign_up_date, $seeking_sub_check, $leasing_sub_check){
-        $days_left = sub_days_left($sign_up_date);
-        if($leasing_sub_check >= 1){
-            return 'my_account/index_leaser_view';
-        } else if ($seeking_sub_check >= 1) {
-            return 'my_account/index_seeker_view';
-        } else if ($days_left <= 0) {
-            return 'my_account/index_free_view';
-        } else {
-            return 'my_account/index_free_view';
-        }
     }
 }
 

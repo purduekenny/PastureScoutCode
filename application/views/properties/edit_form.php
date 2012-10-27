@@ -51,7 +51,7 @@ $min_lease_term = array(
 
 $lease_availability_date = "";
 //if date is set, make date pretty
-if(isset($property['lease_availability_date'])){
+if($property['lease_availability_date'] != '0000-00-00 00:00:00'){
     // MM/DD/YYYY
     $formatted_lease_availability_date = date('m/d/Y', strtotime($property['lease_availability_date']));
 }else{
@@ -130,7 +130,7 @@ $min_bid = array(
 
 $formatted_opening_bid_date = "";
 //if date is set, make date pretty
-if(isset($property['opening_bid_date'])){
+if($property['opening_bid_date'] != '0000-00-00 00:00:00'){
     // MM/DD/YYYY
     $formatted_opening_bid_date = date('m/d/Y', strtotime($property['opening_bid_date']));
 }else{
@@ -146,7 +146,7 @@ $opening_bid_date = array(
 
 $formatted_closing_bid_date = "";
 //if date is set, make date pretty
-if(isset($property['closing_bid_date'])){
+if($property['closing_bid_date'] != '0000-00-00 00:00:00'){
     // MM/DD/YYYY
     $formatted_closing_bid_date = date('m/d/Y', strtotime($property['closing_bid_date']));
 }else{

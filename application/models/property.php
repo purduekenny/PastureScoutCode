@@ -231,10 +231,13 @@ class Property extends CI_Model{
      * @return  int
      */
     function public_pasture_auction($property_id){
-        $this->db->select('`id`');
-        $this->db->where('`custom`', $user_id);
-        $this->db->where('`transaction_subject`', 'Public Pasture Auction');
-        $query = $this->db->get('`ipn_orders`');
+        $this->db->select('`ipn_orders.id`');
+        $this->db->from('ipn_orders');
+        $this->db->join('ipn_order_items', 'ipn_order_items.order_id = ipn_orders.id');
+        $this->db->where('`custom`', $property_id);
+        $this->db->where('`ipn_order_items.item_name`', 'Public Pasture Auction');
+        $query = $this->db->get();
+
         return $query->num_rows();
     }
 

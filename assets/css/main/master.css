@@ -320,7 +320,17 @@ a:hover {
     text-decoration:underline;
 }
 
-
+.list_style_disc{
+    list-style: disc;
+}
+.list_style_disc li{
+    display:inline-block;
+    width:100%;
+    min-height:20px;
+    margin: 0px 0 5px 0;
+    padding-left:25px;
+    border:none;
+}
 .message{
     color:#9d6601;
     padding:7px;
