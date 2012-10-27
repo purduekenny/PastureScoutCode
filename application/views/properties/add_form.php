@@ -252,6 +252,14 @@ $other_info = array(
             <?php echo isset($errors[$allowed_uses['name']])?$errors[$allowed_uses['name']]:''; ?>
         </div>
     </div>
+    <div class="control-group">
+        <?php echo form_label('Description', $other_info['id'], array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo form_textarea($other_info); ?>
+            <?php echo form_error($other_info['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$other_info['name']])?$errors[$other_info['name']]:''; ?>
+        </div>
+    </div>
 <hr>
 <h2>Stock Restrictions (Optional)</h2>
     <div class="control-group">
@@ -268,40 +276,6 @@ $other_info = array(
             <?php echo form_input($max_head_count); ?>
             <?php echo form_error($max_head_count['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$max_head_count['name']])?$errors[$max_head_count['name']]:''; ?>
-        </div>
-    </div>
-<hr>
-<h2>Bid Information</h2>
-    <div class="control-group">
-        <?php echo form_label('Min bid', $min_bid['id'], array('class' => 'control-label')); ?>
-        <div class="controls">
-            <?php echo form_input($min_bid); ?>
-            <?php echo form_error($min_bid['name'], '<span class="error">', '</span>'); ?>
-            <?php echo isset($errors[$min_bid['name']])?$errors[$min_bid['name']]:''; ?>
-        </div>
-    </div>
-    <div class="control-group">
-        <?php echo form_label('Opening Bid Date', $opening_bid_date['id'], array('class' => 'control-label')); ?>
-        <div class="controls">
-            <?php echo form_input($opening_bid_date); ?>
-            <?php echo form_error($opening_bid_date['name'], '<span class="error">', '</span>'); ?>
-            <?php echo isset($errors[$opening_bid_date['name']])?$errors[$opening_bid_date['name']]:''; ?>
-        </div>
-    </div>
-    <div class="control-group">
-        <?php echo form_label('Closing Bid Date', $closing_bid_date['id'], array('class' => 'control-label')); ?>
-        <div class="controls">
-            <?php echo form_input($closing_bid_date); ?>
-            <?php echo form_error($closing_bid_date['name'], '<span class="error">', '</span>'); ?>
-            <?php echo isset($errors[$closing_bid_date['name']])?$errors[$closing_bid_date['name']]:''; ?>
-        </div>
-    </div>
-    <div class="control-group">
-        <?php echo form_label('Description', $other_info['id'], array('class' => 'control-label')); ?>
-        <div class="controls">
-            <?php echo form_textarea($other_info); ?>
-            <?php echo form_error($other_info['name'], '<span class="error">', '</span>'); ?>
-            <?php echo isset($errors[$other_info['name']])?$errors[$other_info['name']]:''; ?>
         </div>
     </div>
 <hr>

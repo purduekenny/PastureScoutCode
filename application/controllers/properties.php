@@ -210,6 +210,12 @@ class Properties extends CI_Controller
         //get user_id
         $user_id = $this->tank_auth->get_user_id();
         $data['info']=$this->user->get_account_info($user_id);
+
+        //get subscription data
+        $sign_up_date = $this->user->get_signup_date($user_id);
+        $seeking_sub_check = $this->user->seeking_sub($user_id);
+        $leasing_sub_check = $this->user->leasing_sub($user_id);
+        
         $this->load->view('header/main_view');
         $this->load->view('properties/add_form');
         $this->load->view('footer/main_view');
@@ -418,6 +424,24 @@ class Properties extends CI_Controller
         $this->load->view('header/main_view');
         $this->load->view('properties/edit_form', $data);
         $this->load->view('footer/main_view');
+    }
+
+    /**
+     * Shows content in index
+     *
+     * @return string
+     */
+    function index_content($user_id, $sign_up_date, $seeking_sub_check, $leasing_sub_check){
+        $days_left = sub_days_left($sign_up_date);
+        if($leasing_sub_check >= 1){
+            return 'my_account/index_leaser_view';
+        } else if ($seeking_sub_check >= 1) {
+            return 'my_account/index_seeker_view';
+        } else if ($days_left <= 0) {
+            return 'my_account/index_free_view';
+        } else {
+            return 'my_account/index_free_view';
+        }
     }
 }
 

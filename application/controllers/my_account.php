@@ -20,6 +20,7 @@ class My_Account extends CI_Controller
             $user_id = $this->tank_auth->get_user_id();
             $data['info']=$this->user->get_account_info($user_id);
 
+            //get subscription data
             $sign_up_date = $this->user->get_signup_date($user_id);
             $seeking_sub_check = $this->user->seeking_sub($user_id);
             $leasing_sub_check = $this->user->leasing_sub($user_id);
