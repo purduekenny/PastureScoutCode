@@ -1,7 +1,6 @@
 <?php
-
 $user_id = $this->tank_auth->get_user_id();
-$days_left = isset($userdata['days_left']) ? $userdata['days_left'] : 'some';
+$sub_access = isset($subscription_access) ? $subscription_access : 'uh oh';
 ?>
 <div class="container-fluid">
 <div class="row-fluid">
@@ -14,7 +13,7 @@ $days_left = isset($userdata['days_left']) ? $userdata['days_left'] : 'some';
         </ul>
 
     <div id="dashboard_nav" class="12 content">
-        <p style="padding-top:20px;">You have <strong><?=$days_left?></strong> days left until your free subscription ends</p>
+        <p style="padding-top:20px;"><?=$sub_access?></p>
     </div>
     </div>
 

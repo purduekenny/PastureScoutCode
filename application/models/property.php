@@ -224,8 +224,36 @@ class Property extends CI_Model{
         return $query->num_rows();
     }
 
+    /**
+     * Check to see if Pasture can be put on a public auction
+     *
+     * @param   int
+     * @return  int
+     */
+    function public_pasture_auction($property_id){
+        $this->db->select('`id`');
+        $this->db->where('`custom`', $user_id);
+        $this->db->where('`transaction_subject`', 'Public Pasture Auction');
+        $query = $this->db->get('`ipn_orders`');
+        return $query->num_rows();
+    }
+
+    /**
+     * Check to see if Pasture can be put on a private auction
+     *
+     * @param   int
+     * @return  int
+     */
+    function private_pasture_auction_check($property_id){
+        $this->db->select('`id`');
+        $this->db->where('`custom`', $user_id);
+        $this->db->where('`transaction_subject`', 'Private Pasture Auction');
+        $query = $this->db->get('`ipn_orders`');
+        return $query->num_rows();
+    }
+
 
 }
 
 /* End of file users.php */
-/* Location: ./application/models/users.php */
+/* Location: ./application/models/property.php */
