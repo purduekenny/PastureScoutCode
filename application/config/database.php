@@ -45,13 +45,13 @@
 | the active record class
 */
 
-$active_group = 'dev';
+$active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'pasture_scout';
+$db['default']['username'] = 'digital_ps1';
+$db['default']['password'] = 'reallylongpassword';
+$db['default']['database'] = 'digital_ps1';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
@@ -84,3 +84,23 @@ $db['dev']['stricton'] = FALSE;
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */
+
+/* 
+ERROR CHECK DATABASE CONNECTION - KW
+echo '<pre>';
+     print_r($db['default']);
+  echo '</pre>';
+
+  echo 'Trying to connect to database: ' .$db['default']['database'];
+  $dbh=mysql_connect
+  (
+    $db['default']['hostname'],
+    $db['default']['username'],
+    $db['default']['password'])
+    or die('Cannot connect to the database because: ' . mysql_error());
+    mysql_select_db ($db['default']['database']);
+
+    echo '<br />   Connected OK:'  ;
+    die( 'file: ' .__FILE__ . '--> Line: ' .__LINE__);
+    */
+     

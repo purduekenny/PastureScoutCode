@@ -182,7 +182,7 @@ $other_info = array(
     <div class="control-group">
         <?php echo form_label('Size', $size['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($size); ?>
+            <div class="input-append"><?php echo form_input($size); ?><span class="add-on">acres</span></div>
             <?php echo form_error($size['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$size['name']])?$errors[$size['name']]:''; ?>
         </div>

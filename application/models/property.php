@@ -255,6 +255,49 @@ class Property extends CI_Model{
         return $query->num_rows();
     }
 
+    function search($state, $size, $cattle){
+        $this->db->select('
+            `id`, 
+            `name`, 
+            `location`, 
+            `region`, 
+            `city`, 
+            `state`, 
+            `country`, 
+            `restricted_stock_type`, 
+            `max_head_count`, 
+            `min_bid`, 
+            `opening_bid_date`, 
+            `closing_bid_date`,
+            `other_info`,
+            `photos`,
+            `size`,
+            `min_lease_term`,
+            `lease_availability_date`,
+            `features_forage_type`,
+            `handling_facilities`,
+            `allowed_uses`,
+            `user_id`
+        ');
+
+        if($state != "NO")
+        {
+            $this->db->where('`state`', $state);
+        }
+        if(!empty($size))
+        {
+            $this->db->where('`size`', $size);
+        }
+        if($cattle != "NO")
+        {
+            $this->db->where('`allowed_uses`', $cattle);
+        }
+
+        $this->db->where('`status`', 'active');
+        $query = $this->db->get('properties');
+        return $query->row_array();
+    }
+
 
 }
 
