@@ -426,6 +426,7 @@ class Properties extends CI_Controller
         $this->load->view('footer/main_view');
     }
 
+<<<<<<< HEAD
     /**
      * Shows content in index
      *
@@ -443,6 +444,84 @@ class Properties extends CI_Controller
             return 'my_account/index_free_view';
         }
     }
+=======
+
+    /** Search
+    *
+    * @return void
+    */
+    function search($start=0) {
+        if (!$this->tank_auth->is_logged_in()) {                                    
+            // if logged in, not activated              
+            $this->session->set_flashdata('message', 'You must be logged in to use this page');
+            redirect(base_url() . 'auth/login');
+        } else if ($user_id= ''){
+            $this->session->set_flashdata('message', 'oops!');
+            redirect(base_url() . 'my_account');
+        } else {
+
+            $state = $this->input->post('state');
+            $size = $this->input->post('size');
+            $cattle = $this->input->post('allowed_uses');
+
+
+            // if all of the search terms aren't empty
+            // then query the database
+            if(!empty($state) || !empty($size) || !empty($cattle))
+            {
+                
+
+                            //pagination configuration
+                $config['base_url'] = base_url().'properties/my_properties/index/';
+                $config['total_rows'] = $this->property->get_properties_count_by_user_id($user_id);
+                $config['full_tag_open'] = '<div class="pagination"><ul>';
+                $config['full_tag_close'] = '</ul></div>';
+                $config['first_link'] = 'First';
+                $config['first_tag_open'] = '<li>';
+                $config['first_tag_close'] = '</li>';
+                $config['last_tag_open'] = '<li>';
+                $config['last_tag_close'] = '</li>';
+                $config['last_link'] = 'Last';
+                $config['next_link'] = '&gt;';
+                $config['next_tag_open'] = '<li>';
+                $config['next_tag_close'] = '</li>';
+                $config['prev_link'] = '&lt;';
+                $config['prev_tag_open'] = '<li>';
+                $config['prev_tag_close'] = '</li>';
+                $config['cur_tag_open'] = '<li class="active"><a href="#">';
+                $config['cur_tag_close'] = '</a></li>';
+                $config['num_tag_open'] = '<li>';
+                $config['num_tag_close'] = '</li>';
+
+                //if number of property rows less than 5
+                if ($config['total_rows'] < 5){
+                    $config['per_page'] = $config['total_rows'];
+                }else{
+                    $config['per_page'] = 5;
+                }
+
+                $data['properties'] = $this->property->search($state, $size, $cattle);
+                
+                //make pagination happen
+                $this->pagination->initialize($config);
+                $data['pages'] = $this->pagination->create_links();
+
+
+
+
+            }
+        }
+
+        $this->load->view('header/main_view');
+        $this->load->view('properties/nav');
+        $this->load->view('properties/search');
+        $this->load->view('footer/main_view');
+    }
+
+
+
+    
+>>>>>>> search changes
 }
 
 /* End of file properties.php */

@@ -88,6 +88,7 @@
         $("#first_name").focus();
 });
 </script>
+<<<<<<< HEAD
 
 <script type="text/javascript">
 
@@ -103,6 +104,16 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv
 
 })();
 
+=======
+<script type="text/javascript">
+// code for uservoice client feedback
+var uvOptions = {};
+(function() {
+var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/sDMTrxU2lexjxWhiBc3nbA.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+})();
+>>>>>>> search changes
 </script>
 </body>
 </html>
