@@ -211,7 +211,8 @@ table td{
 /* current page nav*/
 body#properties_index li#properties_index a,
 body#properties_my_properties li#properties_my_properties a,
-body#properties_create li#properties_create a{
+body#properties_create li#properties_create a,
+body#properties_search li#properties_search a {
     background: #9b7530; /* Old browsers */
     background: -moz-linear-gradient(-45deg, #9b7530 0%, #d8bd40 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#9b7530), color-stop(100%,#d8bd40)); /* Chrome,Safari4+ */
