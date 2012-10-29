@@ -300,6 +300,14 @@ isset($property['id']) ? $property['id'] : '';
             <?php echo isset($errors[$allowed_uses['name']])?$errors[$allowed_uses['name']]:''; ?>
         </div>
     </div>
+    <div class="control-group">
+        <?php echo form_label('Description', $other_info['id'], array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo form_textarea($other_info); ?>
+            <?php echo form_error($other_info['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$other_info['name']])?$errors[$other_info['name']]:''; ?>
+        </div>
+    </div>
 <hr>
     <h2>Stock Restrictions (Optional)</h2>
     <div class="control-group">
@@ -320,7 +328,9 @@ isset($property['id']) ? $property['id'] : '';
         </div>
     </div>
 <hr>
-    <h2>Bid Information</h2>
+
+
+<!--     <h2>Bid Information</h2>
     <div class="control-group">
         <?php echo form_label('Min bid', $min_bid['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -344,15 +354,8 @@ isset($property['id']) ? $property['id'] : '';
             <?php echo form_error($closing_bid_date['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$closing_bid_date['name']])?$errors[$closing_bid_date['name']]:''; ?>
         </div>
-    </div>
-    <div class="control-group">
-        <?php echo form_label('Description', $other_info['id'], array('class' => 'control-label')); ?>
-        <div class="controls">
-            <?php echo form_textarea($other_info); ?>
-            <?php echo form_error($other_info['name'], '<span class="error">', '</span>'); ?>
-            <?php echo isset($errors[$other_info['name']])?$errors[$other_info['name']]:''; ?>
-        </div>
-    </div>
+    </div> -->
+
 <hr>
     <?php 
         $data = array(

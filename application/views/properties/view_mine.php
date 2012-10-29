@@ -27,13 +27,14 @@
     <p><strong>Restricted Stock Type:</strong> <?php echo isset($property['restricted_stock_type']) ? $property['restricted_stock_type'] : 'Not specified'?> </p>
     <p><strong>Max Head Count:</strong> 
         <?php echo isset($property['max_head_count']) ? $property['max_head_count'] : 'Not specified'?> </p>
+    
+<!--     <h2>Bid Information</h2>
     <p><strong>Min Bid:</strong> 
         <?php echo isset($property['min_bid']) ? $property['min_bid'] : 'Not specified'?> </p>
-    <h2>Bid Information</h2>
     <p><strong>Opening Bid Date:</strong> 
         <?php echo ($property['opening_bid_date'] != '0000-00-00 00:00:00') ? $opening_bid_date_format : 'Not specified'?> </p>
     <p><strong>Closing Bid:</strong> 
-        <?php echo ($property['closing_bid_date'] != '0000-00-00 00:00:00') ? $closing_bid_date_format : 'Not specified'?> </p>
+        <?php echo ($property['closing_bid_date'] != '0000-00-00 00:00:00') ? $closing_bid_date_format : 'Not specified'?> </p> -->
 <hr>
 
     <!-- modal-gallery is the modal dialog used for the image gallery -->

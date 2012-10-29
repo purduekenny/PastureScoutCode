@@ -227,10 +227,15 @@ body#properties_search li#properties_search a {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9b7530', endColorstr='#d8bd40',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     color: #fff;
 }
+/*non subcruber a*/
+.non_subscriber a{
+    color: #fff !important;
+    background-color: #ccc !important;
+}
 
-#dashboard_nav li a{
-    color: #969696;
-    text-align: left;
+.non_subscriber a:hover{
+    color: #fff;
+    background: #ccc !important;
 }
 
 .row-fluid .span12{

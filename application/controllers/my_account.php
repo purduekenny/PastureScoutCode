@@ -185,6 +185,5 @@ class My_Account extends CI_Controller
         }
     }
 
-
 /* End of file my_account.php */
 /* Location: ./application/controllers/my_account.php */

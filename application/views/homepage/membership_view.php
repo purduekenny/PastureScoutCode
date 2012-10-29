@@ -28,15 +28,15 @@
                 <h3>Basic</h3>
                 <ul>
                     <li>Use the custom search tool to identify properties that meet your needs</li>
-                    <li>Save properties to your favorites</li>
-                    <li>Use the Lease Calculator to estimate your costs and breakevens</li>
+                    <li>Save property searches to your favorites</li>
+                    <!-- <li>Use the Lease Calculator to estimate your costs and breakevens</li> -->
                     <li><strong>Free</strong></li>
                 </ul>
 
                 <h3>Plus</h3>
                 <ul>
                     <li>See owner contact information for all properties</li>
-                    <li>Be eligible to bid on auction properties</li>
+                    <!-- <li>Be eligible to bid on auction properties</li> -->
                     <li><strong>$25 for 1 month</strong></li>
                 </ul>
             </div>
@@ -47,11 +47,11 @@
                     <li>Gain exposure to thousands of pasture seekers</li>
                     <li>Specify terms of lease</li>
                     <li>Access data about area lease prices</li>
-                    <li>Monitor seeker activity for your listing</li>
+                    <!-- <li>Monitor seeker activity for your listing</li> -->
                     <li><strong>Free for 1 month, then $35/month</strong></li>
                 </ul>
 
-                <h3>Public Auction</h3>
+<!--                 <h3>Public Auction</h3>
                 <ul>
                     <li>Specify length of auction, minimum bid, and bid increments</li>
                     <li>Monitor bid activity</li>
@@ -64,7 +64,7 @@
                     <li>Limit an auction to bidders of your choosing</li>
                     <li>Use PastureScout’s auction platform to manage your auction, saving you time and hassle</li>
                    <li><strong>$.10/acre, minimum $100</strong></li>
-                </ul>
+                </ul> -->
             </div>
         </div><!-- end row-fulid -->
     </div><!-- end content-->

@@ -55,7 +55,7 @@
                 <li><strong>Free for 1 month, then $35/month</strong></li>
             </ul>
 
-            <h3>Public Auction</h3>
+<!--             <h3>Public Auction</h3>
             <ul>
                 <li>Specify length of auction, minimum bid, and bid increments</li>
                 <li>Monitor bid activity</li>
@@ -68,7 +68,7 @@
                 <li>Limit an auction to bidders of your choosing</li>
                 <li>Use PastureScout’s auction platform to manage your auction, saving you time and hassle</li>
                <li><strong>$.10/acre, minimum $100</strong></li>
-            </ul>         
+            </ul>     -->     
             <br>
             <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_xclick-subscriptions">

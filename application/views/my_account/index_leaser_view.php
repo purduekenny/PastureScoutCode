@@ -11,7 +11,7 @@
                 <li>Access data about area lease prices</li>
                 <li>Monitor seeker activity for your listing</li>
             </ul>
-            <h3>Public Auction</h3>
+<!--             <h3>Public Auction</h3>
             <ul>
                 <li>Specify length of auction, minimum bid, and bid increments</li>
                 <li>Monitor bid activity</li>
@@ -23,7 +23,7 @@
             <ul>
                 <li>Limit an auction to bidders of your choosing</li>
                 <li>Use PastureScout’s auction platform to manage your auction, saving you time and hassle</li>
-               <li><strong>$.10/acre, minimum $100</strong></li>
+               <li><strong>$.10/acre, minimum $100</strong></li> -->
             </ul> 
         </td>
     </tr>

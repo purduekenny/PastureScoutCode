@@ -54,12 +54,13 @@ class Properties extends CI_Controller
             //make pagination happen
             $data['properties'] = $this->property->get_properties(5, $start);
 
-            
             $this->pagination->initialize($config);
             $data['pages'] = $this->pagination->create_links();
+
             //load views
             $this->load->view('header/main_view');
-            $this->load->view('properties/nav');
+            //load nav view based off of permissions
+            $this->_nav_view($user_id);
             $this->load->view('properties/all_view', $data);
             $this->load->view('footer/main_view');
         } else {
@@ -116,7 +117,8 @@ class Properties extends CI_Controller
             $data['pages'] = $this->pagination->create_links();
 
             $this->load->view('header/main_view');
-            $this->load->view('properties/nav');
+            //load nav view based off of permissions
+            $this->_nav_view($user_id);
             $this->load->view('properties/my_view', $data);
             $this->load->view('footer/main_view');
         } else {
@@ -142,7 +144,7 @@ class Properties extends CI_Controller
         } else if ($user_id= ''){
             $this->session->set_flashdata('message', 'oops!');
             redirect(base_url() . 'my_account');
-        } else {
+        } else if ($this->_check_permissions($this->tank_auth->get_user_id()) == 'leaser' || $this->_check_permissions($this->tank_auth->get_user_id()) == "free_trial"){
             $user_id = $this->tank_auth->get_user_id();
 
             //form validation
@@ -154,9 +156,6 @@ class Properties extends CI_Controller
             $this->form_validation->set_rules('country', 'Country', 'trim|required|xss_clean|max_length[50]');
             $this->form_validation->set_rules('max_head_count', 'Max Head Count', 'trim|numeric|xss_clean|max_length[100]');
             $this->form_validation->set_rules('restricted_stock_type', 'Restricted Stock Type', 'trim|xss_clean|max_length[100]');
-            $this->form_validation->set_rules('min_bid', 'Mininum Bid', 'trim|numeric|xss_clean|max_length[100]');
-            $this->form_validation->set_rules('opening_bid_date', 'Opening Bid Date', 'trim|required|xss_clean|max_length[100]');
-            $this->form_validation->set_rules('closing_bid_date', 'Closing Bid Date', 'trim|required|xss_clean|max_length[100]');
             $this->form_validation->set_rules('other_info', '', 'trim|xss_clean|max_length[500]');
             $this->form_validation->set_rules('size', 'Size', 'trim|numeric|required|xss_clean|max_length[100]');
             $this->form_validation->set_rules('min_lease_term', 'Minimum Lease Term', 'trim|required|xss_clean|max_length[100]');
@@ -190,9 +189,6 @@ class Properties extends CI_Controller
                     'restricted_stock_type'  => $this->form_validation->set_value('restricted_stock_type'),
                     'max_head_count'         => $this->form_validation->set_value('max_head_count'),
                     'min_bid'                => $this->form_validation->set_value('min_bid'),
-                    'opening_bid_date'       => $opening_bid_date,
-                    'closing_bid_date'       => $closing_bid_date,
-                    'other_info'             => $this->form_validation->set_value('other_info')
                 );
 
                 //call model and create new property
@@ -206,16 +202,13 @@ class Properties extends CI_Controller
                     $errors = $this->tank_auth->get_error_message();
                     foreach ($errors as $k => $v)   $data['errors'][$k] = $this->lang->line($v);
                 }
+        } else {
+            $this->session->set_flashdata('message', 'You must be a Leaser to view this page.');
+            redirect(base_url() . 'my_account');
         }
         //get user_id
         $user_id = $this->tank_auth->get_user_id();
-        $data['info']=$this->user->get_account_info($user_id);
 
-        //get subscription data
-        $sign_up_date = $this->user->get_signup_date($user_id);
-        $seeking_sub_check = $this->user->seeking_sub($user_id);
-        $leasing_sub_check = $this->user->leasing_sub($user_id);
-        
         $this->load->view('header/main_view');
         $this->load->view('properties/add_form');
         $this->load->view('footer/main_view');
@@ -255,8 +248,8 @@ class Properties extends CI_Controller
                 $this->form_validation->set_rules('restricted_stock_type', 'Restricted Stock Type', 'trim|xss_clean|max_length[100]');
                 $this->form_validation->set_rules('max_head_count', 'Max Head Count', 'trim|numeric|xss_clean|max_length[100]');
                 $this->form_validation->set_rules('min_bid', 'Mininum Bid', 'trim|numeric|xss_clean|max_length[100]');
-                $this->form_validation->set_rules('opening_bid_date', 'Opening Bid Date', 'trim|required|xss_clean|max_length[100]');
-                $this->form_validation->set_rules('closing_bid_date', 'Closing Bid Date', 'trim|required|xss_clean|max_length[100]');
+                //$this->form_validation->set_rules('opening_bid_date', 'Opening Bid Date', 'trim|required|xss_clean|max_length[100]');
+                //$this->form_validation->set_rules('closing_bid_date', 'Closing Bid Date', 'trim|required|xss_clean|max_length[100]');
                 $this->form_validation->set_rules('other_info', 'Other Info', 'trim|xss_clean|max_length[500]');
                 $this->form_validation->set_rules('size', 'Size', 'trim|numeric|required|xss_clean|max_length[100]');
                 $this->form_validation->set_rules('min_lease_term', 'Minimum Lease Term', 'trim|required|xss_clean|max_length[100]');
@@ -269,8 +262,8 @@ class Properties extends CI_Controller
                 if ($this->form_validation->run()) {                                        
                     // validation ok prep data to be put in database
                     //change dates to be mysql friendly
-                    $opening_bid_date = date('Y-m-d',strtotime($this->form_validation->set_value('opening_bid_date')));
-                    $closing_bid_date = date('Y-m-d',strtotime($this->form_validation->set_value('closing_bid_date')));
+                    //$opening_bid_date = date('Y-m-d',strtotime($this->form_validation->set_value('opening_bid_date')));
+                    //$closing_bid_date = date('Y-m-d',strtotime($this->form_validation->set_value('closing_bid_date')));
                     $lease_availability_date = date('Y-m-d',strtotime($this->form_validation->set_value('lease_availability_date')));
 
                     $data = array(
@@ -289,8 +282,6 @@ class Properties extends CI_Controller
                         'restricted_stock_type'  => $this->form_validation->set_value('restricted_stock_type'),
                         'max_head_count'         => $this->form_validation->set_value('max_head_count'),
                         'min_bid'                => $this->form_validation->set_value('min_bid'),
-                        'opening_bid_date'       => $opening_bid_date,
-                        'closing_bid_date'       => $closing_bid_date,
                         'other_info'             => $this->form_validation->set_value('other_info'),
                         'modified'               => date('d/m/Y H:i:s', strtotime('today'))
                     );
@@ -349,12 +340,20 @@ class Properties extends CI_Controller
                 //remove last array item
                 array_pop($image_array);
             }
-
+            //put image array into property array to be passed to a view
             $data['property']['images'] = $image_array;
+            //get leaser information
+            $data['user'] = $this->user->get_user_info_by_property_id($property_id);
+
+            $user_info_view = ($this->_check_permissions($user_id) == 'seeker') ? 'properties/view_user_info' : 'properties/view_nothing';
         }
+
         $this->load->view('header/main_view');
-        $this->load->view('properties/nav');
+        //load nav view based off of permissions
+        $this->_nav_view($user_id);
         $this->load->view('properties/view', $data);
+        $this->load->view($user_info_view, $data);
+        $this->load->view('properties/view_bottom', $data);
         $this->load->view('footer/main_view');
     }
 
@@ -392,13 +391,22 @@ class Properties extends CI_Controller
                 //remove last array item
                 array_pop($image_array);
             }
-
+            //put images into data array to be used in the view
             $data['property']['images'] = $image_array;
+            //calculate how much to charge for paypal
+            if ($data['property']['size'] * .1 > 100){
+                $data['property']['paypal_calculation'] = $data['property']['size'] * .1;
+            } else {
+                $data['property']['paypal_calculation'] = 100;
+            }    
             
         }
+        
         $this->load->view('header/main_view');
-        $this->load->view('properties/nav');
+        //load nav view based off of permissions
+        $this->_nav_view($user_id);
         $this->load->view('properties/view_mine', $data);
+        $this->load->view('properties/view_mine_bottom', $data);
         $this->load->view('footer/main_view');
     }
 
@@ -426,25 +434,6 @@ class Properties extends CI_Controller
         $this->load->view('footer/main_view');
     }
 
-    /**
-     * Shows content in index
-     *r
-     * @return string
-     */
-    function index_content($user_id, $sign_up_date, $seeking_sub_check, $leasing_sub_check){
-        $days_left = sub_days_left($sign_up_date);
-        if($leasing_sub_check >= 1){
-            return 'my_account/index_leaser_view';
-        } else if ($seeking_sub_check >= 1) {
-            return 'my_account/index_seeker_view';
-        } else if ($days_left <= 0) {
-            return 'my_account/index_free_view';
-        } else {
-            return 'my_account/index_free_view';
-        }
-    }
-
-
     /** Search
     *
     * @return void
@@ -458,6 +447,7 @@ class Properties extends CI_Controller
             $this->session->set_flashdata('message', 'oops!');
             redirect(base_url() . 'my_account');
         } else {
+            $user_id = $this->tank_auth->get_user_id();
 
             $state = $this->input->post('state');
             $size = $this->input->post('size');
@@ -507,12 +497,71 @@ class Properties extends CI_Controller
         }
 
         $this->load->view('header/main_view');
-        $this->load->view('properties/nav');
+        //load nav view based off of permissions
+        $this->_nav_view($user_id);
         $this->load->view('properties/search');
         $this->load->view('footer/main_view');
     }
 
+    /**
+     * Caculate days left until free subscription ends
+     *
+     * @return int
+     */
+    private function _sub_days_left($sign_up_date) {
+        $date_created = date("Y-m-d", strtotime($sign_up_date['created']));
+        //Add one month to date created
+        $free_end_date = strtotime(date("Y-m-d", strtotime($date_created)) . "+1 month");
+        //Right now
+        $now = time();
+        $time_left = $free_end_date - $now;
+        $days_left = round((($time_left/24)/60)/60); 
+        return $days_left;
+    }
+
+    /**
+     * Load navigation views based off of permissions
+     *
+     * @return string
+     */
+    private function _nav_view($user_id){
+        $permission_check = $this->_check_permissions($user_id);
+        //must be a pasture leaser to view create button
+        $nav_bottom = ($permission_check == 'leaser' || $permission_check == 'free_trial') ? 'properties/nav_subscriber_bottom' : 'properties/nav_not_subscriber_bottom';
+
+        $this->load->view('properties/nav');
+        $this->load->view($nav_bottom);
+    }
+
+    /**
+     * Check permissions 
+     *
+     * @return string
+     */
+    private function _check_permissions($user_id){
+        $sign_up_date = $this->user->get_signup_date($user_id);
+        $days_left = $this->_sub_days_left($sign_up_date);
+        $seeking_sub_check = $this->user->seeking_sub($user_id);
+        $leasing_sub_check = $this->user->leasing_sub($user_id);
+
+        if ($days_left >= 1){
+            return 'free_trial';
+        } else if ($seeking_sub_check >= 1) {
+            return 'seeker';
+        } else if ($leasing_sub_check >= 1) {
+            return 'leaser';
+        } else {
+            return 'something went wrong';
+        }
+    }
+
+
+    
+    
+
 }
+
+
 
 /* End of file properties.php */
 /* Location: ./application/controllers/properties.php */

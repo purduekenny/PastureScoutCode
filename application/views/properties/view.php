@@ -27,6 +27,7 @@
     <p><strong>Restricted Stock Type:</strong> <?php echo isset($property['restricted_stock_type']) ? $property['restricted_stock_type'] : 'Not specified'?> </p>
     <p><strong>Max Head Count:</strong> 
         <?php echo isset($property['max_head_count']) ? $property['max_head_count'] : 'Not specified'?> </p>
+<hr>
 
 
 

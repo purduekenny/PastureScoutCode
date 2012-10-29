@@ -86,6 +86,10 @@
     $(function() {
         $(".datepicker").datepicker();
         $("#first_name").focus();
+        $('.non_subscriber').tooltip();
+        $('.non_subscriber a').on("click", function(e){
+            e.preventDefault();
+        })
 });
 </script>
 <script type="text/javascript">

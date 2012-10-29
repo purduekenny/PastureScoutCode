@@ -135,6 +135,39 @@ class User extends CI_Model{
 		return $query->num_rows();
 	}
 
+	/**
+	 * Get user information based off of Property ID
+	 *
+	 * @param	int
+	 * @return	int
+	 */
+	function get_user_info_by_property_id($property_id){
+		$this->db->select('`first_name`,
+						  `last_name`,
+						  `email`,
+						  `street`,
+						  `users.city`,
+						  `users.state`,
+						  `users.zip_code`,
+						  `birthday` ,
+						  `home_phone`,
+						  `cell_phone`,
+						  `current_business`,
+						  `operation_type`,
+						  `livestock_type_owned`,
+						  `livestock_number`,
+						  `livestock_managing_percent`,
+						  `number_years_experience`,
+						  `largest_lease`,
+						  `education`,
+						  `land_management_training`');
+		$this->db->from('users');
+		$this->db->join('properties', 'properties.user_id = users.id');
+		$this->db->where('`properties.id`', $property_id);
+		$query = $this->db->get();
+		return $query->row_array();;
+	}
+
 
 
 }
