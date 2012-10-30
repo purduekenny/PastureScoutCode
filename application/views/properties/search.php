@@ -157,7 +157,7 @@ $allowed_uses = array(
     ?>
 
 <?php
-
+/*
         if(empty($properties)){
             ?>
                 <h2>Your search did not produce any results.</h2>
@@ -178,7 +178,8 @@ $allowed_uses = array(
         </li>
         <?php
             }//end foreach
-        }//end else
+        }//end else 
+        */
         ?>
 
     </ul>

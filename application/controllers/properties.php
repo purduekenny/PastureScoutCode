@@ -450,49 +450,8 @@ class Properties extends CI_Controller
             redirect(base_url() . 'my_account');
         } else {
             $user_id = $this->tank_auth->get_user_id();
-            //unset previous search items
-            $array_items = array('state' => '', 'size' => '', 'cattle' => '');
-            $this->session->unset_userdata($array_items);
+            
 
-            $state = $this->input->post('state');
-            $size = $this->input->post('size');
-            $cattle = $this->input->post('allowed_uses');
-
-            // if all of the search terms aren't empty
-            // then query the database
-            if(!empty($state) || !empty($size) || !empty($cattle))
-            {
-                //pagination configuration
-                $config['base_url'] = base_url().'properties/search/index';
-                $config['total_rows'] = $this->property->search_results_count($state, $size, $cattle);
-                $config['full_tag_open'] = '<div class="pagination"><ul>';
-                $config['full_tag_close'] = '</ul></div>';
-                $config['first_link'] = 'First';
-                $config['first_tag_open'] = '<li>';
-                $config['first_tag_close'] = '</li>';
-                $config['last_tag_open'] = '<li>';
-                $config['last_tag_close'] = '</li>';
-                $config['last_link'] = 'Last';
-                $config['next_link'] = '&gt;';
-                $config['next_tag_open'] = '<li>';
-                $config['next_tag_close'] = '</li>';
-                $config['prev_link'] = '&lt;';
-                $config['prev_tag_open'] = '<li>';
-                $config['prev_tag_close'] = '</li>';
-                $config['cur_tag_open'] = '<li class="active"><a href="#">';
-                $config['cur_tag_close'] = '</a></li>';
-                $config['num_tag_open'] = '<li>';
-                $config['num_tag_close'] = '</li>';
-
-                //if number of property rows less than 5
-                $config['per_page']  = ($config['total_rows'] < 5) ? $config['total_rows'] : 5;
-
-                $data['properties'] = $this->property->search($state, $size, $cattle, $config['per_page'], $start);
-                
-                //make pagination happen
-                $this->pagination->initialize($config);
-                $data['pages'] = $this->pagination->create_links();
-            }
             //Check to see if data array is empty;
             $data = isset($data) ? $data : '';
 
@@ -505,7 +464,7 @@ class Properties extends CI_Controller
     }
 
     /** 
-     * Search
+     * Search View
      *
      * @return void
      */
@@ -524,6 +483,16 @@ class Properties extends CI_Controller
             $size = $this->input->post('size');
             $cattle = $this->input->post('allowed_uses');
 
+            //if form is submitted, clear session data
+            $is_submitted = $this->input->post('submit');
+
+            if($is_submitted == 'Search Pastures'){
+                //unset previous search items
+                $array_items = array('state' => '', 'size' => '', 'cattle' => '');
+                $this->session->unset_userdata($array_items);
+            }
+
+            //if session data is empty, fill it up.
             $state_session = $this->session->userdata('state');
             if (empty($state_session)) {        
                $newdata = array(
@@ -561,8 +530,6 @@ class Properties extends CI_Controller
 
             $data['properties'] = $this->property->search($this->session->userdata('state'), $this->session->userdata('size'), $this->session->userdata('cattle'), $config['per_page'], $start);
 
-            $this->property->search("NO", "", "sheep", $config['total_rows'], 0);
-
 
             //make pagination happen
             $this->pagination->initialize($config);
@@ -575,7 +542,6 @@ class Properties extends CI_Controller
             $this->load->view('footer/main_view');
         }
     }
-        
 
     /**
      * Caculate days left until free subscription ends
