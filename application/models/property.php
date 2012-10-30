@@ -255,22 +255,24 @@ class Property extends CI_Model{
         return $query->num_rows();
     }
 
-    function search($state, $size, $cattle){
+    /**
+     * Check to see if Pasture can be put on a private auction
+     *
+     * @param   string
+     * @param   string
+     * @param   string
+     * @return  array
+     */
+    function search($state, $size, $cattle, $num=0, $start=0){
         $this->db->select('
             `id`, 
             `name`, 
-            `location`, 
-            `region`, 
-            `city`, 
             `state`, 
-            `country`, 
+            `city`,
+            `country`,
+            `other_info`,
             `restricted_stock_type`, 
             `max_head_count`, 
-            `min_bid`, 
-            `opening_bid_date`, 
-            `closing_bid_date`,
-            `other_info`,
-            `photos`,
             `size`,
             `min_lease_term`,
             `lease_availability_date`,
@@ -286,16 +288,41 @@ class Property extends CI_Model{
         }
         if(!empty($size))
         {
-            $this->db->where('`size`', $size);
+            $this->db->where('size <=', $size);
+            $this->db->where('size !=', 0);
         }
         if($cattle != "NO")
         {
-            $this->db->where('`allowed_uses`', $cattle);
+            $this->db->like('`allowed_uses`', $cattle);
         }
+        $this->db->where('`status`', 'active');
+        $this->db->limit($num, $start);
+        $query = $this->db->get('properties');
+        return $query->result_array();
+    }
 
+    /**
+     * Get search results number for search pagination
+     *
+     * @param   int
+     * @return  int
+     */
+    function search_results_count($state, $size, $cattle){
+        $this->db->select('`id`');
+
+        if($state != "NO"){
+            $this->db->where('`state`', $state);
+        }
+        if(!empty($size)){
+            $this->db->where('size <=', $size);
+            $this->db->where('size !=', 0);
+        }
+        if($cattle != "NO"){
+            $this->db->like('`allowed_uses`', $cattle);
+        }
         $this->db->where('`status`', 'active');
         $query = $this->db->get('properties');
-        return $query->row_array();
+        return $query->num_rows();
     }
 
 

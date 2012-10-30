@@ -90,6 +90,9 @@
         $('.non_subscriber a').on("click", function(e){
             e.preventDefault();
         })
+        $('.active a').on("click", function(e){
+            e.preventDefault();
+        })
 });
 </script>
 <script type="text/javascript">

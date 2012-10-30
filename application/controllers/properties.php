@@ -15,6 +15,7 @@ class Properties extends CI_Controller
         $this->load->model('user');
         $this->load->model('property');
         $this->load->library('pagination');
+        $this->output->enable_profiler(TRUE);
     }
 
     /**
@@ -111,7 +112,7 @@ class Properties extends CI_Controller
             }
 
             $data['properties'] = $this->property->get_properties_by_user($user_id, $config['per_page'], $start);
-            
+
             //make pagination happen
             $this->pagination->initialize($config);
             $data['pages'] = $this->pagination->create_links();
@@ -434,7 +435,8 @@ class Properties extends CI_Controller
         $this->load->view('footer/main_view');
     }
 
-    /** Search
+    /** 
+    * Search
     *
     * @return void
     */
@@ -448,20 +450,21 @@ class Properties extends CI_Controller
             redirect(base_url() . 'my_account');
         } else {
             $user_id = $this->tank_auth->get_user_id();
+            //unset previous search items
+            $array_items = array('state' => '', 'size' => '', 'cattle' => '');
+            $this->session->unset_userdata($array_items);
 
             $state = $this->input->post('state');
             $size = $this->input->post('size');
             $cattle = $this->input->post('allowed_uses');
 
-
             // if all of the search terms aren't empty
             // then query the database
             if(!empty($state) || !empty($size) || !empty($cattle))
             {
-                
                 //pagination configuration
-                $config['base_url'] = base_url().'properties/my_properties/index/';
-                $config['total_rows'] = $this->property->get_properties_count_by_user_id($user_id);
+                $config['base_url'] = base_url().'properties/search/index';
+                $config['total_rows'] = $this->property->search_results_count($state, $size, $cattle);
                 $config['full_tag_open'] = '<div class="pagination"><ul>';
                 $config['full_tag_close'] = '</ul></div>';
                 $config['first_link'] = 'First';
@@ -482,26 +485,97 @@ class Properties extends CI_Controller
                 $config['num_tag_close'] = '</li>';
 
                 //if number of property rows less than 5
-                if ($config['total_rows'] < 5){
-                    $config['per_page'] = $config['total_rows'];
-                }else{
-                    $config['per_page'] = 5;
-                }
+                $config['per_page']  = ($config['total_rows'] < 5) ? $config['total_rows'] : 5;
 
-                $data['properties'] = $this->property->search($state, $size, $cattle);
+                $data['properties'] = $this->property->search($state, $size, $cattle, $config['per_page'], $start);
                 
                 //make pagination happen
                 $this->pagination->initialize($config);
                 $data['pages'] = $this->pagination->create_links();
             }
-        }
+            //Check to see if data array is empty;
+            $data = isset($data) ? $data : '';
 
-        $this->load->view('header/main_view');
-        //load nav view based off of permissions
-        $this->_nav_view($user_id);
-        $this->load->view('properties/search');
-        $this->load->view('footer/main_view');
+            $this->load->view('header/main_view');
+            //load nav view based off of permissions
+            $this->_nav_view($user_id);
+            $this->load->view('properties/search', $data);
+            $this->load->view('footer/main_view');
+        }
     }
+
+    /** 
+     * Search
+     *
+     * @return void
+     */
+    function search_view($start=0) {
+        if (!$this->tank_auth->is_logged_in()) {                                    
+            // if logged in, not activated              
+            $this->session->set_flashdata('message', 'You must be logged in to use this page');
+            redirect(base_url() . 'auth/login');
+        } else if ($user_id= ''){
+            $this->session->set_flashdata('message', 'oops!');
+            redirect(base_url() . 'my_account');
+        } else {
+            $user_id = $this->tank_auth->get_user_id();
+
+            $state = $this->input->post('state');
+            $size = $this->input->post('size');
+            $cattle = $this->input->post('allowed_uses');
+
+            $state_session = $this->session->userdata('state');
+            if (empty($state_session)) {        
+               $newdata = array(
+                       'state'  => $state,
+                       'size'   => $size,
+                       'cattle' => $cattle
+                );
+                $this->session->set_userdata($newdata);
+            }
+
+            //pagination configuration
+            $config['base_url'] = base_url().'properties/search_view/';
+            $config['total_rows'] = $this->property->search_results_count($this->session->userdata('state'), $this->session->userdata('size'), $this->session->userdata('cattle'));
+            $config['full_tag_open'] = '<div class="pagination"><ul>';
+            $config['full_tag_close'] = '</ul></div>';
+            $config['first_link'] = 'First';
+            $config['first_tag_open'] = '<li>';
+            $config['first_tag_close'] = '</li>';
+            $config['last_tag_open'] = '<li>';
+            $config['last_tag_close'] = '</li>';
+            $config['last_link'] = 'Lwordast';
+            $config['next_link'] = '&gt;';
+            $config['next_tag_open'] = '<li>';
+            $config['next_tag_close'] = '</li>';
+            $config['prev_link'] = '&lt;';
+            $config['prev_tag_open'] = '<li>';
+            $config['prev_tag_close'] = '</li>';
+            $config['cur_tag_open'] = '<li class="active"><a href="#">';
+            $config['cur_tag_close'] = '</a></li>';
+            $config['num_tag_open'] = '<li>';
+            $config['num_tag_close'] = '</li>';
+
+            //if number of property rows less than 5
+            $config['per_page']  = ($config['total_rows'] < 5) ? $config['total_rows'] : 5;
+
+            $data['properties'] = $this->property->search($this->session->userdata('state'), $this->session->userdata('size'), $this->session->userdata('cattle'), $config['per_page'], $start);
+
+            $this->property->search("NO", "", "sheep", $config['total_rows'], 0);
+
+
+            //make pagination happen
+            $this->pagination->initialize($config);
+            $data['pages'] = $this->pagination->create_links();
+
+            $this->load->view('header/main_view');
+            //load nav view based off of permissions
+            $this->_nav_view($user_id);
+            $this->load->view('properties/search_view', $data);
+            $this->load->view('footer/main_view');
+        }
+    }
+        
 
     /**
      * Caculate days left until free subscription ends

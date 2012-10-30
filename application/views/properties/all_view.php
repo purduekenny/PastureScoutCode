@@ -9,7 +9,6 @@
 	<ul>
 		<?php
 			foreach($properties as $row){
-
 		?>
 		<li>
 			<h3><a href="<?=base_url() . 'properties/view/' . $row['id']; ?>"><?=$row['name']?></a></h3>

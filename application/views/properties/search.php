@@ -99,12 +99,12 @@ $size = array(
 //array for $allowed_uses checkbox
 $allowed_uses_options = array(
     'NO' => 'No preference',
-    '' => 'Cattle',
-    '' => 'Goats',
-    '' => 'Sheep',
-    '' => 'Horses',
-    '' => 'Exotics',
-    '' => 'Swine'
+    'cattle' => 'Cattle',
+    'goats' => 'Goats',
+    'sheep' => 'Sheep',
+    'horses' => 'Horses',
+    'exotics' => 'Exotics',
+    'swine' => 'Swine'
 );
 $allow = '';
 $allowed_uses = array(
@@ -115,7 +115,7 @@ $allowed_uses = array(
 
 <div class="content span8 properties">
 
-<?php echo form_open(base_url().'properties/search/', array('class' => 'form-horizontal')) ?>
+<?php echo form_open(base_url().'properties/search_view', array('class' => 'form-horizontal')) ?>
     <h2>Search for Pastures	</h2>
     <div class="control-group">
         <?php echo form_label('State/Province', $state['id'], array('class' => 'control-label')); ?>
@@ -131,8 +131,6 @@ $allowed_uses = array(
             <div class="input-append"><?php echo form_input($size); ?> <span class="add-on">acres</span></div>
             <?php echo form_error($size['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$size['name']])?$errors[$size['name']]:''; ?>
-
-
         </div>
     </div>
     <div class="control-group">
@@ -158,35 +156,38 @@ $allowed_uses = array(
         echo form_close();
     ?>
 
+<?php
 
+        if(empty($properties)){
+            ?>
+                <h2>Your search did not produce any results.</h2>
+
+            <?php
+            }else{
+
+    ?>
+    <ul>
+        <?php
+            foreach($properties as $row){
+
+        ?>
+        <li>
+            <h3><a href="<?=base_url() . 'properties/view/' . $row['id']; ?>"><?=$row['name']?></a></h3>
+            <p><?=$row['city']?>, <?=$row['state']?> <?=$row['country']?></p>
+            <p>Description: <?=$row['other_info']?></p>
+        </li>
+        <?php
+            }//end foreach
+        }//end else
+        ?>
+
+    </ul>
 	
 	
-	<?php
-		if(empty($properties)){
-			?>
-			<h2>There were no results found for your search.</h2>
-			<?php
-			}else{
-	?>
-	<ul>
-		<?php
-			foreach($properties as $row){
-
-		?>
-		<li>
-			<h3><a href="<?=base_url() . 'properties/view/' . $row['id']; ?>"><?=$row['name']?></a></h3>
-			<p><?=$row['city']?>, <?=$row['state']?> <?=$row['country']?></p>
-			<p>Description: <?=$row['other_info']?></p>
-		</li>
-		<?php
-			}//end foreach
-		}//end else
-		?>
-
-	</ul>
+	
 </div><!-- end content -->
 <div class="span8 offset4">
-<!-- <?=$pages?> --> 
+<?=isset($pages) ? $pages : '' ?>
 </div>
 </div><!-- end row_fluid -->
 </div><!-- end container_fluid -->
