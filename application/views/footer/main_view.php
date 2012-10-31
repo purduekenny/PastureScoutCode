@@ -89,10 +89,28 @@
         $('.non_subscriber').tooltip();
         $('.non_subscriber a').on("click", function(e){
             e.preventDefault();
-        })
+        });
         $('.active a').on("click", function(e){
             e.preventDefault();
-        })
+        });
+        $('span#favorite a').on("click", function(e){
+
+            e.preventDefault();
+
+            var href = window.location.href;
+            var uri = href.substr(href.lastIndexOf('/') + 1);
+
+            $.ajax({
+                    type: "POST",
+                    url: baseurl + "properties/favorite/" + uri,
+                    data: { property_id: uri },
+                    success : function (result) {
+                    },
+                    error : function () {
+                    }
+                });
+            });
+        $('span#favorite a').tooltip();
 });
 </script>
 <script type="text/javascript">

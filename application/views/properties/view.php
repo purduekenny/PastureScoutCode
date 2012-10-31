@@ -4,7 +4,16 @@
     $lease_availability_date_format = date('F j, Y', strtotime($property['lease_availability_date']));
 ?>
 <div class="content span8 properties">
-    <h2><?=$property['name']?></h2>
+    <h2><?=$property['name']?>
+
+
+        <span id="favorite">
+            <a class="btn btn-medium" href="#"  rel="tooltip" data-placement="top" data-original-title="favorite">
+                <i class="icon-star-empty"></i>
+            </a>
+        </span>
+
+    </h2>
     <p><strong>Description:</strong> 
         <?php echo isset($property['other_info']) ? $property['other_info'] : 'Not specified'?> </p>
     <p><?=$property['city']?>, <?=$property['state']?> <?=$property['country']?></p>

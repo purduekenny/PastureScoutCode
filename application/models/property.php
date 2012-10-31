@@ -256,11 +256,14 @@ class Property extends CI_Model{
     }
 
     /**
-     * Check to see if Pasture can be put on a private auction
+     * Search
      *
      * @param   string
      * @param   string
      * @param   string
+     * @param   int
+     * @param   int
+     * 
      * @return  array
      */
     function search($state, $size, $cattle, $num=0, $start=0){
