@@ -34,7 +34,8 @@ $city = array(
 $state = array(
     'name'  => 'state',
     'id'    => 'state',
-    'maxlength' => 100
+    'value' => isset($info['state']) ? $info['state'] : set_value('state'),
+    'maxlength' => 30
 );
 
 if(empty($info['state'])){

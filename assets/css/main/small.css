@@ -101,3 +101,8 @@ h1 {
     clear:both;
     padding:10px 0 0 0;
 }
+
+.pagination {
+    margin-left: 0px;
+
+}

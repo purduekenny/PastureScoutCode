@@ -232,6 +232,7 @@ body#properties_favorites li#properties_favorites a {
 .non_subscriber a{
     color: #fff !important;
     background-color: #ccc !important;
+    cursor: pointer;
 }
 
 .non_subscriber a:hover{
@@ -253,6 +254,7 @@ body#properties_favorites li#properties_favorites a {
     background: #fdfdfd;
     border:1px solid #ddd;
 }
+
 .content p {
     margin: 5px 0 10px 10px;
     color: #969696;
@@ -269,7 +271,7 @@ body#properties_favorites li#properties_favorites a {
     display:inline-block;
     width:100%;
     min-height:100px;
-    margin: 0px 0 5px 0;
+    margin: 0px 0 0px 0;
     border-bottom:1px solid #ddd;
 }
 
@@ -299,12 +301,14 @@ body#properties_favorites li#properties_favorites a {
     display:inline;
 }
 
+.pagination {
+    margin-left: -23px;
+}
+
+
 h1 {
     font-size:36px;
     color:#ffb400;
-    -moz-text-shadow: 1px 1px 2px #2f6a1d;
-    -webkit-text-shadow: 1px 1px 2px #2f6a1d;
-    text-shadow: 1px 1px 2px #2f6a1d;
 }
 
 
@@ -312,17 +316,29 @@ h2 {
     font-size:20px;
     color:#ffb400;
     font-weight:normal;
-    -moz-text-shadow: 1px 1px 2px #cecece;
-    -webkit-text-shadow: 1px 1px 2px #cecece;
-    text-shadow: 1px 1px 2px #cecece;
     margin:0 0 13px 10px;
 }
+
+
+
 
 h3 {
     font-size:20px;
     color:#969696;
     font-weight:normal;
     margin:10px 0 0 10px;
+}
+
+h3 a:link, h3 a:visited {
+    font-size:20px;
+    color:#ffb400;
+    font-weight:normal;
+}
+
+h3 a:hover {
+    font-size:20px;
+    color:#ffb400;
+    font-weight:normal;
 }
 
 
@@ -426,3 +442,29 @@ br {
     color: #000;
 }
 
+/* browse pastures page */
+
+.pasturePic {
+    float: left;
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    background-color: #efefef;
+    background-image: url('../../images/main/nopic.png');
+
+}
+
+.pastureInfo {
+    float: left;
+    width: 77%;
+}
+.location {
+    margin: -16px 0 0 10px;
+}
+
+.description {  
+    margin: -20px 0 10px 5px;
+    padding: 5px;
+    border-top: 1px #FFE099 dashed;
+
+}

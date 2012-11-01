@@ -210,6 +210,7 @@ class Properties extends CI_Controller
         $user_id = $this->tank_auth->get_user_id();
 
         $this->load->view('header/main_view');
+        $this->_nav_view($user_id);
         $this->load->view('properties/add_form');
         $this->load->view('footer/main_view');
     }

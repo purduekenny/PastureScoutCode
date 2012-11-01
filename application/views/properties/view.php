@@ -3,7 +3,7 @@
     $closing_bid_date_format = date('F j, Y', strtotime($property['closing_bid_date']));
     $lease_availability_date_format = date('F j, Y', strtotime($property['lease_availability_date']));
 ?>
-<div class="content span8 properties">
+<div class="content span9 properties">
     <h2><?=$property['name']?>
 
 

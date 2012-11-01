@@ -74,12 +74,12 @@ $handling_facilities = array(
 );
 //array for $allowed_uses checkbox
 $allows = array(
-    'cattle',
-    'goats',
-    'sheep',
-    'horses',
-    'exotics',
-    'swine'
+    'Cattle',
+    'Goats',
+    'Sheep',
+    'Horses',
+    'Exotics',
+    'Swine'
 );
 $allow = '';
 $allowed_uses = array(
@@ -126,15 +126,13 @@ $other_info = array(
     'cols'  => 30
 );
 ?>
-<div class="container-fluid">
-<div class="row-fluid">
-<div class="span12 content">
+<div class="content span9 properties">
 <?php echo form_open(base_url().'properties/create/', array('class' => 'form-horizontal')) ?>
     <h2>Enter Description</h2>
     <div class="control-group">
-        <?php echo form_label('Pasture Name', $name['id'], array('class' => 'control-label')); ?>
+        <?php echo form_label('Pasture Name', $name['id'], array('class' => 'control-label')); ?> 
         <div class="controls">
-            <?php echo form_input($name); ?>
+            <?php echo form_input($name); ?> <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="Name your pasture something unique and easily identifiable. This will be how your pasture is referenced throughout the site."></i></span>
             <?php echo form_error($name['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$name['name']])?$errors[$name['name']]:''; ?>
         </div>
@@ -142,7 +140,7 @@ $other_info = array(
     <div class="control-group">
         <?php echo form_label('Location', $location['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($location); ?>
+            <?php echo form_input($location); ?> <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="tooltip"></i></span>
             <?php echo form_error($location['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$location['name']])?$errors[$location['name']]:''; ?>
         </div>
@@ -150,7 +148,7 @@ $other_info = array(
     <div class="control-group">
         <?php echo form_label('Region', $region['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($region); ?>
+            <?php echo form_input($region); ?> <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="tooltip"></i></span>
             <?php echo form_error($region['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$region['name']])?$errors[$region['name']]:''; ?>
         </div>
@@ -158,15 +156,68 @@ $other_info = array(
     <div class="control-group">
         <?php echo form_label('City', $city['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($city); ?>
+            <?php echo form_input($city); ?> <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="What city is your pasture located in?"></i></span>
             <?php echo form_error($city['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$city['name']])?$errors[$city['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
-        <?php echo form_label('State/Province', $state['id'], array('class' => 'control-label')); ?>
-        <div class="controls">
-            <?php echo form_input($state); ?>
+        <?php echo form_label('State', $state['id'], array('class' => 'control-label')); ?>
+         <div class="controls">
+            <select name="state" id="state">
+                <option value=''>Select a State</option>
+               <option value="Alabama">Alabama</option>
+                <option value="Alaska">Alaska</option>
+                <option value="Arizona">Arizona</option>
+                <option value="Arkansas">Arkansas</option>
+                <option value="California">California</option>
+                <option value="Colorado">Colorado</option>
+                <option value="Connecticut">Connecticut</option>
+                <option value="Delaware">Delaware</option>
+                <option value="District of Columbia">District of Columbia</option>
+                <option value="Florida">Florida</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Hawaii">Hawaii</option>
+                <option value="Idaho">Idaho</option>
+                <option value="Illinois">Illinois</option>
+                <option value="Indiana">Indiana</option>
+                <option value="Iowa">Iowa</option>
+                <option value="Kansas">Kansas</option>
+                <option value="Kentucky">Kentucky</option>
+                <option value="Louisiana">Louisiana</option>
+                <option value="Maine">Maine</option>
+                <option value="Maryland">Maryland</option>
+                <option value="Massachusetts">Massachusetts</option>
+                <option value="Michigan">Michigan</option>
+                <option value="Minnesota">Minnesota</option>
+                <option value="Mississippi">Mississippi</option>
+                <option value="Missouri">Missouri</option>
+                <option value="Montana">Montana</option>
+                <option value="Nebraska">Nebraska</option>
+                <option value="Nevada">Nevada</option>
+                <option value="New Hampshire">New Hampshire</option>
+                <option value="New Jersey">New Jersey</option>
+                <option value="New Mexico">New Mexico</option>
+                <option value="New York">New York</option>
+                <option value="North Carolina">North Carolina</option>
+                <option value="North Dakota">North Dakota</option>
+                <option value="Ohio">Ohio</option>
+                <option value="Oklahoma">Oklahoma</option>
+                <option value="Oregon">Oregon</option>
+                <option value="Pennsylvania">Pennsylvania</option>
+                <option value="Rhode Island">Rhode Island</option>
+                <option value="South Carolina">South Carolina</option>
+                <option value="South Dakota">South Dakota</option>
+                <option value="Tennessee">Tennessee</option>
+                <option value="Texas">Texas</option>
+                <option value="Utah">Utah</option>
+                <option value="Vermont">Vermont</option>
+                <option value="Virginia">Virginia</option>
+                <option value="Washington">Washington</option>
+                <option value="West Virginia">West Virginia</option>
+                <option value="Wisconsin">Wisconsin</option>
+                <option value="Wyoming">Wyoming</option>
+            </select>  <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="What state is your pasture located in?"></i></span>
             <?php echo form_error($state['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$state['name']])?$errors[$state['name']]:''; ?>
         </div>
@@ -174,7 +225,7 @@ $other_info = array(
     <div class="control-group">
         <?php echo form_label('Country', $country['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($country); ?>
+            <?php echo form_input($country); ?>  <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="What country is your pasture located in?"></i></span>
             <?php echo form_error($country['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$country['name']])?$errors[$country['name']]:''; ?>
         </div>
@@ -190,7 +241,7 @@ $other_info = array(
     <div class="control-group">
         <?php echo form_label('Minimum Lease Term', $min_lease_term['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($min_lease_term); ?>
+            <?php echo form_input($min_lease_term); ?>  <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="What is the minimum amount of time that you are willing to lease your pasture?"></i></span>
             <?php echo form_error($min_lease_term['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$min_lease_term['name']])?$errors[$min_lease_term['name']]:''; ?>
         </div>
@@ -198,13 +249,13 @@ $other_info = array(
     <div class="control-group">
         <?php echo form_label('Lease Availability Date', $lease_availability_date['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($lease_availability_date); ?>
+            <?php echo form_input($lease_availability_date); ?>  <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="When is your land available to lease?"></i></span>
             <?php echo form_error($lease_availability_date['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$lease_availability_date['name']])?$errors[$lease_availability_date['name']]:''; ?>
         </div>
     </div>
     <div class="control-group">
-        <?php echo form_label('Features: Forage Type', $features_forage_type['id'], array('class' => 'control-label')); ?>
+        <?php echo form_label('Forage Type', $features_forage_type['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php
                 foreach ($features as $feature){
@@ -226,7 +277,7 @@ $other_info = array(
     <div class="control-group">
         <?php echo form_label('Handling facilities', $handling_facilities['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($handling_facilities); ?>
+            <?php echo form_input($handling_facilities); ?> <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="tooltip"></i></span>
             <?php echo form_error($handling_facilities['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$handling_facilities['name']])?$errors[$handling_facilities['name']]:''; ?>
         </div>
@@ -237,7 +288,7 @@ $other_info = array(
             <?php 
                 foreach ($allows as $allow){
             ?>
-                <label class="checkbox">
+                <label class="checkbox inline">
                     
                     <input type="checkbox" name="allowed_uses[]" value="<?=$allow?>" 
                     <?php 
@@ -278,20 +329,20 @@ $other_info = array(
             <?php echo isset($errors[$max_head_count['name']])?$errors[$max_head_count['name']]:''; ?>
         </div>
     </div>
-<hr>
     <?php 
         $data = array(
         'name'        => 'submit',
         'id'          => 'submit',
-        'value'       => 'Add Pasture',
-        'class'       => 'btn btn-primary'
+        'value'       => 'Create Your Pasture Listing',
+        'class'       => 'btn btn-primary btn-block',
+        'style'       => 'margin-left: 0px;'
         );
         echo form_submit($data);
         echo form_close();
     ?>
-<hr>
-
-</div><!-- end span12 -->
+        
+    <p style="line-height: 150%;"><span class="label label-info">Did You Know?</span> You can add images of your pasture to your listing. Once you create your listing, add images by going to "My Pastures" and uploading images to the pasture you want!</p>
+    </div><!-- end span9 -->
 
 </div><!-- end row_fluid -->
 </div><!-- end container_fluid -->

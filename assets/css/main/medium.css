@@ -126,3 +126,8 @@ h1 {
 #footerSocial li{
     display: inline
 }
+
+.pagination {
+    margin-left: -0px;
+
+}

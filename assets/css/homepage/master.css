@@ -199,6 +199,7 @@ h2 {
     margin:0 0 13px -2px;
 }
 
+
 td ul{
     list-style: disc;
 }
@@ -245,5 +246,4 @@ footer { background-image:url('../../images/homepage/bg_footer.jpg'); background
 #footerSocial{
     visibility: hidden;
 }
-
 

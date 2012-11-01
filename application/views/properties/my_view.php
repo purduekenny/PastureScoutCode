@@ -1,4 +1,4 @@
-<div class="content span8 properties">
+<div class="content span9 properties">
     <div class="left">
         <script>
             //confirmation for delete
@@ -18,7 +18,8 @@
         <?php
             if(empty($properties)){
                 ?>
-                <h2>There are currently no Pastures to view.</h2>
+                <h2>Oh no!</h2>
+                <p>You have not created any pasture listings. Head on over and <a href="/properties/create">make one</a>!</p>
                 <?php
                 }else{
         ?>
@@ -28,10 +29,18 @@
 
             ?>
             <li>
-
-                <h3><a href="<?=base_url() . 'properties/view_mine/' . $row['id']; ?>"><?=$row['name']?></a></h3>
-                <p><?=$row['city']?>, <?=$row['state']?> <?=$row['country']?></p>
-                <p>Description: <?=$row['other_info']?></p>
+                <div class="pasturePic"></div>
+                <div class="pastureInfo">
+                    <h3><a href="<?=base_url() . 'properties/view_mine/' . $row['id']; ?>"><?=$row['name']?></a></h3>
+                    <p>
+                        <div class="location"><?=$row['city']?>, <?=$row['state']?></div> <br />
+                    </p>
+                        <?php if(!empty($row["other_info"])) { ?>
+                        <div class="description">
+                            <div class="descriptionText"><?=$row['other_info']?></div>
+                        </div>
+                    <?php } ?>
+                </div>
             </li>
             
             <?php
@@ -40,7 +49,8 @@
             ?>
 
         </ul>
-    </p><?=$pages?><p>
+    </p><?=$pages?>
+    <p>
     </div><!-- end class left -->
 </div><!-- end content -->
 </div><!-- end row_fluid -->

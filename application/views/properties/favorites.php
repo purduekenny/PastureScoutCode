@@ -1,4 +1,4 @@
-<div class="content span8 properties">
+<div class="content span9 properties">
     <?php
         if(empty($properties)){
             ?>

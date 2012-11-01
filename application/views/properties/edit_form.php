@@ -210,9 +210,369 @@ isset($property['id']) ? $property['id'] : '';
         </div>
     </div>
     <div class="control-group">
-        <?php echo form_label('State/Province', $state['id'], array('class' => 'control-label')); ?>
+        <?php echo form_label('State', 'state', array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($state); ?>
+            <select name="state" id="state">
+                <option value=''>Select a State</option>
+                <option value='Alabama' 
+                    <?php 
+                        //display if read from database.
+                        echo ($info['state']=='Alabama') ? 'selected' : ''; 
+                        //dispaly if there was a validation error
+                        echo set_select('state', 'Alabama');?>
+                >Alabama
+                </option>
+                <option value='Alaska' 
+                    <?php 
+                        echo ($info['state']=='Alaska') ? 'selected' : ''; 
+                        echo set_select('state', 'Alaska'); 
+                    ?> 
+                >Alaska
+                </option>
+                <option value='Arizona' 
+                    <?php  
+                        echo ($info['state']=='Arizona') ? 'selected' : ''; 
+                        echo set_select('state', 'Arizona'); 
+                    ?> 
+                >Arizona
+                </option>
+                <option value='Arkansas' 
+                    <?php  
+                        echo ($info['state']=='Arkansas') ? 'selected' : ''; 
+                        echo set_select('state', 'Arkansas'); 
+                    ?> 
+                >Arkansas
+                </option>
+                <option value='California' 
+                    <?php  
+                        echo ($info['state']=='California') ? 'selected' : ''; 
+                        echo set_select('state', 'California'); 
+                    ?> 
+                >California
+                </option>
+                <option value='Colorado' 
+                    <?php  
+                        echo ($info['state']=='Colorado') ? 'selected' : ''; 
+                        echo set_select('state', 'Colorado'); 
+                    ?> 
+                >Colorado
+                </option>
+                <option value='Connecticut' 
+                    <?php  
+                        echo ($info['state']=='Connecticut') ? 'selected' : ''; 
+                        echo set_select('state', 'Connecticut'); 
+                    ?> 
+                >Connecticut
+                </option>
+                <option value='Delaware' 
+                    <?php  
+                        echo ($info['state']=='Delaware') ? 'selected' : ''; 
+                        echo set_select('state', 'Delaware'); 
+                    ?> 
+                >Delaware
+                </option>
+                <option value='District Of Columbia' 
+                    <?php  
+                        echo ($info['state']=='District Of Columbia') ? 'selected' : ''; 
+                        echo set_select('state', 'District Of Columbia'); 
+                    ?> 
+                >District Of Columbia
+                </option>
+                <option value='Florida' 
+                    <?php  
+                        echo ($info['state']=='Florida') ? 'selected' : ''; 
+                        echo set_select('state', 'Florida'); 
+                    ?> 
+                >Florida
+                </option>
+                <option value='Georgia' 
+                    <?php  
+                        echo ($info['state']=='Georgia') ? 'selected' : ''; 
+                        echo set_select('state', 'Georgia'); 
+                    ?> 
+                >Georgia
+                </option>
+                <option value='Hawaii' 
+                    <?php  
+                        echo ($info['state']=='Hawaii') ? 'selected' : ''; 
+                        echo set_select('state', 'Hawaii'); 
+                    ?> 
+                >Hawaii
+                </option>
+                <option value='Idaho' 
+                    <?php  
+                        echo ($info['state']=='Idaho') ? 'selected' : ''; 
+                        echo set_select('state', 'Idaho'); 
+                    ?> 
+                >Idaho
+                </option>
+                <option value='Illinois' 
+                    <?php  
+                        echo ($info['state']=='Illinois') ? 'selected' : ''; 
+                        echo set_select('state', 'Illinois'); 
+                    ?> 
+                >Illinois
+                </option>
+                <option value='Indiana' 
+                    <?php  
+                        echo ($info['state']=='Indiana') ? 'selected' : ''; 
+                        echo set_select('state', 'Indiana'); 
+                    ?> 
+                >Indiana
+                </option>
+                <option value='Iowa' 
+                    <?php  
+                        echo ($info['state']=='Iowa') ? 'selected' : ''; 
+                        echo set_select('state', 'Iowa'); 
+                    ?> 
+                >Iowa
+                </option>
+                <option value='Kansas' 
+                    <?php  
+                        echo ($info['state']=='Kansas') ? 'selected' : ''; 
+                        echo set_select('state', 'Kansas'); 
+                    ?> 
+                >Kansas
+                </option>
+                <option value='Kentucky' 
+                    <?php  
+                        echo ($info['state']=='Kentucky') ? 'selected' : ''; 
+                        echo set_select('state', 'Kentucky'); 
+                    ?> 
+                >Kentucky
+                </option>
+                <option value='Louisiana' 
+                    <?php  
+                        echo ($info['state']=='Louisiana') ? 'selected' : ''; 
+                        echo set_select('state', 'Louisiana'); 
+                    ?> 
+                >Louisiana
+                </option>
+                <option value='Maine' 
+                    <?php  
+                        echo ($info['state']=='Maine') ? 'selected' : ''; 
+                        echo set_select('state', 'Maine'); 
+                    ?> 
+                >Maine
+                </option>
+                <option value='Maryland' 
+                    <?php  
+                        echo ($info['state']=='Maryland') ? 'selected' : ''; 
+                        echo set_select('state', 'Maryland'); 
+                    ?> 
+                >Maryland
+                </option>
+                <option value='Massachusetts' 
+                    <?php  
+                        echo ($info['state']=='Massachusetts') ? 'selected' : ''; 
+                        echo set_select('state', 'Massachusetts'); 
+                    ?> 
+                >Massachusetts
+                </option>
+                <option value='Michigan' 
+                    <?php  
+                        echo ($info['state']=='Michigan') ? 'selected' : ''; 
+                        echo set_select('state', 'Michigan'); 
+                    ?> 
+                >Michigan
+                </option>
+                <option value='Minnesota' 
+                    <?php  
+                        echo ($info['state']=='Minnesota') ? 'selected' : ''; 
+                        echo set_select('state', 'Minnesota'); 
+                    ?> 
+                >Minnesota
+                </option>
+                <option value='Mississippi' 
+                    <?php  
+                        echo ($info['state']=='Mississippi') ? 'selected' : ''; 
+                        echo set_select('state', 'Mississippi'); 
+                    ?> 
+                >Mississippi
+                </option>
+                <option value='Missouri' 
+                    <?php  
+                        echo ($info['state']=='Missouri') ? 'selected' : ''; 
+                        echo set_select('state', 'Missouri'); 
+                    ?> 
+                >Missouri
+                </option>
+                <option value='Montana' 
+                    <?php  
+                        echo ($info['state']=='Montana') ? 'selected' : ''; 
+                        echo set_select('state', 'Montana'); 
+                    ?> 
+                >Montana
+                </option>
+                <option value='Nebraska' 
+                    <?php  
+                        echo ($info['state']=='Nebraska') ? 'selected' : ''; 
+                        echo set_select('state', 'Nebraska'); 
+                    ?> 
+                >Nebraska
+                </option>
+                <option value='Nevada' 
+                    <?php  
+                        echo ($info['state']=='Nevada') ? 'selected' : ''; 
+                        echo set_select('state', 'Nevada'); 
+                    ?> 
+                >Nevada
+                </option>
+                <option value='New Hampshire' 
+                    <?php  
+                        echo ($info['state']=='New Hampshire') ? 'selected' : ''; 
+                        echo set_select('state', 'New Hampshire'); 
+                    ?> 
+                >NewHampshire
+                </option>
+                <option value='New Jersey' 
+                    <?php  
+                        echo ($info['state']=='New Jersey') ? 'selected' : ''; 
+                        echo set_select('state', 'New Jersey'); 
+                    ?> 
+                >New Jersey
+                </option>
+                <option value='New Mexico' 
+                    <?php  
+                        echo ($info['state']=='New Mexico') ? 'selected' : ''; 
+                        echo set_select('state', 'New Mexico'); 
+                    ?> 
+                >New Mexico
+                </option>
+                <option value='New York' 
+                    <?php  
+                        echo ($info['state']=='New York') ? 'selected' : ''; 
+                        echo set_select('state', 'New York'); 
+                    ?> 
+                >New York
+                </option>
+                <option value='North Carolina' 
+                    <?php  
+                        echo ($info['state']=='North Carolina') ? 'selected' : ''; 
+                        echo set_select('state', 'North Carolina'); 
+                    ?> 
+                >North Carolina
+                </option>
+                <option value='North Dakota' 
+                    <?php  
+                        echo ($info['state']=='North Dakota') ? 'selected' : ''; 
+                        echo set_select('state', 'North Dakota'); 
+                    ?> 
+                >North Dakota
+                </option>
+                <option value='Ohio' 
+                    <?php  
+                        echo ($info['state']=='Ohio') ? 'selected' : ''; 
+                        echo set_select('state', 'Ohio'); 
+                    ?> 
+                >Ohio
+                </option>
+                <option value='Oklahoma' 
+                    <?php  
+                        echo ($info['state']=='Oklahoma') ? 'selected' : ''; 
+                        echo set_select('state', 'Oklahoma'); 
+                    ?> 
+                >Oklahoma
+                </option>
+                <option value='Oregon' 
+                    <?php  
+                        echo ($info['state']=='Oregon') ? 'selected' : ''; 
+                        echo set_select('state', 'Oregon'); 
+                    ?> 
+                >Oregon
+                </option>
+                <option value='Pennsylvania' 
+                    <?php  
+                        echo ($info['state']=='Pennsylvania') ? 'selected' : ''; 
+                        echo set_select('state', 'Pennsylvania'); 
+                    ?> 
+                >Pennsylvania
+                </option>
+                <option value='Rhode Island' 
+                    <?php  
+                        echo ($info['state']=='Rhode Island') ? 'selected' : ''; 
+                        echo set_select('state', 'Rhode Island'); 
+                    ?> 
+                >Rhode Island
+                </option>
+                <option value='South Carolina' 
+                    <?php  
+                        echo ($info['state']=='South Carolina') ? 'selected' : ''; 
+                        echo set_select('state', 'South Carolina'); 
+                    ?> 
+                >South Carolina
+                </option>
+                <option value='South Dakota' 
+                    <?php  
+                        echo ($info['state']=='South Dakota') ? 'selected' : ''; 
+                        echo set_select('state', 'South Dakota'); 
+                    ?> 
+                >South Dakota
+                </option>
+                <option value='Tennessee' 
+                    <?php  
+                        echo ($info['state']=='Tennessee') ? 'selected' : ''; 
+                        echo set_select('state', 'Tennessee'); 
+                    ?> 
+                >Tennessee
+                </option>
+                <option value='Texas' 
+                    <?php  
+                        echo ($info['state']=='Texas') ? 'selected' : ''; 
+                        echo set_select('state', 'Texas'); 
+                    ?> 
+                >Texas
+                </option>
+                <option value='Utah' 
+                    <?php  
+                        echo ($info['state']=='Utah') ? 'selected' : ''; 
+                        echo set_select('state', 'Utah'); 
+                    ?> 
+                >Utah
+                </option>
+                <option value='Vermont' 
+                    <?php  
+                        echo ($info['state']=='Vermont') ? 'selected' : ''; 
+                        echo set_select('state', 'Vermont'); 
+                    ?> 
+                >Vermont
+                </option>
+                <option value='Virginia' 
+                    <?php  
+                        echo ($info['state']=='Virginia') ? 'selected' : ''; 
+                        echo set_select('state', 'Virginia'); 
+                    ?> 
+                >Virginia
+                </option>
+                <option value='Washington' 
+                    <?php  
+                        echo ($info['state']=='Washington') ? 'selected' : ''; 
+                        echo set_select('state', 'Washington'); 
+                    ?> 
+                >Washington
+                </option>
+                <option value='West Virginia' 
+                    <?php  
+                        echo ($info['state']=='West Virginia') ? 'selected' : ''; 
+                        echo set_select('state', 'West Virginia'); 
+                    ?> 
+                >West Virginia
+                </option>
+                <option value='Wisconsin' 
+                    <?php  
+                        echo ($info['state']=='Wisconsin') ? 'selected' : ''; 
+                        echo set_select('state', 'Wisconsin'); 
+                    ?> 
+                >Wisconsin
+                </option>
+                <option value='Wyoming' 
+                    <?php  
+                        echo ($info['state']=='Wyoming') ? 'selected' : ''; 
+                        echo set_select('state', 'Wyoming'); 
+                    ?> 
+                >Wyoming
+                </option>
+            </select>
             <?php echo form_error($state['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$state['name']])?$errors[$state['name']]:''; ?>
         </div>
