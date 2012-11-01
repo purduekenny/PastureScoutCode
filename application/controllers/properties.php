@@ -15,7 +15,7 @@ class Properties extends CI_Controller
         $this->load->model('user');
         $this->load->model('property');
         $this->load->library('pagination');
-        $this->output->enable_profiler(TRUE);
+      //  $this->output->enable_profiler(TRUE);
     }
 
     /**
