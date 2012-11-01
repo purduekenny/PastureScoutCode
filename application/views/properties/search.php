@@ -95,6 +95,14 @@ $size = array(
     'maxlength' => 50
 );
 
+$max_head_count = array(
+    'name'  => 'max_head_count',
+    'id'    => 'max_head_count',
+    'value' => set_value('max_head_count'),
+    'maxlength' => 10
+);
+
+
 
 //array for $allowed_uses checkbox
 $allowed_uses_options = array(
@@ -134,6 +142,14 @@ $allowed_uses = array(
         </div>
     </div>
     <div class="control-group">
+        <?php echo form_label('Maximum Head Count', $max_head_count['id'], array('class' => 'control-label')); ?>
+        <div class="controls">
+            <div class="input-append"><?php echo form_input($max_head_count); ?> <span class="add-on">animals</span></div>
+            <?php echo form_error($max_head_count['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$max_head_count['name']])?$errors[$max_head_count['name']]:''; ?>
+        </div>
+    </div>
+    <div class="control-group">
         <?php echo form_label('Cattle Type', 'allowed_uses[]', array('class' => 'control-label')); ?>
         <div class="controls">
         	<? echo form_dropdown('allowed_uses', $allowed_uses_options); ?>
@@ -141,6 +157,7 @@ $allowed_uses = array(
             <?php echo isset($errors[$allowed_uses['name']])?$errors[$allowed_uses['name']]:''; ?>
         </div>
     </div>
+    
 
 
 

@@ -89,5 +89,22 @@ class Favorite extends CI_Model{
         return $query->num_rows();
     }
 
+    /**
+     * Check to see if pasture is a favorite
+     *
+     * @param   int
+     * @param   int
+     *
+     * @return  int
+     */
+    function check_favorite($user_id, $property_id){
+        $this->db->select('`id`');
+        $this->db->from('favorites');
+        $this->db->where('`user_id`', $user_id);
+        $this->db->where('`property_id`', $property_id);
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
 
 }

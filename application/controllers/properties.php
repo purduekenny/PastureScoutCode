@@ -322,6 +322,7 @@ class Properties extends CI_Controller
             $this->session->set_flashdata('message', 'oops!');
             redirect(base_url() . 'my_account');
         } else {
+            $this->load->model('favorite');
             //logged in user
             $user_id = $this->tank_auth->get_user_id();
             //propety record
@@ -344,7 +345,12 @@ class Properties extends CI_Controller
             $data['property']['images'] = $image_array;
             //get leaser information
             $data['user'] = $this->user->get_user_info_by_property_id($property_id);
-
+            //check to see if it is a favorite - 1 if favorite, 0 if not a favorite
+            $check_favorite = $this->favorite->check_favorite($user_id, $property_id);
+            //change css class based off favorite status
+            $data['is_favorite']['a_class'] = ($check_favorite >= 1) ? "icon-star" : "icon-star-empty";
+            $data['is_favorite']['title'] = ($check_favorite >= 1) ? "un-favorite" : "favorite";
+            //show a view based off of permissions
             $user_info_view = ($this->_check_permissions($user_id) == 'seeker') ? 'properties/view_user_info' : 'properties/view_nothing';
         }
 
@@ -478,16 +484,22 @@ class Properties extends CI_Controller
         } else {
             $user_id = $this->tank_auth->get_user_id();
 
-            $state = $this->input->post('state');
-            $size = $this->input->post('size');
-            $cattle = $this->input->post('allowed_uses');
+            $state          = $this->input->post('state');
+            $size           = $this->input->post('size');
+            $cattle         = $this->input->post('allowed_uses');
+            $max_head_count = $this->input->post('max_head_count');
 
             //if form is submitted, clear session data
             $is_submitted = $this->input->post('submit');
 
             if($is_submitted == 'Search Pastures'){
                 //unset previous search items
-                $array_items = array('state' => '', 'size' => '', 'cattle' => '');
+                $array_items = array(
+                    'state' => '', 
+                    'size' => '', 
+                    'max_head_count' => '', 
+                    'cattle' => ''
+                );
                 $this->session->unset_userdata($array_items);
             }
 
@@ -495,17 +507,24 @@ class Properties extends CI_Controller
             $state_session = $this->session->userdata('state');
             if (empty($state_session)) {        
                $newdata = array(
-                       'state'  => $state,
-                       'size'   => $size,
-                       'cattle' => $cattle
+                       'state'          => $state,
+                       'size'           => $size,
+                       'max_head_count' => $max_head_count,
+                       'cattle'         => $cattle
                 );
                 $this->session->set_userdata($newdata);
             }
 
             //pagination configuration
-            $config['base_url'] = base_url().'properties/search_view/';
-            $config['total_rows'] = $this->property->search_results_count($this->session->userdata('state'), $this->session->userdata('size'), $this->session->userdata('cattle'));
+            $config['base_url'] = base_url().'properties/search_view/index';
+            $config['total_rows'] = $this->property->search_results_count(
+                $this->session->userdata('state'), 
+                $this->session->userdata('size'), 
+                $this->session->userdata('max_head_count'), 
+                $this->session->userdata('cattle')
+            );
             $config['full_tag_open'] = '<div class="pagination"><ul>';
+            $config['uri_segment'] = 4;
             $config['full_tag_close'] = '</ul></div>';
             $config['first_link'] = 'First';
             $config['first_tag_open'] = '<li>';
@@ -527,7 +546,13 @@ class Properties extends CI_Controller
             //if number of property rows less than 5
             $config['per_page']  = ($config['total_rows'] < 5) ? $config['total_rows'] : 5;
 
-            $data['properties'] = $this->property->search($this->session->userdata('state'), $this->session->userdata('size'), $this->session->userdata('cattle'), $config['per_page'], $start);
+            $data['properties'] = $this->property->search(
+                $this->session->userdata('state'), 
+                $this->session->userdata('size'), 
+                $this->session->userdata('max_head_count'), 
+                $this->session->userdata('cattle'), 
+                $config['per_page'], $start
+            );
 
 
             //make pagination happen
@@ -558,12 +583,38 @@ class Properties extends CI_Controller
             $this->session->set_flashdata('message', 'oops!');
             redirect(base_url() . 'my_account');
         } else {
-            $user_id = 26;
-            $property_id = 4;
+            $user_id = $this->tank_auth->get_user_id();
+            $property_id = $this->input->post('property_id');
 
             $this->load->model('favorite');
 
             $this->favorite->add_favorite($user_id, $property_id);
+
+        }
+    }
+
+    /** 
+     * un-favorite
+     *
+     * @param int
+     *
+     * @return json
+     */
+    function un_favorite($property_id) {
+        if (!$this->tank_auth->is_logged_in()) {                                    
+            // if logged in, not activated              
+            $this->session->set_flashdata('message', 'You must be logged in to use this page');
+            redirect(base_url() . 'auth/login');
+        } else if ($user_id= ''){
+            $this->session->set_flashdata('message', 'oops!');
+            redirect(base_url() . 'my_account');
+        } else {
+            $user_id = $this->tank_auth->get_user_id();
+            $property_id = $this->input->post('property_id');
+
+            $this->load->model('favorite');
+
+            $this->favorite->unfavorite($user_id, $property_id);
 
         }
     }
@@ -583,6 +634,7 @@ class Properties extends CI_Controller
             //pagination configuration
             $config['base_url'] = base_url().'properties/favorites/index';
             $config['total_rows'] = $this->favorite->get_favorite_count_by_user_id($user_id);
+            $config['uri_segment'] = 4;
             $config['full_tag_open'] = '<div class="pagination"><ul>';
             $config['full_tag_close'] = '</ul></div>';
             $config['first_link'] = 'First';

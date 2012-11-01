@@ -8,8 +8,8 @@
 
 
         <span id="favorite">
-            <a class="btn btn-medium" href="#"  rel="tooltip" data-placement="top" data-original-title="favorite">
-                <i class="icon-star-empty"></i>
+            <a id="<?=$is_favorite['title']?>" class="btn btn-medium" href="#"  rel="tooltip" data-placement="top" data-original-title="<?=$is_favorite['title']?>">
+                <i class="<?=$is_favorite['a_class']?>"></i>
             </a>
         </span>
 

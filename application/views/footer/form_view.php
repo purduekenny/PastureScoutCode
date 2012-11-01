@@ -83,7 +83,7 @@
         $("#first_name").focus();
 });
 </script>
-
+<script type="text/javascript" src="<?= base_url("assets/scripts/main.js"); ?>"></script>
 <script type="text/javascript">
 // code for uservoice client feedback
 var uvOptions = {};

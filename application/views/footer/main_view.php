@@ -82,37 +82,8 @@
 <script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.core.js"); ?>"></script>
 <script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.widget.js"); ?>"></script>
 <script type="text/javascript" src="<?= base_url("assets/plugins/stock_jquery/jquery.ui.datepicker.js"); ?>"></script>
-<script>
-    $(function() {
-        $(".datepicker").datepicker();
-        $("#first_name").focus();
-        $('.non_subscriber').tooltip();
-        $('.non_subscriber a').on("click", function(e){
-            e.preventDefault();
-        });
-        $('.active a').on("click", function(e){
-            e.preventDefault();
-        });
-        $('span#favorite a').on("click", function(e){
+<script type="text/javascript" src="<?= base_url("assets/scripts/main.js"); ?>"></script>
 
-            e.preventDefault();
-
-            var href = window.location.href;
-            var uri = href.substr(href.lastIndexOf('/') + 1);
-
-            $.ajax({
-                    type: "POST",
-                    url: baseurl + "properties/favorite/" + uri,
-                    data: { property_id: uri },
-                    success : function (result) {
-                    },
-                    error : function () {
-                    }
-                });
-            });
-        $('span#favorite a').tooltip();
-});
-</script>
 <script type="text/javascript">
 // code for uservoice client feedback
 var uvOptions = {};

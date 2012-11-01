@@ -259,14 +259,15 @@ class Property extends CI_Model{
      * Search
      *
      * @param   string
-     * @param   string
+     * @param   int
+     * @param   int
      * @param   string
      * @param   int
      * @param   int
      * 
      * @return  array
      */
-    function search($state, $size, $cattle, $num=0, $start=0){
+    function search($state, $size, $max_head_count, $cattle, $num=0, $start=0){
         $this->db->select('
             `id`, 
             `name`, 
@@ -285,17 +286,18 @@ class Property extends CI_Model{
             `user_id`
         ');
 
-        if($state != "NO")
-        {
+        if($state != "NO"){
             $this->db->where('`state`', $state);
         }
-        if(!empty($size))
-        {
+        if(!empty($size)){
             $this->db->where('size <=', $size);
             $this->db->where('size !=', 0);
         }
-        if($cattle != "NO")
-        {
+        if(!empty($max_head_count)){
+            $this->db->where('max_head_count >=', $max_head_count);
+            $this->db->where('max_head_count !=', 0);
+        }
+        if($cattle != "NO"){
             $this->db->like('`allowed_uses`', $cattle);
         }
         $this->db->where('`status`', 'active');
@@ -306,11 +308,15 @@ class Property extends CI_Model{
 
     /**
      * Get search results number for search pagination
-     *
+     * 
+     * @param   string
      * @param   int
+     * @param   int
+     * @param   string
+     * 
      * @return  int
      */
-    function search_results_count($state, $size, $cattle){
+    function search_results_count($state, $size, $max_head_count, $cattle){
         $this->db->select('`id`');
 
         if($state != "NO"){
@@ -319,6 +325,10 @@ class Property extends CI_Model{
         if(!empty($size)){
             $this->db->where('size <=', $size);
             $this->db->where('size !=', 0);
+        }
+        if(!empty($max_head_count)){
+            $this->db->where('max_head_count <=', $max_head_count);
+            $this->db->where('max_head_count !=', 0);
         }
         if($cattle != "NO"){
             $this->db->like('`allowed_uses`', $cattle);
