@@ -13,7 +13,7 @@ html {
 
 /***** BODY *****/
 body {
-    background-image:url(../../images/homepage/bg_body.jpg);
+    background-image:url(../../images/homepage/bg_body.jpg) repeat-x;
     height:100%;
     margin:0px;
     padding:0px;

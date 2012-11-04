@@ -1,6 +1,6 @@
 /***** LOGO *****/
 body{
-    background-image:url(../../images/homepage/small/small_bg_body.png);
+    background-image:url(../../images/homepage/small/small_bg_body.png) repeat-x;
 }
 
 

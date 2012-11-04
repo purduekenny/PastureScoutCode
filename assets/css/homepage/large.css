@@ -1,5 +1,5 @@
 body{
-    background-image:url(../../images/homepage/bg_body.jpg);
+    background-image:url(../../images/homepage/bg_body.jpg) repeat-x;
 }
 #pageContainer {  
     width:95%;
