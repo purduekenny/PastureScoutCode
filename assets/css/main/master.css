@@ -20,6 +20,7 @@ body {
     font-family:Arial, Helvetica, sans-serif;
     font-size:14px;
 }
+
 #pageContainer {  
     position: relative;
     width:960px;
@@ -309,14 +310,15 @@ body#properties_favorites li#properties_favorites a {
 h1 {
     font-size:36px;
     color:#ffb400;
+    margin: 10px 0 0 10px;
 }
 
 
 h2 {
-    font-size:20px;
+    font-size:23px;
     color:#ffb400;
     font-weight:normal;
-    margin:0 0 13px 10px;
+    margin: 10px 0 0px 10px;
 }
 
 
@@ -467,4 +469,26 @@ br {
     padding: 5px;
     border-top: 1px #FFE099 dashed;
 
+}
+
+/* register page */
+
+.registerForm {
+    float: left; 
+    width: 45%;
+}
+
+.registerImage {
+    margin-top: 80px;
+}
+
+/* login page */
+
+#login_links, #login_button {
+    margin-left: 180px;
+}
+
+#login_text {
+    margin-left: 180px;
+    margin-top: 10px;
 }

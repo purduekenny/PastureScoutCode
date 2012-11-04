@@ -1,4 +1,4 @@
-<div class="content span8 properties">
+P<div class="content span8 properties">
 <h2>Search Results</h2>
 <?php
 
@@ -30,8 +30,9 @@
 
     
 </div><!-- end content -->
-<div class="span8 offset4">
-<?=$pages ?>
+<div class="span8 offset3" class="pagination">
+<?=$pages?>
 </div>
+
 </div><!-- end row_fluid -->
 </div><!-- end container_fluid -->

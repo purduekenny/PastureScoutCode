@@ -241,7 +241,8 @@ $other_info = array(
     <div class="control-group">
         <?php echo form_label('Minimum Lease Term', $min_lease_term['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($min_lease_term); ?>  <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="What is the minimum amount of time that you are willing to lease your pasture?"></i></span>
+            <div class="input-append">
+            <?php echo form_input($min_lease_term); ?><span class="add-on">months</span><span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="What is the minimum amount of time that you are willing to lease your pasture?"></i></span></div>
             <?php echo form_error($min_lease_term['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$min_lease_term['name']])?$errors[$min_lease_term['name']]:''; ?>
         </div>

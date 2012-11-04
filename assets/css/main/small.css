@@ -106,3 +106,23 @@ h1 {
     margin-left: 0px;
 
 }
+
+/* register page */
+
+.registerForm {
+    width: 100%;
+}
+
+.registerImage {
+    display: none;
+}
+
+/*  log in page */
+
+#login_links, #login_button {
+    margin-left: 5px;
+}
+
+#login_text {
+    margin-left: 0px;
+}
