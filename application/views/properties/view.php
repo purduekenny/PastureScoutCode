@@ -37,7 +37,6 @@
         <p><strong>Max Head Count:</strong> 
             <?php echo isset($property['max_head_count']) ? $property['max_head_count'] : 'Not specified'?> </p>
     </div>
-    here
 <hr>
 
 
