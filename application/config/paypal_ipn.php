@@ -24,11 +24,11 @@
 */
 
 // Set this to TRUE or FALSE
-$config['paypal_ipn_use_live_settings'] = FALSE;
+$config['paypal_ipn_use_live_settings'] = TRUE;
 
 // Constants for the live environment
 $config['paypal_ipn_live_settings'] = array(
-    'email' => 'seller_1350686034_biz@gmail.com', // Your merchant email address
+    'email' => 'ryan@pasturescout.com', // Your merchant email address
     'url' => 'https://www.paypal.com/cgi-bin/webscr', // PayPal's IPN handler for validating the data
     'debug' => FALSE // Whether we want debugging enabled (see below for explanation...)
 );
