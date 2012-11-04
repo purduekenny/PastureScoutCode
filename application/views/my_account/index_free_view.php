@@ -36,6 +36,7 @@
     <input type="hidden" name="a3" value="0.10">
     <input type="hidden" name="p3" value="1">
     <input type="hidden" name="t3" value="M">
+    <input type="hidden" name="custom" value="<?=$user_id?>" />
     <input type="hidden" name="currency_code" value="USD">
     <input type="hidden" name="bn" value="PP-SubscriptionsBF:btn_subscribeCC_LG.gif:NonHosted">
     <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
@@ -105,6 +106,7 @@
     <input type="hidden" name="a3" value="0.20">
     <input type="hidden" name="p3" value="1">
     <input type="hidden" name="t3" value="M">
+    <input type="hidden" name="custom" value="<?=$user_id?>" />
     <input type="hidden" name="currency_code" value="USD">
     <input type="hidden" name="bn" value="PP-SubscriptionsBF:btn_subscribeCC_LG.gif:NonHosted">
     <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">

@@ -30,7 +30,7 @@ $config['paypal_ipn_use_live_settings'] = TRUE;
 $config['paypal_ipn_live_settings'] = array(
     'email' => 'ryan@pasturescout.com', // Your merchant email address
     'url' => 'https://www.paypal.com/cgi-bin/webscr', // PayPal's IPN handler for validating the data
-    'debug' => FALSE // Whether we want debugging enabled (see below for explanation...)
+    'debug' => TRUE // Whether we want debugging enabled (see below for explanation...)
 );
 // Debugging simply caches the latest PayPal IPN post data into the database, and retrieves it if
 // validateIPN is called without post data. This is useful for directly trying a validateIPN call from

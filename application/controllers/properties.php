@@ -1,4 +1,4 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+    <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Properties extends CI_Controller
 {
@@ -533,7 +533,7 @@ class Properties extends CI_Controller
             $config['first_tag_close'] = '</li>';
             $config['last_tag_open'] = '<li>';
             $config['last_tag_close'] = '</li>';
-            $config['last_link'] = 'Lwordast';
+            $config['last_link'] = 'Last';
             $config['next_link'] = '&gt;';
             $config['next_tag_open'] = '<li>';
             $config['next_tag_close'] = '</li>';
