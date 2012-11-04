@@ -189,6 +189,7 @@ class Properties extends CI_Controller
                     'restricted_stock_type'  => $this->form_validation->set_value('restricted_stock_type'),
                     'max_head_count'         => $this->form_validation->set_value('max_head_count'),
                     'min_bid'                => $this->form_validation->set_value('min_bid'),
+                    'other_info'             => $this->form_validation->set_value('other_info')
                 );
 
                 //call model and create new property

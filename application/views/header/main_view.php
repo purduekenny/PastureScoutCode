@@ -23,7 +23,7 @@
     <!-- Styles for smartphones -->
     <link rel='stylesheet' media='screen and (max-width: 480px)' href='<?= base_url("assets/css/main/small.css"); ?>'>
     <!-- Bootstrap Image Gallery styles -->
-    <link rel="stylesheet" href="http://blueimp.github.com/Bootstrap-Image-Gallery/css/bootstrap-image-gallery.min.css">
+    <link rel="stylesheet" href="<?= base_url()?>assets/plugins/bluimp/bootstrap-image-gallery.min.css">
     <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
     <link rel="stylesheet" href="<?= base_url("assets/plugins/blueimp_file_upload/css/jquery.fileupload-ui.css"); ?>">
     <!-- base_url for javascript -->
