@@ -131,3 +131,14 @@ h1 {
     margin-left: -0px;
 
 }
+
+/* register page */
+
+.registerForm {
+    width: 100%;
+}
+
+.registerImage {
+    margin: auto;
+    text-align: center;
+}

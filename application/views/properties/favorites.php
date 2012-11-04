@@ -11,10 +11,19 @@
             foreach($properties as $row){
         ?>
         <li>
-            <h3><a href="<?=base_url() . 'properties/view/' . $row['id']; ?>"><?=$row['name']?></a></h3>
-            <p><?=$row['city']?>, <?=$row['state']?> <?=$row['country']?></p>
-            <p>Description: <?=$row['other_info']?></p>
-        </li>
+                <div class="pasturePic"></div>
+                <div class="pastureInfo">
+                    <h3><a href="<?=base_url() . 'properties/view/' . $row['id']; ?>"><?=$row['name']?></a></h3>
+                    <p>
+                        <div class="location"><?=$row['city']?>, <?=$row['state']?></div> <br />
+                    </p>
+                        <?php if(!empty($row["other_info"])) { ?>
+                        <div class="description">
+                            <div class="descriptionText"><?=$row['other_info']?></div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </li>
         <?php
             }//end foreach
         }//end else

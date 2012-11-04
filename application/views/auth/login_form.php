@@ -35,7 +35,7 @@ $captcha = array(
 <div class="row-fluid">
 <div class="span12 content">
 <?php echo form_open($this->uri->uri_string(), array('class' => 'form-horizontal')); ?>
-<h2 style="margin-left: 180px">Login</h2>
+<h2 id="login_text">Login to PastureScout</h2>
 	<div class="control-group">
 		<?php echo form_label($login_label, $login['id'], array('class' => 'control-label')); ?>
 		<div class="controls">
@@ -84,29 +84,29 @@ $captcha = array(
 	</ul>
 	<?php }
 	} ?>
+	<div class="control-group">
+		<ul>
+			<li colspan="3" id="login_links">
+				<?php echo form_checkbox($remember); ?>
+				<span style="position:relative; top:-10px;">
+					<?php echo form_label('Remember me', $remember['id']); ?>
+					<?php echo anchor('/auth/forgot_password/', 'Forgot password'); ?>
+					<?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', 'Register'); ?>
+				</span>
+			</li>
+		</ul>
 
-	<ul style="margin-left: 180px">
-		<li colspan="3" id="login_links">
-			<?php echo form_checkbox($remember); ?>
-			<span style="position:relative; top:-10px;">
-				<?php echo form_label('Remember me', $remember['id']); ?>
-				<?php echo anchor('/auth/forgot_password/', 'Forgot password'); ?>
-				<?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', 'Register'); ?>
-			</span>
-		</li>
-	</ul>
-
-<?php $data = array(
-    'name'        => 'edit',
-    'id'          => 'edit',
-    'value'       => 'Login',
-    'class'       => 'btn btn-primary',
-    'style'		  => 'margin-left: 180px'
-    );
-echo form_submit($data);
-echo form_close();
-?>
-
+	<?php $data = array(
+	    'name'        => 'edit',
+	    'id'          => 'edit',
+	    'value'       => 'Login',
+	    'class'       => 'btn btn-primary',
+	    'id'		  => 'login_button'
+	    );
+	echo form_submit($data);
+	echo form_close();
+	?>
+</div> <!-- end control group -->
 </div><!-- end edit_account -->
 </div><!-- end row_fluid -->
 </div><!-- end container_fluid -->
