@@ -145,6 +145,9 @@ nav {
 h1 {
     font-size:36px;
     color:#ffb400;
+    -moz-text-shadow: 1px 1px 2px #2f6a1d;
+    -webkit-text-shadow: 1px 1px 2px #2f6a1d;
+    text-shadow: 1px 1px 2px #2f6a1d;
 }
 
 .infoBoxText {
@@ -184,12 +187,27 @@ h1 {
     width:900px;
     margin:0 30px 30px 30px;
     line-height:22px;
+    background-color: #f5f5f5;
+}
+
+#poll {
+    float: left; 
+    width: 50%; 
+    margin-left: 30px; 
+    border: 1px solid red;
+}
+
+#blog {
+    float: left;
 }
 
 h2 {
     font-size:32px;
     color:#ffb400;
     font-weight:normal;
+    -moz-text-shadow: 1px 1px 2px #cecece;
+    -webkit-text-shadow: 1px 1px 2px #cecece;
+    text-shadow: 1px 1px 2px #cecece;
     margin:0 0 13px -2px;
 }
 

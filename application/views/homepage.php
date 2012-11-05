@@ -210,28 +210,26 @@
 
         <div id="longContent">
                         <br /><br />
-            <div style="float: left; width: 50%; position: relative; left: 35px;">
-            <!--[if IE]>
-            <iframe src="http://www.pasturescout.com/blog/showlast3.php" type="text/html" style="border: none; background-color: #f8f8f8; " frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="300" height="100"></iframe>
-
-            <![endif]-->
- 
-            <!--[if !IE]> <-->
-            <object style="background-color: transparent;" type="text/html" data="http://www.pasturescout.com/blog/showlast3.php">
-            <p>Visit our <a href="/blog">blog</a>.</p>
-            </object>
-            <!--> <![endif]-->
-
-            <!--
-                <object data="http://www.pasturescout.com/blog/showlast3.php" width="300" height="100"> <embed src="http://www.pasturescout.com/blog/showlast3.php" width="300" height="100"> </embed> Error: Embedded data could not be displayed. </object>
-            -->
-            </div>
-
-            <div style="float: left; width:49%; position: relative; left: 35px;">
+            <div id="poll">
                     <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/6481409.js"></script>
                     <noscript><a href="http://polldaddy.com/poll/6481409/">When seeking a new pasture lease, how far are you willing to travel?</a></noscript>
+            </div>
 
-                    
+            <div id="blog">
+                <!--[if IE]>
+                <iframe src="http://www.pasturescout.com/blog/showlast3.php" type="text/html" style="border: none; background-color: #f8f8f8; " frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="300" height="100"></iframe>
+
+                <![endif]-->
+     
+                <!--[if !IE]> <-->
+                <object style="background-color: transparent;" type="text/html" data="http://www.pasturescout.com/blog/showlast3.php">
+                <p>Visit our <a href="/blog">blog</a>.</p>
+                </object>
+                <!--> <![endif]-->
+
+                <!--
+                    <object data="http://www.pasturescout.com/blog/showlast3.php" width="300" height="100"> <embed src="http://www.pasturescout.com/blog/showlast3.php" width="300" height="100"> </embed> Error: Embedded data could not be displayed. </object>
+                -->         
             </div>      
             <br style="clear: both;"> 
         </div><!-- close long text content -->
