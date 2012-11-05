@@ -81,6 +81,11 @@ h1 {
     margin:0 10px 10px 10px;
 }
 
+#blog {
+
+    margin-top: 20px;
+}
+
 #asSeen {
     background: url('../../images/homepage/medium/medium_asseen.png') no-repeat center;
     width:auto;

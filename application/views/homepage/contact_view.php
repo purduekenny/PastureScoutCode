@@ -122,7 +122,7 @@ $message = array(
                     'name'        => 'submit',
                     'id'          => 'submit',
                     'value'       => 'Send Email',
-                    'class'       => 'btn btn-primary'
+                    'class'       => 'btn btn-primary btn-block'
                     );
                     echo form_submit($data);
                     echo form_close();
