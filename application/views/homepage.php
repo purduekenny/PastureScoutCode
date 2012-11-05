@@ -217,7 +217,7 @@
             <![endif]-->
  
             <!--[if !IE]> <-->
-            <object type="text/html" data="http://www.pasturescout.com/blog/showlast3.php">
+            <object style="background-color: transparent;" type="text/html" data="http://www.pasturescout.com/blog/showlast3.php">
             <p>Visit our <a href="/blog">blog</a>.</p>
             </object>
             <!--> <![endif]-->
@@ -233,11 +233,7 @@
 
                     
             </div>      
-            <br style="clear: both;">
-
-            <h2>Long Content</h2>
-            <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Donec mi dui, tempor eget hendrerit id, porta non ligula. Etiam scel erisque est ac quam faucibus rhoncus. Etiam et nunc justo, in fermentum nulla. Proin sollicitudin orci vel ante tincidunt accumsan. Vesti bulum tortor tellus, pelle ntesque quis venenatis eget, hendrerit eleifend leo. Ut vitae imperdiet dolor pretium ligula eget lacus lacinia at aliqua. Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Donec mi dui, tempor eget hendrerit id, porta non ligula. Etiam scel erisque est ac quam faucibus rhoncus. Etiam et nunc justo, in fermentum nulla. Proin sollicitudin orci vel ante tincidunt accumsan. Vesti bulum tortor tellus, pelle ntesque quis venenatis eget, hendrerit eleifend leo ut vitae imperdiet dolor pretium ligul eget. lacus lacinia at aliqua.</p>
-            
+            <br style="clear: both;"> 
         </div><!-- close long text content -->
         
     </div><!-- close page container -->
