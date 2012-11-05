@@ -128,11 +128,11 @@ $other_info = array(
 ?>
 <div class="content span9 properties">
 <?php echo form_open(base_url().'properties/create/', array('class' => 'form-horizontal')) ?>
-    <h2>Enter Description</h2>
+    <h2>Tell Us About Your Pasture</h2>
     <div class="control-group">
         <?php echo form_label('Pasture Name', $name['id'], array('class' => 'control-label')); ?> 
         <div class="controls">
-            <?php echo form_input($name); ?> <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="Name your pasture something unique and easily identifiable. This will be how your pasture is referenced throughout the site."></i></span>
+            <?php echo form_input($name); ?> <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="left" title="Name your pasture something unique and easily identifiable. This will be how your pasture is referenced throughout the site."></i></span>
             <?php echo form_error($name['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$name['name']])?$errors[$name['name']]:''; ?>
         </div>
@@ -140,7 +140,7 @@ $other_info = array(
     <div class="control-group">
         <?php echo form_label('Location', $location['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($location); ?> <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="tooltip"></i></span>
+            <?php echo form_input($location); ?> <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="left" title="Street address or nearest local landmark. For example, 'Near old saw mill on State Road 42'."></i></span>
             <?php echo form_error($location['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$location['name']])?$errors[$location['name']]:''; ?>
         </div>
@@ -148,7 +148,7 @@ $other_info = array(
     <div class="control-group">
         <?php echo form_label('Region', $region['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($region); ?> <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="tooltip"></i></span>
+            <?php echo form_input($region); ?> <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="left" title="Geographic region of state. For example, 'Southwest Texas.'"></i></span>
             <?php echo form_error($region['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$region['name']])?$errors[$region['name']]:''; ?>
         </div>
@@ -156,7 +156,7 @@ $other_info = array(
     <div class="control-group">
         <?php echo form_label('City', $city['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($city); ?> <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="What city is your pasture located in?"></i></span>
+            <?php echo form_input($city); ?> <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="left" title="What city is your pasture located in?"></i></span>
             <?php echo form_error($city['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$city['name']])?$errors[$city['name']]:''; ?>
         </div>
@@ -217,7 +217,7 @@ $other_info = array(
                 <option value="West Virginia">West Virginia</option>
                 <option value="Wisconsin">Wisconsin</option>
                 <option value="Wyoming">Wyoming</option>
-            </select>  <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="What state is your pasture located in?"></i></span>
+            </select>  <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="left" title="What state is your pasture located in?"></i></span>
             <?php echo form_error($state['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$state['name']])?$errors[$state['name']]:''; ?>
         </div>
@@ -225,7 +225,7 @@ $other_info = array(
     <div class="control-group">
         <?php echo form_label('Country', $country['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($country); ?>  <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="What country is your pasture located in?"></i></span>
+            <?php echo form_input($country); ?>  <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="left" title="What country is your pasture located in?"></i></span>
             <?php echo form_error($country['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$country['name']])?$errors[$country['name']]:''; ?>
         </div>
@@ -242,7 +242,7 @@ $other_info = array(
         <?php echo form_label('Minimum Lease Term', $min_lease_term['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <div class="input-append">
-            <?php echo form_input($min_lease_term); ?><span class="add-on">months</span><span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="What is the minimum amount of time that you are willing to lease your pasture?"></i></span></div>
+            <?php echo form_input($min_lease_term); ?><span class="add-on">months</span></div>
             <?php echo form_error($min_lease_term['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$min_lease_term['name']])?$errors[$min_lease_term['name']]:''; ?>
         </div>
@@ -250,7 +250,7 @@ $other_info = array(
     <div class="control-group">
         <?php echo form_label('Lease Availability Date', $lease_availability_date['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($lease_availability_date); ?>  <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="When is your land available to lease?"></i></span>
+            <?php echo form_input($lease_availability_date); ?>  <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="left" title="When is your land available to lease?"></i></span>
             <?php echo form_error($lease_availability_date['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$lease_availability_date['name']])?$errors[$lease_availability_date['name']]:''; ?>
         </div>
@@ -278,7 +278,7 @@ $other_info = array(
     <div class="control-group">
         <?php echo form_label('Handling facilities', $handling_facilities['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($handling_facilities); ?> <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="right" title="tooltip"></i></span>
+            <?php echo form_input($handling_facilities); ?> <span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="left" title="Describe any livestock handling facilities, suh as corrals, pens, barns, etc."></i></span>
             <?php echo form_error($handling_facilities['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$handling_facilities['name']])?$errors[$handling_facilities['name']]:''; ?>
         </div>
@@ -336,7 +336,7 @@ $other_info = array(
         'id'          => 'submit',
         'value'       => 'Create Your Pasture Listing',
         'class'       => 'btn btn-primary btn-block',
-        'style'       => 'margin-left: 0px;'
+        'style'       => 'width: 96%;'
         );
         echo form_submit($data);
         echo form_close();

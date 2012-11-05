@@ -5,31 +5,49 @@
 ?>
 
 <div class="content span9 properties">
+    <h2><strong><?=$property['name']?></strong></h2>
     <div class="pasturePic"></div>
     <div class="pastureInfo">
-        <h2><strong><?=$property['name']?></strong></h2>
+        <p style="font-size: 18px;"><strong><?=$property['city']?>, <?=$property['state']?></strong></p>
         <p><strong>Description:</strong> 
             <?php echo isset($property['other_info']) ? $property['other_info'] : 'Not specified'?> </p>
-        <p><?=$property['city']?>, <?=$property['state']?> <?=$property['country']?></p>
-        <p><strong>Location:</strong> <?=$property['city']?> </p>
-        <p><strong>Region:</strong> <?=$property['region']?> </p>
-        <p><strong>Size:</strong> 
-            <?php echo isset($property['size']) ? $property['size'] : 'Not specified'?> </p>
-        <p><strong>Minimum Lease Term:</strong> 
-            <?php echo isset($property['min_lease_term']) ? $property['min_lease_term'] : 'Not specified'?> </p>
-        <p><strong>Lease Availability:</strong> 
-            <?php echo isset($property['lease_availability_date']) ? $lease_availability_date_format : 'Not specified'?> </p>
-        <p><strong>Features:</strong> 
-            <?php echo isset($property['features_forage_type']) ? $property['features_forage_type'] : 'Not specified'?> </p>
-        <p><strong>Handling Facilties:</strong> 
-            <?php echo isset($property['handling_facilities']) ? $property['handling_facilities'] : 'Not specified'?> </p>
-        <p><strong>Allowed Uses:</strong> 
-            <?php echo isset($property['allowed_uses']) ? $property['allowed_uses'] : 'Not specified'?> </p>
-        <h2>Stock Rescrictions</h2>
-        <p><strong>Restricted Stock Type:</strong> <?php echo isset($property['restricted_stock_type']) ? $property['restricted_stock_type'] : 'Not specified'?> </p>
-        <p><strong>Max Head Count:</strong> 
-            <?php echo isset($property['max_head_count']) ? $property['max_head_count'] : 'Not specified'?> </p>
         
+        <div style="float: left; width: 45%">
+            <p><strong>Location</strong> 
+                <br />
+                <?=$property['city']?> </p>
+            <p><strong>Region</strong> 
+                <br />
+                <?=$property['region']?> </p>
+            <p><strong>Size</strong> 
+                <br />
+                <?php echo isset($property['size']) ? $property['size'] : 'Not specified'?> acres</p>
+            <p><strong>Minimum Lease Term</strong> 
+                <br />
+                <?php echo isset($property['min_lease_term']) ? $property['min_lease_term'] . " months" : 'Not specified'?></p>
+        </div>
+        <div style="float: left; width: 45%">    
+            <p><strong>Lease Availability</strong> 
+                <br />
+                <?php echo isset($property['lease_availability_date']) ? $lease_availability_date_format : 'Not specified'?> </p>
+            <p><strong>Features</strong> 
+                <br />
+                <?php echo isset($property['features_forage_type']) ? $property['features_forage_type'] : 'None'?> </p>
+            <p><strong>Handling Facilties</strong> 
+                <br />
+                <?php echo isset($property['handling_facilities']) ? $property['handling_facilities'] : 'None'?> </p>
+            <p><strong>Allowed Uses</strong> 
+                <br />
+                <?php echo isset($property['allowed_uses']) ? $property['allowed_uses'] : 'None specified'?> </p>
+        </div>
+            <br class="clearfix">
+            <h2>Stock Rescrictions</h2>
+            <p><?= $property["name"] ?>'s max head count is <?php echo isset($property['max_head_count']) ? "<strong>" . $property['max_head_count'] . "</strong>" : 'not specified'?>. </p>
+        
+            <p><strong>Restricted Stock Type</strong> 
+                <br />
+                <?php echo isset($property['restricted_stock_type']) ? $property['restricted_stock_type'] : 'Not specified'?> </p>
+
 <!--     <h2>Bid Information</h2>
     <p><strong>Min Bid:</strong> 
         <?php echo isset($property['min_bid']) ? $property['min_bid'] : 'Not specified'?> </p>

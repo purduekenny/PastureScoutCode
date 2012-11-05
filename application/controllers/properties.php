@@ -15,7 +15,7 @@ class Properties extends CI_Controller
         $this->load->model('user');
         $this->load->model('property');
         $this->load->library('pagination');
-      //  $this->output->enable_profiler(TRUE);
+        $this->output->enable_profiler(TRUE);
     }
 
     /**
@@ -351,7 +351,7 @@ class Properties extends CI_Controller
             $check_favorite = $this->favorite->check_favorite($user_id, $property_id);
             //change css class based off favorite status
             $data['is_favorite']['a_class'] = ($check_favorite >= 1) ? "icon-star" : "icon-star-empty";
-            $data['is_favorite']['title'] = ($check_favorite >= 1) ? "un-favorite" : "favorite";
+            $data['is_favorite']['title'] = ($check_favorite >= 1) ? "un-favorite" : "Favorite";
             //show a view based off of permissions
             $user_info_view = ($this->_check_permissions($user_id) == 'seeker') ? 'properties/view_user_info' : 'properties/view_nothing';
         }
