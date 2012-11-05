@@ -36,6 +36,11 @@
         
     </div><!-- close green footer -->
 
+    <!-- jquery -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<!-- bootstrap js -->
+<script src="<?= base_url("assets/bootstrap/js/bootstrap.min.js"); ?>"></script>
+
 </footer><!-- close footer -->
 </body>
 </html>
