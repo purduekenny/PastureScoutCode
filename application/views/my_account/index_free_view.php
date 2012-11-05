@@ -33,7 +33,7 @@
     <input type="hidden" name="rm" value="1">
     <input type="hidden" name="return" value="<?= base_url()?>/my_account">
     <input type="hidden" name="src" value="1">
-    <input type="hidden" name="a3" value="0.10">
+    <input type="hidden" name="a3" value="25.00">
     <input type="hidden" name="p3" value="1">
     <input type="hidden" name="t3" value="M">
     <input type="hidden" name="custom" value="<?=$user_id?>" />
@@ -103,7 +103,7 @@
     <input type="hidden" name="rm" value="1">
     <input type="hidden" name="return" value="<?= base_url()?>/my_account">
     <input type="hidden" name="src" value="1">
-    <input type="hidden" name="a3" value="0.20">
+    <input type="hidden" name="a3" value="35.00">
     <input type="hidden" name="p3" value="1">
     <input type="hidden" name="t3" value="M">
     <input type="hidden" name="custom" value="<?=$user_id?>" />

@@ -206,7 +206,35 @@
         </div><!-- close find bid lease -->
         
         <!-- LONG TEXT CONTENT -->
+        
+
         <div id="longContent">
+                        <br /><br />
+            <div style="float: left; width: 50%; position: relative; left: 35px;">
+            <!--[if IE]>
+            <iframe src="http://www.pasturescout.com/blog/showlast3.php" type="text/html" style="border: none; background-color: #f8f8f8; " frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="300" height="100"></iframe>
+
+            <![endif]-->
+ 
+            <!--[if !IE]> <-->
+            <object type="text/html" data="http://www.pasturescout.com/blog/showlast3.php">
+            <p>Visit our <a href="/blog">blog</a>.</p>
+            </object>
+            <!--> <![endif]-->
+
+            <!--
+                <object data="http://www.pasturescout.com/blog/showlast3.php" width="300" height="100"> <embed src="http://www.pasturescout.com/blog/showlast3.php" width="300" height="100"> </embed> Error: Embedded data could not be displayed. </object>
+            -->
+            </div>
+
+            <div style="float: left; width:49%; position: relative; left: 35px;">
+                    <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/6481409.js"></script>
+                    <noscript><a href="http://polldaddy.com/poll/6481409/">When seeking a new pasture lease, how far are you willing to travel?</a></noscript>
+
+                    
+            </div>      
+            <br style="clear: both;">
+
             <h2>Long Content</h2>
             <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Donec mi dui, tempor eget hendrerit id, porta non ligula. Etiam scel erisque est ac quam faucibus rhoncus. Etiam et nunc justo, in fermentum nulla. Proin sollicitudin orci vel ante tincidunt accumsan. Vesti bulum tortor tellus, pelle ntesque quis venenatis eget, hendrerit eleifend leo. Ut vitae imperdiet dolor pretium ligula eget lacus lacinia at aliqua. Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Donec mi dui, tempor eget hendrerit id, porta non ligula. Etiam scel erisque est ac quam faucibus rhoncus. Etiam et nunc justo, in fermentum nulla. Proin sollicitudin orci vel ante tincidunt accumsan. Vesti bulum tortor tellus, pelle ntesque quis venenatis eget, hendrerit eleifend leo ut vitae imperdiet dolor pretium ligul eget. lacus lacinia at aliqua.</p>
             

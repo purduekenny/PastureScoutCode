@@ -43,7 +43,7 @@
         
         <!-- HEADER -->
         <header>
-            <a href="<?= base_url(); ?>"><div id="logo"></div></a>
+            <a href="<?= base_url() . "properties"; ?>"><div id="logo"></div></a>
             <!-- NAVIGATION -->
             <div id="nav_wrapper">
                 <ul class="navList">
