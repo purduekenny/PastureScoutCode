@@ -150,7 +150,7 @@ $allowed_uses = array(
         </div>
     </div>
     <div class="control-group">
-        <?php echo form_label('Cattle Type', 'allowed_uses[]', array('class' => 'control-label')); ?>
+        <?php echo form_label('Livestock Type', 'allowed_uses[]', array('class' => 'control-label')); ?>
         <div class="controls">
         	<? echo form_dropdown('allowed_uses', $allowed_uses_options); ?>
             <?php echo form_error($allowed_uses['name'], '<span class="error">', '</span>'); ?>
