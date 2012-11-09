@@ -6,7 +6,7 @@
     <ul class="nav nav-tabs">
         <li class="active"><a href="#tabs1-pane1" data-toggle="tab">Why is <strong>PastureScout</strong> needed?</a></li>
         <li><a href="#tabs1-pane2" data-toggle="tab">How does <strong>PastureScout</strong> work?</a></li>
-        <li><a href="#tabs1-pane3" data-toggle="tab">About the Team</a></li>
+        <li><a href="#tabs1-pane3" data-toggle="tab">The Team</a></li>
     </ul>
     <div class="tab-content">
         <div class="tab-pane active" id="tabs1-pane1">

@@ -52,8 +52,8 @@
                         $email = $this->session->userdata('email');
                         if($email != '' ){
                             ?>
-                                <li class="navLi"><a href='<?= base_url("properties"); ?>'>My Dashboard</a></li>
-                                <li class="navLi"><a href='<?= base_url("my_account"); ?>'>My Account</a></li> 
+                                <li class="navLi"><a href='<?= base_url("properties"); ?>'>Pastures</a></li>
+                                <li class="navLi"><a href='<?= base_url("my_account"); ?>'>Account</a></li> 
                                 <li class="navLi"><a href='<?= base_url("auth/logout"); ?>'>Logout</a></li>
                                 </ul><!-- close navigation -->
                             <?php
