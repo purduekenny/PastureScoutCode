@@ -1,7 +1,6 @@
 <div class="container-fluid">
     <div class="content">
         <div class="row-fulid">
-            <h1>Membership</h1>
             <br />
         </div>
         <div class="row-fluid">
