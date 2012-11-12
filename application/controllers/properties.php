@@ -516,7 +516,7 @@ class Properties extends CI_Controller
             }
 
             //pagination configuration
-            $config['base_url'] = base_url().'properties/search_view/index';
+            $config['base_url'] = base_url().'properties/search_view';
             $config['total_rows'] = $this->property->search_results_count(
                 $this->session->userdata('state'), 
                 $this->session->userdata('size'), 
@@ -524,7 +524,7 @@ class Properties extends CI_Controller
                 $this->session->userdata('cattle')
             );
             $config['full_tag_open'] = '<div class="pagination"><ul>';
-            $config['uri_segment'] = 4;
+            $config['uri_segment'] = 3;
             $config['full_tag_close'] = '</ul></div>';
             $config['first_link'] = 'First';
             $config['first_tag_open'] = '<li>';
