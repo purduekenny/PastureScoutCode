@@ -12,6 +12,8 @@ $profile_image = isset($property['images'][0])? 'files/'.$property['images'][0] 
     <ul>
         <?php
             foreach($properties as $row){
+                list($photo) = explode(',', $row['photos']);
+                $profile_image = $photo != "" ? 'files/' . $photo : 'assets/images/main/nopic.png';
         ?>
         <li>
                 <div class="pasturePic"><img src="<?=base_url("$profile_image")?>"></div>

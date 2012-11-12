@@ -451,6 +451,12 @@ br {
     margin: 10px;
 }
 
+.pasturePic img{
+    max-height: 120px;
+
+}
+
+
 .pastureInfo {
     float: left;
     width: 77%;

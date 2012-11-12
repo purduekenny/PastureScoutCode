@@ -1,6 +1,4 @@
-<?php
-$profile_image = isset($property['images'][0])? 'files/'.$property['images'][0] : 'assets/images/main/nopic.png';
-?>
+
 <div class="content span9 properties">
     <div class="left">
         <script>
@@ -29,7 +27,9 @@ $profile_image = isset($property['images'][0])? 'files/'.$property['images'][0] 
         <ul>
             <?php
                 foreach($properties as $row){
-
+                //get first photo
+                list($photo) = explode(',', $row['photos']);
+                $profile_image = $photo != "" ? 'files/' . $photo : 'assets/images/main/nopic.png';
             ?>
             <li>
                 <div class="pasturePic"><img src="<?=base_url("$profile_image")?>"></div>

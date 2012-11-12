@@ -61,6 +61,7 @@ class Favorite extends CI_Model{
             `P.restricted_stock_type`, 
             `P.max_head_count`, 
             `P.size`,
+            `P.photos`,
             `P.min_lease_term`,
             `P.lease_availability_date`,
             `P.features_forage_type`,
