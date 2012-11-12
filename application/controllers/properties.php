@@ -15,7 +15,7 @@ class Properties extends CI_Controller
         $this->load->model('user');
         $this->load->model('property');
         $this->load->library('pagination');
-       // $this->output->enable_profiler(TRUE);
+        //$this->output->enable_profiler(TRUE);
     }
 
     /**
@@ -83,10 +83,11 @@ class Properties extends CI_Controller
             $user_id = $this->tank_auth->get_user_id();
 
             //pagination configuration
-            $config['base_url'] = base_url().'properties/my_properties/index/';
+            $config['base_url'] = base_url().'properties/my_properties/';
             $config['total_rows'] = $this->property->get_properties_count_by_user_id($user_id);
             $config['full_tag_open'] = '<div class="pagination"><ul>';
             $config['full_tag_close'] = '</ul></div>';
+            $config['uri_segment'] = 3;
             $config['first_link'] = 'First';
             $config['first_tag_open'] = '<li>';
             $config['first_tag_close'] = '</li>';
@@ -197,7 +198,7 @@ class Properties extends CI_Controller
 
                 //message
                 $this->session->set_flashdata('message', 'You have successfully added a new property');
-                redirect(base_url() . 'properties/my_properties');
+                redirect(base_url() . 'properties/get_property_id');
 
                 } else {
                     $errors = $this->tank_auth->get_error_message();
@@ -214,6 +215,30 @@ class Properties extends CI_Controller
         $this->_nav_view($user_id);
         $this->load->view('properties/add_form');
         $this->load->view('footer/main_view');
+    }
+
+    /**
+     * Angie's hackish way to get new pasture id to redirect to images
+     *
+     * @return void
+     */
+    function get_property_id()
+    {
+        if (!$this->tank_auth->is_logged_in()) {                                    
+            // if logged in, not activated              
+            $this->session->set_flashdata('message', 'You must be logged in to use this page');
+            redirect(base_url() . 'auth/login');
+        } else if ($user_id= ''){
+            $this->session->set_flashdata('message', 'oops!');
+            redirect(base_url() . 'my_account');
+        } else if ($this->_check_permissions($this->tank_auth->get_user_id()) == 'leaser' || $this->_check_permissions($this->tank_auth->get_user_id()) == "free_trial"){
+            $user_id = $this->tank_auth->get_user_id();
+            $data = $this->property->get_latest_pasture_id($user_id);
+            redirect(base_url() . 'upload/index/' . $data['id']);
+        } else {
+            $this->session->set_flashdata('message', 'You must be a Leaser to view this page.');
+            redirect(base_url() . 'my_account');
+        }
     }
 
     /**

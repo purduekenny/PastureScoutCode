@@ -334,7 +334,7 @@ $other_info = array(
         $data = array(
         'name'        => 'submit',
         'id'          => 'submit',
-        'value'       => 'Create Your Pasture Listing',
+        'value'       => 'Create Your Pasture Listing and Add Images',
         'class'       => 'btn btn-primary btn-block',
         'style'       => 'width: 96%;'
         );
@@ -342,7 +342,7 @@ $other_info = array(
         echo form_close();
     ?>
         
-    <p style="line-height: 150%;"><span class="label label-info">Did You Know?</span> You can add images of your pasture to your listing. Once you create your listing, add images by going to "My Pastures" and uploading images to the pasture you want!</p>
+<!--     <p style="line-height: 150%;"><span class="label label-info">Did You Know?</span> You can add images of your pasture to your listing. Once you create your listing, add images by going to "My Pastures" and uploading images to the pasture you want!</p> -->
     </div><!-- end span9 -->
 
 </div><!-- end row_fluid -->

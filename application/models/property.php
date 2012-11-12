@@ -109,6 +109,22 @@ class Property extends CI_Model{
     }
 
     /**
+     * get latest pasture id from a user. 
+     *
+     * @param   int
+     * @return  null
+     */
+    function get_latest_pasture_id($user_id){
+        $this->db->select('`id`');
+        $this->db->where('`user_id`', $user_id);
+        $this->db->order_by("created", "desc");
+        $this->db->limit(1);
+        $query = $this->db->get('properties');
+        return $query->row_array();
+    }
+
+
+    /**
      * get images
      *
      * @param   int
