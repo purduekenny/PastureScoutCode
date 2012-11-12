@@ -2,11 +2,12 @@
     $opening_bid_date_format = date('F j, Y', strtotime($property['opening_bid_date']));
     $closing_bid_date_format = date('F j, Y', strtotime($property['closing_bid_date']));
     $lease_availability_date_format = date('F j, Y', strtotime($property['lease_availability_date']));
+    $profile_image = isset($property['images'][0])? 'files/'.$property['images'][0] : 'assets/images/main/nopic.png';
 ?>
 
 <div class="content span9 properties">
     <h2><strong><?=$property['name']?></strong></h2>
-    <div class="pasturePic"></div>
+    <div class="pasturePic"><img src="<?=base_url("$profile_image")?>"></div>
     <div class="pastureInfo">
         <p style="font-size: 18px;"><strong><?=$property['city']?>, <?=$property['state']?></strong></p>
         <p><strong>Description:</strong> 

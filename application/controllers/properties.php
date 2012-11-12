@@ -357,19 +357,9 @@ class Properties extends CI_Controller
             //owner of pasture
             $property_user_id = $data['property']['user_id'];
 
-            //get images from db
-            $images = $this->property->get_images($property_id);
-            //turn field 'photos' into an array, 
-            $image_array = explode(",", $images['photos']);
-            //get last item
-            $last_item = end(array_values($image_array));
-            //remove last item if it doesn't have anything
-            if ($last_item == ''){
-                //remove last array item
-                array_pop($image_array);
-            }
-            //put image array into property array to be passed to a view
-            $data['property']['images'] = $image_array;
+            //put images into data array to be used in the view
+            $data['property']['images'] = $this->_all_images($property_id);
+
             //get leaser information
             $data['user'] = $this->user->get_user_info_by_property_id($property_id);
             //check to see if it is a favorite - 1 if favorite, 0 if not a favorite
@@ -411,27 +401,9 @@ class Properties extends CI_Controller
             $data['property'] = $this->property->get_property_by_id($property_id);
             //owner of pasture
             $property_user_id = $data['property']['user_id'];
-            //if current user owns pasture
 
-            //get images from db
-            $images = $this->property->get_images($property_id);
-            //turn field 'photos' into an array, 
-            $image_array = explode(",", $images['photos']);
-            //get last item
-            $last_item = end(array_values($image_array));
-            //remove last item if it doesn't have anything
-            if ($last_item == ''){
-                //remove last array item
-                array_pop($image_array);
-            }
             //put images into data array to be used in the view
-            $data['property']['images'] = $image_array;
-            //calculate how much to charge for paypal
-            if ($data['property']['size'] * .1 > 100){
-                $data['property']['paypal_calculation'] = $data['property']['size'] * .1;
-            } else {
-                $data['property']['paypal_calculation'] = 100;
-            }    
+            $data['property']['images'] = $this->_all_images($property_id);
             
         }
         
@@ -442,6 +414,7 @@ class Properties extends CI_Controller
         $this->load->view('properties/view_mine_bottom', $data);
         $this->load->view('footer/main_view');
     }
+
 
     /**
      * Archive property
@@ -599,7 +572,7 @@ class Properties extends CI_Controller
      *
      * @param int
      *
-     * @return json
+     * @return null
      */
     function favorite($property_id) {
         if (!$this->tank_auth->is_logged_in()) {                                    
@@ -625,7 +598,7 @@ class Properties extends CI_Controller
      *
      * @param int
      *
-     * @return json
+     * @return null
      */
     function un_favorite($property_id) {
         if (!$this->tank_auth->is_logged_in()) {                                    
@@ -740,6 +713,8 @@ class Properties extends CI_Controller
     /**
      * Check permissions 
      *
+     * @param int
+     *
      * @return string
      */
     private function _check_permissions($user_id){
@@ -759,6 +734,51 @@ class Properties extends CI_Controller
         }
     }
 
+    /**
+     * Get all images
+     *
+     * @param int
+     *
+     * @return void
+     */
+    private function _all_images($property_id){
+        //get images from db
+        $images = $this->property->get_images($property_id);
+        //turn field 'photos' into an array, 
+        $image_array = explode(",", $images['photos']);
+        //get last item
+        $last_item = end(array_values($image_array));
+        //remove last item if it doesn't have anything
+        if ($last_item == ''){
+            //remove last array item
+            array_pop($image_array);
+        }
+
+        return $image_array;
+    }
+
+    /**
+     * Get first image
+     *
+     * @param int
+     *
+     * @return void
+     */
+    private function _first_image($property_id){
+        //get images from db
+        $images = $this->property->get_images($property_id);
+        //turn field 'photos' into an array, 
+        $image_array = explode(",", $images['photos']);
+        //get last item
+        $last_item = end(array_values($image_array));
+        //remove last item if it doesn't have anything
+        if ($last_item == ''){
+            //remove last array item
+            array_pop($image_array);
+        }
+
+        return $image_array[0];
+    }
 
     
     
