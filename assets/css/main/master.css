@@ -229,6 +229,22 @@ body#properties_favorites li#properties_favorites a {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9b7530', endColorstr='#d8bd40',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     color: #fff;
 }
+/* current page nav*/
+body#forages_index li#forages_index a,
+body#forages_my_forages li#forages_my_forages a,
+body#forages_create li#forages_create a,
+body#forages_search li#forages_search a,
+body#forages_favorites li#forages_favorites a {
+    background: #9b7530; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #9b7530 0%, #d8bd40 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#9b7530), color-stop(100%,#d8bd40)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg, #9b7530 0%,#d8bd40 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg, #9b7530 0%,#d8bd40 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg, #9b7530 0%,#d8bd40 100%); /* IE10+ */
+    background: linear-gradient(135deg, #9b7530 0%,#d8bd40 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9b7530', endColorstr='#d8bd40',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    color: #fff;
+}
 /*non subcruber a*/
 .non_subscriber a{
     color: #fff !important;
@@ -281,6 +297,23 @@ body#properties_favorites li#properties_favorites a {
 }
 
 .properties li a{
+    color:#969696;
+}
+
+/*foragess*/
+.foragess li{
+    display:inline-block;
+    width:100%;
+    min-height:100px;
+    margin: 0px 0 0px 0;
+    border-bottom:1px solid #ddd;
+}
+
+.foragess li:last-child{
+    border-bottom:none;
+}
+
+.foragess li a{
     color:#969696;
 }
 

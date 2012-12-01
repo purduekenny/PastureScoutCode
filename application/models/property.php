@@ -1,33 +1,33 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * Property Model
+ * forages Model
  *
  *
  */
-class Property extends CI_Model{
+class forages extends CI_Model{
 
     /**
-     * Create new property
+     * Create new forages
      *
      * @param   array
      * @return  null
      */
-    function create_property($data){
+    function create_forages($data){
 
         $data['created'] = date('Y-m-d H:i:s');
         $data['status'] = 'active';
-        $this->db->insert('properties', $data);
+        $this->db->insert('forages', $data);
         return NULL;
     }
 
     /**
-     * Get properties
+     * Get forages
      * @param   int
      * @param   int
      * @return  array
      */
-    function get_properties($num=5, $start=0){
+    function get_forages($num=5, $start=0){
         $this->db->select('
             `id`, 
             `name`, 
@@ -52,20 +52,20 @@ class Property extends CI_Model{
         ');
         $this->db->where('status', 'active');
         $this->db->limit($num, $start);
-        $query = $this->db->get('properties'); 
+        $query = $this->db->get('forages'); 
         return $query->result_array();
     
     }
 
     /**
-     * Get properties by user_id
+     * Get forages by user_id
      *
      * @param   int
      * @param   int
      * @param   int
      * @return  array
      */
-    function get_properties_by_user($user_id, $num=0, $start=0){
+    function get_forages_by_user($user_id, $num=0, $start=0){
         $this->db->select('            
             `id`, 
             `name`, 
@@ -92,36 +92,36 @@ class Property extends CI_Model{
         $this->db->where('user_id', $user_id);
         $this->db->where('status', 'active');
         $this->db->limit($num, $start);
-        $query = $this->db->get('properties');
+        $query = $this->db->get('forages');
         return $query->result_array();
     
     }
 
     /**
-     * update property
+     * update forages
      *
      * @param   int
      * @param   array
      * @return  null
      */
-    function set_property($property_id, $data){
-        $this->db->where('id', $property_id);
-        $this->db->update('properties', $data);
+    function set_forages($forages_id, $data){
+        $this->db->where('id', $forages_id);
+        $this->db->update('forages', $data);
         return NULL;
     }
 
     /**
-     * get latest pasture id from a user. 
+     * get latest forage id from a user. 
      *
      * @param   int
      * @return  null
      */
-    function get_latest_pasture_id($user_id){
+    function get_latest_forage_id($user_id){
         $this->db->select('`id`');
         $this->db->where('`user_id`', $user_id);
         $this->db->order_by("created", "desc");
         $this->db->limit(1);
-        $query = $this->db->get('properties');
+        $query = $this->db->get('forages');
         return $query->row_array();
     }
 
@@ -133,10 +133,10 @@ class Property extends CI_Model{
      * @param   array
      * @return  null
      */
-    function get_images($property_id){
+    function get_images($forages_id){
         $this->db->select('`photos`');
-        $this->db->where('`id`', $property_id);
-        $query = $this->db->get('properties');
+        $this->db->where('`id`', $forages_id);
+        $query = $this->db->get('forages');
         return $query->row_array();
     }
 
@@ -147,10 +147,10 @@ class Property extends CI_Model{
      * @param   array
      * @return  null
      */
-    function set_image($property_id, $name){
-        $query = 'UPDATE  `properties` SET `photos` = CONCAT(`photos`, ' ;
+    function set_image($forages_id, $name){
+        $query = 'UPDATE  `forages` SET `photos` = CONCAT(`photos`, ' ;
         $query .=  "'$name,'";
-        $query .= ') WHERE `id` = ' . $property_id;
+        $query .= ') WHERE `id` = ' . $forages_id;
         $this->db->query($query);
     }
 
@@ -161,20 +161,20 @@ class Property extends CI_Model{
      * @param   array
      * @return  null
      */
-    function update_images($property_id, $name){
+    function update_images($forages_id, $name){
         $this->db->set('photos', $name);
-        $this->db->where('id', $property_id);
-        $this->db->update('properties');
+        $this->db->where('id', $forages_id);
+        $this->db->update('forages');
     }
 
 
     /**
-     * Get a property by id
+     * Get a forages by id
      *
      * @param   int
      * @return  array
      */
-    function get_property_by_id($property_id){
+    function get_forages_by_id($forages_id){
         $this->db->select('
             `id`, 
             `name`, 
@@ -198,77 +198,77 @@ class Property extends CI_Model{
             `allowed_uses`,
             `user_id`
         ');
-        $this->db->where('id', $property_id);
+        $this->db->where('id', $forages_id);
         $this->db->where('`status`', 'active');
-        $query = $this->db->get('properties');
+        $query = $this->db->get('forages');
         return $query->row_array();
     }
 
     /**
-     * Archive property
+     * Archive forages
      *
      * @param   int
      * @return  null
      */
-    function archive_property($property_id){
+    function archive_forages($forages_id){
         $this->db->set('status', 'archived');
-        $this->db->where('id', $property_id);
-        $this->db->update('properties');
+        $this->db->where('id', $forages_id);
+        $this->db->update('forages');
     }
 
     /**
-     * Get properties count
+     * Get forages count
      *
      * @return  int
      */
-    function get_properties_count(){
+    function get_forages_count(){
         $this->db->select('`id`');
         $this->db->where('`status`', 'active');
-        $query = $this->db->get('properties');
+        $query = $this->db->get('forages');
         return $query->num_rows();
     }
 
     /**
-     * Get properties count by user_id
+     * Get forages count by user_id
      *
      * @param   int
      * @return  int
      */
-    function get_properties_count_by_user_id($user_Id){
+    function get_forages_count_by_user_id($user_Id){
         $this->db->select('`id`');
         $this->db->where('`status`', 'active');
         $this->db->where('`user_id`', $user_Id);
-        $query = $this->db->get('properties');
+        $query = $this->db->get('forages');
         return $query->num_rows();
     }
 
     /**
-     * Check to see if Pasture can be put on a public auction
+     * Check to see if forage can be put on a public auction
      *
      * @param   int
      * @return  int
      */
-    function public_pasture_auction($property_id){
+    function public_forage_auction($forages_id){
         $this->db->select('`ipn_orders.id`');
         $this->db->from('ipn_orders');
         $this->db->join('ipn_order_items', 'ipn_order_items.order_id = ipn_orders.id');
-        $this->db->where('`custom`', $property_id);
-        $this->db->where('`ipn_order_items.item_name`', 'Public Pasture Auction');
+        $this->db->where('`custom`', $forages_id);
+        $this->db->where('`ipn_order_items.item_name`', 'Public forage Auction');
         $query = $this->db->get();
 
         return $query->num_rows();
     }
 
     /**
-     * Check to see if Pasture can be put on a private auction
+     * Check to see if forage can be put on a private auction
      *
      * @param   int
      * @return  int
      */
-    function private_pasture_auction_check($property_id){
+    function private_forage_auction_check($forages_id){
         $this->db->select('`id`');
         $this->db->where('`custom`', $user_id);
-        $this->db->where('`transaction_subject`', 'Private Pasture Auction');
+        $this->db->where('`transaction_subject`', 'Private forage Auction');
         $query = $this->db->get('`ipn_orders`');
         return $query->num_rows();
     }
@@ -321,7 +321,7 @@ class Property extends CI_Model{
         }
         $this->db->where('`status`', 'active');
         $this->db->limit($num, $start);
-        $query = $this->db->get('properties');
+        $query = $this->db->get('forages');
         return $query->result_array();
     }
 
@@ -353,7 +353,7 @@ class Property extends CI_Model{
             $this->db->like('`allowed_uses`', $cattle);
         }
         $this->db->where('`status`', 'active');
-        $query = $this->db->get('properties');
+        $query = $this->db->get('forages');
         return $query->num_rows();
     }
 
@@ -361,4 +361,4 @@ class Property extends CI_Model{
 }
 
 /* End of file users.php */
-/* Location: ./application/models/property.php */
+/* Location: ./application/models/forages.php */
