@@ -121,6 +121,7 @@ class User extends CI_Model{
 		return $query->num_rows();
 	}
 
+
 	/**
 	 * Check if user is subscribed to Pasture Leasing.
 	 *
@@ -174,7 +175,7 @@ class User extends CI_Model{
 	 * @param	int
 	 * @return	int
 	 */
-	function seeking_sub($user_id){
+	function seeking_forage_sub($user_id){
 		$this->db->select('`id`');
 		$this->db->where('`custom`', $user_id);
 		$this->db->where('`transaction_subject`', 'Forage Seeking');
@@ -188,7 +189,7 @@ class User extends CI_Model{
 	 * @param	int
 	 * @return	int
 	 */
-	function leasing_sub($user_id){
+	function leasing_forage_sub($user_id){
 		$this->db->select('`id`');
 		$this->db->where('`custom`', $user_id);
 		$this->db->where('`transaction_subject`', 'Forage Leasing');

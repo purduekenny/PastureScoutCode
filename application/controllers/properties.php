@@ -584,7 +584,7 @@ class Properties extends CI_Controller
             redirect(base_url() . 'my_account');
         } else {
             $user_id = $this->tank_auth->get_user_id();
-            $property_id = $this->input->post('property_id');
+            $property_id = $this->input->post('id');
 
             $this->load->model('favorite');
 
@@ -610,7 +610,7 @@ class Properties extends CI_Controller
             redirect(base_url() . 'my_account');
         } else {
             $user_id = $this->tank_auth->get_user_id();
-            $property_id = $this->input->post('property_id');
+            $property_id = $this->input->post('id');
 
             $this->load->model('favorite');
 

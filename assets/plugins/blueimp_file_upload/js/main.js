@@ -66,13 +66,22 @@ $(function () {
         // Load existing files:
         $('#fileupload').each(function () {
         var that = this;
-        var url = baseurl + 'upload/get_files/' + property_id;
+        
+        if (typeof property_id != 'undefined') {
+            var id = property_id;
+            var upload = 'upload'
+        } else{
+            var id = forage_id;
+            var upload = 'upload_forages'
+        }
+        var url = baseurl + upload + '/get_files/' + id;
             $.getJSON(url, function (result) {
             if (result && result.length) {
                 $(that).fileupload('option', 'done')
                 .call(that, null, {result: result});
             }
         });
+
     });
     }
 

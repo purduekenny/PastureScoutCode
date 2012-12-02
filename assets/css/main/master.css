@@ -494,6 +494,23 @@ br {
     float: left;
     width: 77%;
 }
+
+.foragePic {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+}
+
+.foragePic img{
+    max-height: 120px;
+
+}
+.forageInfo {
+    display: inline-block;
+    vertical-align: top;
+    width: 77%;
+}
 .location {
     margin: -16px 0 0 10px;
 }

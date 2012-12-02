@@ -156,6 +156,7 @@ class Favorite extends CI_Model{
     function get_favorite_count_by_user_id($user_id){
         $this->db->select('`id`');
         $this->db->where('`user_id`', $user_id);
+        $this->db->where('`property_id`', "<> 0");
         $query = $this->db->get('favorites');
         return $query->num_rows();
     }
@@ -169,6 +170,7 @@ class Favorite extends CI_Model{
     function get_favorite_forage_count_by_user_id($user_id){
         $this->db->select('`id`');
         $this->db->where('`user_id`', $user_id);
+        $this->db->where('`forage_id`', "<> 0");
         $query = $this->db->get('favorites');
         return $query->num_rows();
     }
