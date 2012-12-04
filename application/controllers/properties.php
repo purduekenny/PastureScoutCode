@@ -15,7 +15,7 @@ class Properties extends CI_Controller
         $this->load->model('user');
         $this->load->model('property');
         $this->load->library('pagination');
-       // $this->output->enable_profiler(TRUE);
+        //$this->output->enable_profiler(TRUE);
     }
 
     /**
@@ -83,10 +83,11 @@ class Properties extends CI_Controller
             $user_id = $this->tank_auth->get_user_id();
 
             //pagination configuration
-            $config['base_url'] = base_url().'properties/my_properties/index/';
+            $config['base_url'] = base_url().'properties/my_properties/';
             $config['total_rows'] = $this->property->get_properties_count_by_user_id($user_id);
             $config['full_tag_open'] = '<div class="pagination"><ul>';
             $config['full_tag_close'] = '</ul></div>';
+            $config['uri_segment'] = 3;
             $config['first_link'] = 'First';
             $config['first_tag_open'] = '<li>';
             $config['first_tag_close'] = '</li>';
@@ -197,7 +198,7 @@ class Properties extends CI_Controller
 
                 //message
                 $this->session->set_flashdata('message', 'You have successfully added a new property');
-                redirect(base_url() . 'properties/my_properties');
+                redirect(base_url() . 'properties/get_property_id');
 
                 } else {
                     $errors = $this->tank_auth->get_error_message();
@@ -214,6 +215,30 @@ class Properties extends CI_Controller
         $this->_nav_view($user_id);
         $this->load->view('properties/add_form');
         $this->load->view('footer/main_view');
+    }
+
+    /**
+     * Angie's hackish way to get new pasture id to redirect to images
+     *
+     * @return void
+     */
+    function get_property_id()
+    {
+        if (!$this->tank_auth->is_logged_in()) {                                    
+            // if logged in, not activated              
+            $this->session->set_flashdata('message', 'You must be logged in to use this page');
+            redirect(base_url() . 'auth/login');
+        } else if ($user_id= ''){
+            $this->session->set_flashdata('message', 'oops!');
+            redirect(base_url() . 'my_account');
+        } else if ($this->_check_permissions($this->tank_auth->get_user_id()) == 'leaser' || $this->_check_permissions($this->tank_auth->get_user_id()) == "free_trial"){
+            $user_id = $this->tank_auth->get_user_id();
+            $data = $this->property->get_latest_pasture_id($user_id);
+            redirect(base_url() . 'upload/index/' . $data['id']);
+        } else {
+            $this->session->set_flashdata('message', 'You must be a Leaser to view this page.');
+            redirect(base_url() . 'my_account');
+        }
     }
 
     /**
@@ -332,19 +357,9 @@ class Properties extends CI_Controller
             //owner of pasture
             $property_user_id = $data['property']['user_id'];
 
-            //get images from db
-            $images = $this->property->get_images($property_id);
-            //turn field 'photos' into an array, 
-            $image_array = explode(",", $images['photos']);
-            //get last item
-            $last_item = end(array_values($image_array));
-            //remove last item if it doesn't have anything
-            if ($last_item == ''){
-                //remove last array item
-                array_pop($image_array);
-            }
-            //put image array into property array to be passed to a view
-            $data['property']['images'] = $image_array;
+            //put images into data array to be used in the view
+            $data['property']['images'] = $this->_all_images($property_id);
+
             //get leaser information
             $data['user'] = $this->user->get_user_info_by_property_id($property_id);
             //check to see if it is a favorite - 1 if favorite, 0 if not a favorite
@@ -386,27 +401,9 @@ class Properties extends CI_Controller
             $data['property'] = $this->property->get_property_by_id($property_id);
             //owner of pasture
             $property_user_id = $data['property']['user_id'];
-            //if current user owns pasture
 
-            //get images from db
-            $images = $this->property->get_images($property_id);
-            //turn field 'photos' into an array, 
-            $image_array = explode(",", $images['photos']);
-            //get last item
-            $last_item = end(array_values($image_array));
-            //remove last item if it doesn't have anything
-            if ($last_item == ''){
-                //remove last array item
-                array_pop($image_array);
-            }
             //put images into data array to be used in the view
-            $data['property']['images'] = $image_array;
-            //calculate how much to charge for paypal
-            if ($data['property']['size'] * .1 > 100){
-                $data['property']['paypal_calculation'] = $data['property']['size'] * .1;
-            } else {
-                $data['property']['paypal_calculation'] = 100;
-            }    
+            $data['property']['images'] = $this->_all_images($property_id);
             
         }
         
@@ -417,6 +414,7 @@ class Properties extends CI_Controller
         $this->load->view('properties/view_mine_bottom', $data);
         $this->load->view('footer/main_view');
     }
+
 
     /**
      * Archive property
@@ -518,7 +516,7 @@ class Properties extends CI_Controller
             }
 
             //pagination configuration
-            $config['base_url'] = base_url().'properties/search_view/index';
+            $config['base_url'] = base_url().'properties/search_view';
             $config['total_rows'] = $this->property->search_results_count(
                 $this->session->userdata('state'), 
                 $this->session->userdata('size'), 
@@ -526,14 +524,14 @@ class Properties extends CI_Controller
                 $this->session->userdata('cattle')
             );
             $config['full_tag_open'] = '<div class="pagination"><ul>';
-            $config['uri_segment'] = 4;
+            $config['uri_segment'] = 3;
             $config['full_tag_close'] = '</ul></div>';
             $config['first_link'] = 'First';
             $config['first_tag_open'] = '<li>';
             $config['first_tag_close'] = '</li>';
             $config['last_tag_open'] = '<li>';
             $config['last_tag_close'] = '</li>';
-            $config['last_link'] = 'Lwordast';
+            $config['last_link'] = 'Last';
             $config['next_link'] = '&gt;';
             $config['next_tag_open'] = '<li>';
             $config['next_tag_close'] = '</li>';
@@ -574,7 +572,7 @@ class Properties extends CI_Controller
      *
      * @param int
      *
-     * @return json
+     * @return null
      */
     function favorite($property_id) {
         if (!$this->tank_auth->is_logged_in()) {                                    
@@ -586,7 +584,7 @@ class Properties extends CI_Controller
             redirect(base_url() . 'my_account');
         } else {
             $user_id = $this->tank_auth->get_user_id();
-            $property_id = $this->input->post('property_id');
+            $property_id = $this->input->post('id');
 
             $this->load->model('favorite');
 
@@ -600,7 +598,7 @@ class Properties extends CI_Controller
      *
      * @param int
      *
-     * @return json
+     * @return null
      */
     function un_favorite($property_id) {
         if (!$this->tank_auth->is_logged_in()) {                                    
@@ -612,7 +610,7 @@ class Properties extends CI_Controller
             redirect(base_url() . 'my_account');
         } else {
             $user_id = $this->tank_auth->get_user_id();
-            $property_id = $this->input->post('property_id');
+            $property_id = $this->input->post('id');
 
             $this->load->model('favorite');
 
@@ -715,6 +713,8 @@ class Properties extends CI_Controller
     /**
      * Check permissions 
      *
+     * @param int
+     *
      * @return string
      */
     private function _check_permissions($user_id){
@@ -734,6 +734,51 @@ class Properties extends CI_Controller
         }
     }
 
+    /**
+     * Get all images
+     *
+     * @param int
+     *
+     * @return void
+     */
+    private function _all_images($property_id){
+        //get images from db
+        $images = $this->property->get_images($property_id);
+        //turn field 'photos' into an array, 
+        $image_array = explode(",", $images['photos']);
+        //get last item
+        $last_item = end(array_values($image_array));
+        //remove last item if it doesn't have anything
+        if ($last_item == ''){
+            //remove last array item
+            array_pop($image_array);
+        }
+
+        return $image_array;
+    }
+
+    /**
+     * Get first image
+     *
+     * @param int
+     *
+     * @return void
+     */
+    private function _first_image($property_id){
+        //get images from db
+        $images = $this->property->get_images($property_id);
+        //turn field 'photos' into an array, 
+        $image_array = explode(",", $images['photos']);
+        //get last item
+        $last_item = end(array_values($image_array));
+        //remove last item if it doesn't have anything
+        if ($last_item == ''){
+            //remove last array item
+            array_pop($image_array);
+        }
+
+        return $image_array[0];
+    }
 
     
     

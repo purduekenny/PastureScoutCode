@@ -29,11 +29,15 @@
                     <i class="icon-ban-circle icon-white"></i>
                     <span>Cancel upload</span>
                 </button>
-                <button type="button" class="btn btn-danger delete">
+                <!-- <button type="button" class="btn btn-danger delete">
                     <i class="icon-trash icon-white"></i>
                     <span>Delete</span>
-                </button>
-                <input type="checkbox" class="toggle">
+                </button> -->
+                <a class="btn btn-info" href="<?=base_url().'properties/view_mine/'. $property_id ?>">
+                    <i class="icon-home icon-white"></i>
+                    <span>Back to My Pasture</span>
+                </a>
+                <!-- <input type="checkbox" class="toggle"> -->
             </div>
             <!-- The global progress information -->
             <div class="span5 fileupload-progress fade">
@@ -135,12 +139,12 @@
                 <i class="icon-trash icon-white"></i>
                 <span>Delete</span>
             </button>
-            <input type="checkbox" name="delete" value="1">
+            
         </td>
     </tr>
 {% } %}
 </script>
-
+<!-- <input type="checkbox" name="delete" value="1"> -->
 </div><!-- span12 -->
 </div><!-- end row_fluid -->
 </div><!-- end container_fluid -->

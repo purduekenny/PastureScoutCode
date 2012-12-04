@@ -43,6 +43,7 @@ class Property extends CI_Model{
             `closing_bid_date`,
             `other_info`,
             `size`,
+            `photos`,
             `min_lease_term`,
             `lease_availability_date`,
             `features_forage_type`,
@@ -80,6 +81,7 @@ class Property extends CI_Model{
             `closing_bid_date`,
             `other_info`,
             `size`,
+            `photos`,
             `min_lease_term`,
             `lease_availability_date`,
             `features_forage_type`,
@@ -225,6 +227,21 @@ class Property extends CI_Model{
     }
 
     /**
+     * get latest pasture id from a user. 
+     *
+     * @param   int
+     * @return  null
+     */
+    function get_latest_pasture_id($user_id){
+        $this->db->select('`id`');
+        $this->db->where('`user_id`', $user_id);
+        $this->db->order_by("created", "desc");
+        $this->db->limit(1);
+        $query = $this->db->get('properties');
+        return $query->row_array();
+    }
+
+    /**
      * Check to see if Pasture can be put on a public auction
      *
      * @param   int
@@ -278,6 +295,7 @@ class Property extends CI_Model{
             `restricted_stock_type`, 
             `max_head_count`, 
             `size`,
+            `photos`,
             `min_lease_term`,
             `lease_availability_date`,
             `features_forage_type`,

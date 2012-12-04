@@ -121,6 +121,7 @@ class User extends CI_Model{
 		return $query->num_rows();
 	}
 
+
 	/**
 	 * Check if user is subscribed to Pasture Leasing.
 	 *
@@ -167,6 +168,69 @@ class User extends CI_Model{
 		$query = $this->db->get();
 		return $query->row_array();;
 	}
+
+	/**
+	 * Check if user is subscribed to Forage Seeking.
+	 *
+	 * @param	int
+	 * @return	int
+	 */
+	function seeking_forage_sub($user_id){
+		$this->db->select('`id`');
+		$this->db->where('`custom`', $user_id);
+		$this->db->where('`transaction_subject`', 'Forage Seeking');
+		$query = $this->db->get('ipn_orders');
+		return $query->num_rows();
+	}
+
+	/**
+	 * Check if user is subscribed to Forage Leasing.
+	 *
+	 * @param	int
+	 * @return	int
+	 */
+	function leasing_forage_sub($user_id){
+		$this->db->select('`id`');
+		$this->db->where('`custom`', $user_id);
+		$this->db->where('`transaction_subject`', 'Forage Leasing');
+		$query = $this->db->get('ipn_orders');
+		return $query->num_rows();
+	}
+
+	/**
+	 * Get user information based off of forage ID
+	 *
+	 * @param	int
+	 * @return	int
+	 */
+	function get_user_info_by_forage_id($forage_id){
+		$this->db->select('`first_name`,
+						  `last_name`,
+						  `email`,
+						  `street`,
+						  `users.city`,
+						  `users.state`,
+						  `users.zip_code`,
+						  `birthday` ,
+						  `home_phone`,
+						  `cell_phone`,
+						  `current_business`,
+						  `operation_type`,
+						  `livestock_type_owned`,
+						  `livestock_number`,
+						  `livestock_managing_percent`,
+						  `number_years_experience`,
+						  `largest_lease`,
+						  `education`,
+						  `land_management_training`');
+		$this->db->from('users');
+		$this->db->join('properties', 'properties.user_id = users.id');
+		$this->db->where('`properties.id`', $forage_id);
+		$query = $this->db->get();
+		return $query->row_array();;
+	}
+
+
 
 
 

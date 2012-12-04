@@ -1,3 +1,4 @@
+
 <div class="content span9 properties">
     <div class="left">
         <script>
@@ -26,10 +27,12 @@
         <ul>
             <?php
                 foreach($properties as $row){
-
+                //get first photo
+                list($photo) = explode(',', $row['photos']);
+                $profile_image = $photo != "" ? 'files/' . $photo : 'assets/images/main/nopic.png';
             ?>
             <li>
-                <div class="pasturePic"></div>
+                <div class="pasturePic"><img src="<?=base_url("$profile_image")?>"></div>
                 <div class="pastureInfo">
                     <h3><a href="<?=base_url() . 'properties/view_mine/' . $row['id']; ?>"><?=$row['name']?></a></h3>
                     <p>
