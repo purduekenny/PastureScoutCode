@@ -16,6 +16,9 @@
     <link rel='stylesheet' media='screen and (max-width:768px)' href='<?= base_url("assets/css/homepage/medium.css"); ?>' />
     <!-- Styles for smartphones -->
     <link rel='stylesheet' media='screen and (max-width: 480px)' href='<?= base_url("assets/css/homepage/small.css"); ?>' />
+    <!-- google font -->
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
+
     <!-- Styles for IE7 -->
     <!--[if IE 7]>
         <link rel="stylesheet" type="text/css" href="css/ie7.css">
@@ -46,7 +49,7 @@
     <link rel='stylesheet' href='<?= base_url("assets/plugins/popbox_plugin/popbox.css"); ?>' type='text/css' media='screen' charset='utf-8'>
     <style type="text/css">
         body{
-            background-image:url("<?= base_url('assets/images/homepage/bg_body2.png'); ?>");
+          /*  background-image:url("<?= base_url('assets/images/homepage/bg_body2.png'); ?>");*/
         }
 
         p, h2, h3{

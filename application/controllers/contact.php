@@ -45,7 +45,7 @@ class Contact extends CI_Controller {
             $this->load->library('email');
 
             $this->email->from($data['email'], $data['name']);
-            $this->email->to('angeline.e.tran@gmail.com'); 
+            $this->email->to('josh@pasturescout.com'); 
 
             $this->email->subject($data['subject']);
             $this->email->message($this->load->view('email/contact-html', $data, TRUE));  

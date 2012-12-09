@@ -164,7 +164,7 @@ class My_Account extends CI_Controller
         } else if ($days_left <= 0) {
             return "Your free subscription has expired.";
         } else {
-            return "You have " . $days_left. " until your free trial ends";
+            return "You have " . $days_left. " day(s) until your free trial ends";
         }
     }
 

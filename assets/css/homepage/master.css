@@ -52,10 +52,10 @@ nav {
 
 #nav_wrapper{
     position: relative;
-    width:400px;
+    width:480px;
     height:40px;
     float:right;
-    top:45px;
+    top:50px;
 }
 
 /***** SOCIAL MEDIA *****/
@@ -80,6 +80,10 @@ nav {
     float:left;
 }
 
+.loginButton {
+    display: none;
+}
+
 .navLi a:link,
 .navLi a:active,
 .navLi a:visited {
@@ -91,7 +95,7 @@ nav {
     color:#3e8827;
 }
 
-#button_login{
+#button_login {
     width:87px;
     height:28px;
     position:relative; 
@@ -132,7 +136,7 @@ nav {
 
 #slider {
     width:750px;
-    margin:53px auto
+    margin:80px auto
 }
 
 #signup{
@@ -143,8 +147,10 @@ nav {
 }
 
 h1 {
+    /*  #ffb400 */
+    font-family: 'Playfair Display SC', serif;
     font-size:36px;
-    color:#ffb400;
+    color: #009900;
     margin: 13px 0 0 5px;
 }
 
@@ -258,3 +264,33 @@ footer { background-image:url('../../images/homepage/bg_footer.jpg'); background
     visibility: hidden;
 }
 
+
+.btn-primary {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #008800;
+*background-color: #006600;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#008800), to(#006600));
+  background-image: -webkit-linear-gradient(top, #008800, #006600);
+  background-image: -o-linear-gradient(top, #008800, #006600);
+  background-image: linear-gradient(to bottom, #008800, #006600);
+  background-image: -moz-linear-gradient(top, #008800, #006600);
+
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  color: #ffffff;
+  background-color: #006600;
+  *background-color: #006600;
+}
+
+.tab-pane {
+    background-image: url('../../images/jw.png');
+    background-repeat: no-repeat;
+    background-position: center;
+
+}

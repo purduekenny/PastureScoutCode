@@ -20,7 +20,7 @@
                             <ul>
                                 <li>Use the custom search tool to identify properties that meet your needs</li>
                                 <li>Save property searches to your favorites</li>
-                                <li><span class="label label-important">Not released yet</span> Use the Lease Calculator to estimate your costs and breakevens</li>
+                                <li>Use the Lease Calculator to estimate your costs and breakevens <span class="label label-important">Not released yet</span></li>
                             </ul>
                         </div>
 
@@ -29,7 +29,7 @@
                         <div style="margin-left: 10px;">    
                             <ul>
                                 <li>See owner contact information for all properties</li>
-                                <li><span class="label label-important">Not released yet</span> Be eligible to bid on auction properties</li>
+                                <li>Be eligible to bid on auction properties <span class="label label-important">Not released yet</span></li>
                             </ul>
                         </div>
                         <div style="margin: 10px 0 0 70px;">    
@@ -66,7 +66,7 @@
                                     <li>Gain exposure to thousands of pasture seekers</li>
                                     <li>Specify terms of lease</li>
                                     <li>Access data about area lease prices</li>
-                                    <li><span class="label label-important">Not released yet</span> Monitor seeker activity for your listing</li>
+                                    <li>Monitor seeker activity for your listing <span class="label label-important">Not released yet</span></li>
                                 </ul>
                             </div>
                             <div style="margin: 10px 0 3px 70px;">

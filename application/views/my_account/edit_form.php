@@ -775,16 +775,6 @@ $land_management_training = array(
             <?php echo isset($errors[$largest_lease['name']])?$errors[$largest_lease['name']]:''; ?>
         </div>
     </div>
-<hr>
-<h2>Background</h2>
-    <div class="control-group">
-        <?php echo form_label('Education', $education['id'], array('class' => 'control-label')); ?>
-        <div class="controls">
-            <?php echo form_input($education); ?>
-            <?php echo form_error($education['name'], '<span class="error">', '</span>'); ?>
-            <?php echo isset($errors[$education['name']])?$errors[$education['name']]:''; ?>
-        </div>
-    </div>
     <div class="control-group">
         <?php echo form_label('Any training related to land management, e.g. Ranching for Profit, Beef Cattle Short Course', $education['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -793,6 +783,17 @@ $land_management_training = array(
             <?php echo isset($errors[$land_management_training['name']])?$errors[$land_management_training['name']]:''; ?>
         </div>
     </div>
+<!-- REMOVED PER CLIENT REQUEST
+    <div class="control-group">
+        <?php echo form_label('Education', $education['id'], array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo form_input($education); ?>
+            <?php echo form_error($education['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$education['name']])?$errors[$education['name']]:''; ?>
+        </div>
+    </div>
+    
+--> 
 
 <!--         <?php echo form_radio('active', '1', FALSE, (1 == $member->active) ? set_radio('active', $member->active, TRUE) : set_radio('active', '1')); ?> 
         <?php echo form_radio('active', '0', FALSE, (0 == $member->active) ? set_radio('active', $member->active, TRUE) : set_radio('active', '0')); ?> -->
@@ -802,7 +803,7 @@ $land_management_training = array(
 $data = array(
     'name'        => 'edit',
     'id'          => 'edit',
-    'value'       => 'Edit Account',
+    'value'       => 'Save Changes',
     'class'       => 'btn btn-primary',
     );
 echo form_submit($data);

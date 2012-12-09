@@ -67,9 +67,10 @@
                         <li class="navLi"><a href="<?=base_url()?>about/">About</a></li>
                         <li class="navLi"><a href="<?=base_url()?>membership/">Membership</a></li>
                         <li class="navLi"><a href="<?=base_url()?>contact/">Contact</a></li>
+                        <li class="navLi"><a href="<?= base_url()?>auth/register">Sign Up</a></li>
                     </ul><!-- close navigation -->
                         <a href="auth/login" id="button_login">
-                            <img src="assets/images/homepage/login.png" alt="User Login" width="87" height="28">
+                            <img src="assets/images/homepage/login.png" alt="User Login" width="87" height="28" />
                         </a>
                 </div><!--end nav wrapper -->
             </nav><!-- close navigation area-->
@@ -192,8 +193,8 @@
                 });
             </script>
 
-            <div  id="signup" class="centerme"><a href="auth/register"><img src="assets/images/homepage/register.png" width="452" height="103" alt="Sign up" /></a></div>
-                
+           <!-- <div  id="signup" class="centerme"><a href="auth/register"><img src="assets/images/homepage/register.png" width="452" height="103" alt="Sign up" /></a></div>
+               removed by client request--> 
                 
             
         </div><!-- close info bar -->
