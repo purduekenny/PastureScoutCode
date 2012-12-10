@@ -32,7 +32,7 @@ nav {
     width:420px;
     height:70px;
     float:right;
-    top:48px;
+    top:75px;
     left:0px;
 
 }
@@ -45,6 +45,21 @@ nav {
 .btnLogin {
     left:235px;
     top:33px;
+}
+
+#footerSocial{
+    display: block;
+    visibility: visible;
+    position: relative;
+    width:150px;
+    height:40px;
+    clear:both;
+    padding-top: 10px;
+}
+
+
+#footerSocial li{
+    display: inline
 }
 
 /***** login *****/

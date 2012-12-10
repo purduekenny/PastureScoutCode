@@ -45,7 +45,7 @@ $size = array(
 $min_lease_term = array(
     'name'  => 'min_lease_term',
     'id'    => 'min_lease_term',
-    'value' => set_value('min_lease_term'),
+    'value' => '1',
     'maxlength' => 50
 ); 
 $lease_availability_date = array(

@@ -55,7 +55,7 @@
                         if($email != '' ){
                             ?>
                                 <li class="navLi"><a href='<?= base_url("properties"); ?>'>Pastures</a></li>
-                                <li class="navLi"><a href='<?= base_url("forages"); ?>'>Forages</a></li>
+                                <li class="navLi"><a href='<?= base_url("forages"); ?>'>Harvested Forages</a></li>
                                 <li class="navLi"><a href='<?= base_url("my_account"); ?>'>Account</a></li> 
                                 <li class="navLi"><a href='<?= base_url("auth/logout"); ?>'>Logout</a></li>
                                 </ul><!-- close navigation -->

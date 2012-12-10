@@ -50,7 +50,8 @@ $data = array(
     'name'        => 'edit',
     'id'          => 'edit',
     'value'       => 'Change Password',
-    'class'       => 'btn btn-danger',
+    'class'       => 'btn btn-danger btn-block',
+    'style'		  => 'width:95%;'
     );
 echo form_submit($data);
 echo form_close(); 

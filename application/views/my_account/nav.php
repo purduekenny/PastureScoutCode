@@ -1,6 +1,8 @@
 <?php
 $user_id = $this->tank_auth->get_user_id();
-$sub_access = isset($subscription_access) ? $subscription_access : 'uh oh';
+// ass backwards way to hide the subscriptions because we are using the auth controller instead of the my_account controller
+// since it's not passing the same info, we're hiding subscriptions for delete account and change password
+$sub_access = isset($subscription_access) ? $subscription_access : "<style>.subscriptions { display: none; } </style>";
 ?>
 <div class="container-fluid">
 <div class="row-fluid">
@@ -12,7 +14,7 @@ $sub_access = isset($subscription_access) ? $subscription_access : 'uh oh';
             <li><a href="<?=base_url() . 'auth/unregister/' . $user_id; ?>">Delete your Account</a></li>
         </ul>
 
-    <div id="dashboard_nav" class="12 content">
+    <div id="dashboard_nav" class="12 content subscriptions">
         <h2>Subscriptions</h2>
         <p style="padding-top:20px;"><?=$sub_access?></p>
     </div>

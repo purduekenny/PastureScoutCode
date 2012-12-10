@@ -27,7 +27,7 @@ $city = array(
 
 
 $state_options = array(
-		'NO' => 'No preference',
+		'NO' => 'Select One',
         'Alabama' => 'Alabama',
         'Alaska' => 'Alaska',
         'Arizona' => 'Arizona',
@@ -124,7 +124,7 @@ $allowed_uses = array(
 <div class="content span9 forages">
 
 <?php echo form_open(base_url().'forages/search_view', array('class' => 'form-horizontal')) ?>
-    <h2>Search for Forages	</h2>
+    <h2>Search for Harvested Forages	</h2>
     <div class="control-group">
         <?php echo form_label('State/Province', $state['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -133,6 +133,8 @@ $allowed_uses = array(
             <?php echo isset($errors[$state['name']])?$errors[$state['name']]:''; ?>
         </div>
     </div>
+    <!--
+    Not relevant search terms for forages
     <div class="control-group">
         <?php echo form_label('Maximum Size', $size['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -157,6 +159,7 @@ $allowed_uses = array(
             <?php echo isset($errors[$allowed_uses['name']])?$errors[$allowed_uses['name']]:''; ?>
         </div>
     </div>
+        -->
     
 
 

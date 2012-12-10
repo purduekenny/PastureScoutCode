@@ -7,6 +7,7 @@
 <footer>
 
     <!-- GREEN FOOTER -->
+    <div id="yellowLine"></div>
     <div id="greenFooter">
 
         <!-- FOOTER LINKS -->
