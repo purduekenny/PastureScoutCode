@@ -15,7 +15,7 @@ class Forages extends CI_Controller
         $this->load->model('user');
         $this->load->model('forage');
         $this->load->library('pagination');
-        $this->output->enable_profiler(TRUE);
+        //$this->output->enable_profiler(TRUE);
     }
 
     /**
