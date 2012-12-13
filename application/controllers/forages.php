@@ -15,7 +15,7 @@ class Forages extends CI_Controller
         $this->load->model('user');
         $this->load->model('forage');
         $this->load->library('pagination');
-        //$this->output->enable_profiler(TRUE);
+        $this->output->enable_profiler(TRUE);
     }
 
     /**
@@ -613,10 +613,7 @@ class Forages extends CI_Controller
             $forage_id = $this->input->post('id');
 
             $this->load->model('favorite');
- echo "<pre>";
-            var_dump($forage_id);
-            echo "</pre>";
-            die();
+
             $this->favorite->unfavorite_forage($user_id, $forage_id);
            
 

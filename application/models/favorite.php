@@ -122,25 +122,25 @@ class Favorite extends CI_Model{
      */
     function list_favorite_forages($user_id, $num=0, $start=0){
         $this->db->select('
-            `P.id`, 
-            `P.name`, 
-            `P.state`, 
-            `P.city`,
-            `P.country`,
-            `P.other_info`,
-            `P.restricted_stock_type`, 
-            `P.max_head_count`, 
-            `P.size`,
-            `P.photos`,
-            `P.min_lease_term`,
-            `P.lease_availability_date`,
-            `P.features_forage_type`,
-            `P.handling_facilities`,
-            `P.allowed_uses`,
-            `P.user_id`
+            `FO.id`, 
+            `FO.name`, 
+            `FO.state`, 
+            `FO.city`,
+            `FO.country`,
+            `FO.other_info`,
+            `FO.restricted_stock_type`, 
+            `FO.max_head_count`, 
+            `FO.size`,
+            `FO.photos`,
+            `FO.min_lease_term`,
+            `FO.lease_availability_date`,
+            `FO.features_forage_type`,
+            `FO.handling_facilities`,
+            `FO.allowed_uses`,
+            `FO.user_id`
         ');
         $this->db->from('favorites F');
-        $this->db->join('forages P', 'P.id = F.forage_id');
+        $this->db->join('forages FO', 'FO.id = F.forage_id');
         $this->db->where('`F.user_id`', $user_id);
         $this->db->limit($num, $start);
         $query = $this->db->get();
@@ -156,7 +156,7 @@ class Favorite extends CI_Model{
     function get_favorite_count_by_user_id($user_id){
         $this->db->select('`id`');
         $this->db->where('`user_id`', $user_id);
-        $this->db->where('`property_id`', "<> 0");
+        $this->db->where('`property_id` <>', "0");
         $query = $this->db->get('favorites');
         return $query->num_rows();
     }
@@ -170,7 +170,7 @@ class Favorite extends CI_Model{
     function get_favorite_forage_count_by_user_id($user_id){
         $this->db->select('`id`');
         $this->db->where('`user_id`', $user_id);
-        $this->db->where('`forage_id`', "<> 0");
+        $this->db->where('`forage_id` <>', "0");
         $query = $this->db->get('favorites');
         return $query->num_rows();
     }
