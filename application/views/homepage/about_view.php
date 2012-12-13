@@ -1,6 +1,7 @@
 <div class="container-fluid">
 <div class="row-fluid">
 <div class="content" style="min-height: 600px;">
+<div class="row-fluid">
     <br />
 <div class="tabbable span12" style="margin-left: -5px;">
     <ul class="nav nav-tabs">
@@ -29,21 +30,25 @@
         </div>
         <div class="tab-pane" id="tabs1-pane2">
         <h1>How does PastureScout work?</h1>
-            <h2>Find It</h2>
+            <h2><img src="<?=base_url()?>assets/images/findit.png" /> Find It</h2>
             <p>Looking for pasture? Use PastureScout’s customized search tool to discover your next pasture lease quickly 
                 Want to lease your pasture? List on PastureScout and reach thousands of pasture seekers faster</p>
-            <h2>Bid it</h2>
+            <h2><img src="<?=base_url()?>assets/images/bidit.png" /> Bid it</h2>
             <p>Curious about lease prices? Bid on pasture with PastureScout’s user-friendly auction
                 Curious what your pasture is worth?  Use PastureScout’s secure process to auction your pasture and receive better offers from more bidders</p>
-            <h2>Lease It</h2>
+            <h2><img src="<?=base_url()?>assets/images/leaseit.png" /> Lease It</h2>
             <p>Be confident that you have secured the right lease, with the right person, at the right price</p>
         </div>
         <div class="tab-pane" id="tabs1-pane3">            
             <h1>The Team</h1>
+      
                 <p>With lifelong experience in agriculture and the cattle industry, plus degrees from MIT, Princeton, Texas A&M, and the King Ranch Institute for Ranch Management, the PastureScout team is passionate about contributing to the success and sustainability of landowners and livestock producers.  We believe in challenging the status quo, expanding and strengthening the network of land stewards, and increasing transparency and accessibility in the pasture lease marketplace</p>
+                <br /><br /><br /><br />
+                <!-- Make the background image come down -->
         </div>
     </div><!-- /.tab-content -->
 </div><!-- /.tabbable -->
+</div>
 </div>
 </div>
 </div>

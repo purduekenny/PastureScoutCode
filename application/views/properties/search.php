@@ -167,7 +167,8 @@ $allowed_uses = array(
         'name'        => 'submit',
         'id'          => 'submit',
         'value'       => 'Search Pastures',
-        'class'       => 'btn btn-primary'
+        'class'       => 'btn btn-primary btn-block',
+        'style'       => 'width:95%'
         );
         echo form_submit($data);
         echo form_close();

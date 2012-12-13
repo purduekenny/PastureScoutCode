@@ -639,7 +639,7 @@ isset($property['id']) ? $property['id'] : '';
         </div>
     </div>
     <div class="control-group">
-        <?php echo form_label('Allowed Uses', 'allowed_uses[]', array('class' => 'control-label')); ?>
+        <?php echo form_label('Livestock Types Allowed', 'allowed_uses[]', array('class' => 'control-label')); ?>
         <div class="controls">
             <?php 
                 foreach ($allows as $allow){
@@ -661,6 +661,14 @@ isset($property['id']) ? $property['id'] : '';
         </div>
     </div>
     <div class="control-group">
+        <?php echo form_label('Max Head Count', $max_head_count['id'], array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo form_input($max_head_count); ?>
+            <?php echo form_error($max_head_count['name'], '<span class="error">', '</span>'); ?>
+            <?php echo isset($errors[$max_head_count['name']])?$errors[$max_head_count['name']]:''; ?>
+        </div>
+    </div>
+    <div class="control-group">
         <?php echo form_label('Description', $other_info['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_textarea($other_info); ?>
@@ -669,9 +677,9 @@ isset($property['id']) ? $property['id'] : '';
         </div>
     </div>
 <hr>
-    <h2>Stock Restrictions (Optional)</h2>
-    <div class="control-group">
-    
+
+<!--
+    <div class="control-group">   
         <?php echo form_label('Restricted Stock Type', $restricted_stock_type['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($restricted_stock_type); ?>
@@ -679,15 +687,8 @@ isset($property['id']) ? $property['id'] : '';
             <?php echo isset($errors[$restricted_stock_type['name']])?$errors[$restricted_stock_type['name']]:''; ?>
         </div>
     </div>
-    <div class="control-group">
-        <?php echo form_label('Max Head Count', $max_head_count['id'], array('class' => 'control-label')); ?>
-        <div class="controls">
-            <?php echo form_input($max_head_count); ?>
-            <?php echo form_error($max_head_count['name'], '<span class="error">', '</span>'); ?>
-            <?php echo isset($errors[$max_head_count['name']])?$errors[$max_head_count['name']]:''; ?>
-        </div>
-    </div>
-<hr>
+-->
+
 
 
 <!--     <h2>Bid Information</h2>

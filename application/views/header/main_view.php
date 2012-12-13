@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="<?= base_url()?>assets/plugins/bluimp/bootstrap-image-gallery.min.css">
     <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
     <link rel="stylesheet" href="<?= base_url("assets/plugins/blueimp_file_upload/css/jquery.fileupload-ui.css"); ?>">
+    <!-- google font -->
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
     <!-- base_url for javascript -->
     <script>
     /* <![CDATA[ */

@@ -13,6 +13,7 @@ $sub_access = isset($subscription_access) ? $subscription_access : 'uh oh';
         </ul>
 
     <div id="dashboard_nav" class="12 content">
+        <h2>Subscriptions</h2>
         <p style="padding-top:20px;"><?=$sub_access?></p>
     </div>
     </div>
