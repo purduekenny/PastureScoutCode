@@ -586,13 +586,14 @@ isset($forages['id']) ? $forages['id'] : '';
         </div>
     </div>
     <div class="control-group">
-        <?php echo form_label('Size', $size['id'], array('class' => 'control-label')); ?>
+        <?php echo form_label('Amount', $size['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($size); ?>
             <?php echo form_error($size['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$size['name']])?$errors[$size['name']]:''; ?>
         </div>
     </div>
+    <!--
     <div class="control-group">
         <?php echo form_label('Minimum Lease Term', $min_lease_term['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -601,6 +602,7 @@ isset($forages['id']) ? $forages['id'] : '';
             <?php echo isset($errors[$min_lease_term['name']])?$errors[$min_lease_term['name']]:''; ?>
         </div>
     </div>
+    -->
     <div class="control-group">
         <?php echo form_label('Lease Availability Date', $lease_availability_date['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -638,7 +640,8 @@ isset($forages['id']) ? $forages['id'] : '';
             <?php echo isset($errors[$handling_facilities['name']])?$errors[$handling_facilities['name']]:''; ?>
         </div>
     </div>
-    <div class="control-group">
+
+<!--    <div class="control-group">
         <?php echo form_label('Allowed Uses', 'allowed_uses[]', array('class' => 'control-label')); ?>
         <div class="controls">
             <?php 
@@ -659,7 +662,7 @@ isset($forages['id']) ? $forages['id'] : '';
             <?php echo form_error($allowed_uses['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$allowed_uses['name']])?$errors[$allowed_uses['name']]:''; ?>
         </div>
-    </div>
+    </div> -->
     <div class="control-group">
         <?php echo form_label('Description', $other_info['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -668,8 +671,6 @@ isset($forages['id']) ? $forages['id'] : '';
             <?php echo isset($errors[$other_info['name']])?$errors[$other_info['name']]:''; ?>
         </div>
     </div>
-<hr>
-    <h2>Stock Restrictions (Optional)</h2>
     <div class="control-group">
     
         <?php echo form_label('Restricted Stock Type', $restricted_stock_type['id'], array('class' => 'control-label')); ?>
@@ -679,6 +680,7 @@ isset($forages['id']) ? $forages['id'] : '';
             <?php echo isset($errors[$restricted_stock_type['name']])?$errors[$restricted_stock_type['name']]:''; ?>
         </div>
     </div>
+    <!--
     <div class="control-group">
         <?php echo form_label('Max Head Count', $max_head_count['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -686,7 +688,7 @@ isset($forages['id']) ? $forages['id'] : '';
             <?php echo form_error($max_head_count['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$max_head_count['name']])?$errors[$max_head_count['name']]:''; ?>
         </div>
-    </div>
+    </div>-->
 <hr>
 
 

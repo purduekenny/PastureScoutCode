@@ -20,31 +20,23 @@
             <p><strong>Region</strong> 
                 <br />
                 <?=$forage['region']?> </p>
-            <p><strong>Size</strong> 
+            <p><strong>Amount</strong> 
                 <br />
                 <?php echo isset($forage['size']) ? $forage['size'] : 'Not specified'?> acres</p>
+        </div>
+        <div style="float: left; width: 45%">    
             <p><strong>Minimum Lease Term</strong> 
                 <br />
                 <?php echo isset($forage['min_lease_term']) ? $forage['min_lease_term'] . " months" : 'Not specified'?></p>
-        </div>
-        <div style="float: left; width: 45%">    
-            <p><strong>Lease Availability</strong> 
-                <br />
-                <?php echo isset($forage['lease_availability_date']) ? $lease_availability_date_format : 'Not specified'?> </p>
             <p><strong>Features</strong> 
                 <br />
                 <?php echo isset($forage['features_forage_type']) ? $forage['features_forage_type'] : 'None'?> </p>
             <p><strong>Handling Facilties</strong> 
                 <br />
                 <?php echo isset($forage['handling_facilities']) ? $forage['handling_facilities'] : 'None'?> </p>
-            <p><strong>Allowed Uses</strong> 
-                <br />
-                <?php echo isset($forage['allowed_uses']) ? $forage['allowed_uses'] : 'None specified'?> </p>
         </div>
             <br class="clearfix">
-            <h2>Stock Rescrictions</h2>
-            <p><?= $forage["name"] ?>'s max head count is <?php echo isset($forage['max_head_count']) ? "<strong>" . $forage['max_head_count'] . "</strong>" : 'not specified'?>. </p>
-        
+            <h2>Stock Rescrictions</h2>        
             <p><strong>Restricted Stock Type</strong> 
                 <br />
                 <?php echo isset($forage['restricted_stock_type']) ? $forage['restricted_stock_type'] : 'Not specified'?> </p>

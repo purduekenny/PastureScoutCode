@@ -84,6 +84,7 @@ $allows = array(
 $allow = '';
 $allowed_uses = array(
     'name'  => 'allowed_uses[]',
+    'value' => '1',
     'id'    => 'allowed_uses',
 );
 $restricted_stock_type = array(
@@ -95,7 +96,7 @@ $restricted_stock_type = array(
 $max_head_count = array(
     'name'  => 'max_head_count',
     'id'    => 'max_head_count',
-    'value' => set_value('max_head_count'),
+    'value' => '0',
     'maxlength' => 100
 );
 $min_bid = array(
@@ -231,13 +232,14 @@ $other_info = array(
         </div>
     </div>
     <div class="control-group">
-        <?php echo form_label('Size', $size['id'], array('class' => 'control-label')); ?>
+        <?php echo form_label('Amount', $size['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <div class="input-append"><?php echo form_input($size); ?><span class="add-on">acres</span></div>
+            <div><?php echo form_input($size); ?></div>
             <?php echo form_error($size['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$size['name']])?$errors[$size['name']]:''; ?>
         </div>
     </div>
+    <!--
     <div class="control-group">
         <?php echo form_label('Minimum Lease Term', $min_lease_term['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -247,6 +249,7 @@ $other_info = array(
             <?php echo isset($errors[$min_lease_term['name']])?$errors[$min_lease_term['name']]:''; ?>
         </div>
     </div>
+    -->
     <div class="control-group">
         <?php echo form_label('Lease Availability Date', $lease_availability_date['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -283,7 +286,7 @@ $other_info = array(
             <?php echo isset($errors[$handling_facilities['name']])?$errors[$handling_facilities['name']]:''; ?>
         </div>
     </div>
-    <div class="control-group">
+    <!--<div class="control-group">
         <?php echo form_label('Allowed Uses', 'allowed_uses[]', array('class' => 'control-label')); ?>
         <div class="controls">
             <?php 
@@ -304,6 +307,7 @@ $other_info = array(
             <?php echo isset($errors[$allowed_uses['name']])?$errors[$allowed_uses['name']]:''; ?>
         </div>
     </div>
+    -->
     <div class="control-group">
         <?php echo form_label('Description', $other_info['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -312,8 +316,6 @@ $other_info = array(
             <?php echo isset($errors[$other_info['name']])?$errors[$other_info['name']]:''; ?>
         </div>
     </div>
-<hr>
-<h2>Stock Restrictions (Optional)</h2>
     <div class="control-group">
         <?php echo form_label('Restricted Stock Type', $restricted_stock_type['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -322,6 +324,7 @@ $other_info = array(
             <?php echo isset($errors[$restricted_stock_type['name']])?$errors[$restricted_stock_type['name']]:''; ?>
         </div>
     </div>
+    <!--
     <div class="control-group">
         <?php echo form_label('Max Head Count', $max_head_count['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -330,6 +333,7 @@ $other_info = array(
             <?php echo isset($errors[$max_head_count['name']])?$errors[$max_head_count['name']]:''; ?>
         </div>
     </div>
+    -->
     <?php 
         $data = array(
         'name'        => 'submit',

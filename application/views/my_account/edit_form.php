@@ -804,7 +804,8 @@ $data = array(
     'name'        => 'edit',
     'id'          => 'edit',
     'value'       => 'Save Changes',
-    'class'       => 'btn btn-primary',
+    'style'       => 'width:95%;',
+    'class'       => 'btn btn-primary btn-blok',
     );
 echo form_submit($data);
 echo form_close(); 
