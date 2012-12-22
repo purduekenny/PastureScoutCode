@@ -17,6 +17,7 @@ class Property extends CI_Model{
 
         $data['created'] = date('Y-m-d H:i:s');
         $data['status'] = 'active';
+        $this->db->where('public', 'private');
         $this->db->insert('properties', $data);
         return NULL;
     }
@@ -48,9 +49,11 @@ class Property extends CI_Model{
             `lease_availability_date`,
             `features_forage_type`,
             `handling_facilities`,
+            `public`,
             `allowed_uses`
         ');
         $this->db->where('status', 'active');
+        $this->db->where('public', 'public');
         $this->db->limit($num, $start);
         $query = $this->db->get('properties'); 
         return $query->result_array();
@@ -87,6 +90,7 @@ class Property extends CI_Model{
             `features_forage_type`,
             `handling_facilities`,
             `allowed_uses`,
+            `public`,
             `user_id`
         ');
         $this->db->where('user_id', $user_id);
@@ -180,10 +184,12 @@ class Property extends CI_Model{
             `features_forage_type`,
             `handling_facilities`,
             `allowed_uses`,
+            `public`,
             `user_id`
         ');
         $this->db->where('id', $property_id);
         $this->db->where('`status`', 'active');
+        $this->db->where('public', 'public');
         $query = $this->db->get('properties');
         return $query->row_array();
     }
@@ -208,6 +214,7 @@ class Property extends CI_Model{
     function get_properties_count(){
         $this->db->select('`id`');
         $this->db->where('`status`', 'active');
+        $this->db->where('public', 'public');
         $query = $this->db->get('properties');
         return $query->num_rows();
     }
@@ -301,6 +308,7 @@ class Property extends CI_Model{
             `features_forage_type`,
             `handling_facilities`,
             `allowed_uses`,
+            `public`,
             `user_id`
         ');
 
@@ -319,6 +327,7 @@ class Property extends CI_Model{
             $this->db->like('`allowed_uses`', $cattle);
         }
         $this->db->where('`status`', 'active');
+        $this->db->where('`public`', 'public');
         $this->db->limit($num, $start);
         $query = $this->db->get('properties');
         return $query->result_array();
@@ -352,8 +361,37 @@ class Property extends CI_Model{
             $this->db->like('`allowed_uses`', $cattle);
         }
         $this->db->where('`status`', 'active');
+        $this->db->where('public', 'public');
         $query = $this->db->get('properties');
         return $query->num_rows();
+    }
+
+    /**
+     * make public
+     * 
+     * @param   int
+     * 
+     * @return  null
+     */
+    function publicize($property_id){
+        $this->db->where('id', $property_id);
+        $this->db->set('public', 'public');
+        $this->db->update('properties');
+        return NULL;
+    }
+
+    /**
+     * make public
+     * 
+     * @param   int
+     * 
+     * @return  null
+     */
+    function privitize($property_id){
+        $this->db->where('id', $property_id);
+        $this->db->set('public', 'private');
+        $this->db->update('properties');
+        return NULL;
     }
 
 

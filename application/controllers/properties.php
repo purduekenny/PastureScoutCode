@@ -402,6 +402,15 @@ class Properties extends CI_Controller
             //owner of pasture
             $property_user_id = $data['property']['user_id'];
 
+            //check to see if public or not
+            if($data['property']['public'] == 'public'){
+                $data['property']['style'] = "icon-eye-open";
+                $data['property']['title'] = "Make Private";
+            }else{
+                $data['property']['style'] = "icon-eye-close";
+                $data['property']['title'] = "Make Public";
+            }
+
             //put images into data array to be used in the view
             $data['property']['images'] = $this->_all_images($property_id);
             
@@ -615,6 +624,52 @@ class Properties extends CI_Controller
             $this->load->model('favorite');
 
             $this->favorite->unfavorite($user_id, $property_id);
+
+        }
+    }
+
+    /** 
+     * Make Public
+     *
+     * @param int
+     *
+     * @return null
+     */
+    function make_public($property_id) {
+        if (!$this->tank_auth->is_logged_in()) {                                    
+            // if logged in, not activated              
+            $this->session->set_flashdata('message', 'You must be logged in to use this page');
+            redirect(base_url() . 'auth/login');
+        } else if ($user_id= ''){
+            $this->session->set_flashdata('message', 'oops!');
+            redirect(base_url() . 'my_account');
+        } else {
+            $property_id = $this->input->post('id');
+
+            $this->property->publicize($property_id);
+
+        }
+    }
+
+    /** 
+     * Make Private
+     *
+     * @param int
+     *
+     * @return null
+     */
+    function make_private($property_id) {
+        if (!$this->tank_auth->is_logged_in()) {                                    
+            // if logged in, not activated              
+            $this->session->set_flashdata('message', 'You must be logged in to use this page');
+            redirect(base_url() . 'auth/login');
+        } else if ($user_id= ''){
+            $this->session->set_flashdata('message', 'oops!');
+            redirect(base_url() . 'my_account');
+        } else {
+            $property_id = $this->input->post('id');
+
+            $this->property->privitize($property_id);
 
         }
     }

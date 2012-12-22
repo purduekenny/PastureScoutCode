@@ -343,6 +343,17 @@ body#forages_favorites li#forages_favorites a {
     margin: 10px 10px 0 0;
 }
 
+#is_public{
+    position: relative;
+    float:right;
+    font-family: 'Playfair Display SC', serif !important;
+    font-size: 15px;
+    top: 15px;
+    left: -10px;
+}
+
+
+
 /*Pagination*/
 .pagination li a{
     color: #727272;

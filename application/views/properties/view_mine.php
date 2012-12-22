@@ -6,7 +6,13 @@
 ?>
 
 <div class="content span9 properties">
-    <h2><strong><?=$property['name']?></strong></h2>
+    <h2><strong><?=$property['name']?></strong>
+        <span id="is_public">
+            <a id="<?=$property['public']?>" class="btn btn-medium" href="#" rel="tooltip" data-placement="top" data-original-title="<?=$property['title']?>">
+                <i class="<?=$property['style']?>"></i>
+            </a>
+        </span>
+    </h2>
     <div class="pasturePic"><img src="<?=base_url("$profile_image")?>"></div>
     <div class="pastureInfo">
         <p style="font-size: 18px;"><strong><?=$property['city']?>, <?=$property['state']?></strong></p>
