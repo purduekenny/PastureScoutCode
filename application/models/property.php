@@ -17,7 +17,7 @@ class Property extends CI_Model{
 
         $data['created'] = date('Y-m-d H:i:s');
         $data['status'] = 'active';
-        $this->db->where('public', 'private');
+        $data['public'] = 'private';
         $this->db->insert('properties', $data);
         return NULL;
     }
