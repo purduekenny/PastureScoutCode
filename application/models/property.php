@@ -189,7 +189,6 @@ class Property extends CI_Model{
         ');
         $this->db->where('id', $property_id);
         $this->db->where('`status`', 'active');
-        $this->db->where('public', 'public');
         $query = $this->db->get('properties');
         return $query->row_array();
     }

@@ -402,6 +402,15 @@ class Forages extends CI_Controller
             //owner of forage
             $forage_user_id = $data['forage']['user_id'];
 
+            //check to see if public or not and then put in some css/titles
+            if($data['forage']['public'] == 'public'){
+                $data['forage']['style'] = "icon-eye-open";
+                $data['forage']['title'] = "Make Private";
+            }else{
+                $data['forage']['style'] = "icon-eye-close";
+                $data['forage']['title'] = "Make Public";
+            }
+
             //put images into data array to be used in the view
             $data['forage']['images'] = $this->_all_images($forage_id);
             
@@ -616,6 +625,52 @@ class Forages extends CI_Controller
 
             $this->favorite->unfavorite_forage($user_id, $forage_id);
            
+
+        }
+    }
+
+        /** 
+     * Make Public
+     *
+     * @param int
+     *
+     * @return null
+     */
+    function make_public($forage_id) {
+        if (!$this->tank_auth->is_logged_in()) {                                    
+            // if logged in, not activated              
+            $this->session->set_flashdata('message', 'You must be logged in to use this page');
+            redirect(base_url() . 'auth/login');
+        } else if ($user_id= ''){
+            $this->session->set_flashdata('message', 'oops!');
+            redirect(base_url() . 'my_account');
+        } else {
+            $forage_id = $this->input->post('id');
+
+            $this->forage->publicize($forage_id);
+
+        }
+    }
+
+    /** 
+     * Make Private
+     *
+     * @param int
+     *
+     * @return null
+     */
+    function make_private($forage_id) {
+        if (!$this->tank_auth->is_logged_in()) {                                    
+            // if logged in, not activated              
+            $this->session->set_flashdata('message', 'You must be logged in to use this page');
+            redirect(base_url() . 'auth/login');
+        } else if ($user_id= ''){
+            $this->session->set_flashdata('message', 'oops!');
+            redirect(base_url() . 'my_account');
+        } else {
+            $forage_id = $this->input->post('id');
+
+            $this->forage->privitize($forage_id);
 
         }
     }

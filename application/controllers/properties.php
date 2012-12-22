@@ -402,7 +402,7 @@ class Properties extends CI_Controller
             //owner of pasture
             $property_user_id = $data['property']['user_id'];
 
-            //check to see if public or not
+            //check to see if public or not and then put in some css/titles
             if($data['property']['public'] == 'public'){
                 $data['property']['style'] = "icon-eye-open";
                 $data['property']['title'] = "Make Private";

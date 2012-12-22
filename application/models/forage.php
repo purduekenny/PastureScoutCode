@@ -17,6 +17,7 @@ class Forage extends CI_Model{
 
         $data['created'] = date('Y-m-d H:i:s');
         $data['status'] = 'active';
+        $data['public'] = 'private';
         $this->db->insert('forages', $data);
         return NULL;
     }
@@ -48,9 +49,11 @@ class Forage extends CI_Model{
             `lease_availability_date`,
             `features_forage_type`,
             `handling_facilities`,
+            `public`,
             `allowed_uses`
         ');
         $this->db->where('status', 'active');
+        $this->db->where('public', 'public');
         $this->db->limit($num, $start);
         $query = $this->db->get('forages'); 
         return $query->result_array();
@@ -87,6 +90,7 @@ class Forage extends CI_Model{
             `features_forage_type`,
             `handling_facilities`,
             `allowed_uses`,
+            `public`,
             `user_id`
         ');
         $this->db->where('user_id', $user_id);
@@ -196,6 +200,7 @@ class Forage extends CI_Model{
             `features_forage_type`,
             `handling_facilities`,
             `allowed_uses`,
+            `public`,
             `user_id`
         ');
         $this->db->where('id', $forage_id);
@@ -224,6 +229,7 @@ class Forage extends CI_Model{
     function get_forages_count(){
         $this->db->select('`id`');
         $this->db->where('`status`', 'active');
+        $this->db->where('public', 'public');
         $query = $this->db->get('forages');
         return $query->num_rows();
     }
@@ -302,6 +308,7 @@ class Forage extends CI_Model{
             `features_forage_type`,
             `handling_facilities`,
             `allowed_uses`,
+            `public`,
             `user_id`
         ');
 
@@ -320,6 +327,7 @@ class Forage extends CI_Model{
             $this->db->like('`allowed_uses`', $cattle);
         }
         $this->db->where('`status`', 'active');
+        $this->db->where('public', 'public');
         $this->db->limit($num, $start);
         $query = $this->db->get('forages');
         return $query->result_array();
@@ -353,9 +361,39 @@ class Forage extends CI_Model{
             $this->db->like('`allowed_uses`', $cattle);
         }
         $this->db->where('`status`', 'active');
+        $this->db->where('public', 'public');
         $query = $this->db->get('forages');
         return $query->num_rows();
     }
+
+    /**
+     * make public
+     * 
+     * @param   int
+     * 
+     * @return  null
+     */
+    function publicize($forage_id){
+        $this->db->where('id', $forage_id);
+        $this->db->set('public', 'public');
+        $this->db->update('forages');
+        return NULL;
+    }
+
+    /**
+     * make public
+     * 
+     * @param   int
+     * 
+     * @return  null
+     */
+    function privitize($forage_id){
+        $this->db->where('id', $forage_id);
+        $this->db->set('public', 'private');
+        $this->db->update('forages');
+        return NULL;
+    }
+
 
 
 }
