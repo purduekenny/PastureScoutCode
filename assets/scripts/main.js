@@ -50,7 +50,8 @@ $(function() {
                 var href = window.location.href;
                 //get last uri
                 var uri = href.substr(href.lastIndexOf('/') + 1);
-                    $.ajax({
+                console.log(baseurl + type + "/un_favorite/" + uri)
+                $.ajax({
                     type: "POST",
                     url: baseurl + type + "/un_favorite/" + uri,
                     data: { id: uri },
@@ -66,6 +67,8 @@ $(function() {
         }
 
         function make_private(){
+            $('span#is_public').on("click", "a#public",function(e){
+                console.log("privitize");
                 //prevents 'a' default action
                 e.preventDefault();
                 //get url
@@ -89,6 +92,7 @@ $(function() {
 
         function make_public(){
             $('span#is_public').on("click", "a#private", function(e){
+                console.log(type);
                 //prevents 'a' default action
                 e.preventDefault();
                 //get url
