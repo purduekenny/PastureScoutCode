@@ -335,6 +335,7 @@ $other_info = array(
         </div>
     </div>
     -->
+
     
     <?php 
         $data = array(

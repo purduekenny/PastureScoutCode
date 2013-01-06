@@ -160,9 +160,9 @@ class Forages extends CI_Controller
             $this->form_validation->set_rules('other_info', '', 'trim|xss_clean|max_length[500]');
             $this->form_validation->set_rules('size', 'Size', 'trim|required|xss_clean|max_length[100]');
             $this->form_validation->set_rules('min_lease_term', 'Minimum Lease Term', 'trim|xss_clean|max_length[100]');
-            $this->form_validation->set_rules('lease_availability_date', 'Lease Availability Date', 'trim|required|xss_clean|max_length[100]');
-            $this->form_validation->set_rules('features_forage_type', 'Features: Forage Type', 'trim|required|xss_clean');
-            $this->form_validation->set_rules('handling_facilities', 'Handling Facilities', 'trim|required|xss_clean|max_length[100]');
+            $this->form_validation->set_rules('lease_availability_date', 'Lease Availability Date', 'trim|xss_clean|max_length[100]');
+            $this->form_validation->set_rules('features_forage_type', 'Features: Forage Type', 'trim|xss_clean');
+            $this->form_validation->set_rules('handling_facilities', 'Handling Facilities', 'trim|xss_clean|max_length[100]');
             $this->form_validation->set_rules('allowed_uses[]', 'Allowed Uses', 'trim|xss_clean');
             $data['errors'] = array();
 
@@ -280,9 +280,9 @@ class Forages extends CI_Controller
                 $this->form_validation->set_rules('other_info', 'Other Info', 'trim|xss_clean|max_length[500]');
                 $this->form_validation->set_rules('size', 'Size', 'trim|required|xss_clean|max_length[100]');
                 $this->form_validation->set_rules('min_lease_term', 'Minimum Lease Term', 'trim|xss_clean|max_length[100]');
-                $this->form_validation->set_rules('lease_availability_date', 'Lease Availability Date', 'trim|required|xss_clean|max_length[100]');
-                $this->form_validation->set_rules('features_forage_type', 'Features: Forage Type', 'trim|required|xss_clean');
-                $this->form_validation->set_rules('handling_facilities', 'Handling Facilities', 'trim|required|xss_clean|max_length[100]');
+                $this->form_validation->set_rules('lease_availability_date', 'Lease Availability Date', 'trim|xss_clean|max_length[100]');
+                $this->form_validation->set_rules('features_forage_type', 'Features: Forage Type', 'trim|xss_clean');
+                $this->form_validation->set_rules('handling_facilities', 'Handling Facilities', 'trim|xss_clean|max_length[100]');
                 $this->form_validation->set_rules('allowed_uses[]', 'Allowed Uses', 'trim|xss_clean');
                 $data['errors'] = array();               
 

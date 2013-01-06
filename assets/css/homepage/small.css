@@ -1,6 +1,6 @@
 /***** LOGO *****/
 body{
-    background:url(../../images/homepage/small/small_bg_body.png) repeat-x;
+    background:url(../../images/homepage/small/small_bg_body.jpg) repeat-x;
     background-color:#f5f5f5;
 }
 
@@ -37,6 +37,7 @@ body{
 .navLi {
     padding: 0 10px 0 0px;
     font-size:12px;
+    margin-top: -10px;
 }
 
 #button_login{
@@ -44,6 +45,7 @@ body{
     height:28px;
     position:relative; 
     top: 0px;
+    left: 0px;
 }
 
 /***** login *****/

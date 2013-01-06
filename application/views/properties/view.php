@@ -50,10 +50,6 @@
             <h2>Stock Rescrictions</h2>
             <p><?= $property["name"] ?>'s max head count is <?php echo isset($property['max_head_count']) ? "<strong>" . $property['max_head_count'] . "</strong>" : 'not specified'?>. </p>
         
-            <p><strong>Restricted Stock Type</strong> 
-                <br />
-                <?php echo isset($property['restricted_stock_type']) ? $property['restricted_stock_type'] : 'Not specified'?> </p>
-
             <h2>Contact Information</h2>
             <?php
 

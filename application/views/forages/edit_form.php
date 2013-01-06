@@ -176,7 +176,7 @@ isset($forages['id']) ? $forages['id'] : '';
 <div class="span12 content">
 <?php echo form_open(base_url().'forages/edit/'. $forages['id'], array('class' => 'form-horizontal')) ?>
 
-    <h2>Enter Description</h2>
+    <h2>Edit Your Forage</h2>
     <div class="control-group">
         <?php echo form_label('forage Name', $name['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -589,6 +589,7 @@ isset($forages['id']) ? $forages['id'] : '';
         <?php echo form_label('Amount', $size['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($size); ?>
+            <span class="help-block">Specify amount in bales (type/size) or tons</span>
             <?php echo form_error($size['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$size['name']])?$errors[$size['name']]:''; ?>
         </div>
@@ -602,7 +603,7 @@ isset($forages['id']) ? $forages['id'] : '';
             <?php echo isset($errors[$min_lease_term['name']])?$errors[$min_lease_term['name']]:''; ?>
         </div>
     </div>
-    -->
+    
     <div class="control-group">
         <?php echo form_label('Lease Availability Date', $lease_availability_date['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -641,7 +642,7 @@ isset($forages['id']) ? $forages['id'] : '';
         </div>
     </div>
 
-<!--    <div class="control-group">
+    <div class="control-group">
         <?php echo form_label('Allowed Uses', 'allowed_uses[]', array('class' => 'control-label')); ?>
         <div class="controls">
             <?php 
@@ -672,7 +673,7 @@ isset($forages['id']) ? $forages['id'] : '';
         </div>
     </div>
     <div class="control-group">
-    
+    <!--
         <?php echo form_label('Restricted Stock Type', $restricted_stock_type['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($restricted_stock_type); ?>
@@ -680,7 +681,6 @@ isset($forages['id']) ? $forages['id'] : '';
             <?php echo isset($errors[$restricted_stock_type['name']])?$errors[$restricted_stock_type['name']]:''; ?>
         </div>
     </div>
-    <!--
     <div class="control-group">
         <?php echo form_label('Max Head Count', $max_head_count['id'], array('class' => 'control-label')); ?>
         <div class="controls">

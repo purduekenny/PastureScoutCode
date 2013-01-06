@@ -315,7 +315,7 @@ class Property extends CI_Model{
             $this->db->where('`state`', $state);
         }
         if(!empty($size)){
-            $this->db->where('size <=', $size);
+            $this->db->where('size >=', $size);
             $this->db->where('size !=', 0);
         }
         if(!empty($max_head_count)){

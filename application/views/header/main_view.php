@@ -42,10 +42,14 @@
 
     <!-- PAGE CONTAINER -->
     <div id="pageContainer">
-        
         <!-- HEADER -->
         <header>
-            <a href="<?= base_url() . "properties"; ?>"><div id="logo"></div></a>
+            <?php if ($_SERVER["REQUEST_URI"] == "/auth/login.php" || $_SERVER["REQUEST_URI"] == "/auth/register" || $_SERVER["REQUEST_URI"] == "/auth/register.php" || $_SERVER["REQUEST_URI"] == "/auth/forgot_password.php"){ ?>
+                <a href="<?= base_url()?>"><div id="logo"></div></a>
+            <?php } else { ?>
+                 <a href="<?= base_url() . "properties"; ?>"><div id="logo"></div></a>
+            <?php } ?>
+
             <!-- NAVIGATION -->
             <div id="nav_wrapper">
                 <ul class="navList">

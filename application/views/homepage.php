@@ -90,7 +90,7 @@
                                         </div>
                                         <div class="video_details">
                                             <p class="cp-title">Pasture Scout</p>
-                                            <p>PastureScout is an online marketplace that<br> allows users to list, find, and secure leases that meet their needs</p>
+                                            <p>PastureScout is an online marketplace that allows users to list, find, and secure leases that meet their needs</p>
                                             <div class="clear"></div>                           
                                         </div>
                                         <div class="close"></div>
@@ -101,7 +101,7 @@
                                 <div class="creative_layer ">
                                     <div class="cp-left fade">
                                         <p class="cp-title">Leasing Made Simple</p>
-                                        <p>PastureScout is an online marketplace <br> that allows users to list, find, and secure <br>leases that meet their needs.</p>
+                                        <p>PastureScout is an online marketplace <br />that allows users to list, find, and secure <br>leases that meet their needs.</p>
                                         <div class="clear"></div>                           
                                     </div>                                  
                                 </div>

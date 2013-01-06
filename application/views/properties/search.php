@@ -134,7 +134,7 @@ $allowed_uses = array(
         </div>
     </div>
     <div class="control-group">
-        <?php echo form_label('Maximum Size', $size['id'], array('class' => 'control-label')); ?>
+        <?php echo form_label('Minimum Size', $size['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <div class="input-append"><?php echo form_input($size); ?> <span class="add-on">acres</span></div>
             <?php echo form_error($size['name'], '<span class="error">', '</span>'); ?>
@@ -142,7 +142,7 @@ $allowed_uses = array(
         </div>
     </div>
     <div class="control-group">
-        <?php echo form_label('Maximum Head Count', $max_head_count['id'], array('class' => 'control-label')); ?>
+        <?php echo form_label('Minimum Head Count', $max_head_count['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <div class="input-append"><?php echo form_input($max_head_count); ?> <span class="add-on">animals</span></div>
             <?php echo form_error($max_head_count['name'], '<span class="error">', '</span>'); ?>

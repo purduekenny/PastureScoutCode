@@ -113,7 +113,7 @@ class My_Account extends CI_Controller
                 
                 $this->session->set_userdata($newdata);
                 $this->session->set_flashdata('message', 'You have successfully edited your account');
-                redirect(base_url() . 'my_account');
+                redirect(base_url() . 'properties');
 
                 } else {
                     $errors = $this->tank_auth->get_error_message();

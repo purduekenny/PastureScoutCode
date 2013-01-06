@@ -33,10 +33,14 @@
                     <i class="icon-trash icon-white"></i>
                     <span>Delete</span>
                 </button> -->
+                <br /><br />
+                    <div class="alert alert-info"><strong>Make Your Pasture Visible!</strong><br /><br />Once you're finished uploading images, make your pasture visible by clicking the "Back to My Pasture" below and clicking the eye icon in the upper right-hand of the page. Once you complete this step, your pasture is live.
+                <br /><br />
                 <a class="btn btn-info" href="<?=base_url().'properties/view_mine/'. $property_id ?>">
                     <i class="icon-home icon-white"></i>
                     <span>Back to My Pasture</span>
                 </a>
+            </div>
                 <!-- <input type="checkbox" class="toggle"> -->
             </div>
             <!-- The global progress information -->

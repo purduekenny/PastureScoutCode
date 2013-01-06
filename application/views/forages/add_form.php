@@ -234,7 +234,8 @@ $other_info = array(
     <div class="control-group">
         <?php echo form_label('Amount', $size['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <div><?php echo form_input($size); ?></div>
+            <div><?php echo form_input($size); ?><span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="left" title="e.g. square bales 4'x4'x8', 5' diaround bales, 20 tons?"></i></span></div>            
+            <span class="help-block">Specify amount in bales (type/size) or tons</span>
             <?php echo form_error($size['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$size['name']])?$errors[$size['name']]:''; ?>
         </div>
@@ -250,6 +251,7 @@ $other_info = array(
         </div>
     </div>
     -->
+    <!--
     <div class="control-group">
         <?php echo form_label('Lease Availability Date', $lease_availability_date['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -258,6 +260,7 @@ $other_info = array(
             <?php echo isset($errors[$lease_availability_date['name']])?$errors[$lease_availability_date['name']]:''; ?>
         </div>
     </div>
+    
     <div class="control-group">
         <?php echo form_label('Forage Type', $features_forage_type['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -286,7 +289,7 @@ $other_info = array(
             <?php echo isset($errors[$handling_facilities['name']])?$errors[$handling_facilities['name']]:''; ?>
         </div>
     </div>
-    <!--<div class="control-group">
+    <<div class="control-group">
         <?php echo form_label('Allowed Uses', 'allowed_uses[]', array('class' => 'control-label')); ?>
         <div class="controls">
             <?php 
@@ -316,6 +319,7 @@ $other_info = array(
             <?php echo isset($errors[$other_info['name']])?$errors[$other_info['name']]:''; ?>
         </div>
     </div>
+    <!--
     <div class="control-group">
         <?php echo form_label('Restricted Stock Type', $restricted_stock_type['id'], array('class' => 'control-label')); ?>
         <div class="controls">
@@ -324,7 +328,6 @@ $other_info = array(
             <?php echo isset($errors[$restricted_stock_type['name']])?$errors[$restricted_stock_type['name']]:''; ?>
         </div>
     </div>
-    <!--
     <div class="control-group">
         <?php echo form_label('Max Head Count', $max_head_count['id'], array('class' => 'control-label')); ?>
         <div class="controls">

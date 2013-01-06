@@ -13,7 +13,7 @@
         <div class="tab-pane active" id="tabs1-pane1">
             <h1>Why is PastureScout needed?</h1>
 
-                <h2>There is growing demand for leased pasture</h2>.
+                <h2>There is growing demand for leased pasture</h2>
                     <p>Widespread drought and increasing costs of ranch ownership are powerful forces driving many ranchers to find leased pasture in order to avoid selling livestock.</p>  
 
                 <h2>Leasing pasture is harder than it should be</h2>
@@ -25,7 +25,7 @@
 
                     <p>PastureScout changes this, making finding and securing a pasture lease simple.</p>
 
-                <h2>Stewardship of the land</h2>
+                <h2>Land stewardship is more important than ever</h2>
                     <p>Sustainable land management takes creativity, hard work, and a network of like-minded landowners and producers.  As increasing pressure is put on our nation’s agricultural land, the wise utilization of range and cropland by capable people is more important than ever.</p>   
         </div>
         <div class="tab-pane" id="tabs1-pane2">

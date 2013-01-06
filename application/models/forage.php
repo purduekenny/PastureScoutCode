@@ -350,11 +350,11 @@ class Forage extends CI_Model{
             $this->db->where('`state`', $state);
         }
         if(!empty($size)){
-            $this->db->where('size <=', $size);
+            $this->db->where('size >=', $size);
             $this->db->where('size !=', 0);
         }
         if(!empty($max_head_count)){
-            $this->db->where('max_head_count <=', $max_head_count);
+            $this->db->where('max_head_count >=', $max_head_count);
             $this->db->where('max_head_count !=', 0);
         }
         if($cattle != "NO"){

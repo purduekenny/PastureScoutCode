@@ -30,30 +30,16 @@
             <p><strong>Location</strong> 
                 <br />
                 <?=$forage['city']?> </p>
-            <p><strong>Region</strong> 
-                <br />
-                <?=$forage['region']?> </p>
             <p><strong>Amount</strong> 
                 <br />
-                <?php echo isset($forage['size']) ? $forage['size'] : 'Not specified'?> acres</p>
+                <?php echo isset($forage['size']) ? $forage['size'] : 'Not specified'?></p>
         </div>
         <div style="float: left; width: 45%">    
-            <p><strong>Lease Availability</strong> 
+                 <p><strong>Region</strong> 
                 <br />
-                <?php echo isset($forage['lease_availability_date']) ? $lease_availability_date_format : 'Not specified'?> </p>
-            <p><strong>Features</strong> 
-                <br />
-                <?php echo isset($forage['features_forage_type']) ? $forage['features_forage_type'] : 'None'?> </p>
-            <p><strong>Handling Facilties</strong> 
-                <br />
-                <?php echo isset($forage['handling_facilities']) ? $forage['handling_facilities'] : 'None'?> </p>
-
+                <?=$forage['region']?> </p>
         </div>
             <br class="clearfix">
-            <h2>Stock Rescrictions</h2>
-            <p><strong>Restricted Stock Type</strong> 
-                <br />
-                <?php echo isset($forage['restricted_stock_type']) ? $forage['restricted_stock_type'] : 'Not specified'?> </p>
 
             <h2>Contact Information</h2>
             <?php

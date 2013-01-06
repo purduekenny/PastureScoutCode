@@ -53,6 +53,7 @@
                                         <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                                     </form>
                         </div>
+                        <p>Subscription charges will be listed under Ag Link, LLC.</p>
                         <br /><br />
 
                     </div> <!--end tabbed content for 1 --> 
@@ -90,8 +91,9 @@
                                     <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                                 </form>
                         </div>
+                            <p>Subscription charges will be listed under Ag Link, LLC.</p>
                             <br /><br />
-                            <div class="alert alert-info" style="margin: 5px;">We will roll out the auction service in a few weeks, at which point bidding for leases can begin. Until then, please list and search properties to gain an idea of what is offered. -PastureScout Team</div>
+                            <div class="alert alert-info" style="margin: 5px;">We will roll out the auction service in the future, at which point bidding for leases can begin. Until then, please list and search properties to gain an idea of what is offered. -PastureScout Team</div>
                     </div>
                 </div><!-- /.tab-content -->
             </div><!-- /.tabbable -->

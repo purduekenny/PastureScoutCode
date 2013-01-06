@@ -41,7 +41,7 @@
                                 <li>Monitor seeker activity for your listing <span class="label label-important">Not released yet</span></li>
                             </ul>
                             <br /><br />
-                            <div class="alert alert-info">We will roll out the auction service in a few weeks, at which point bidding for leases can begin. Until then, please list and search properties to gain an idea of what is offered. -PastureScout Team</div>
+                            <div class="alert alert-info">We will roll out the auction service in the future, at which point bidding for leases can begin. Until then, please list and search properties to gain an idea of what is offered. -PastureScout Team</div>
                     </div>
                 </div><!-- /.tab-content -->
             </div><!-- /.tabbable -->
