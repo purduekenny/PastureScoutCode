@@ -18,6 +18,7 @@
     <link rel='stylesheet' media='screen and (max-width: 480px)' href='<?= base_url("assets/css/homepage/small.css"); ?>' />
     <!-- google font -->
     <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Balthazar' rel='stylesheet' type='text/css'>
 
     <!-- Styles for IE7 -->
     <!--[if IE 7]>

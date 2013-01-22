@@ -148,7 +148,7 @@ nav {
 
 h1 {
     /*  #ffb400 */
-    font-family: 'Playfair Display SC', serif;
+    font-family: 'Balthazar', serif;
     font-size:36px;
     color: #009900;
     margin: 13px 0 0 5px;
@@ -183,11 +183,15 @@ h1 {
 
 /***** FIND BID LEASE *****/
 #findBidLease {  
+    position: relative;
+    top: -100px;
     width:100%;
 }
 
 /***** TEXT CONTENT *****/
 #longContent {  
+    position: relative;
+    top: -50px;
     width:900px;
     margin:0 30px 30px 30px;
     line-height:22px;

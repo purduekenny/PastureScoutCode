@@ -48,7 +48,6 @@
                 <?php echo isset($property['allowed_uses']) ? $property['allowed_uses'] : 'None specified'?> </p>
         </div>
             <br class="clearfix">
-            <h2>Stock Rescrictions</h2>
             <p><?= $property["name"] ?>'s max head count is <?php echo isset($property['max_head_count']) ? "<strong>" . $property['max_head_count'] . "</strong>" : 'not specified'?>. </p>
         
 <!--     <h2>Bid Information</h2>

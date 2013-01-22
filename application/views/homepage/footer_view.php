@@ -16,7 +16,7 @@
         <div id="footerLinks">
             <!-- SITE LINKS -->
             <span id="siteLinks">
-                <a href="<?=base_url()?>terms/">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="<?=base_url()?>assets/documents/TaC.pdf">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                 <a href="<?=base_url()?>about/">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                 <a href="<?=base_url()?>membership/">Membership</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                 <a href="<?=base_url()?>contact/">Contact</a>

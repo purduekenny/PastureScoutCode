@@ -11,10 +11,11 @@
     <div id="greenFooter">
 
         <!-- FOOTER LINKS -->
-        <div id="footerLinks">
+        <div id="footerLinks" style="position: relative; z-index: 999;">
             <!-- SITE LINKS -->
             <span id="siteLinks">
-                <a href="#">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://pasturescout.com/blog/about-us/">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Contact</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Feedback</a>
+            <a href="<?=base_url()?>assets/documents/TaC.pdf">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://pasturescout.com/blog/about-us/">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Contact</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Feedback</a>
             </span><!-- close site_links -->
 
             <!-- COPYRIGHT -->

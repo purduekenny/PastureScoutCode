@@ -305,18 +305,20 @@ $other_info = array(
         </div>
     </div>
      <div class="control-group">
-        <?php echo form_label('Max Head Count', $max_head_count['id'], array('class' => 'control-label')); ?>
+        <?php echo form_label('Max Aniaml Units', $max_head_count['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_input($max_head_count); ?>
+            <?php echo form_input($max_head_count); ?><span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="left" title="Bull=1.25au, Cow (1000lb) = 1au, Yearling Steer/Heifer=1au, Calves(6-12 mos)=.75au, Calves(3-6 mos)=.5au, Horse=1.25au, Sheep/Goats=.3au"></i></span>
             <?php echo form_error($max_head_count['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$max_head_count['name']])?$errors[$max_head_count['name']]:''; ?>
         </div>
     </div>
+
+    
     
     <div class="control-group">
         <?php echo form_label('Description', $other_info['id'], array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo form_textarea($other_info); ?>
+            <?php echo form_textarea($other_info); ?><span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="left" title="Any other details you'd like to give about the property?"></i></span>
             <?php echo form_error($other_info['name'], '<span class="error">', '</span>'); ?>
             <?php echo isset($errors[$other_info['name']])?$errors[$other_info['name']]:''; ?>
         </div>

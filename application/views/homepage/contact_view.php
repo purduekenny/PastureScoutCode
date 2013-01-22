@@ -168,8 +168,12 @@ $message = array(
                     <h3>Is there a minimum lease term?</h3>
                     <p>No. Lease length is completely determined by a pasture owner. sPastureScout is a good way to find a summer grazing lease, a winter grazing lease, a monthly grazing lease, or a yearly grazing lease.</p>
 
+                    <h3>What is harvested forage?</h3>
+                    <p>All types of hay and silage are considered harvested forage.</p>
+                    
                     <h3>How do I pay for or get paid for a lease?</h3>
                     <p>It is the responsibility of the pasture owner and seeker to come to exchange payment for a lease. PastureScout does not transfer payment between seekers and owners. PastureScout is simply a place where pasture owners and seekers can find one another and conduct business.  The auction tool is technology we provide for those who wish to use it.  Auction lengths, auction winners, and leasing contract details are set by the pasture owner.</p>
+
 
                     <h2>Contact Information</h2>
 

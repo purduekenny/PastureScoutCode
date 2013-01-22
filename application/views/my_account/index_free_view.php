@@ -11,16 +11,18 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="tabs1-pane1">
-                        <h2>Looking for pastures?</h2>
-                            <p>Save time and money by using PastureScout’s customized search tool to find leases that meet your specific grazing needs.  Compare properties by saving them to your favorites. Bid on auction properties and stay informed about competitors’ bids.</p>
-                            <h2>Membership Levels</h2>
+                        <h2>Looking for pasture or harvested forage?</h2>
+                        
+                        <p>Save time and money by using PastureScout’s customized search tool to find pasture leases or harvested forages that meet your specific needs. Compare properties and harvested forage sources by saving them to your favorites. Bid on auction properties or forages and stay informed about competitors’ bids.</p>
+
+                        <h2>Membership Levels</h2>
                          <h3>Basic: <strong>Absolutely Free</strong></h3>
                         
                          <div style="margin-left: 10px;">
                             <ul>
-                                <li>Use the custom search tool to identify properties that meet your needs</li>
-                                <li>Save property searches to your favorites</li>
-                                <li>Use the Lease Calculator to estimate your costs and breakevens <span class="label label-important">Not released yet</span></li>
+                                <li>Use the custom search tool to identify properties or harvested forages that meet your needs.</li>
+                                <li>Save property or harvested forage searches to your favorites.</li>
+                                <li>Use the Lease Calculator for pasture leasing to estimate your costs and breakevens. <span class="label label-important">Not released yet</span></li>
                             </ul>
                         </div>
 
@@ -28,8 +30,8 @@
                         <h3>Plus: <strong>$25.00/month subscription</strong></h3>
                         <div style="margin-left: 10px;">    
                             <ul>
-                                <li>See owner contact information for all properties</li>
-                                <li>Be eligible to bid on auction properties <span class="label label-important">Not released yet</span></li>
+                                <li>See owner contact information for all properties and forage sources.</li>
+                                <li>Be eligible to bid on auction properties and forage sources. <span class="label label-important">Not released yet</span></li>
                             </ul>
                         </div>
                         <div style="margin: 10px 0 0 70px;">    
@@ -58,15 +60,15 @@
 
                     </div> <!--end tabbed content for 1 --> 
                     <div class="tab-pane" id="tabs1-pane2">
-                        <h2>Want to lease your pasture?</h2> 
-                            <p>PastureScout is a simple and affordable way to reach thousands of pasture seekers faster than word of mouth or a local newspaper. List your property and then realize market value for your lease by using our auction tool.  Stay updated about who is bidding and what the bids are.</p> 
+                        <h2>Want to lease your pasture or sell your harvested forage?</h2> 
+                            <p>PastureScout is a simple and affordable way to reach thousands of pasture or forage seekers faster than word of mouth or a local newspaper. List your property or harvested forage and then realize the true market value for your lease or forage by using our auction tool. Stay updated about who is bidding and what the bids are.</p> 
                             <h2>Membership Levels</h2>
                             <h3>Classified Listing: Free 1 month trial then <strong>$35.00/month</strong></h3>
                             <div style="margin-left: 10px;">
                                 <ul>
-                                    <li>Gain exposure to thousands of pasture seekers</li>
-                                    <li>Specify terms of lease</li>
-                                    <li>Access data about area lease prices</li>
+                                    <li>Gain exposure to thousands of pasture or forage seekers.</li>
+                                    <li>Specify terms of pasture lease or harvested forage sale.</li>
+                                    <li>Access data about area pasture lease or harvested forage prices.</li>
                                     <li>Monitor seeker activity for your listing <span class="label label-important">Not released yet</span></li>
                                 </ul>
                             </div>

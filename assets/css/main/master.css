@@ -291,8 +291,11 @@ body#forages_favorites li#forages_favorites a {
 
 .content p {
     margin: 5px 0 10px 10px;
-    color: #969696;
+    color: #696969;
+    padding: 3px;
 }
+
+
 
 .content h3 {
     font-size:20px;
@@ -369,7 +372,7 @@ body#forages_favorites li#forages_favorites a {
 
 
 h1 {
-    font-family: 'Playfair Display SC', serif;
+    font-family: 'Balthazar', serif;
     font-size:36px;
     color:#ffb400;
     margin: 10px 0 0 10px;
@@ -377,7 +380,7 @@ h1 {
 
 
 h2 {
-    font-family: 'Playfair Display SC', serif;
+    font-family: 'Balthazar', serif;
     font-size:23px;
     color:#006600;
     font-weight:bold;
@@ -459,6 +462,8 @@ footer { z-index:10; background-image:url('../../images/main/bg_footer.jpg'); ba
 }
 
 #footerLinks {
+    position: relative; 
+    z-index: 999;
     font-size:12px;
     padding:25px 0 0 0;
 }

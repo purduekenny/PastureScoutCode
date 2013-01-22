@@ -100,8 +100,8 @@
                                 
                                 <div class="creative_layer ">
                                     <div class="cp-left fade">
-                                        <p class="cp-title">Leasing Made Simple</p>
-                                        <p>PastureScout is an online marketplace <br />that allows users to list, find, and secure <br>leases that meet their needs.</p>
+                                        <p class="cp-title">Pasture Leasing & Finding<br /> Forage Made Simple</p>
+                                        <p>PastureScout is an online marketplace that <br />allows users to list, find, and secure pasture<br /> leases and forage.</p>
                                         <div class="clear"></div>                           
                                     </div>                                  
                                 </div>
@@ -111,8 +111,9 @@
                             <div class="creative_layer ">
                                     <div class="cp-bottom fadeup">
                                         <p class="cp-title">Why is PastureScout needed?</p>
-                                        <p>There is growing demand for leased pasture.</p>
-                                        <p>Leasing pasture is harder than it should be.</p>
+                                        <p>Discover and bid on pasture leases and harvested forage resources that meet your needs.</p>
+
+                                        <p>Discover fair market price for your pasture and forage.</p>
                                     </div>                                  
                                 </div>
                         </li>  
@@ -120,7 +121,7 @@
                         <li data-transition="slide" data-startalign="left,bottom" data-zoom="in" data-zoomfact="3" data-endAlign="center,center" data-panduration="8" data-colortransition="4"><img alt="" src="assets/images/homepage/slider_images/slides/pscout3.png">
                             <div class="creative_layer ">
                                     <div class="cp-left fade">
-                                        <p class="cp-title">How does PastureScout<br> Work?</p>
+                                        <p class="cp-title">How does<br />PastureScout<br> Work?</p>
                                         <p>Discover and bid on pasture<br> leases that meet your needs</p>
                                         <p>Discover fair market price <br> for your pasture</p>                                           
                                     </div>                                  
@@ -248,7 +249,7 @@
         <div id="footerLinks">
             <!-- SITE LINKS -->
             <span id="siteLinks">
-                <a href="<?=base_url()?>terms/">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="<?=base_url()?>assets/documents/TaC.pdf">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                 <a href="<?=base_url()?>about">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                 <a href="<?=base_url()?>membership">Membership</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                 <a href="<?=base_url()?>contact">Contact</a>
