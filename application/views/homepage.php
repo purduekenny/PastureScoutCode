@@ -111,9 +111,9 @@
                             <div class="creative_layer ">
                                     <div class="cp-bottom fadeup">
                                         <p class="cp-title">Why is PastureScout needed?</p>
-                                        <p>Discover and bid on pasture leases and harvested forage resources that meet your needs.</p>
+                                        <p>There is a growing demand for leased pasture and harvested forage resources.</p>
 
-                                        <p>Discover fair market price for your pasture and forage.</p>
+                                        <p>Leasing pasture and finding alternative forage sources is harder than it should be.</p>
                                     </div>                                  
                                 </div>
                         </li>  
@@ -122,8 +122,8 @@
                             <div class="creative_layer ">
                                     <div class="cp-left fade">
                                         <p class="cp-title">How does<br />PastureScout<br> Work?</p>
-                                        <p>Discover and bid on pasture<br> leases that meet your needs</p>
-                                        <p>Discover fair market price <br> for your pasture</p>                                           
+                                        <p>Discover and bid on pasture<br> leases and harvested forages<br /> that meet your needs.</p>
+                                        <p>Discover fair market price <br> for your pasture and forages.</p>                                           
                                     </div>                                  
                                 </div>
                         </li>
