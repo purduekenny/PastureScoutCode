@@ -7,7 +7,7 @@ $profile_image = isset($property['images'][0])? 'files/'.$property['images'][0] 
             ?>
             <h2>Favorite Pastures</h2>
             <p><strong>Nothing here.</strong></p>
-            <p>You haven't favorited any pastures. To favorite a pasture, browse to the forage you want to favorite and click the star at the top-right corner of the listing.</p>
+            <p>You haven't favorited any public pastures. To favorite a pasture, browse to the forage you want to favorite and click the star at the top-right corner of the listing.</p>
             <?php
             }else{
     ?>

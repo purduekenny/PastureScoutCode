@@ -106,6 +106,7 @@ class Favorite extends CI_Model{
         $this->db->from('favorites F');
         $this->db->join('properties P', 'P.id = F.property_id');
         $this->db->where('`F.user_id`', $user_id);
+        $this->db->where('public', 'public');
         $this->db->limit($num, $start);
         $query = $this->db->get();
         return $query->result_array(); 

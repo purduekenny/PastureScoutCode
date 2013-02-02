@@ -305,7 +305,7 @@ $other_info = array(
         </div>
     </div>
      <div class="control-group">
-        <?php echo form_label('Max Aniaml Units', $max_head_count['id'], array('class' => 'control-label')); ?>
+        <?php echo form_label('Max Animal Units', $max_head_count['id'], array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo form_input($max_head_count); ?><span class="help-inline"><i class="icon icon-question-sign" rel="tooltip" data-placement="left" title="Bull=1.25au, Cow (1000lb) = 1au, Yearling Steer/Heifer=1au, Calves(6-12 mos)=.75au, Calves(3-6 mos)=.5au, Horse=1.25au, Sheep/Goats=.3au"></i></span>
             <?php echo form_error($max_head_count['name'], '<span class="error">', '</span>'); ?>

@@ -68,7 +68,7 @@ $(function() {
 
         function make_private(){
             $('span#is_public').on("click", "a#public",function(e){
-                console.log("privitize");
+                //console.log("privitize");
                 //prevents 'a' default action
                 e.preventDefault();
                 //get url
@@ -92,7 +92,7 @@ $(function() {
 
         function make_public(){
             $('span#is_public').on("click", "a#private", function(e){
-                console.log(type);
+                //console.log(type);
                 //prevents 'a' default action
                 e.preventDefault();
                 //get url

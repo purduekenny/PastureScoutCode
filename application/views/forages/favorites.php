@@ -7,7 +7,7 @@ $profile_image = isset($forage['images'][0])? 'files/'.$forage['images'][0] : 'a
             ?>
             <h2>Favorite Forages</h2>
             <p><strong>Nothing here.</strong></p>
-            <p>You haven't favorited any forages. To favorite a forage, browse to the forage you want to favorite and click the star at the top-right corner of the listing.</p>
+            <p>You haven't favorited any public forages. To favorite a forage, browse to the forage you want to favorite and click the star at the top-right corner of the listing.</p>
 
             <?php
             }else{
