@@ -668,6 +668,7 @@ isset($property['id']) ? $property['id'] : '';
             <?php echo isset($errors[$max_head_count['name']])?$errors[$max_head_count['name']]:''; ?>
         </div>
     </div>
+
     <div class="control-group">
         <?php echo form_label('Description', $other_info['id'], array('class' => 'control-label')); ?>
         <div class="controls">

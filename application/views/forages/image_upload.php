@@ -34,7 +34,7 @@
                     <span>Delete</span>
                 </button> -->
                  <br /><br />
-                    <div class="alert alert-info"><strong>Make Your Forage Visible!</strong><br /><br />Once you're finished uploading images, make your forage visible by clicking the "Back to My Forage" below and clicking the eye icon in the upper right-hand of the page. Once you complete this step, your forage is live.
+                    <div class="alert alert-info"><strong>Make Your Forage Visible!</strong><br /><br />Once you're finished uploading images, make your forage visible by clicking the "Back to My Forage" below and clicking the eye icon in the upper right-hand of the page. Once you complete this step, your forage is live. The maximum picture size is 5MB.
                 <br /><br />
                 <a class="btn btn-info" href="<?=base_url().'forages/view_mine/'. $forage_id ?>">
                     <i class="icon-home icon-white"></i>

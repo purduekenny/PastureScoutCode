@@ -1,4 +1,13 @@
 <div class="content span9 properties">
+	
+	<div class="alert alert-info alert-block">
+
+		<h4>Bug Reporting</h4>
+		Please use the Feedback link at the bottom of the page to report bugs. Provide as much information as possible to ensure the bug's fix. If you see a bug already posted and you experience it as well, simply vote for that bug, do not duplicate reports.  
+
+	</div>
+
+
 	<?php
 		if(empty($properties)){
 			?>
