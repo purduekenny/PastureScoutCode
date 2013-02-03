@@ -20,7 +20,7 @@
             </a>
         </span>
     </h2>
-    <div class="foragePic"><img src="<?=base_url("$profile_image")?>"></div>  
+    <div class="foragePic img-polaroid"><img src="<?=base_url("$profile_image")?>"></div>  
     <div class="forageInfo">
         <p style="font-size: 18px;"><strong><?=$forage['city']?>, <?=$forage['state']?></strong></p>
         <p><strong>Description:</strong> 

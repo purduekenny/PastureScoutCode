@@ -32,7 +32,7 @@
                 $profile_image = $photo != "" ? 'files/' . $photo : 'assets/images/main/nopic.png';
             ?>
             <li>
-                <div class="pasturePic"><img src="<?=base_url("$profile_image")?>"></div>
+                <div class="pasturePic img-polaroid"><img src="<?=base_url("$profile_image")?>"></div>
                 <div class="pastureInfo">
                     <h3><a href="<?=base_url() . 'properties/view_mine/' . $row['id']; ?>"><?=$row['name']?></a></h3>
                     <p>

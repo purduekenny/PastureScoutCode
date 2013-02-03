@@ -165,7 +165,7 @@ $closing_bid_date = array(
 $other_info = array(
     'name'  => 'other_info',
     'id'    => 'other_info',
-    'value' => set_value('other_info'),
+    'value' => isset($forages['other_info']) ? $forages['other_info'] : set_value('other_info'),
     'rows'  => 30,
     'cols'  => 30
 );

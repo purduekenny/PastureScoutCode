@@ -13,7 +13,7 @@
             </a>
         </span>
     </h2>
-    <div class="pasturePic"><img src="<?=base_url("$profile_image")?>"></div>
+    <div class="pasturePic img-polaroid"><img src="<?=base_url("$profile_image")?>"></div>
     <div class="pastureInfo">
         <p style="font-size: 18px;"><strong><?=$property['city']?>, <?=$property['state']?></strong></p>
         <p><strong>Description:</strong> 

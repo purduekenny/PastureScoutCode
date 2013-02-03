@@ -21,7 +21,7 @@ $profile_image = isset($forage['images'][0])? 'files/'.$forage['images'][0] : 'a
                 $profile_image = $photo != "" ? 'files/' . $photo : 'assets/images/main/nopic.png';
         ?>
         <li>
-             <div class="foragePic"><img src="<?=base_url("$profile_image")?>"></div>
+             <div class="foragePic img-polaroid"><img src="<?=base_url("$profile_image")?>"></div>
                 <div class="forageInfo">
                     <h3><a href="<?=base_url() . 'forages/view/' . $row['id']; ?>"><?=$row['name']?></a></h3>
                     <p>
