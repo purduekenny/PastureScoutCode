@@ -20,7 +20,7 @@
 			foreach($properties as $row){
 				//get first photo
                 list($photo) = explode(',', $row['photos']);
-                $profile_image = $photo != "" ? 'files/' . $photo : 'assets/images/main/nopic.png';
+                $profile_image = $photo != "" ? 'thumbnails/' . $photo : 'assets/images/main/nopic.png';
 		?>
 		<li>
                 <div class="pasturePic"><img src="<?=base_url("$profile_image")?>"></div>

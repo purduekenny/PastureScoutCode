@@ -2,7 +2,7 @@
     $opening_bid_date_format = date('F j, Y', strtotime($property['opening_bid_date']));
     $closing_bid_date_format = date('F j, Y', strtotime($property['closing_bid_date']));
     $lease_availability_date_format = date('F j, Y', strtotime($property['lease_availability_date']));
-    $profile_image = isset($property['images'][0])? 'files/'.$property['images'][0] : 'assets/images/main/nopic.png';
+    $profile_image = isset($property['images'][0])? 'thumbnails/'.$property['images'][0] : 'assets/images/main/nopic.png';
 ?>
 
 <div class="content span9 properties">

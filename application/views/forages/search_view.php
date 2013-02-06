@@ -18,7 +18,7 @@ $profile_image = isset($forage['images'][0])? 'files/'.$forage['images'][0] : 'a
         <?php
             foreach($forages as $row){
                 list($photo) = explode(',', $row['photos']);
-                $profile_image = $photo != "" ? 'files/' . $photo : 'assets/images/main/nopic.png';
+                $profile_image = $photo != "" ? 'thumbnails/' . $photo : 'assets/images/main/nopic.png';
         ?>
         <li>
              <div class="foragePic img-polaroid"><img src="<?=base_url("$profile_image")?>"></div>

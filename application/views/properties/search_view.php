@@ -1,5 +1,5 @@
 <?php
-$profile_image = isset($property['images'][0])? 'files/'.$property['images'][0] : 'assets/images/main/nopic.png';
+$profile_image = isset($property['images'][0])? 'thumbnails/'.$property['images'][0] : 'assets/images/main/nopic.png';
 ?>
 <div class="content span9 properties">
 <h2>Search Results</h2>
@@ -18,7 +18,7 @@ $profile_image = isset($property['images'][0])? 'files/'.$property['images'][0] 
         <?php
             foreach($properties as $row){
                 list($photo) = explode(',', $row['photos']);
-                $profile_image = $photo != "" ? 'files/' . $photo : 'assets/images/main/nopic.png';
+                $profile_image = $photo != "" ? 'thumbnails/' . $photo : 'assets/images/main/nopic.png';
         ?>
         <li>
              <div class="pasturePic img-polaroid"><img src="<?=base_url("$profile_image")?>"></div>
