@@ -723,7 +723,7 @@ isset($property['id']) ? $property['id'] : '';
         $data = array(
         'name'        => 'edit',
         'id'          => 'edit',
-        'value'       => 'Edit Pasture',
+        'value'       => 'Save Changes',
         'class'       => 'btn btn-primary'
         );
     ?>

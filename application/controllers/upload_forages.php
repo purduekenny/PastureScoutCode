@@ -73,7 +73,7 @@ class Upload_Forages extends CI_Controller {
         $config['upload_path'] = $this->getPath_img_upload_folder();
   
         $config['allowed_types'] = 'gif|jpg|png|JPG|GIF|PNG';
-        $config['max_size'] = '1000';
+        $config['max_size'] = '5000';
         $config['file_name'] = $name;
 
        //Load the upload library

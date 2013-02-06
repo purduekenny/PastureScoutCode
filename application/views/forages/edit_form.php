@@ -723,7 +723,7 @@ isset($forages['id']) ? $forages['id'] : '';
         $data = array(
         'name'        => 'edit',
         'id'          => 'edit',
-        'value'       => 'Edit forage',
+        'value'       => 'Save Changes',
         'class'       => 'btn btn-primary'
         );
     ?>
